@@ -11,6 +11,11 @@
 	else 
 		return 0; **/
 
-	echo "1"; 
+
+	if($_POST['usuario'] == 'ARMANDO2018' and $_POST['clave'] == '12345678' )
+
+		echo "1"; 
+	
+	else echo "-1";
 
  ?>

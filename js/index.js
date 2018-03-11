@@ -24,6 +24,8 @@ $(document).ready(function() {
   $("input[name=usuario]").mayuscula() // texto en mayuscula 
   
   $("input[name=usuario]").validCampo(soloLetras_Numeros()) // solo acepta letras y numeros 
+  
+  $("input[name=clave]").validCampo(soloClaves()) // solo acepta letras y numeros 
 
 //----------------------------------------------------------------------------------------
 
@@ -32,6 +34,23 @@ $(document).ready(function() {
 $("input[name=usuario]").tooltip({titulo:"¡¡¡Escribe Aqui!!!", contenido:"Ingresa tu nombre de Usuario"})
 
 $("input[name=clave]").tooltip({titulo:"¡¡¡Escribe Aqui!!!", contenido:"Ingresa tu clave super secreta"})
+
+$("#ingresar")
+.tooltip(
+			{
+				titulo:"¡¡¡Haz Click Aqui!!!" ,
+				contenido: "Si haces click aqui verificara tu usuario y clave, si son correctos ingresaras al sistema" 
+			}
+		)
+
+$("#cambiar")
+.tooltip(
+			{
+				titulo:"¡¡¡Haz Click Aqui!!!" ,
+				contenido: "¿Haz olvidado tu clave? no te preocupes, haz click aqui para ingresar al sistema de recuperacion de claves" 
+			}
+		)
+
 
 // -------------------------------------------------------------
 

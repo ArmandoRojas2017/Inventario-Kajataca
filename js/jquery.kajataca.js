@@ -351,6 +351,12 @@ function soloLetras_Numeros(){
 
 function soloNumeros(){
 
+	return "{1234567890}"
+}
+
+function soloClaves(){
+
+	return "{1234567890ABCDEFGHIJKMNLOPQRSTUVWXYZÑabcdefghijklmnopqrstuvwxyzñ.$_-@}"
 }
 
 
