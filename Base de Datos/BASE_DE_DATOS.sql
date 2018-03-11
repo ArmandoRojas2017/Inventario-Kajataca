@@ -1,4 +1,10 @@
+/*
+	Base de datos del Sistema de Inventario Kajataca,
+	la base de datos se llama igual que mi novia <3
 
+	by: Armando Rojas - 2018 
+
+ */
 
 create database Mi_Cerenis_Cabrera;
 
@@ -37,6 +43,10 @@ create table eventos (
 		
 ); 
 
+
+
+
+
 insert into eventos (descripcion,status)  
 	values ('Ingresó al Sistema',1); 
 
@@ -48,6 +58,23 @@ insert into eventos (descripcion,status)
 
 insert into eventos (descripcion,status)  
 	values ('Genero un nuevo  ',1); 
+
+
+create table configuracion (
+
+	id_configuracion int unsigned auto_increment,
+	descripcion varchar(100) not null,
+	fecha datetime,
+	
+	primary key  (id_configuracion)
+		
+); 
+
+insert configuracion (descripcion, fecha) values 
+	( '137627911d58602826fd657b3caccb1e' , 20180311003744 );
+
+insert configuracion (descripcion, fecha) values 
+	( '137627911d58602826fd657b3caccb1e' , 20180311003744 );
 
 create table logs (
 
@@ -118,7 +145,7 @@ create table presentacion (
 
 create table distribuidora (
 
-	id_presentacion int unsigned auto_increment,
+	id_distribuidora int unsigned auto_increment,
 	id_empresa int unsigned,
 	descripcion varchar(45) not null unique,
 	nombre varchar(100),
@@ -127,8 +154,92 @@ create table distribuidora (
 	fecha_m datetime,
 	status TINYINT(1), 
 
-	primary key  (id_presentacion)
+	primary key  (id_distribuidora)
 		
 ); 
+
+create table productos(
+
+	id_productos int unsigned auto_increment,
+	
+	id_sub_categorias int unsigned,
+	id_distribuidora int unsigned,
+	id_presentacion int unsigned,
+
+	descripcion varchar(60) not null unique,
+	stock_max int,
+	stock_min int,
+	cantidad int,
+
+	fecha_c datetime,
+	fecha_m datetime,
+	status TINYINT(1), 
+
+	primary key  (id_productos),
+
+
+	constraint pk5
+
+		foreign key 
+
+			( id_sub_categorias ) references  sub_categorias (id_sub_categorias),
+
+	constraint pk6
+
+		foreign key 
+
+			( id_distribuidora ) references  distribuidora (id_distribuidora),
+	
+	constraint pk7
+
+		foreign key 
+
+			( id_presentacion ) references  presentacion (id_presentacion)
+
+); 
+
+
+/*
+
+	Tablas transacciopnales 
+ */
+
+create table despacho(
+	
+	id_despacho int unsigned auto_increment,
+	id_productos int unsigned,
+	cantidad int,
+	fecha_c datetime,
+	fecha_m datetime,
+	status TINYINT(1),
+	
+	primary key  (id_despacho),
+
+	constraint pk11
+
+		foreign key 
+
+			( id_productos ) references  productos (id_productos)
+
+);
+
+create table despacho(
+	
+	id_despacho int unsigned auto_increment,
+	id_productos int unsigned,
+	cantidad int,
+	fecha_c datetime,
+	fecha_m datetime,
+	status TINYINT(1),
+	
+	primary key  (id_despacho),
+
+	constraint pk11
+
+		foreign key 
+
+			( id_productos ) references  productos (id_productos)
+
+);
 
 
