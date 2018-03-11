@@ -65,6 +65,17 @@
         <!-- Fin de Opciones provenientes del Controller  -->
 
 
+     <!-- Opcion de Ver PErfil -->
+        <li>
+
+         <a id=cerrar >
+         <i class="glyphicon glyphicon-user " ></i>
+          Ver Perfil  
+
+          </a>
+        </li>
+          <!-- fin de la opcion -->
+
 
           <!-- Opcion de Cerrar sesion -->
         <li>
@@ -86,3 +97,4 @@
   </div>
 </nav>
 <!-- Fin de Menu dinamico -->
+
