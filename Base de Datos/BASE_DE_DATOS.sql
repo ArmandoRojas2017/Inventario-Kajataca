@@ -20,6 +20,13 @@ create table usuarios (
 
 );
 
+insert into usuarios 
+	(nombre,clave,pregunta,
+		respuesta,tipo_usuario,fecha_c,
+		fecha_m,status) values
+	('ARMANDO2018', md5('12345678') , '¿Eres Chavizta?' ,
+		'tu eres marico', 1 , now() , now() , 1  );
+
 create table eventos (
 
 	id_eventos int unsigned auto_increment,
@@ -29,6 +36,18 @@ create table eventos (
 	primary key  (id_eventos)
 		
 ); 
+
+insert into eventos (descripcion,status)  
+	values ('Ingresó al Sistema',1); 
+
+insert into eventos (descripcion,status)  
+	values ('Salio exitosamente del Sistema',1); 
+
+insert into eventos (descripcion,status)  
+	values ('Ingreso a ',1); 
+
+insert into eventos (descripcion,status)  
+	values ('Genero un nuevo  ',1); 
 
 create table logs (
 
@@ -96,4 +115,20 @@ create table presentacion (
 	primary key  (id_presentacion)
 		
 ); 
+
+create table distribuidora (
+
+	id_presentacion int unsigned auto_increment,
+	id_empresa int unsigned,
+	descripcion varchar(45) not null unique,
+	nombre varchar(100),
+	telefono varchar(12),
+	fecha_c datetime,
+	fecha_m datetime,
+	status TINYINT(1), 
+
+	primary key  (id_presentacion)
+		
+); 
+
 
