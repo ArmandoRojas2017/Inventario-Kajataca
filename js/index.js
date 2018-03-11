@@ -73,15 +73,19 @@ $("#ingresar").click(function() {
 	
 	})
 	.done(function($request) {
-		alert($request); 
+		
+		if($request == 1)
+			mensajeNotify({mensaje:'Encontrado' })
+		else 
+			mensajeNotify({mensaje:'Usuario o Clave Invalida', tipo:'danger'})
+
 		console.log("success");
 	})
 	.fail(function() {
+		mensajeNotify({mensaje:'Error en la conexion', tipo:'danger'})
 		console.log("error");
 	})
-	.always(function() {
-		console.log("complete");
-	});
+	
 
 
 
