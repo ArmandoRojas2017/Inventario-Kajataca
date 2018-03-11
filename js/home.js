@@ -9,7 +9,6 @@ Menu(); //invocamos los scripts del menu
 	}, 1000);	
 	
 
-
 });
 
 

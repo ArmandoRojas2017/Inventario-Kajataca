@@ -332,7 +332,7 @@ const miTiempo = {
 		if(segundos < 10) segundos = "0"+segundos.toString();
 
 		/*Cambiar Regimen y establecer formato 12h*/
-		if(hora > 11) {
+		if(hora > 12) {
 			regimen = "pm"; 
 			hora -= 12; 
 		}

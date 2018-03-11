@@ -21,12 +21,12 @@
 			<div class="panel panel-info">
 				<div class="panel-header">
 						<div class="panel-title text-muted text-center">
-							<h2>Ed Sheeran - Kiss me </h2>
+							<h2 id=tituloPista >Ed Sheeran - Kiss me </h2>
 						 </div>
 				 </div>
 
-				 <div class="panel-body text-center">
-				 <audio src="storage/cere.mp3" autoplay controls></audio>
+				 <div class="panel-body text-center" id=pista >
+				 	<audio src="storage/cere.mp3" autoplay controls></audio>
 				 	
 				 </div>
 				
