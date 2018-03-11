@@ -1,0 +1,55 @@
+.pag404 {
+	background: url('../images/imagen.jpg');
+	height: 100%;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: center top;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	overflow: hidden;
+	width: 100%;
+}
+
+.pag404 h1{
+	text-align: center;
+	padding: .3em;
+	width: 80%;
+	margin: auto;
+	margin-top: 1em;
+}
+
+.login{
+	background: url('../images/ar.jpg');
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: center top;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+}
+
+#hora{
+	background: #C2703F;
+	color: white;
+	border-radius: 0em 0em 1em 1em;
+  	width: 8em;
+}
+
+a{
+
+	cursor: pointer;
+}
+
+.separacion{
+	margin-bottom: 10%;
+}
+
+.container_fixe_bottom {
+
+	position: fixed;
+	bottom: 0;
+}
