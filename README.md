@@ -1,2 +1,4 @@
 # Inventario-Kajataca
-Sencillo inventario elaborado PHP sin Framework, donde se elaborar un practico inventario para pequeños comercios
+## By: Armando José Rojas Querales 
+
+Elaboracion de un sencillo Sistema de Inventario para la cervezeria la preferida, este software esta realizado con finalidades de estudios, ya que sera utilizado en la materia de implantacion de sistemas en la UNEFA, extension Turén, Estado Portuguesa.
