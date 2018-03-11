@@ -7,11 +7,17 @@ Menu(); //invocamos los scripts del menu
 		$("#mi_reloj").html(miTiempo.hora_local())
 
 	}, 1000);	
+
+
+	/*-------------- Rutas ------------------*/
+	$("#usuario").ruta("usuario")
+	$("#cerrar").ruta("cerrar")
+	$("#ver").ruta("verPerfil")
+	//--------------------------------
+
 	
 
 });
 
 
-$("#usuario").ruta("usuario")
 
-a

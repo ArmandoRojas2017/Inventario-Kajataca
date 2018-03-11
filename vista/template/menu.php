@@ -68,7 +68,7 @@
      <!-- Opcion de Ver PErfil -->
         <li>
 
-         <a id=cerrar >
+         <a id=ver >
          <i class="glyphicon glyphicon-user " ></i>
           Ver Perfil  
 
