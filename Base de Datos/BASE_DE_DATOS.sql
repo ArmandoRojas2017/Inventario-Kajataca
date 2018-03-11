@@ -44,7 +44,7 @@ create table eventos (
 ); 
 
 
-
+/*Volcando datos para eventos*/
 
 
 insert into eventos (descripcion,status)  
@@ -58,6 +58,27 @@ insert into eventos (descripcion,status)
 
 insert into eventos (descripcion,status)  
 	values ('Genero un nuevo  ',1); 
+
+insert into eventos (descripcion,status)  
+	values ('Genero una nuevo  ',1); 
+
+insert into eventos (descripcion,status)  
+	values ('Modificando un ',1); 
+
+insert into eventos (descripcion,status)  
+	values ('Modificando una ',1); 
+
+insert into eventos (descripcion,status)  
+	values ('Desactivando un ',1); 
+
+insert into eventos (descripcion,status)  
+	values ('Desactivando una ',1); 
+
+insert into eventos (descripcion,status)  
+	values ('Abastecio ',1);
+
+insert into eventos (descripcion,status)  
+	values ('Despacho ',1);
 
 
 create table configuracion (
@@ -112,6 +133,15 @@ create table categorias (
 	primary key (id_categorias)
 ); 
 
+insert into categorias (descripcion, fecha_c, fecha_m, status) values
+	("Bebidas Alcoholicas", now() , now() , 1 );
+
+insert into categorias (descripcion, fecha_c, fecha_m, status) values
+	("Refrescos", now() , now() , 1 );
+
+insert into categorias (descripcion, fecha_c, fecha_m, status) values
+	("Maltas", now() , now() , 1 );
+
 create table sub_categorias (
 
 	id_sub_categorias int unsigned auto_increment,
@@ -129,6 +159,15 @@ create table sub_categorias (
 
 			( id_categorias ) references  categorias (id_categorias)
 ); 
+/*
+	Categoria 1 -- Bebidas alcoholica... 
+ */
+
+insert into sub_categorias (id_categorias,descripcion,fecha_c,fecha_m,status)
+	values (1,'Cerveza',now(),now(),1);
+
+insert into sub_categorias (id_categorias,descripcion,fecha_c,fecha_m,status)
+	values (1,'Cucuy de Penca',now(),now(),1);
 
 
 create table presentacion (
