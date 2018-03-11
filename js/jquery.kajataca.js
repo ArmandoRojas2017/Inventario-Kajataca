@@ -299,9 +299,9 @@ $(function(){
 
 			ruta: function(url){
 
-				return this.each(function(url){
+				return this.each(function(){
 
-					$(this).click(function(url) {
+					$(this).click(function() {
 						
 						window.location.href = '?url='+url; 
 

@@ -12,3 +12,6 @@ Menu(); //invocamos los scripts del menu
 });
 
 
+$("#usuario").ruta("usuario")
+
+a

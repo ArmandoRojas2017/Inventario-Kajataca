@@ -29,7 +29,7 @@
 					 	 array('titulo' => 'Gestion', 
 					 	 	'icono' => 'paperclip',
 					 		'contenido' => array( 
-					 								"otros1" => array( 'texto' => 'Usuarios' , 
+					 								"usuario" => array( 'texto' => 'Usuarios' , 
 					 													 'icono' => 'user'  
 					 													) ,
 
