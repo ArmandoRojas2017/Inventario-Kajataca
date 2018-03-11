@@ -1,41 +1,68 @@
 /*
 	Hora actualizable
  */
-setInterval(function(){
 
-	$("#hora").html(miTiempo.hora_local())
 
-}, 1000);
+$(document).ready(function() {
+	
+	setInterval(function(){
+
+		$("#hora").html(miTiempo.hora_local())
+
+	}, 1000);	
+	
+
+/*Imagen al cargar */
+
+//modalImagen("Bienvenido al Sistema Kajataca de la Cervezeria la Preferida");
+
 
 /*
-	Imagen al cargar 
-
+	Validar Campos de Usuario y Clave 
  */
+  $("input").noCopiar();
+  $("input[name=usuario]").mayuscula();
 
-modalImagen("Bienvenido al Sistema Kajataca de la Cervezeria la Preferida");
+// al hacer click
+$("#ingresar").click(function() {
 
+	let objecto = {
 
-/*
-	Validar Usuario y Clave 
- */
+		usuario : $("input[name=usuario]").val(),
+		clave : $("input[name=clave]").val()
 
+	}
+	
 
-
-$.ajax({
-	url: 'ajax/Autenticar',
+	$.ajax({
+	url: 'ajax/Autenticar.php',
 	type: 'POST',
-	data: { usuario: $("input[name=clave]").val()   },
-})
-.done(function() {
-	alert(); 
-	console.log("success");
-})
-.fail(function() {
-	console.log("error");
-})
-.always(function() {
-	console.log("complete");
+	data: objecto,
+	
+	})
+	.done(function($request) {
+		alert($request); 
+		console.log("success");
+	})
+	.fail(function() {
+		console.log("error");
+	})
+	.always(function() {
+		console.log("complete");
+	});
+
+
+
 });
+
+	
+
+});
+
+
+
+
+
 
 
 

@@ -340,6 +340,9 @@ const miTiempo = {
 	}
 };
 
+/*
+	Script para el reloj
+ */
 
 
 

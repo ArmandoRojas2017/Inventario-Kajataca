@@ -45,7 +45,7 @@
 				<div class="panel-footer">
 				<div class="row">
 					<div class="col-sm-offset-1 col-sm-4">
-							<button class="btn btn-block btn-success"> Ingresar </button>
+							<button class="btn btn-block btn-success" id=ingresar > Ingresar </button>
 					</div>
 					<div class="col-sm-6">
 							<button class="btn btn-block btn-danger"> Cambiar Contraseña</button>
