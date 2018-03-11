@@ -223,18 +223,18 @@ create table despacho(
 
 );
 
-create table despacho(
+create table abastecimiento(
 	
-	id_despacho int unsigned auto_increment,
+	id_abastecimiento int unsigned auto_increment,
 	id_productos int unsigned,
 	cantidad int,
 	fecha_c datetime,
 	fecha_m datetime,
 	status TINYINT(1),
 	
-	primary key  (id_despacho),
+	primary key  (id_abastecimiento),
 
-	constraint pk11
+	constraint pk12
 
 		foreign key 
 
