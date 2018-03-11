@@ -296,6 +296,18 @@ $(function(){
 
 				});
 			},
+
+			ruta: function(url){
+
+				return this.each(function(url){
+
+					$(this).click(function(url) {
+						
+						window.location.href = '?url='+url; 
+
+					});
+				});
+			},
 		//---------------------------------
 
 		/*Prueba de alerta  */
