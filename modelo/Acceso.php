@@ -27,7 +27,7 @@ if(file_exists('../../include/DB.php'))
 		// clave encriptada
 			$pass = md5($pass); 
 		//sentencia SQL
-			$sql = "SELECT * FROM usuario , tiposusuarios where nombre='$user' AND clave='$pass'" ;
+			$sql = "SELECT * FROM usuario  where nombre='$user' AND clave='$pass'" ;
 		// conexion a Base de Datos 
 			$db = new DB();
 
