@@ -301,7 +301,7 @@ $(function(){
 		//prueba del objecto 
 
 		alerta: function(){
-			alert("te Quiero Nelsibeth Oliva"); 
+			alert("Te Amo Cerenis Paola <3"); 
 		}
 
 		//------------------------------------
@@ -341,8 +341,17 @@ const miTiempo = {
 };
 
 /*
-	Script para el reloj
+	Expresiones Regulares 
  */
+
+function soloLetras_Numeros(){
+
+	return "{1234567890ABCDEFGHIJKMNLOPQRSTUVWXYZÑabcdefghijklmnopqrstuvwxyzñ}"
+}
+
+function soloNumeros(){
+	
+}
 
 
 

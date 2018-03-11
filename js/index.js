@@ -20,8 +20,9 @@ $(document).ready(function() {
 /*
 	Validar Campos de Usuario y Clave 
  */
-  $("input").noCopiar();
-  $("input[name=usuario]").mayuscula();
+  $("input").noCopiar()
+  $("input[name=usuario]").mayuscula()
+  $("input[name=usuario]").validCampo(soloLetras_Numeros())
 
 // al hacer click
 $("#ingresar").click(function() {
