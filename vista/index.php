@@ -48,7 +48,7 @@
 							<button class="btn btn-block btn-success" id=ingresar > Ingresar </button>
 					</div>
 					<div class="col-sm-6">
-							<button class="btn btn-block btn-danger"> Cambiar Contraseña</button>
+							<button class="btn btn-block btn-danger" id=cambiar > Cambiar Contraseña</button>
 					</div>
 				
 

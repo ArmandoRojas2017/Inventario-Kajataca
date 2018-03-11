@@ -17,12 +17,24 @@ $(document).ready(function() {
 //modalImagen("Bienvenido al Sistema Kajataca de la Cervezeria la Preferida");
 
 
-/*
-	Validar Campos de Usuario y Clave 
- */
-  $("input").noCopiar()
-  $("input[name=usuario]").mayuscula()
-  $("input[name=usuario]").validCampo(soloLetras_Numeros())
+/*----- Validar Campos de Usuario y Clave  -------------*/
+
+  $("input").noCopiar() // no copiar y pegar 
+
+  $("input[name=usuario]").mayuscula() // texto en mayuscula 
+  
+  $("input[name=usuario]").validCampo(soloLetras_Numeros()) // solo acepta letras y numeros 
+
+//----------------------------------------------------------------------------------------
+
+/* ------------- Mensajes tooltip de ayuda -------------------- */
+
+$("input[name=usuario]").tooltip({titulo:"¡¡¡Escribe Aqui!!!", contenido:"Ingresa tu nombre de Usuario"})
+
+$("input[name=clave]").tooltip({titulo:"¡¡¡Escribe Aqui!!!", contenido:"Ingresa tu clave super secreta"})
+
+// -------------------------------------------------------------
+
 
 // al hacer click
 $("#ingresar").click(function() {
