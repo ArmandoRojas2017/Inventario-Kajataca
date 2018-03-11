@@ -137,10 +137,8 @@ insert into categorias (descripcion, fecha_c, fecha_m, status) values
 	("Bebidas Alcoholicas", now() , now() , 1 );
 
 insert into categorias (descripcion, fecha_c, fecha_m, status) values
-	("Refrescos", now() , now() , 1 );
+	("Otro tipo de Bebidas", now() , now() , 1 );
 
-insert into categorias (descripcion, fecha_c, fecha_m, status) values
-	("Maltas", now() , now() , 1 );
 
 create table sub_categorias (
 
@@ -169,6 +167,17 @@ insert into sub_categorias (id_categorias,descripcion,fecha_c,fecha_m,status)
 insert into sub_categorias (id_categorias,descripcion,fecha_c,fecha_m,status)
 	values (1,'Cucuy de Penca',now(),now(),1);
 
+/*
+	otro tipo de Bebidas 
+ */
+
+insert into sub_categorias (id_categorias,descripcion,fecha_c,fecha_m,status)
+	values (2,'Malta',now(),now(),1);
+
+insert into sub_categorias (id_categorias,descripcion,fecha_c,fecha_m,status)
+	values (2,'Jugo',now(),now(),1);
+
+
 
 create table presentacion (
 
@@ -181,6 +190,22 @@ create table presentacion (
 	primary key  (id_presentacion)
 		
 ); 
+
+/*
+	Presentacion 
+ */
+
+ insert into presentacion (descripcion,fecha_c,fecha_m,status) values
+ 	('Caja de 32 unidades',now(),now(),1); 
+
+ insert into presentacion (descripcion,fecha_c,fecha_m,status) values
+ 	('Caja de 28 unidades',now(),now(),1); 
+ 
+ insert into presentacion (descripcion,fecha_c,fecha_m,status) values
+ 	('Litros ',now(),now(),1); 
+
+  insert into presentacion (descripcion,fecha_c,fecha_m,status) values
+ 	('Mililitros ',now(),now(),1); 
 
 create table distribuidora (
 
@@ -196,6 +221,17 @@ create table distribuidora (
 	primary key  (id_distribuidora)
 		
 ); 
+
+/*
+	Distribuidora 
+ */
+
+insert distribuidora (id_empresa , descripcion , nombre , telefono , fecha_c , fecha_m , status)
+	values (1, 'Doña Oliva Serrada','Nelsibeth Oliva','04145235969', now() , now() , 1); 
+
+insert distribuidora (id_empresa , descripcion , nombre , telefono , fecha_c , fecha_m , status)
+	values (2, 'Mafia Cabrera','Cerenis Cabrera','04145235969', now() , now() , 1); 
+
 
 create table productos(
 
