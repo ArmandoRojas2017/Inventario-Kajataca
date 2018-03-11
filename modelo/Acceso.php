@@ -2,19 +2,19 @@
 //activar sesion
 session_start();
 
-if(file_exists('../../include/DB.php')) 
-		require_once ('../../include/DB.php');
-	elseif (file_exists('../include/DB.php')) {
-		require_once ('../include/DB.php');
+if(file_exists('../../modelo/DB.php')) 
+		require_once ('../../modelo/DB.php');
+	elseif (file_exists('../modelo/DB.php')) {
+		require_once ('../modelo/DB.php');
 	}
-	elseif (file_exists('include/DB.php')   ) {
-		require_once ('include/DB.php');
+	elseif (file_exists('modelo/DB.php')   ) {
+		require_once ('modelo/DB.php');
 	}
-	elseif (file_exists('../../../include/DB.php')   ) {
-		require_once ('../../../include/DB.php');
+	elseif (file_exists('../../../modelo/DB.php')   ) {
+		require_once ('../../../modelo/DB.php');
 	}
 	else 
-		exit("No EXISTE LA CONEXION CON EL MODELO");
+		exit("-1");
 
 
 
@@ -27,19 +27,23 @@ if(file_exists('../../include/DB.php'))
 		// clave encriptada
 			$pass = md5($pass); 
 		//sentencia SQL
-			$sql = "SELECT * FROM usuario  where nombre='$user' AND clave='$pass'" ;
+			$sql = "SELECT * FROM usuarios  where nombre='$user' AND clave='$pass' " ;
 		// conexion a Base de Datos 
 			$db = new DB();
 
 		 	$db->consulta($sql ); 
 
+
 		 	if  ($db->getCantidad() >  0) { 
 		 		
-		 		$this->datos['id'] = $db->getResultado("idUsuario");
+		 		$_SESSION['usuario'] = $this->datos['id'] = $db->getResultado("id_usuarios");
 		 		$this->datos['nombre'] = $db->getResultado("nombre");
-		 		$this->datos['tipo'] = $db->getResultado("descripcion");
+		 		$this->datos['tipo'] = $db->getResultado("tipo_usuario");
+
+
 		 			
-		 	}
+		 	}else
+		 		$_SESSION['usuario'] = NO_ENCONTRADO; 
 
 
 		 	return $db->getCantidad();
@@ -52,4 +56,7 @@ if(file_exists('../../include/DB.php'))
 			else return $this->datos['tipo']; 
 		}
 	}
+
+
+
  ?>

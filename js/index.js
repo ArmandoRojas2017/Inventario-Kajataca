@@ -68,7 +68,7 @@ $("#ingresar").click(function() {
 	
 	})
 	.done(function($request) {
-		
+
 		if($request == 1){
 			
 			mensajeNotify({mensaje:'Encontrado' })
@@ -82,7 +82,7 @@ $("#ingresar").click(function() {
 		}
 		else{
 			mensajeNotify({mensaje:'Error en el Server...', tipo:'warning'})
-			modalImagen("LLamar al 0414-5235969 para solucionar el Error..");
+			modalImagen("LLamar al 0414-5235969 para solucionar el Error.."+$request);
 		}
 
 	
