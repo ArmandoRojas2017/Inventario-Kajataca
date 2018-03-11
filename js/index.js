@@ -16,6 +16,14 @@ $(document).ready(function() {
 
 //modalImagen("Bienvenido al Sistema Kajataca de la Cervezeria la Preferida");
 
+/* Bloquear Boton de Ingresar */
+
+	$("#ingresar").disabled(true)
+//--------------------------------
+
+
+
+
 
 /*----- Validar Campos de Usuario y Clave  -------------*/
 
@@ -27,7 +35,69 @@ $(document).ready(function() {
   
   $("input[name=clave]").validCampo(soloClaves()) // solo acepta letras y numeros 
 
+  $("input[name=usuario]").longitud($("#ingresar") , {max:45,min:4})
+
+  $("input[name=clave]").longitud($("#ingresar") , {max:45,min:4})
+
+
+
 //----------------------------------------------------------------------------------------
+
+
+/*------ Ingreso al Sistema */
+
+// al hacer click
+$("#ingresar").click(function() {
+
+	if ( ( $("input[name=usuario]").val() != "" ) &&  ($("input[name=clave]").val() != "" ) ){
+
+	let objecto = {
+
+		usuario : $("input[name=usuario]").val(),
+		clave : $("input[name=clave]").val()
+
+	}
+	
+
+
+
+	$.ajax({
+	url: 'ajax/Autenticar.php',
+	type: 'POST',
+	data: objecto,
+	
+	})
+	.done(function($request) {
+		
+		if($request == 1){
+			
+			mensajeNotify({mensaje:'Encontrado' })
+
+			window.location.href = '?url=home'
+
+		}
+		else if($request == -1){
+			mensajeNotify({mensaje:'Usuario o Clave Invalida', tipo:'danger'})
+
+		}
+		else{
+			mensajeNotify({mensaje:'Error en el Server...', tipo:'warning'})
+			modalImagen("LLamar al 0414-5235969 para solucionar el Error..");
+		}
+
+	
+	})
+	.fail(function() {
+		mensajeNotify({mensaje:'Error en la conexion', tipo:'danger'})
+
+	})
+	
+}else
+	modalImagen("Campos vacios... Termina de escribir en todos los campos")
+
+});
+//--------------------------------------------------------------------------------
+
 
 /* ------------- Mensajes tooltip de ayuda -------------------- */
 
@@ -53,43 +123,6 @@ $("#cambiar")
 
 
 // -------------------------------------------------------------
-
-
-// al hacer click
-$("#ingresar").click(function() {
-
-	let objecto = {
-
-		usuario : $("input[name=usuario]").val(),
-		clave : $("input[name=clave]").val()
-
-	}
-	
-
-	$.ajax({
-	url: 'ajax/Autenticar.php',
-	type: 'POST',
-	data: objecto,
-	
-	})
-	.done(function($request) {
-		
-		if($request == 1)
-			mensajeNotify({mensaje:'Encontrado' })
-		else 
-			mensajeNotify({mensaje:'Usuario o Clave Invalida', tipo:'danger'})
-
-		console.log("success");
-	})
-	.fail(function() {
-		mensajeNotify({mensaje:'Error en la conexion', tipo:'danger'})
-		console.log("error");
-	})
-	
-
-
-
-});
 
 	
 
