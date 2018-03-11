@@ -10,17 +10,17 @@
 				$opciones =  array( 
 
 					 array('titulo' => 'Operaciones', 
-					 		'icono' => 'usd',
+					 		'icono' => 'list-alt',
 					 		'contenido' => array( 
-					 								"cuentas1" => array( 'texto' => 'Inventario' , 
-					 													 'icono' => 'piggy-bank' 
+					 								"inventario" => array( 'texto' => 'Inventario' , 
+					 													 'icono' => 'tag' 
 					 													 ),
 
-													"cuentas2" => array( 'texto' => 'Despacho' , 
-					 													 'icono' => 'piggy-bank'  
+													"despacho" => array( 'texto' => 'Despacho' , 
+					 													 'icono' => 'tags'  
 					 													) , 
 					 												
-													"cuentas3" => array( 'texto' => 'Orden de Compra' , 
+													"compra" => array( 'texto' => 'Orden de Compra' , 
 					 													 'icono' => 'briefcase'  
 					 													)
 					 							 )  
@@ -30,32 +30,32 @@
 					 	 	'icono' => 'paperclip',
 					 		'contenido' => array( 
 					 								"otros1" => array( 'texto' => 'Usuarios' , 
-					 													 'icono' => 'envelope'  
+					 													 'icono' => 'user'  
 					 													) ,
 
-													"otros2" => array( 'texto' => 'Proveedores' , 
-					 													 'icono' => 'open-file'  
+													"proveedor" => array( 'texto' => 'Proveedores' , 
+					 													 'icono' => 'folder-close'  
 					 													),
-													"otros3" => array( 'texto' => 'Articulos' , 
-					 													 'icono' => 'open-file'  
+													"articulo" => array( 'texto' => 'Articulos' , 
+					 													 'icono' => 'barcode'  
 					 													)
 					 							 )  
 					 		),
 
 					 	  array('titulo' => 'Reportes', 
-					 	  	'icono' => 'cog',
+					 	  	'icono' => 'print',
 					 		'contenido' => array( 
-					 								"config1" => array( 'texto' => 'Stock de Articulos' , 
-					 													 'icono' => 'eye-open'  
+					 								"reporte1" => array( 'texto' => 'Stock de Articulos' , 
+					 													 'icono' => 'duplicate'  
 					 													) ,
-													"config2" => array( 'texto' => 'Flujo de Despacho' , 
-					 													 'icono' => 'heart-empty'  
+													"reporte2" => array( 'texto' => 'Flujo de Despacho' , 
+					 													 'icono' => 'stats'  
 					 													) ,  
-													"config3" => array( 'texto' => 'Regisro de Movimientos' , 
-					 													 'icono' => 'bitcoin'  
+													"reporte3" => array( 'texto' => 'Regisro de Movimientos' , 
+					 													 'icono' => 'retweet'  
 					 													) ,
-													"config4" => array( 'texto' => 'Logs del Sistema' , 
-					 													 'icono' => 'user'  
+													"reporte4" => array( 'texto' => 'Logs del Sistema' , 
+					 													 'icono' => 'transfer'  
 					 													),
 												
 					 							 )  
@@ -63,19 +63,19 @@
 
 
 					 	   array('titulo' => 'Informacion', 
-					 	  	'icono' => 'cog',
+					 	  	'icono' => 'exclamation-sign',
 					 		'contenido' => array( 
 					 								"config1" => array( 'texto' => 'Acerca de la Cervezeria la Preferida' , 
 					 													 'icono' => 'eye-open'  
 					 													) ,
 													"config2" => array( 'texto' => 'Acerca del Software' , 
-					 													 'icono' => 'heart-empty'  
+					 													 'icono' => 'phone'  
 					 													) ,  
 													"config3" => array( 'texto' => 'Manual de Usuario' , 
-					 													 'icono' => 'bitcoin'  
+					 													 'icono' => 'heart'  
 					 													) ,
 													"config4" => array( 'texto' => 'Manual del Sistema' , 
-					 													 'icono' => 'user'  
+					 													 'icono' => 'book'  
 					 													),
 												
 					 							 )  
