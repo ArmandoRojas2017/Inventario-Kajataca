@@ -15,19 +15,20 @@ let Menu = function(){
 		type: 'POST'
 	})
 	.done(function(resp) {
-		console.log("success")
 		
-		if(resp == 1) {
-
+		if(resp == 1) 
+			// muestra mensaje
 			mensajeNotify("Usuario Verificado....")
+		
+		else{ 
+			$("#verificar").html(resp) // agrega la respuesta negativa
+			localStorage.clear() // limpiar
 		}
-		else 
-			$("#verificar").html(resp)
-
 	})
-	.fail(function(request) {
+	.fail((request) =>
+		// muestra mensaje en 
 		modalImagen("Error en el Server")
-	})
+	)
 	
 
 	//-------------------------------------
@@ -40,7 +41,6 @@ let Menu = function(){
 			type: 'POST'
 		})
 		.done(function(resp) {
-			console.log("success")
 			
 			if(resp == -1) 
 				localStorage.clear()	
