@@ -41,7 +41,7 @@ if(file_exists('../../modelo/DB.php'))
 		 		$this->datos['tipo'] = $db->getResultado("tipo_usuario");
 
 		 		$_SESSION['Autenticado'] = ENCONTRADO;
-		 		$_SESSION['name'] = $this->datos['nombre'];
+		 		$_SESSION['id'] = $this->datos['id'];
 		 		$_SESSION['control'] = md5($this->datos['nombre']);
 
 		 			

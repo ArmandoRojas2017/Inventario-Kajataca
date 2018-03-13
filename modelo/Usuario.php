@@ -121,7 +121,7 @@ Usuario
 			$db = new DB();
 			
 			// cosnulta
-			$db->consulta("SELECT * FROM usuarios where idPersona=$id ");
+			$db->consulta("SELECT * FROM usuarios where id_persona=$id ");
 
 			// resultado 1. Nombre 2.ID 3.Stautus
 

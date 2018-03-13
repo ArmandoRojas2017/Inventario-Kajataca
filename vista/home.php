@@ -5,7 +5,7 @@
 		<div class="jumbotron text-center">
 			<h1 >
 				
-					Hola 
+					Bienvenido <span id=nombre_usuario>Armando</span> 
 
 
 			</h1>

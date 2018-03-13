@@ -98,3 +98,7 @@
 </nav>
 <!-- Fin de Menu dinamico -->
 
+<!-- Verificar Usuario -->
+<div id=verificar></div>
+
+<!-- Fin de Verificiar Usuario -->
