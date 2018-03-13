@@ -40,13 +40,15 @@ if(file_exists('../../modelo/DB.php'))
 		 		$this->datos['nombre'] = $db->getResultado("nombre");
 		 		$this->datos['tipo'] = $db->getResultado("tipo_usuario");
 
-		 		$_SESSION['Autenticado'] = ENCONTRADO;
+		 		$_SESSION['autenticado'] = ENCONTRADO;
+		 		$_SESSION['nombre'] = $this->datos['nombre'];
+		 		
 		 		$_SESSION['id'] = $this->datos['id'];
 		 		$_SESSION['control'] = md5($this->datos['nombre']);
 
 		 			
 		 	}else
-		 		$_SESSION['Aunteticado'] = NO_ENCONTRADO; 
+		 		$_SESSION['aunteticado'] = NO_ENCONTRADO; 
 
 
 		 	return $db->getCantidad();

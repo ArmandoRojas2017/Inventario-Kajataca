@@ -9,10 +9,9 @@ Menu(); //invocamos los scripts del menu
 	}, 1000);	
 
 
-	/*-------------- Rutas ------------------*/
-	$("#usuario").ruta("usuario")
-	$("#cerrar").ruta("cerrar")
-	$("#ver").ruta("verPerfil")
+	/*-------------- Nombre de Usuario ------------------*/
+
+		$("#nombre_usuario").html(localStorage.nombre)
 	//--------------------------------
 
 	

@@ -5,11 +5,19 @@
 		<div class="jumbotron text-center">
 			<h1 >
 				
-					Bienvenido <span id=nombre_usuario>Armando</span> 
-
+					¡Bienvenido <span id=nombre_usuario>Armando</span>!	
+					
 
 			</h1>
+
+			
+
 			<br>
+
+			<h2>
+				
+				al Sistema Kajataca
+			</h2>
 			<h3>
 				<span id=mi_reloj> </span>
 			</h3>
