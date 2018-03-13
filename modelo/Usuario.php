@@ -1,17 +1,17 @@
 <?php 
-	if(file_exists('../../include/DB.php')) 
-		require_once ('../../include/DB.php');
-	elseif (file_exists('../include/DB.php')) {
-		require_once ('../include/DB.php');
+	if(file_exists('../../modelo/DB.php')) 
+		require_once ('../../modelo/DB.php');
+	elseif (file_exists('../modelo/DB.php')) {
+		require_once ('../modelo/DB.php');
 	}
-	elseif (file_exists('include/DB.php')   ) {
-		require_once ('include/DB.php');
+	elseif (file_exists('modelo/DB.php')   ) {
+		require_once ('modelo/DB.php');
 	}
-	elseif (file_exists('../../../include/DB.php')   ) {
-		require_once ('../../../include/DB.php');
+	elseif (file_exists('../../../modelo/DB.php')   ) {
+		require_once ('../../../modelo/DB.php');
 	}
 	else 
-		exit("No EXISTE LA CONEXION CON EL MODELO"); 
+		exit(-1); 
 
 	// Devolver arreglo bidimencional 
 	// para mostrar los codigos telefonos
@@ -33,7 +33,7 @@
 		 function get($id){
 
 			// sentencia sql para consulta
-			$sql = "SELECT * FROM usuario , tiposusuarios where idUsuario = $id" ;
+			$sql = "SELECT * FROM usuarios where id_usuarios = $id" ;
 			// llamar a  conexio a DB
 			$db = new DB();
 
@@ -121,7 +121,7 @@ Usuario
 			$db = new DB();
 			
 			// cosnulta
-			$db->consulta("SELECT * FROM usuario where idPersona=$id ");
+			$db->consulta("SELECT * FROM usuarios where idPersona=$id ");
 
 			// resultado 1. Nombre 2.ID 3.Stautus
 
