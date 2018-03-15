@@ -397,3 +397,7 @@ function soloClaves(){
 
 
  
+/* Invocar ayuda */
+
+
+//------------------------

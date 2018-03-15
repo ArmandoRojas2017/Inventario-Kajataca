@@ -124,3 +124,8 @@
 <div id=modal_kajataca></div>
 
 <!-- Fin de Modal kajataca -->
+
+<!-- Modal  ayuda -->
+<div id=modal_ayuda></div>
+
+<!-- Fin de Modal ayuda-->
