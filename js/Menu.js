@@ -79,7 +79,7 @@ let Menu = function(){
 			$("#modal_cervezeria").html(request)
 
 			$(".close").borrar("#modal_cervezeria")
-			$("#cerrar").borrar("#modal_cervezeria")
+			$(".cerrar").borrar("#modal_cervezeria")
 
 		})
 		.fail(function() {
@@ -87,9 +87,24 @@ let Menu = function(){
 		})
 		
 	});
+	
+	
+	
+	$("#config2").click(function(event) {
 
+		$.ajax({url: 'vista/modal/kajataca.php'})
+		.done(function(request) {
+			$("#modal_kajataca").html(request)
 
+			$(".close").borrar("#modal_kajataca")
+			$(".cerrar").borrar("#modal_kajataca")
+
+		})
+		.fail(function() {
+			modalImagen("Error en el Server al Cargar Pagina")
+		})
 		
-		
+	});
+	
 	//-------------------------------------
 } 

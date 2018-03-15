@@ -119,3 +119,8 @@
 <div id=modal_cervezeria></div>
 
 <!-- Fin de Modal Cervezeria -->
+
+<!-- Modal  kajataca -->
+<div id=modal_kajataca></div>
+
+<!-- Fin de Modal kajataca -->
