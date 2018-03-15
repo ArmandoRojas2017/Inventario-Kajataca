@@ -72,15 +72,22 @@ let Menu = function(){
 	
 	/*----------CArgar Modal--------------*/
 
-		$.ajax({
-			url: 'vista/modal/cerveza.php',
-		})
+	$("#config1").click(function(event) {
+
+		$.ajax({url: 'vista/modal/cerveza.php'})
 		.done(function(request) {
 			$("#modal_cervezeria").html(request)
+
+			$(".close").borrar("#modal_cervezeria")
+
 		})
 		.fail(function() {
 			modalImagen("Error en el Server al Cargar Pagina")
 		})
+		
+	});
+
+
 		
 		
 	//-------------------------------------

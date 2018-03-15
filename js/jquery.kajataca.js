@@ -1,12 +1,12 @@
  /*
-	Plugin el funcionamiento Visual del Software
+	Plugin del funcionamiento visual del software
 	El cual integra cada vendor de manera practica y limpia 
 
 	El cual maneja validaciones, mensajes notify, sweet2...
 
 	Uso del tooltip de manera practica 
 
-	Author = Armando Rojas - UNEFA 2017 
+	Autor = Armando Rojas - UNEFA 2017 
 
 */
 
@@ -299,33 +299,45 @@ $(function(){
 					    html: true,
 					    trigger: 'manual'
 					  }).mouseover(function() {
-					    $(this).flyout('show');
+					    $(this).flyout('show')
 					  }).mouseout(function() {
-					    $(this).flyout('hide');
+					    $(this).flyout('hide')
 					  });
 
 				});
 			},
-
+	//---------------------------------
+	
+	/* Sistema de Enrutamiento Armando Rojas */
 			ruta: function(url){
 
 				return this.each(function(){
 
-					$(this).click(function() {
-						
-						window.location.href = '?url='+url; 
-
-					});
-				});
+					$(this).click( () => window.location.href = '?url='+url )
+				})
 			},
 		//---------------------------------
+		
+		/* borrar Area */
+			borrar: function(nodo){
+
+				return this.each(function(){
+
+					$(this).click( () => $(nodo).html("") );
+				});
+			},
+
+
+
+		//---------------------------------
+		
 
 		/*Prueba de alerta  */
 
 		//prueba del objecto 
 
 		alerta: function(){
-			alert("Te Amo Cerenis Paola <3"); 
+			alert("Te Amo Cerenis Paola Cabrera de Rojas <3"); 
 		}
 
 		//------------------------------------
@@ -384,7 +396,4 @@ function soloClaves(){
 }
 
 
-
-
- 	
  
