@@ -95,6 +95,23 @@ a{
 	overflow: hidden;
 }
 
+.modal-backdrop-kajataca {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1040;
+  background: url('../images/kajataca.jpg');
+  background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: center top;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	overflow: hidden;
+}
+
 .modal-content{
 
 	height: 90%;

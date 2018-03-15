@@ -13,7 +13,7 @@ Kajataca
 </div>
 <div class="modal-body">
 
- <img src="images/negocio.jpeg" class="img-responsive img-thumbnail" >
+ <img src="images/kajataca2.jpg" class="img-responsive img-thumbnail" >
 </div>
 <div class="modal-footer">
   
