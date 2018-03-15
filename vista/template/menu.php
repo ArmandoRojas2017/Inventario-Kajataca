@@ -113,3 +113,9 @@
 <div id=verificar></div>
 
 <!-- Fin de Verificiar Usuario -->
+
+
+<!-- Modal cervezeria -->
+<div id=modal_cervezeria></div>
+
+<!-- Fin de Modal Cervezeria -->
