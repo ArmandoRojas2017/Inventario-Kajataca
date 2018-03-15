@@ -23,7 +23,7 @@
 							</div>
 
 							<div class="col-sm-6">
-							<input type="text" class="form-control" name="usuario">
+							<input type="text" class="form-control" name="usuario"  >
 							</div>
 						</div>
 

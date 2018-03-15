@@ -237,6 +237,16 @@ $(function(){
 			});
 		},
 
+		// validar maximo de cadena 
+		
+		longitudMax: function(value){
+
+			this.each(function(){
+  
+				$(this).attr('maxlength', value.toString() );
+			});
+		},
+
 	
 
 		
