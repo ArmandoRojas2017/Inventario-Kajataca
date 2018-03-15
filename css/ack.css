@@ -86,3 +86,9 @@ a{
 	background-size: cover;
 	overflow: hidden;
 }
+
+.modal-content{
+
+	height: 90%;
+	overflow: auto;
+}

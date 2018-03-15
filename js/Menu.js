@@ -79,6 +79,7 @@ let Menu = function(){
 			$("#modal_cervezeria").html(request)
 
 			$(".close").borrar("#modal_cervezeria")
+			$("#cerrar").borrar("#modal_cervezeria")
 
 		})
 		.fail(function() {
