@@ -18,12 +18,12 @@
               <!-- Nav tabs -->
               <ul class="nav nav-tabs" role="tablist">
                 <li role="presentation" class="active">
-                  <a href="#historia" aria-controls="historia" role="tab" data-toggle="tab">
+                  <a id=btn1 href="#historia" aria-controls="historia" role="tab" data-toggle="tab">
                     Guia de Ayuda
                   </a>
                 </li>
 
-                <li role="presentation"><a href="#vision" aria-controls="mision" role="tab" data-toggle="tab">
+                <li id=btn2 role="presentation"><a href="#vision" aria-controls="mision" role="tab" data-toggle="tab">
                 Video de Ayuda
                 </a></li>
                

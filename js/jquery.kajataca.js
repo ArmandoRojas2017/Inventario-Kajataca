@@ -421,6 +421,24 @@ const videoDeAyuda = function( id , _titulo ) {
 			$(".close").borrar("#modal_ayuda")
 			$(".cerrar").borrar("#modal_ayuda")
 
+			$("#btn1").click( () => alert());
+
+			$("#btn2").click( function(){
+
+				$(".modal-backdrop-cervezeria")
+				.removeClass('modal-backdrop-cervezeria')
+				.addClass('modal-backdrop-kajataca')
+
+				$("#btn2").animar("bounceIn")
+				$("video").animar("bounceIn")
+
+				$(".modal-header")
+				.removeClass('bg-primary')
+				.addClass('fondo_rojo')
+
+				$("h4").addClass('color_blanco')
+			} );
+
 		})
 		.fail(function() {
 			modalImagen("Error en el Server al Cargar Pagina")
