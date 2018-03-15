@@ -399,5 +399,31 @@ function soloClaves(){
  
 /* Invocar ayuda */
 
+const videoDeAyuda = function( id ) {
+
+	$("#ayuda").click(function(event) {
+
+		$.ajax(
+			{
+				url: 'vista/modal/ayuda.php',
+				data: {
+					valor : id
+				}
+			}
+			)
+		.done(function(request) {
+			
+			$("#modal_ayuda").html(request)
+
+			$(".close").borrar("#modal_ayuda")
+			$(".cerrar").borrar("#modal_ayuda")
+
+		})
+		.fail(function() {
+			modalImagen("Error en el Server al Cargar Pagina")
+		})
+		
+	});
+}
 
 //------------------------
