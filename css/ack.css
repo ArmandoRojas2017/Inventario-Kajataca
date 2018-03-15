@@ -58,3 +58,31 @@ a{
 	border-radius: 1em; 
 	box-shadow: 1em 1em 1em;
 }
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1040;
+  background: linear-gradient(to top, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
+}
+
+
+.modal-backdrop-cervezeria {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1040;
+  background: url('../images/negocio.jpeg');
+  background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: center top;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	overflow: hidden;
+}
