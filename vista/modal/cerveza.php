@@ -1,4 +1,5 @@
 <div class="modal show" tabindex="-1" role="dialog">
+<div class="modal-backdrop">
 <div class="modal-dialog" role="document">
 <div class="modal-content">
 <div class="modal-header">
@@ -16,3 +17,4 @@
 </div><!-- /.modal-content -->
 </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+</div>

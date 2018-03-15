@@ -3,7 +3,7 @@
 	<div class="row " style="margin-top: 10%">
 		<div class="col-md-6 col-md-offset-3 col-xs-10 col-xs-offset-1  ">
 			<br>
-			<div class="panel  panel-info ">
+			<div class="panel  panel-info sombra_roja ">
 				<div class="panel-footer">
 					<div class="panel-title text-center text">
 					 Iniciar Sessión <i class="glyphicon glyphicon-user"> </i>  
