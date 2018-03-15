@@ -22,11 +22,11 @@ Cervezeria la Preferida
               <!-- Nav tabs -->
               <ul class="nav nav-tabs" role="tablist">
                 <li role="presentation" class="active">
-                  <a href="#historia" aria-controls="historia" role="tab" data-toggle="tab">Historia </a>
+                  <a href="#historia" aria-controls="historia" role="tab" data-toggle="tab">¿Por que ese nombre para el Software? </a>
                 </li>
 
-                <li role="presentation"><a href="#vision" aria-controls="mision" role="tab" data-toggle="tab">Vision </a></li>
-                <li role="presentation"><a href="#mision" aria-controls="vision" role="tab" data-toggle="tab">Mision</a></li>
+                <li role="presentation"><a href="#vision" aria-controls="mision" role="tab" data-toggle="tab">¿Quien es? </a></li>
+                <li role="presentation"><a href="#mision" aria-controls="vision" role="tab" data-toggle="tab">Mas de su Historia...</a></li>
                
               </ul>
              
@@ -35,15 +35,15 @@ Cervezeria la Preferida
 
               <div class="tab-content">
               <div role="tabpanel" class="tab-pane active text-justify" id="historia">
-                <script> $("#historia").load('ajax/historia.html'); </script>
+                <script> $("#historia").load('ajax/kajataca1.html'); </script>
               </div>
               <div role="tabpanel" class="tab-pane text-justify" id="mision"> 
-                <script> $("#mision").load('ajax/mision.html'); </script>
+                <script> $("#mision").load('ajax/kajataca2.html'); </script>
               </div>
 
 
               <div role="tabpanel" class="tab-pane text-justify" id="vision">
-                <script> $("#vision").load('ajax/vision.html'); </script>
+                <script> $("#vision").load('ajax/kajataca3.html'); </script>
               </div>
 
               </div>
