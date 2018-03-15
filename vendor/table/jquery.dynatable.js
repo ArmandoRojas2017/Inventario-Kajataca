@@ -1298,7 +1298,7 @@
       });
 
       return $('<span />', {
-        'class': 'dynatable-per-page col-sm-2 form-inline '
+        'class': 'dynatable-per-page col-sm-3 form-inline '
       }).append("<span class='dynatable-per-page-label form-control '>" + settings.inputs.perPageText + "</span>").append($select);
     };
 

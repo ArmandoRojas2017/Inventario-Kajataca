@@ -15,7 +15,7 @@
     
       <div id="home" > 
 
-        ACK <i class="glyphicon glyphicon-home"></i> 
+        Kajataca <i class="glyphicon glyphicon-home"></i> 
 
       </div>
      
@@ -71,6 +71,17 @@
          <a id=ver >
          <i class="glyphicon glyphicon-user " ></i>
           Ver Perfil  
+
+          </a>
+        </li>
+          <!-- fin de la opcion -->
+
+     <!-- Opcion de Ver PErfil -->
+        <li>
+
+         <a id=ayuda >
+         <i class="glyphicon glyphicon-question-sign " ></i>
+          ¡Ayuda! 
 
           </a>
         </li>
