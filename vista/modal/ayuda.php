@@ -44,6 +44,11 @@
               <!-- Video de ayuda -->
                <div role="tabpanel" class="tab-pane text-justify" id="vision">
 
+               <br>
+               <br>
+               <br>
+               <br>
+
                <video controls  src=<?= "'storage/ayuda/". $_GET['video']."'"   ?> class="img-responsive"  ></video>
 
             
@@ -63,7 +68,13 @@
 <!--  LLama con ajax a la historia, vision y mison... el cual se encuentra en include -->
 
 
-          
+<button type="button" class="btn btn-primary" data-dismiss="modal" id=descargar >
+  
+    Descargar Ayuda
+  
+
+</button>
+     
             
   
 <button type="button" class="btn btn-danger cerrar" data-dismiss="modal"  >

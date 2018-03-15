@@ -399,7 +399,7 @@ function soloClaves(){
  
 /* Invocar ayuda */
 
-const videoDeAyuda = function( id , _titulo ) {
+const videoDeAyuda = function( id ) {
 
 	$("#ayuda").click(function(event) {
 
@@ -407,10 +407,11 @@ const videoDeAyuda = function( id , _titulo ) {
 			{
 				url: 'vista/modal/ayuda.php',
 				data: {
-					valor : id,
-					titulo : _titulo,
+				
+					titulo : "Hola Cere",
 					video : "index.MKV",
-					guia: "index.html"
+					guia: "index.html",
+					descarga : "index.pdf"
 				}
 			}
 			)
@@ -421,7 +422,22 @@ const videoDeAyuda = function( id , _titulo ) {
 			$(".close").borrar("#modal_ayuda")
 			$(".cerrar").borrar("#modal_ayuda")
 
-			$("#btn1").click( () => alert());
+			$("#btn1").click( function(){
+
+				$(".modal-backdrop-kajataca")
+				.removeClass('modal-backdrop-kajataca')
+				.addClass('modal-backdrop-cervezeria')
+
+				$("#btn1").animar("bounceIn")
+				
+
+				$(".modal-header")
+				.removeClass('fondo_rojo')
+				.addClass('bg-primary')
+
+				$("h4").removeClass('color_blanco')
+
+			});
 
 			$("#btn2").click( function(){
 
@@ -438,6 +454,8 @@ const videoDeAyuda = function( id , _titulo ) {
 
 				$("h4").addClass('color_blanco')
 			} );
+
+			$("#descargar").click(() => window.open('storage/ayuda/index.pdf') );
 
 		})
 		.fail(function() {

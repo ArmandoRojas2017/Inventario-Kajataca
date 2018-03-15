@@ -1,15 +1,20 @@
 [
 	{
 		"id" : 1,
-		"video" : "index.mp4",
-		"texto" : "index.html"
+		"video" : "index.MKV",
+		"texto" : "index.html",
+		"archivo" : "index.pdf" ,
+		"titulo" : "¿Que Puedes hacer?"
 
 	},
 	{
 		"id" : 2,
-		"video" : "usuarios.mp4",
-		"texto" : "usuarios.html"
+		"video" : "index.MKV",
+		"texto" : "index.html",
+		"archivo" : "index.pdf" ,
+		"titulo" : "¿Que Puedes hacer?"
 
 	}
+	
 
 ]
