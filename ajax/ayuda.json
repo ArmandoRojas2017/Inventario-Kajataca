@@ -1,20 +1,17 @@
 [
-	{
-		"id" : 1,
+	 {
 		"video" : "index.MKV",
-		"texto" : "index.html",
+		"guia" : "index.html",
 		"archivo" : "index.pdf" ,
 		"titulo" : "¿Que Puedes hacer?"
 
 	},
-	{
-		"id" : 2,
-		"video" : "index.MKV",
-		"texto" : "index.html",
-		"archivo" : "index.pdf" ,
-		"titulo" : "¿Que Puedes hacer?"
+	 {
+		
+		"video" : "index2.MKV",
+		"guia" : "perrsdso.html",
+		"archivo" : "index2.pdf" ,
+		"titulo" : "Marico el que lo lea"
 
 	}
-	
-
 ]

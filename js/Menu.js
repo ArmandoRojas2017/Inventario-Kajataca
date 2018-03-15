@@ -107,7 +107,7 @@ let Menu = function(){
 	});
 
 
-	videoDeAyuda(1,"ArmandoRojas")
+	videoDeAyuda(1)
 	
 	//-------------------------------------
 } 

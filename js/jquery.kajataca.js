@@ -401,6 +401,14 @@ function soloClaves(){
 
 const videoDeAyuda = function( id ) {
 
+	let objecto = {}
+
+	$.getJSON('ajax/ayuda.json', 
+		function(json) {
+		
+		objecto = json[id]
+	});
+
 	$("#ayuda").click(function(event) {
 
 		$.ajax(
@@ -408,10 +416,9 @@ const videoDeAyuda = function( id ) {
 				url: 'vista/modal/ayuda.php',
 				data: {
 				
-					titulo : "Hola Cere",
-					video : "index.MKV",
-					guia: "index.html",
-					descarga : "index.pdf"
+					titulo : objecto.titulo,
+					video : objecto.video,
+					guia: objecto.guia
 				}
 			}
 			)
@@ -455,7 +462,9 @@ const videoDeAyuda = function( id ) {
 				$("h4").addClass('color_blanco')
 			} );
 
-			$("#descargar").click(() => window.open('storage/ayuda/index.pdf') );
+			$("#descargar").click(() => window.open('storage/ayuda/'+objecto.archivo) );
+
+
 
 		})
 		.fail(function() {
