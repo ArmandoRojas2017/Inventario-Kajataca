@@ -5,8 +5,8 @@
 <div class="modal-header bg-primary">
 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
 </button>
-<h4 class="modal-title">
-  <?= $titulo ?>
+<h4 class="modal-title text-center">
+  <?= $_GET['titulo'] ?>
  <i class='glyphicon glyphicon-question-sign'></i>
 
 </h4>
