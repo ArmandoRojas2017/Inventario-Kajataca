@@ -30,6 +30,8 @@
 	<!--  Wow Js -->
 	<link rel="stylesheet" href="vendor/wow/animate.css">
 	
+	<link rel="stylesheet" href="vendor/table/jquery.dynatable.css">
+	
 
 	<!-- fin de lo estilos -->
 
@@ -57,6 +59,7 @@ if( !controller($url) ) view('404');
 <script src="vendor/jquery/crazy.js" > </script>
 <script src="vendor/bootstrap/js/bootstrap.min.js" > </script>
 <script src="vendor/wow/wow.js" > </script>
+<script src="vendor/table/jquery.dynatable.js" > </script>
 
 <script src="vendor/jquery-flyout-master/jquery.flyout.js" > </script>
 

@@ -75,16 +75,16 @@
       paginationNextClass: 'dynatable-page-next',
       paginationActiveClass: 'dynatable-active-page',
       paginationDisabledClass: 'dynatable-disabled-page',
-      paginationPrev: 'Previous',
-      paginationNext: 'Next',
+      paginationPrev: 'Anterior',
+      paginationNext: 'Siguiente',
       paginationGap: [1,2,2,1],
       searchTarget: null,
       searchPlacement: 'before',
       perPageTarget: null,
       perPagePlacement: 'before',
-      perPageText: 'Show: ',
-      recordCountText: 'Showing ',
-      processingText: 'Processing...'
+      perPageText: 'Ver: ',
+      recordCountText: 'Cantidad ',
+      processingText: 'Procesando...'
     },
     dataset: {
       ajax: false,
@@ -120,7 +120,7 @@
       page: 'page',
       perPage: 'perPage',
       offset: 'offset',
-      records: 'records',
+      records: 'registros',
       record: null,
       queryRecordCount: 'queryRecordCount',
       totalRecordCount: 'totalRecordCount'
@@ -713,9 +713,9 @@
 
       if (recordsShown < recordsQueryCount && settings.features.paginate) {
         var bounds = obj.records.pageBounds();
-        text += "<span class='dynatable-record-bounds'>" + (bounds[0] + 1) + " to " + bounds[1] + "</span> of ";
+        text += "<span class='dynatable-record-bounds'>" + (bounds[0] + 1) + " to " + bounds[1] + "</span> de ";
       } else if (recordsShown === recordsQueryCount && settings.features.paginate) {
-        text += recordsShown + " of ";
+        text += recordsShown + " de ";
       }
       text += recordsQueryCount + " " + collection_name;
       if (recordsQueryCount < recordsTotal) {
@@ -1208,8 +1208,8 @@
           }),
           $searchSpan = $('<span></span>', {
             id: 'dynatable-search-' + obj.element.id,
-            'class': 'dynatable-search',
-            text: 'Search: '
+            'class': 'dynatable-search form-inline',
+            text: 'Buscar: '
           }).append($search);
 
       $search
@@ -1283,7 +1283,7 @@
     this.create = function() {
       var $select = $('<select>', {
             id: 'dynatable-per-page-' + obj.element.id,
-            'class': 'dynatable-per-page-select'
+            'class': 'dynatable-per-page-select form-control'
           });
 
       for (var i = 0, len = settings.dataset.perPageOptions.length; i < len; i++) {
@@ -1298,8 +1298,8 @@
       });
 
       return $('<span />', {
-        'class': 'dynatable-per-page'
-      }).append("<span class='dynatable-per-page-label'>" + settings.inputs.perPageText + "</span>").append($select);
+        'class': 'dynatable-per-page col-sm-2 form-inline '
+      }).append("<span class='dynatable-per-page-label form-control '>" + settings.inputs.perPageText + "</span>").append($select);
     };
 
     this.attach = function() {
