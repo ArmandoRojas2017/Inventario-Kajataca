@@ -409,7 +409,7 @@ const videoDeAyuda = function( id , _titulo ) {
 				data: {
 					valor : id,
 					titulo : _titulo,
-					video : "index.mp4",
+					video : "index.MKV",
 					guia: "index.html"
 				}
 			}

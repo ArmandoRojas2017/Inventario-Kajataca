@@ -43,7 +43,10 @@
 
               <!-- Video de ayuda -->
                <div role="tabpanel" class="tab-pane text-justify" id="vision">
-                <script> $("#vision").load(<?= "'storage/ayuda/". $_GET['guia']."'" ?>); </script>
+
+               <video controls  src=<?= "'storage/ayuda/". $_GET['video']."'"   ?> class="img-responsive"  ></video>
+
+            
               </div>
               <!-- fin de video de ayuda -->
 
@@ -52,7 +55,6 @@
 
               </div>
 
- <img src="images/negocio.jpeg" class="img-responsive img-thumbnail" >
 </div>
 <div class="modal-footer">
   
