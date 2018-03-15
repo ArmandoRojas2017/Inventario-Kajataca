@@ -47,6 +47,14 @@ a{
 	margin-bottom: 10%;
 }
 
+.fondo_rojo{
+	background: #d9534f;
+}
+
+.color_blanco {
+	color: white;
+}
+
 .container_fixe_bottom {
 
 	position: fixed;
@@ -92,3 +100,5 @@ a{
 	height: 90%;
 	overflow: auto;
 }
+
+

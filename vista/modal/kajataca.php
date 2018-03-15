@@ -1,13 +1,13 @@
-<div class="modal show" tabindex="-1" role="dialog">
-<div class="modal-backdrop-cervezeria">
+<div class="modal show " tabindex="-1" role="dialog">
+<div class="modal-backdrop-kajataca">
 <div class="modal-dialog" role="document">
 <div class="modal-content">
-<div class="modal-header bg-primary">
+<div class="modal-header fondo_rojo">
 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
 </button>
-<h4 class="modal-title">
-Cervezeria la Preferida
- <i class='glyphicon glyphicon-glass'></i>
+<h4 class="modal-title text-center color_blanco">
+Kajataca 
+ <i class='glyphicon glyphicon-fire'></i>
 
 </h4>
 </div>
