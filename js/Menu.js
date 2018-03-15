@@ -9,6 +9,10 @@ let Menu = function(){
 	$("#ver").ruta("verPerfil")
 
 	//-------------------------------------
+	//
+	/*----- No permite click derecho */
+		clickDerecho();
+	//------------------------------
 	
 
 	/*------------ Obtener Nombre de Usuario --------*/
@@ -107,7 +111,10 @@ let Menu = function(){
 	});
 
 
-	videoDeAyuda(1)
+	videoDeAyuda(0)
 	
 	//-------------------------------------
+
+
+	teclass(e);
 } 

@@ -1,9 +1,18 @@
 $(document).ready(function() {
 
-	Menu(); //invocamos los scripts del menu 
-	$("table").dynatable()
+
+	alert()
+	$("table").dynatable({
+		 inputs: {
+    		queries: $('#search-year')
+ 		 }
+	}).queries.add("apellido","rojas");
+
 	$("#dynatable-query-search-").addClass("form-control")
+
+
 	
+	Menu()
 });
 
 

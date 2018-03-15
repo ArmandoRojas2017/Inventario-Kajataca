@@ -475,3 +475,39 @@ const videoDeAyuda = function( id ) {
 }
 
 //------------------------
+
+
+/*Desactivar click derecho*/
+
+function clickDerecho(){
+
+	   document.oncontextmenu = function() {
+      return false
+   }
+   function right(e) {
+     
+      if (navigator.appName == 'Netscape' && e.which == 3) {
+         
+         modalImagen(" ¡¡¡Esta prohibido usar el click derecho!!! ")
+        
+         return false;
+      }
+      else if (navigator.appName == 'Microsoft Internet Explorer' && event.button==2) {
+         alert("NO USES CLICK DERECHO"); //- Si no quieres asustar al usuario que utiliza IE,  entonces quita esta linea...
+                        //- Aunque realmente se lo merezca...
+      return false;
+      }
+   return true;
+}
+document.onmousedown = right;
+
+
+}
+
+
+function teclass (e)
+{
+    var evt = e ? e : event;
+    var key = window.Event ? evt.which : evt.keyCode;
+    alert (key);
+}
