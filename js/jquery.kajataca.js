@@ -408,7 +408,9 @@ const videoDeAyuda = function( id , _titulo ) {
 				url: 'vista/modal/ayuda.php',
 				data: {
 					valor : id,
-					titulo : _titulo
+					titulo : _titulo,
+					video : "index.mp4",
+					guia: "index.html"
 				}
 			}
 			)

@@ -18,24 +18,32 @@
               <!-- Nav tabs -->
               <ul class="nav nav-tabs" role="tablist">
                 <li role="presentation" class="active">
-                  <a href="#historia" aria-controls="historia" role="tab" data-toggle="tab">Historia </a>
+                  <a href="#historia" aria-controls="historia" role="tab" data-toggle="tab">
+                    Guia de Ayuda
+                  </a>
                 </li>
 
-                <li role="presentation"><a href="#vision" aria-controls="mision" role="tab" data-toggle="tab">Vision </a></li>
+                <li role="presentation"><a href="#vision" aria-controls="mision" role="tab" data-toggle="tab">
+                Video de Ayuda
+                </a></li>
                
                
               </ul>
                   <div class="tab-content">
                 <!-- Guia de ayuda -->
               <div role="tabpanel" class="tab-pane active text-justify" id="historia">
-                <script> $("#historia").load('ajax/historia.html'); </script>
+                <script> 
+
+                  $("#historia").load(<?= "'storage/ayuda/". $_GET['guia']."'" ?>);
+
+                 </script>
               </div>
               <!-- fin de guia de ayuda -->
 
 
               <!-- Video de ayuda -->
                <div role="tabpanel" class="tab-pane text-justify" id="vision">
-                <script> $("#vision").load('ajax/vision.html'); </script>
+                <script> $("#vision").load(<?= "'storage/ayuda/". $_GET['guia']."'" ?>); </script>
               </div>
               <!-- fin de video de ayuda -->
 
