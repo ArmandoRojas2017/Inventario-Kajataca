@@ -13,11 +13,7 @@
 </div>
 <div class="modal-body">
 
- <img src="images/negocio.jpeg" class="img-responsive img-thumbnail" >
-</div>
-<div class="modal-footer">
-  
-        
+
             <div>
               <!-- Nav tabs -->
               <ul class="nav nav-tabs" role="tablist">
@@ -29,8 +25,6 @@
                 <li role="presentation"><a href="#mision" aria-controls="vision" role="tab" data-toggle="tab">Mision</a></li>
                
               </ul>
-             
-<!--  LLama con ajax a la historia, vision y mison... el cual se encuentra en include -->
 
 
               <div class="tab-content">
@@ -42,17 +36,25 @@
               </div>
 
 
-              <div role="tabpanel" class="tab-pane text-justify" id="vision">
-                <script> $("#vision").load('ajax/vision.html'); </script>
-              </div>
-
-              </div>
-              </div>
+ <img src="images/negocio.jpeg" class="img-responsive img-thumbnail" >
+</div>
+<div class="modal-footer">
   
+        
+             
+<!--  LLama con ajax a la historia, vision y mison... el cual se encuentra en include -->
+
+
+          
 <button type="button" class="btn btn-danger cerrar" data-dismiss="modal"  >
-	Cerrar
+  Cerrar
 
 </button>
+      
+
+
+              </div>
+             
 
 </div>
 </div><!-- /.modal-content -->
