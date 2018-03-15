@@ -14,7 +14,6 @@ $(document).ready(function() {
 
 /*Imagen al cargar */
 
-//modalImagen("Bienvenido al Sistema Kajataca de la Cervezeria la Preferida");
 
 /* Bloquear Boton de Ingresar */
 
@@ -124,6 +123,29 @@ $("#cambiar")
 
 // -------------------------------------------------------------
 
+/*---------Verificar si esta ya ingreso al sistema-------------------*/
+	
+	$.ajax({
+		url: 'ajax/Verificar.php',
+		type: 'POST'
+	})
+	.done(function(resp) {
+		
+		if(resp == 1) 
+			// muestra mensaje
+			window.location.href= '?url=home'
+		
+		else
+			modalImagen("Bienvenido al Sistema Kajataca de la Cervezeria la Preferida")
+
+	})
+	.fail((request) =>
+		// muestra mensaje en 
+		modalImagen("Error en el Server")
+	)
+
+	
+//------------------
 	
 
 });
