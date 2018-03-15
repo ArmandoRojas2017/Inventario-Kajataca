@@ -22,19 +22,27 @@
                 </li>
 
                 <li role="presentation"><a href="#vision" aria-controls="mision" role="tab" data-toggle="tab">Vision </a></li>
-                <li role="presentation"><a href="#mision" aria-controls="vision" role="tab" data-toggle="tab">Mision</a></li>
+               
                
               </ul>
-
-
-              <div class="tab-content">
+                  <div class="tab-content">
+                <!-- Guia de ayuda -->
               <div role="tabpanel" class="tab-pane active text-justify" id="historia">
                 <script> $("#historia").load('ajax/historia.html'); </script>
               </div>
-              <div role="tabpanel" class="tab-pane text-justify" id="mision"> 
-                <script> $("#mision").load('ajax/mision.html'); </script>
-              </div>
+              <!-- fin de guia de ayuda -->
 
+
+              <!-- Video de ayuda -->
+               <div role="tabpanel" class="tab-pane text-justify" id="vision">
+                <script> $("#vision").load('ajax/vision.html'); </script>
+              </div>
+              <!-- fin de video de ayuda -->
+
+
+           
+
+              </div>
 
  <img src="images/negocio.jpeg" class="img-responsive img-thumbnail" >
 </div>
@@ -46,15 +54,12 @@
 
 
           
+            
+  
 <button type="button" class="btn btn-danger cerrar" data-dismiss="modal"  >
-  Cerrar
+	Cerrar
 
 </button>
-      
-
-
-              </div>
-             
 
 </div>
 </div><!-- /.modal-content -->
