@@ -105,6 +105,9 @@ let Menu = function(){
 		})
 		
 	});
+
+
+	videoDeAyuda(1,"ArmandoRojas")
 	
 	//-------------------------------------
 } 

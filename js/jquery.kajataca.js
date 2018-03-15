@@ -399,7 +399,7 @@ function soloClaves(){
  
 /* Invocar ayuda */
 
-const videoDeAyuda = function( id ) {
+const videoDeAyuda = function( id , _titulo ) {
 
 	$("#ayuda").click(function(event) {
 
@@ -407,7 +407,8 @@ const videoDeAyuda = function( id ) {
 			{
 				url: 'vista/modal/ayuda.php',
 				data: {
-					valor : id
+					valor : id,
+					titulo : _titulo
 				}
 			}
 			)
