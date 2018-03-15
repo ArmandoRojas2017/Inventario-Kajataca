@@ -13,7 +13,6 @@ let Menu = function(){
 
 	/*------------ Obtener Nombre de Usuario --------*/
 
-		if(!localStorage.nombre)
 		$.ajax({
 			url: 'ajax/ObtenerNombreDeUsuario.php',
 			type: 'POST'
@@ -24,6 +23,8 @@ let Menu = function(){
 				localStorage.clear()	
 			else 
 				localStorage.nombre = resp
+
+			verificar()
 
 		})
 		.fail(function(request) {
@@ -37,6 +38,8 @@ let Menu = function(){
 
 	/*------------ Validar Login de Usuario --------*/
 
+	let verificar = function(){
+
 	$.ajax({
 		url: 'ajax/Verificar.php',
 		type: 'POST',
@@ -46,20 +49,23 @@ let Menu = function(){
 		
 		if(resp == 1) 
 			// muestra mensaje
-			mensajeNotify("Usuario Verificado....")
+			mensajeNotify({  mensaje: "Usuario Verificado...."})
 		
 		else{ 
 			$("#verificar").html(resp) // agrega la respuesta negativa
 			localStorage.clear() // limpiar
 
+
 		}
 
-		alert(resp)
+	
 	})
 	.fail((request) =>
 		// muestra mensaje en 
 		modalImagen("Error en el Server")
 	)
+
+	}
 	
 
 	//-------------------------------------
