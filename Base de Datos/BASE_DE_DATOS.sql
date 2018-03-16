@@ -65,8 +65,6 @@ create table eventos (
 /*Volcando datos para eventos*/
 
 
-
-
 create table configuracion (
 
 	id_configuracion int unsigned auto_increment,
@@ -85,7 +83,7 @@ insert configuracion (descripcion, fecha) values
 
 create table logs (
 
-	fecha datetime,
+	fecha datetime default now(),
 
 
 	id_eventos int unsigned, 
@@ -112,18 +110,13 @@ create table categorias (
 
 	id_categorias int unsigned auto_increment,
 	descripcion varchar(45) not null unique,
-	fecha_c datetime,
-	fecha_m datetime,
-	status TINYINT(1), 
+	fecha_c datetime default now(),
+	fecha_m datetime default now(),
+	status TINYINT(1) default 1, 
 	
 	primary key (id_categorias)
 ); 
 
-insert into categorias (descripcion, fecha_c, fecha_m, status) values
-	("Bebidas Alcoholicas", now() , now() , 1 );
-
-insert into categorias (descripcion, fecha_c, fecha_m, status) values
-	("Otro tipo de Bebidas", now() , now() , 1 );
 
 
 create table sub_categorias (
@@ -131,9 +124,9 @@ create table sub_categorias (
 	id_sub_categorias int unsigned auto_increment,
 	id_categorias int unsigned, 
 	descripcion varchar(45) not null unique,
-	fecha_c datetime,
-	fecha_m datetime,
-	status TINYINT(1), 
+	fecha_c datetime default now(),
+	fecha_m datetime default now(),
+	status TINYINT(1) default 1, 
 
 	primary key pk2 (id_sub_categorias),
 	
@@ -143,25 +136,7 @@ create table sub_categorias (
 
 			( id_categorias ) references  categorias (id_categorias)
 ); 
-/*
-	Categoria 1 -- Bebidas alcoholica... 
- */
 
-insert into sub_categorias (id_categorias,descripcion,fecha_c,fecha_m,status)
-	values (1,'Cerveza',now(),now(),1);
-
-insert into sub_categorias (id_categorias,descripcion,fecha_c,fecha_m,status)
-	values (1,'Cucuy de Penca',now(),now(),1);
-
-/*
-	otro tipo de Bebidas 
- */
-
-insert into sub_categorias (id_categorias,descripcion,fecha_c,fecha_m,status)
-	values (2,'Malta',now(),now(),1);
-
-insert into sub_categorias (id_categorias,descripcion,fecha_c,fecha_m,status)
-	values (2,'Jugo',now(),now(),1);
 
 
 
@@ -169,9 +144,9 @@ create table presentacion (
 
 	id_presentacion int unsigned auto_increment,
 	descripcion varchar(45) not null unique,
-	fecha_c datetime,
-	fecha_m datetime,
-	status TINYINT(1), 
+	fecha_c datetime default now(),
+	fecha_m datetime default now(),
+	status TINYINT(1) default 1, 
 
 	primary key  (id_presentacion)
 		
@@ -377,6 +352,25 @@ insert into eventos (descripcion)  values ('Desactivando un ');
 insert into eventos (descripcion)  values ('Desactivando una '); 
 insert into eventos (descripcion)  values ('Abastecio ');
 insert into eventos (descripcion)  values ('Despacho ');
+
+
+/*Categoria*/
+
+insert into categorias (descripcion) values ("Bebidas Alcoholicas");
+insert into categorias (descripcion) values ("Otro tipo de Bebidas" );
+
+/*Sub categorias*/
+
+	/*Categoria 1 -- Bebidas alcoholica... */
+
+insert into sub_categorias (id_categorias,descripcion)	values (1,'Cerveza');
+insert into sub_categorias (id_categorias,descripcion)	values (1,'Cucuy de Penca');
+
+	/*otro tipo de Bebidas */
+
+insert into sub_categorias (id_categorias,descripcion)	values (2,'Malta');
+insert into sub_categorias (id_categorias,descripcion)	values (2,'Jugo');
+
 
 
 drop database Mi_Cerenis_Cabrera
