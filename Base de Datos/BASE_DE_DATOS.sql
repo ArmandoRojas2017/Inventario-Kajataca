@@ -152,46 +152,43 @@ create table presentacion (
 		
 ); 
 
-/*
-	Presentacion 
- */
 
- insert into presentacion (descripcion,fecha_c,fecha_m,status) values
- 	('Caja de 32 unidades',now(),now(),1); 
+create table empresas (
+	
+	id_empresas int unsigned auto_increment,
+	descripcion varchar(45) not null unique,
+	fecha_c datetime default now(),
+	fecha_m datetime default now(),
+	status TINYINT(1) default 1, 
 
- insert into presentacion (descripcion,fecha_c,fecha_m,status) values
- 	('Caja de 28 unidades',now(),now(),1); 
- 
- insert into presentacion (descripcion,fecha_c,fecha_m,status) values
- 	('Litros ',now(),now(),1); 
+	primary key  (id_empresas)
+);
 
-  insert into presentacion (descripcion,fecha_c,fecha_m,status) values
- 	('Mililitros ',now(),now(),1); 
+insert into empresas (descripcion) values ("La Polar");
+
+
+
 
 create table distribuidora (
 
 	id_distribuidora int unsigned auto_increment,
-	id_empresa int unsigned,
+	id_empresas int unsigned,
 	descripcion varchar(45) not null unique,
 	nombre varchar(100),
-	telefono varchar(12),
-	fecha_c datetime,
-	fecha_m datetime,
-	status TINYINT(1), 
+	telefono varchar(12)  not null unique,
+	fecha_c datetime default now(),
+	fecha_m datetime default now(),
+	status TINYINT(1) default 1, 
 
-	primary key  (id_distribuidora)
+	primary key  (id_distribuidora),
+	constraint pk323
+
+		foreign key 
+
+			( id_empresas ) references  empresas (id_empresas)
 		
 ); 
 
-/*
-	Distribuidora 
- */
-
-insert distribuidora (id_empresa , descripcion , nombre , telefono , fecha_c , fecha_m , status)
-	values (1, 'Doña Oliva Serrada','Nelsibeth Oliva','04145235969', now() , now() , 1); 
-
-insert distribuidora (id_empresa , descripcion , nombre , telefono , fecha_c , fecha_m , status)
-	values (2, 'Mafia Cabrera','Cerenis Cabrera','04145235969', now() , now() , 1); 
 
 
 create table productos(
@@ -207,9 +204,9 @@ create table productos(
 	stock_min int,
 	cantidad int,
 
-	fecha_c datetime,
-	fecha_m datetime,
-	status TINYINT(1), 
+	fecha_c datetime default now(),
+	fecha_m datetime default now(),
+	status TINYINT(1) default 1, 
 
 	primary key  (id_productos),
 
@@ -370,6 +367,27 @@ insert into sub_categorias (id_categorias,descripcion)	values (1,'Cucuy de Penca
 
 insert into sub_categorias (id_categorias,descripcion)	values (2,'Malta');
 insert into sub_categorias (id_categorias,descripcion)	values (2,'Jugo');
+
+/*Presentacion*/
+
+insert into presentacion (descripcion) values ('Caja de 32 unidades'); 
+insert into presentacion (descripcion) values ('Caja de 28 unidades'); 
+insert into presentacion (descripcion) values ('Litros '); 
+insert into presentacion (descripcion) values ('Mililitros '); 
+
+
+/*Empresas*/
+
+insert into empresas (descripcion) values ("La Polar");
+insert into empresas (descripcion) values ("La Regional");
+insert into empresas (descripcion) values ("UnicornioLandia en Revolucion");
+
+
+/*Distribuidora  */
+
+insert distribuidora (id_empresas , descripcion , nombre , telefono ) values (1, 'Doña Oliva Serrada','Nelsibeth Oliva','04145235969'); 
+insert distribuidora (id_empresas , descripcion , nombre , telefono ) values (2, 'Mafia Cabrera','Cerenis Cabrera','04145235269'); 
+
 
 
 

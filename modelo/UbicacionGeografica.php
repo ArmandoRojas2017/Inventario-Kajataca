@@ -1,14 +1,14 @@
 <?php 
-	if(file_exists('../../include/DB.php')) 
-		require_once ('../../include/DB.php');
-	elseif (file_exists('../include/DB.php')) {
-		require_once ('../include/DB.php');
+	if(file_exists('../../modelo/DB.php')) 
+		require_once ('../../modelo/DB.php');
+	elseif (file_exists('../modelo/DB.php')) {
+		require_once ('../modelo/DB.php');
 	}
-	elseif (file_exists('include/DB.php')   ) {
-		require_once ('include/DB.php');
+	elseif (file_exists('modelo/DB.php')   ) {
+		require_once ('modelo/DB.php');
 	}
-	elseif (file_exists('../../../include/DB.php')   ) {
-		require_once ('../../../include/DB.php');
+	elseif (file_exists('../../../modelo/DB.php')   ) {
+		require_once ('../../../modelo/DB.php');
 	}
 	else 
 		exit("No EXISTE LA CONEXION CON EL MODELO");
