@@ -4,34 +4,52 @@
 
 	by: Armando Rojas - 2018 
 
+	1 = TRUE 
+	0 = FALSE 
+
  */
 
 create database Mi_Cerenis_Cabrera;
 
 use Mi_Cerenis_Cabrera;
 
-create table usuarios (
+create table roles (
 
-	id_usuarios int unsigned auto_increment,
-	nombre varchar(100) not null unique,
-	clave varchar(100),
-	pregunta varchar(100),
-	respuesta varchar(100),
-	tipo_usuario int(2),
-	fecha_c datetime,
-	fecha_m datetime,
-	status TINYINT(1), 
+	id_roles int unsigned auto_increment,
+	descripcion varchar(100) not null unique,
+	fecha_c datetime default now(),
+	fecha_m datetime default now(),
+	status TINYINT(1) default 1, 
 	
-	primary key (id_usuarios)
+	primary key (id_roles)
 
 );
 
-insert into usuarios 
-	(nombre,clave,pregunta,
-		respuesta,tipo_usuario,fecha_c,
-		fecha_m,status) values
-	('ARMANDO2018', md5('12345678') , '¿Eres Chavizta?' ,
-		'tu eres marico', 1 , now() , now() , 1  );
+
+create table usuarios (
+
+	id_usuarios int unsigned auto_increment,
+	id_roles int unsigned,
+	nick varchar(12) not null unique,
+	nombre varchar(100) not null,
+	clave varchar(100),
+	pregunta varchar(100),
+	respuesta varchar(100),
+	
+	fecha_c datetime default now(),
+	fecha_m datetime default now(),
+	status TINYINT(1) default 1, 
+	
+	primary key (id_usuarios),
+	constraint pk44
+
+		foreign key 
+
+			( id_roles ) references  roles (id_roles)
+
+);
+
+
 
 create table eventos (
 
@@ -317,4 +335,62 @@ create table abastecimiento(
 
 );
 
+/*
+##############################
 
+ Volcado de Datos   
+#############################
+ */
+
+/*Tipos de usuario*/
+insert into roles (descripcion) values ("Root");
+insert into roles (descripcion) values ("Administrador");
+
+
+/*Usuarios*/
+
+insert into usuarios 
+	(nick, nombre,clave,pregunta,
+		respuesta, id_roles) values
+	('ARMANDO2018',"Armando Rojas", md5('12345678') , '¿Eres Chavizta?' ,
+		'TU ERES MARICO', 1 );
+
+insert into usuarios 
+	(nick, nombre,clave,pregunta,
+		respuesta, id_roles) values
+	('CAPERUCITA',"Nelsibeth Oliva", md5('12345678') , '¿Eres Chavizta?' ,
+		'TU ERES MARICO', 2 );
+
+insert into usuarios 
+	(nick, nombre,clave,pregunta,
+		respuesta, id_roles) values
+	('CRISTIANK',"CRISTIAN HEREDIA", md5('12345678') , '¿Eres Chavizta?' ,
+		'TU ERES MARICO', 2 );
+
+
+insert into usuarios 
+	(nick, nombre,clave,pregunta,
+		respuesta, id_roles) values
+	('PANDITA',"CERENIS CABRERA", md5('12345') , '¿Eres Chavizta?' ,
+		'TU ERES MARICO', 2 );
+
+
+insert into usuarios 
+	(nick, nombre,clave,pregunta,
+		respuesta, id_roles) values
+	('PELUCA',"VILMARYS CASTILLO", md5('12345678') , '¿Eres Chavizta?' ,
+		'TU ERES MARICO', 2 );
+
+
+insert into usuarios 
+	(nick, nombre,clave,pregunta,
+		respuesta, id_roles) values
+	('CHRISTO2018',"CHRISTOPHER SIVIRA", md5('12345678') , '¿Eres Chavizta?' ,
+		'TU ERES MARICO', 2 );
+
+
+insert into usuarios 
+	(nick, nombre,clave,pregunta,
+		respuesta, id_roles) values
+	('PUCHI2018',"ARGENIS RODRIGUES", md5('12345678') , '¿Eres Chavizta?' ,
+		'TU ERES MARICO', 2 );
