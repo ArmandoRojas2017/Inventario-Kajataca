@@ -55,7 +55,7 @@ create table eventos (
 
 	id_eventos int unsigned auto_increment,
 	descripcion varchar(70) not null unique,
-	status TINYINT(1), 
+	status TINYINT(1) default 1, 
 	
 	primary key  (id_eventos)
 		
@@ -65,38 +65,6 @@ create table eventos (
 /*Volcando datos para eventos*/
 
 
-insert into eventos (descripcion,status)  
-	values ('Ingresó al Sistema',1); 
-
-insert into eventos (descripcion,status)  
-	values ('Salio exitosamente del Sistema',1); 
-
-insert into eventos (descripcion,status)  
-	values ('Ingreso a ',1); 
-
-insert into eventos (descripcion,status)  
-	values ('Genero un nuevo  ',1); 
-
-insert into eventos (descripcion,status)  
-	values ('Genero una nuevo  ',1); 
-
-insert into eventos (descripcion,status)  
-	values ('Modificando un ',1); 
-
-insert into eventos (descripcion,status)  
-	values ('Modificando una ',1); 
-
-insert into eventos (descripcion,status)  
-	values ('Desactivando un ',1); 
-
-insert into eventos (descripcion,status)  
-	values ('Desactivando una ',1); 
-
-insert into eventos (descripcion,status)  
-	values ('Abastecio ',1);
-
-insert into eventos (descripcion,status)  
-	values ('Despacho ',1);
 
 
 create table configuracion (
@@ -352,13 +320,13 @@ insert into roles (descripcion) values ("Administrador");
 insert into usuarios 
 	(nick, nombre,clave,pregunta,
 		respuesta, id_roles) values
-	('ARMANDO2018',"Armando Rojas", md5('12345678') , '¿Eres Chavizta?' ,
+	('ARMANDO2018',"ARMANDO ROJAS", md5('12345678') , '¿Eres Chavizta?' ,
 		'TU ERES MARICO', 1 );
 
 insert into usuarios 
 	(nick, nombre,clave,pregunta,
 		respuesta, id_roles) values
-	('CAPERUCITA',"Nelsibeth Oliva", md5('12345678') , '¿Eres Chavizta?' ,
+	('CAPERUCITA',"NELSIBETH DE MADURO", md5('12345678') , '¿Eres Chavizta?' ,
 		'TU ERES MARICO', 2 );
 
 insert into usuarios 
@@ -394,3 +362,21 @@ insert into usuarios
 		respuesta, id_roles) values
 	('PUCHI2018',"ARGENIS RODRIGUES", md5('12345678') , '¿Eres Chavizta?' ,
 		'TU ERES MARICO', 2 );
+
+/* Eventos*/
+
+
+insert into eventos (descripcion)  values ('Ingresó al Sistema'); 
+insert into eventos (descripcion)  values ('Salio exitosamente del Sistema'); 
+insert into eventos (descripcion)  values ('Ingreso a '); 
+insert into eventos (descripcion)  values ('Genero un nuevo  '); 
+insert into eventos (descripcion)  values ('Genero una nuevo  '); 
+insert into eventos (descripcion)  values ('Modificando un '); 
+insert into eventos (descripcion)  values ('Modificando una '); 
+insert into eventos (descripcion)  values ('Desactivando un '); 
+insert into eventos (descripcion)  values ('Desactivando una '); 
+insert into eventos (descripcion)  values ('Abastecio ');
+insert into eventos (descripcion)  values ('Despacho ');
+
+
+drop database Mi_Cerenis_Cabrera
