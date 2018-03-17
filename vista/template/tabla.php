@@ -1,3 +1,6 @@
+<button class="btn btn-danger"> Imprimir </button>  
+<button class="btn btn-primary"> Registrar Usuario </button>
+
 <table id="search-example" class="table table-responsive ">
   
   <thead class="bg-primary">
