@@ -61,19 +61,7 @@
 			return $array; 
 		}
 
-/*
 
-Usuario
-+-----------------+--------------+------+-----+---------+-------+
-| Field           | Type         | Null | Key | Default | Extra |
-+-----------------+--------------+------+-----+---------+-------+
-| idUsuario       | int(11)      | NO   | PRI | NULL    |       |
-| idTiposUsuarios | int(11)      | YES  | MUL | NULL    |       |
-| idPersona       | int(11)      | YES  | MUL | NULL    |       |
-| nombre          | varchar(45)  | YES  |     | NULL    |       |
-| clave           | varchar(100) | YES  |     | NULL    |       |
-| status          | char(1)      | YES  |     | NULL    |       |
-+-----------------+--------------+------+-----+---------+-------+*/
 		function insertar( $idTiposUsuarios, $idPersona, $nombre, $clave){
 
 			//sentencia para registrar
@@ -121,7 +109,7 @@ Usuario
 			$db = new DB();
 			
 			// cosnulta
-			$db->consulta("SELECT * FROM usuarios where id_persona=$id ");
+			$db->consulta("SELECT * FROM usuarios where id_personas=$id ");
 
 			// resultado 1. Nombre 2.ID 3.Stautus
 

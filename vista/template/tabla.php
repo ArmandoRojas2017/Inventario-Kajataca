@@ -1,6 +1,7 @@
 <button class="btn btn-danger"> Imprimir </button>  
 <button class="btn btn-primary"> Registrar Usuario </button>
 
+
 <table id="search-example" class="table table-responsive ">
   
   <thead class="bg-primary">
@@ -10,6 +11,10 @@
       	 <?= $encabezado[$i]['texto'] ?>
       </th>
     <?php endfor ?>
+
+        <th>
+          Operaciones 
+        </th>
     </tr>
   </thead>
 
@@ -25,19 +30,16 @@
       <?php endforeach ?>
 
       <td>
-        <button class="btn btn-warning"  value="123" >
-            <i class="glyphicon glyphicon-edit" >  </i>
-        </button>
+        
+          <button class="btn btn-warning"> <i class="glyphicon glyphicon-edit" > </i>  </button>
       </td>
 
-      <td>
-        <button  class="btn btn-danger" value="123" >
-            <i class="glyphicon glyphicon-erase"> </i>
-         </button>
-      </td>
   </tr>
 
+
   <?php endfor ?>
+
+ 
 
   </tbody>
 </table>

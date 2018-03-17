@@ -7,6 +7,7 @@ $(document).ready(function() {
 
 	var dynatable = $('#search-example').dynatable().data('dynatable');
 
+/*
 $('#search-year').change( function() {
   var value = $(this).val();
   if (value === "") {
@@ -15,7 +16,7 @@ $('#search-year').change( function() {
     dynatable.queries.add("year",value);
   }
   dynatable.process();
-});
+});*/
 
 
 	
