@@ -1,4 +1,5 @@
 <?php 
+	/*Verificar Usuario*/
 	session_start(); 
 
 	const NO_VERIFICADO = "<script>window.location.href = '?url=cerrar'</script>'"; 

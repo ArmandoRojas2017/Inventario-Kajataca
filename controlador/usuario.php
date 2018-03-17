@@ -13,7 +13,7 @@
 			
 		);
 
-	$contenido = $usuario->get(); 
+	$contenido = $usuario->get(); // obtener array con los datos
 
 
 	view("usuario",compact('opciones','encabezado','contenido'));

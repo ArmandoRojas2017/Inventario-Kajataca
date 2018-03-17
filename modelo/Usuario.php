@@ -45,10 +45,13 @@
 
 			if(  $db->getCantidad() > 0) { 
 				
-				$array['id'] = $db->getResultado("idUsuario" ,$i);
-				$array['nombre'] = $db->getResultado('nombre' ,$i);
-				$array['nick'] = $db->getResultado('nick' ,$i);
-			
+				for ($i=0; $i < $db->getCantidad(); $i++) { 
+					
+					$array[$i]['id'] = $db->getResultado("id_usuarios" ,$i);
+					$array[$i]['nombre'] = $db->getResultado('nombre' ,$i);
+					$array[$i]['nick'] = $db->getResultado('nick' ,$i);
+				
+				}
 			}
 			
 			

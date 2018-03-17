@@ -27,24 +27,29 @@ if(file_exists('../../modelo/DB.php'))
 		// clave encriptada
 			$pass = md5($pass); 
 		//sentencia SQL
-			$sql = "SELECT * FROM usuarios  where nombre='$user' AND clave='$pass' " ;
+			$sql = "SELECT * FROM usuarios, roles  where nick='$user' AND clave='$pass'  AND usuarios.id_roles = roles.id_roles" ;
 		// conexion a Base de Datos 
 			$db = new DB();
 
+		// realiza consulta
 		 	$db->consulta($sql ); 
 
+		//verifica si a un usuario 
 
 		 	if  ($db->getCantidad() >  0) { 
-		 		
-		 		 $this->datos['id'] = $db->getResultado("id_usuarios");
+		 		// almacenar datos 
+		 		$this->datos['id'] = $db->getResultado("id_usuarios");
 		 		$this->datos['nombre'] = $db->getResultado("nombre");
-		 		$this->datos['tipo'] = $db->getResultado("tipo_usuario");
+		 		$this->datos['nick'] = $db->getResultado("nick");
+		 		$this->datos['tipo'] = $db->getResultado("descripcion");
+		 	
 
 		 		$_SESSION['autenticado'] = ENCONTRADO;
 		 		$_SESSION['nombre'] = $this->datos['nombre'];
-		 		
 		 		$_SESSION['id'] = $this->datos['id'];
-		 		$_SESSION['control'] = md5($this->datos['nombre']);
+		 		$_SESSION['nick'] = $this->datos['nick'];
+		 		$_SESSION['tipo'] = $this->datos['tipo'];
+		 	
 
 		 			
 		 	}else
