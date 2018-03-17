@@ -68,6 +68,10 @@
 		<br>
 	<?php endfor ?>
 
+	
+
+	<footer>  En caso de Emergencia Click Aqui   </footer>s
+
 
 </section>
 

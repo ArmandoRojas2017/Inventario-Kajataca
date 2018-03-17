@@ -232,6 +232,9 @@ create table productos(
 ); 
 
 
+
+
+
 /*
 
 	Tablas transacciopnales 
@@ -292,7 +295,7 @@ insert into roles (descripcion) values ("Administrador");
 insert into usuarios 
 	(nick, nombre,clave,pregunta,
 		respuesta, id_roles) values
-	('ARMANDO2018',"ARMANDO ROJAS", md5('12345678') , '¿Eres Chavizta?' ,
+	('ARMANDO2018',"ARMANDOROJAS", md5('12345678') , '¿Eres Chavizta?' ,
 		'TU ERES MARICO', 1 );
 
 insert into usuarios 

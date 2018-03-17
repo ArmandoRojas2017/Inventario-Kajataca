@@ -16,6 +16,9 @@ if(file_exists('../../config/DB.php'))
 	elseif (file_exists('../config/DB.php')   ) {
 		require_once ('../config/DB.php');
 	}
+	elseif (file_exists('config/DB.php')   ) {
+		require_once ('config/DB.php');
+	}
 	else 
 		exit("NO EXISTE LA CONEXION CON LA CONFIGURACION");
 

@@ -30,10 +30,10 @@
 	
 
 		/*Constructor*/
-		 function get($id){
+		 function get(){
 
 			// sentencia sql para consulta
-			$sql = "SELECT * FROM usuarios where id_usuarios = $id" ;
+			$sql = "SELECT * FROM usuarios" ;
 			// llamar a  conexio a DB
 			$db = new DB();
 
@@ -41,20 +41,16 @@
 			$db->consulta($sql);
 
 			//declarando un array bidimencional
-			$array; 
+			$array = NULL; 
 
 			if(  $db->getCantidad() > 0) { 
 				
 				$array['id'] = $db->getResultado("idUsuario" ,$i);
 				$array['nombre'] = $db->getResultado('nombre' ,$i);
-				$array['tipo'] = $db->getResultado('descripcion' ,$i);
+				$array['nick'] = $db->getResultado('nick' ,$i);
 			
 			}
-			else {
-
-				echo "<script> window.location.href = '?id=index' </script>";
-			}
-
+			
 			
 
 			$db->cerrar();

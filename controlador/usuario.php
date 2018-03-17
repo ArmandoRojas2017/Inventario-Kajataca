@@ -1,7 +1,21 @@
 <?php 
 	require_once 'controlador/Menu.php'; 
-	$opciones = $menu->getOpciones();
+	require_once 'modelo/Usuario.php'; 
 
-	view("usuario",compact('opciones'));
+	$opciones = $menu->getOpciones(); // obtener opciones del menus
+	$usuario = new Usuario(); // creacion del objecto usuario
+
+	$encabezado = array(
+
+			array('texto' => 'Id' , 'filtro' => 'id' ),
+			array('texto' => 'Nombre y Apellido' , 'filtro' => 'nombre' ),
+			array('texto' => 'nick' , 'filtro' => 'nombre' )
+			
+		);
+
+	$contenido = $usuario->get(); 
+
+
+	view("usuario",compact('opciones','encabezado','contenido'));
 	 
  ?>

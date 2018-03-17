@@ -118,4 +118,21 @@ a{
 	overflow: auto;
 }
 
+footer{
+	
+	background: black;
+	color: white;
+	width: 20%;
+	text-align: center; 
+	border-radius: 1em 1em 0em 0em;
+	border: .3em solid #ccc;
+	position: fixed;
+	bottom: 0;
+	cursor: pointer;
+	transition: .5s;
+	
+}
+
+
+
 

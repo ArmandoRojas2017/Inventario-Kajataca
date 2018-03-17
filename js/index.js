@@ -28,7 +28,8 @@ $(document).ready(function() {
 
   $("input").noCopiar() // no copiar y pegar 
 
-  $("input[name=usuario]").mayuscula() // texto en mayuscula 
+  $("input[name=usuario]").mayuscula().longitudMax(12) // texto en mayuscula 
+  $("input[name=clave]").mayuscula().longitudMax(12) // texto en mayuscula 
   
   $("input[name=usuario]").validCampo(soloLetras_Numeros()) // solo acepta letras y numeros 
   
@@ -146,6 +147,20 @@ $("#cambiar")
 
 	
 //------------------
+
+
+
+/* Efectos al Footer*/
+
+	$("footer").click(function(){
+
+		$("footer").animar("shake")
+
+		window.open('https://platzi.com/@ArmandoRojas2017/')
+
+	})
+
+//-------------------
 	
 
 });
