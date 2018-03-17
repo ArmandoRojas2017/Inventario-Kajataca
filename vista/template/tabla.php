@@ -23,6 +23,18 @@
       		<?= $texto ?>
     	</td>
       <?php endforeach ?>
+
+      <td>
+        <button class="btn btn-warning"  value="123" >
+            <i class="glyphicon glyphicon-edit" >  </i>
+        </button>
+      </td>
+
+      <td>
+        <button  class="btn btn-danger" value="123" >
+            <i class="glyphicon glyphicon-erase"> </i>
+         </button>
+      </td>
   </tr>
 
   <?php endfor ?>
