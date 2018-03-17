@@ -14,7 +14,7 @@ if(file_exists('../../modelo/DB.php'))
 		require_once ('../../../modelo/DB.php');
 	}
 	else 
-		exit("-1");
+		exit("CONEXION A LA BASE DE DATOS NO ENCONTRADA EN ESTE SERVIDOR: LLAMAR AL 0414-5235969 PARA MAS INFORMACION");
 
 
 

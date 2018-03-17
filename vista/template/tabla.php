@@ -15,10 +15,11 @@
     <?php for( $i = 0; $i < count($contenido); $i++ ): ?>
   
   <tr>
-
+      <?php foreach (   $contenido[$i] as $texto ): ?>
    	 <td style="text-align: left;">
-      		<?= $contenido[$i]['nombre'] ?>
+      		<?= $texto ?>
     	</td>
+      <?php endforeach ?>
   </tr>
 
   <?php endfor ?>

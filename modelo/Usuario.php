@@ -33,7 +33,7 @@
 		 function get(){
 
 			// sentencia sql para consulta
-			$sql = "SELECT * FROM usuarios" ;
+			$sql = "SELECT * FROM usuarios, roles where usuarios.id_roles = roles.id_roles " ;
 			// llamar a  conexio a DB
 			$db = new DB();
 
@@ -50,6 +50,7 @@
 					$array[$i]['id'] = $db->getResultado("id_usuarios" ,$i);
 					$array[$i]['nombre'] = $db->getResultado('nombre' ,$i);
 					$array[$i]['nick'] = $db->getResultado('nick' ,$i);
+					$array[$i]['tipo'] = $db->getResultado('descripcion' ,$i);
 				
 				}
 			}

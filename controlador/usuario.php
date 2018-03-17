@@ -9,7 +9,8 @@
 
 			array('texto' => 'Id' , 'filtro' => 'id' ),
 			array('texto' => 'Nombre y Apellido' , 'filtro' => 'nombre' ),
-			array('texto' => 'nick' , 'filtro' => 'nombre' )
+			array('texto' => 'Nick' , 'filtro' => 'nick' ),
+			array('texto' => 'Tipo' , 'filtro' => 'Rol' )
 			
 		);
 
