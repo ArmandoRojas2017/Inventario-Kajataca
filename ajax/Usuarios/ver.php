@@ -6,7 +6,12 @@
 	
 	$modelo = new Usuario(); // instanciar el objecto
 
-	view("modal/usuario")
+	$datos =  array(
+				
+				'titulo' => "Usuario con ID -> "
+
+			);
+	view("modal/usuario",compact('datos'))
 	
 	
  ?>

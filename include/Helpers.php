@@ -80,6 +80,11 @@
 			include "../".$ruta.$archivo.".php";
 			return true;
 
+		}elseif (   file_exists("../../".$ruta.$archivo.".php")) {
+
+			include "../../".$ruta.$archivo.".php";
+			return true;
+
 		}elseif (file_exists($ruta.$archivo.".html")) {
 
 			include $ruta.$archivo.".html"; 
