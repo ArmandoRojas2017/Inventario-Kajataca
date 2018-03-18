@@ -2,7 +2,7 @@
 <button class="btn btn-primary"> Registrar Usuario </button>
 
 
-<table id="search-example" class="table table-responsive ">
+<table id="search-example" class="table table-responsive " style="margin-top: 2em">
   
   <thead class="bg-primary">
     <tr>
