@@ -10,9 +10,8 @@
 
 			$("#modal_consulta").html(request)
 			
-			$(".close").borrar("#modal_consulta")
 			$(".cerrar").borrar("#modal_consulta")
-			$(".modal-backdrop").borrar("#modal_consulta")
+
 			
 		})
 		.fail(function() {

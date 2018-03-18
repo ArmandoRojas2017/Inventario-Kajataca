@@ -1,3 +1,22 @@
+/*Estilos generales */
+.separacion{
+	margin-bottom: 10%;
+}
+
+.fondo_rojo{
+	background: #d9534f;
+}
+
+.color_blanco {
+	color: white;
+}
+
+.invisible{
+	display: none;
+}
+
+/*Estilo para el sistema*/
+
 .pag404 {
 	background: url('../images/imagen.jpg');
 	height: 100%;
@@ -43,17 +62,6 @@ a{
 	cursor: pointer;
 }
 
-.separacion{
-	margin-bottom: 10%;
-}
-
-.fondo_rojo{
-	background: #d9534f;
-}
-
-.color_blanco {
-	color: white;
-}
 
 .container_fixe_bottom {
 
