@@ -11,10 +11,11 @@
 	</div>
 	<div class="row">
 			
-			<?php componentes('tabla',compact('encabezado','contenido')) ?>
+			<?php componentes('tabla',compact('encabezado','contenido','status')) ?>
 		
 		</div>
 	</div>
+
 
 </div>
 

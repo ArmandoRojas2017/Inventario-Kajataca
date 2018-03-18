@@ -1,5 +1,4 @@
-<button class="btn btn-danger"> Imprimir </button>  
-<button class="btn btn-primary"> Registrar Usuario </button>
+<?php componentes("botoneraTabla")  ?>
 
 
 <table id="search-example" class="table table-responsive " style="margin-top: 2em">
@@ -13,8 +12,8 @@
       </th>
     <?php endfor ?>
 
-        <th>
-          Ver 
+        <th data-dynatable-column="estado" class="dynatable-head" >
+          Estado
         </th>
     </tr>
   </thead>
@@ -31,9 +30,21 @@
       <?php endforeach ?>
 
       <td>
+            
+          <?php if (($status[$i]) == 1): ?>
+            <h6 class="btn btn-success btn-sm" style="display: inline;  ">
+              Activo
+            </h6>
+          <?php else: ?>
+            <h6 class="btn btn-info btn-sm" style="display: inline;  ">
+            Desactivado
+            </h6>
+          <?endif  ?>
+         
           <!-- Boton de Editar y Desactivar -->
-          <button class="btn btn-default"  onclick="return verProducto(this.value)"  value=<?= $contenido[$i]['id'] ?>   > 
+          <button class="btn btn-default "  onclick="return verProducto(this.value)"  value=<?= $contenido[$i]['id'] ?>   > 
             <i class="glyphicon glyphicon-eye-open" > </i>  
+
           </button>
 
         

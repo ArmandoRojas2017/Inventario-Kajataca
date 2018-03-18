@@ -14,9 +14,12 @@
 			
 		);
 
+	
 	$contenido = $usuario->get(); // obtener array con los datos
 
+	$status = $usuario->getStatus();
 
-	view("usuario",compact('opciones','encabezado','contenido'));
+
+	view("usuario",compact('opciones','encabezado','contenido','status'));
 	 
  ?>

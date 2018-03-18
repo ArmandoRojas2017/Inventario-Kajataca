@@ -27,7 +27,7 @@
 
 	
 
-	
+		protected $status;
 
 		/*Constructor*/
 		 function get(){
@@ -51,14 +51,22 @@
 					$array[$i]['nombre'] = $db->getResultado('nombre' ,$i);
 					$array[$i]['nick'] = $db->getResultado('nick' ,$i);
 					$array[$i]['tipo'] = $db->getResultado('descripcion' ,$i);
-				
+					
+					$this->status[$i] = $db->getResultado('status' ,$i);
 				}
+
+
 			}
 			
 			
 
 			$db->cerrar();
 			return $array; 
+		}
+
+		function getStatus(){
+
+			return $this->status;
 		}
 
 
