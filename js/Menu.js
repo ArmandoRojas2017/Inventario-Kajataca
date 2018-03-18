@@ -117,19 +117,18 @@ let Menu = function(){
 	
 	$("#config2").click(function(event) {
 
-		$.ajax({url: 'vista/modal/kajataca.php'})
-		.done(function(request) {
+		ajax("vista/modal/kajataca.php", function(request){
 			$("#modal_kajataca").html(request)
 
 			$(".close").borrar("#modal_kajataca")
 			$(".cerrar").borrar("#modal_kajataca")
 
-		})
-		.fail(function() {
-			modalImagen("Error en el Server al Cargar Pagina")
-		})
+
+	} , null  )
 		
 	});
+
+
 
 
 	videoDeAyuda(0)
@@ -137,7 +136,7 @@ let Menu = function(){
 	//-------------------------------------
 	
 
-	ajax("contenido/historia.html", function(e){
+	ajax("ajax/contenido/historia.html", function(e){
 		alert(e)
 	} , null  )
 

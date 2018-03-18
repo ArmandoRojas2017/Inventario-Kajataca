@@ -35,15 +35,15 @@ Kajataca
 
               <div class="tab-content">
               <div role="tabpanel" class="tab-pane active text-justify" id="historia">
-                <script> $("#historia").load('ajax/kajataca1.html'); </script>
+                <script> $("#historia").load('ajax/contenido/kajataca1.html'); </script>
               </div>
               <div role="tabpanel" class="tab-pane text-justify" id="mision"> 
-                <script> $("#mision").load('ajax/kajataca2.html'); </script>
+                <script> $("#mision").load('ajax/contenido/kajataca2.html'); </script>
               </div>
 
 
               <div role="tabpanel" class="tab-pane text-justify" id="vision">
-                <script> $("#vision").load('ajax/kajataca3.html'); </script>
+                <script> $("#vision").load('ajax/contenido/kajataca3.html'); </script>
               </div>
 
               </div>

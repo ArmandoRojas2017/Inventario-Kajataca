@@ -35,15 +35,15 @@ Cervezeria la Preferida
 
               <div class="tab-content">
               <div role="tabpanel" class="tab-pane active text-justify" id="historia">
-                <script> $("#historia").load('ajax/historia.html'); </script>
+                <script> $("#historia").load('ajax/contenido/historia.html'); </script>
               </div>
               <div role="tabpanel" class="tab-pane text-justify" id="mision"> 
-                <script> $("#mision").load('ajax/mision.html'); </script>
+                <script> $("#mision").load('ajax/contenido/mision.html'); </script>
               </div>
 
 
               <div role="tabpanel" class="tab-pane text-justify" id="vision">
-                <script> $("#vision").load('ajax/vision.html'); </script>
+                <script> $("#vision").load('ajax/contenido/vision.html'); </script>
               </div>
 
               </div>

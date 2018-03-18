@@ -520,9 +520,8 @@ const errorAlCargarPorAjax = () => "Problemas Tecnicos... Por favor notificar al
 const ajax = function ajax( archivo, funcionAnonima , variables   ) {
 		
 
-
 		$.ajax({
-			url: 'ajax/'+url,
+			url: archivo,
 			type: 'POST',
 			data: variables
 			})
@@ -530,28 +529,12 @@ const ajax = function ajax( archivo, funcionAnonima , variables   ) {
 				
 				funcionAnonima(resp)
 
-				
-
 			})
 			.fail(function(request) {
-				modalImagen(errorAlCargarPorAjax)
+				modalImagen(errorAlCargarPorAjax())
 		})
 }
 
-const ajaxModal = function ajax( url, funcionAnonima , variables   ) {
-		$.ajax({
-			url: 'ajax/'+url,
-			type: 'POST',
-			data: variables
-			})
-			.done(function(resp) {
-				
-				funcionAnonima(resp)
 
-				
 
-			})
-			.fail(function(request) {
-				modalImagen(errorAlCargarPorAjax)
-		})
-}
+//------------------------------------------------------
