@@ -1,3 +1,5 @@
+
+
 <!-- Menu Dinamico -->
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
@@ -129,3 +131,8 @@
 <div id=modal_ayuda></div>
 
 <!-- Fin de Modal ayuda-->
+
+
+<div id=modal_consulta ></div>
+
+

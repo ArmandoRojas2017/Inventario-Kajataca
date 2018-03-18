@@ -7,8 +7,8 @@
 </button>
 
   <h4 class="modal-title">
-      $datos['titulo']
-   <i class='glyphicon glyphicon-glass'></i>
+     <?= $datos['titulo'] ?>
+   <i class='glyphicon glyphicon-user'></i>
 
   </h4>
 </div>

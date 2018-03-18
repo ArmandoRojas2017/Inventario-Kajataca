@@ -506,4 +506,4 @@ document.onmousedown = right;
 
 /*Mensajes de Alerta en el sistema */
 
-const errorAlCargarPorAjax = () => "Error en el server"
+const errorAlCargarPorAjax = () => "Problemas Tecnicos... Por favor notificar al 04145235969"
