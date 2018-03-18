@@ -5,8 +5,16 @@ let Menu = function(){
 
 	/*------------ Rutas  --------*/
 	$("#usuario").ruta("usuario")
-	$("#cerrar").ruta("cerrar")
+	
 	$("#ver").ruta("verPerfil")
+
+	
+
+	$("#cerrar").click(function() {
+
+		localStorage.clear()	
+		$("#cerrar").ruta("cerrar")
+	});
 
 	//-------------------------------------
 	//
@@ -16,24 +24,34 @@ let Menu = function(){
 	
 
 	/*------------ Obtener Nombre de Usuario --------*/
-
-		$.ajax({
+		let obtenerUsuario = () => {
+			$.ajax({
 			url: 'ajax/Auth/ObtenerNombreDeUsuario.php',
 			type: 'POST'
-		})
-		.done(function(resp) {
+			})
+			.done(function(resp) {
+				
+				if(resp == -1) {
+					localStorage.clear()	
+
+				}
+				else 
+					localStorage.nombre = resp
 			
-			if(resp == -1) 
-				localStorage.clear()	
-			else 
-				localStorage.nombre = resp
+				verificar(localStorage.nombre)
 
-			verificar()
+				
 
-		})
-		.fail(function(request) {
-			modalImagen("Error en el Server")
-		})
+			})
+			.fail(function(request) {
+				modalImagen("Error en el Server")
+			})
+
+		}
+
+		obtenerUsuario()
+
+		
 	
 
 	//-------------------------------------
@@ -42,22 +60,25 @@ let Menu = function(){
 
 	/*------------ Validar Login de Usuario --------*/
 
-	let verificar = function(){
+	let verificar = function(val){
 
+		
 	$.ajax({
 		url: 'ajax/Auth/Verificar.php',
 		type: 'POST',
-		data: {nombre :localStorage.nombre }
+		data: {nombre :val }
 	})
 	.done(function(resp) {
 		
-		if(resp == 1) 
+		
+		if(resp == 1){ 
 			// muestra mensaje
 			mensajeNotify({  mensaje: "Usuario Verificado...."})
-		
+		}
 		else{ 
 			$("#verificar").html(resp) // agrega la respuesta negativa
 			localStorage.clear() // limpiar
+
 
 
 		}

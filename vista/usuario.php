@@ -10,7 +10,9 @@
 		
 	</div>
 	<div class="row">
-			
+
+
+			<?php if(!$botonera) componentes("botoneraTabla")  ?>
 			<?php componentes('tabla',compact('encabezado','contenido','status')) ?>
 		
 		</div>

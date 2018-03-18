@@ -11,7 +11,9 @@ Menu(); //invocamos los scripts del menu
 
 	/*-------------- Nombre de Usuario ------------------*/
 
-		$("#nombre_usuario").html(localStorage.nombre)
+	setTimeout( () => $("#nombre_usuario").html(localStorage.nombre)  ,0500)
+
+		
 	//--------------------------------
 
 	

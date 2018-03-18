@@ -1,4 +1,3 @@
-<?php componentes("botoneraTabla")  ?>
 
 
 <table id="search-example" class="table table-responsive " style="margin-top: 2em">

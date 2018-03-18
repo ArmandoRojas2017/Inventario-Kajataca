@@ -5,7 +5,8 @@
 		<div class="jumbotron text-center">
 			<h1 >
 				
-					¡Bienvenido <span id=nombre_usuario>Armando</span>!	
+					¡Hola! <br>
+					<span id=nombre_usuario>Armando</span>	
 					
 
 			</h1>
@@ -16,7 +17,7 @@
 
 			<h2>
 				
-				al Sistema Kajataca
+				te damos la Bienvenida al Sistema Kajataca
 			</h2>
 			<h3>
 				<span id=mi_reloj> </span>

@@ -20,6 +20,7 @@
 	$status = $usuario->getStatus();
 
 
+
 	view("usuario",compact('opciones','encabezado','contenido','status'));
 	 
  ?>
