@@ -1203,6 +1203,7 @@
       var $search = $('<input />', {
             type: 'search',
             id: 'dynatable-query-search-' + obj.element.id,
+            'class' : 'form-control',
             'data-dynatable-query': 'search',
             value: settings.dataset.queries.search
           }),

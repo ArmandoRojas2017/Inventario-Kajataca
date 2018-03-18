@@ -1,3 +1,11 @@
+
+	const verProducto(id){
+
+		
+	
+	}
+
+
 $(document).ready(function() {
 
 
@@ -17,6 +25,7 @@ $('#search-year').change( function() {
   }
   dynatable.process();
 });*/
+
 
 
 	

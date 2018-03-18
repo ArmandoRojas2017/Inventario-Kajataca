@@ -6,6 +6,7 @@
   
   <thead class="bg-primary">
     <tr>
+      <!-- Cargar datos  -->
       <?php for( $i = 0; $i < count($encabezado); $i++ ): ?>
       <th data-dynatable-column=<?= $encabezado[$i]['filtro'] ?> class="dynatable-head">
       	 <?= $encabezado[$i]['texto'] ?>
@@ -13,7 +14,7 @@
     <?php endfor ?>
 
         <th>
-          Operaciones 
+          Ver 
         </th>
     </tr>
   </thead>
@@ -30,8 +31,14 @@
       <?php endforeach ?>
 
       <td>
+          <!-- Boton de Editar y Desactivar -->
+          <button class="btn btn-default"  onclick="return verProducto(this.value)"  value=<?= $contenido[$i]['id'] ?>   > 
+            <i class="glyphicon glyphicon-eye-open" > </i>  
+          </button>
+
         
-          <button class="btn btn-warning"> <i class="glyphicon glyphicon-edit" > </i>  </button>
+
+
       </td>
 
   </tr>
