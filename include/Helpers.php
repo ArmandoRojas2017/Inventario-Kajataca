@@ -25,6 +25,16 @@
 
 			include $ruta.$archivo.".html"; 
 			return true;
+		}elseif (   file_exists("../../".$ruta.$archivo.".php")) {
+
+			include "../../".$ruta.$archivo.".php";
+			return true;
+
+		}elseif (   file_exists("../../../".$ruta.$archivo.".php")) {
+
+			include "../../../".$ruta.$archivo.".php";
+			return true;
+
 		}
 		
 		else 

@@ -2,8 +2,8 @@
 	
 	/*Script para validar usuarios */
 
-	include '../modelo/Acceso.php'; 
-	include '../config/DB.php'; 
+	include '../../modelo/Acceso.php'; 
+	include '../../config/DB.php'; 
 
 	$acceso = new Acceso(); 
 

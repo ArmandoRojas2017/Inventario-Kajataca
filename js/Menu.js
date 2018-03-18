@@ -18,7 +18,7 @@ let Menu = function(){
 	/*------------ Obtener Nombre de Usuario --------*/
 
 		$.ajax({
-			url: 'ajax/ObtenerNombreDeUsuario.php',
+			url: 'ajax/Auth/ObtenerNombreDeUsuario.php',
 			type: 'POST'
 		})
 		.done(function(resp) {
@@ -45,7 +45,7 @@ let Menu = function(){
 	let verificar = function(){
 
 	$.ajax({
-		url: 'ajax/Verificar.php',
+		url: 'ajax/Auth/Verificar.php',
 		type: 'POST',
 		data: {nombre :localStorage.nombre }
 	})

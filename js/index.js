@@ -62,7 +62,7 @@ $("#ingresar").click(function() {
 
 
 	$.ajax({
-	url: 'ajax/Autenticar.php',
+	url: 'ajax/Auth/Autenticar.php',
 	type: 'POST',
 	data: objecto,
 	
@@ -127,7 +127,7 @@ $("#cambiar")
 /*---------Verificar si esta ya ingreso al sistema-------------------*/
 	
 	$.ajax({
-		url: 'ajax/Verificar.php',
+		url: 'ajax/Auth/Verificar.php',
 		type: 'POST'
 	})
 	.done(function(resp) {

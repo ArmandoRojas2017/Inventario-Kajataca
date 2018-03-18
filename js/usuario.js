@@ -1,6 +1,19 @@
 
-	const verProducto(id){
+	const verProducto = (val) =>{
 
+		$.ajax({
+			url: 'ajax/Auth/ver.php',
+			type: 'POST',
+			data: { id: val }
+		})
+		.done(function($request) {
+			console.log("success");
+			alert($request)
+		})
+		.fail(function() {
+			modalImagen(errorAlCargarPorAjax())
+		})
+		
 		
 	
 	}

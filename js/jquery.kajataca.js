@@ -403,7 +403,7 @@ const videoDeAyuda = function( id ) {
 
 	let objecto = {}
 
-	$.getJSON('ajax/ayuda.json', 
+	$.getJSON('ajax/configuracion/ayuda.json', 
 		function(json) {
 		
 		objecto = json[id]
@@ -504,10 +504,6 @@ document.onmousedown = right;
 
 }
 
+/*Mensajes de Alerta en el sistema */
 
-function teclass (e)
-{
-    var evt = e ? e : event;
-    var key = window.Event ? evt.which : evt.keyCode;
-    alert (key);
-}
+const errorAlCargarPorAjax = () => "Error en el server"
