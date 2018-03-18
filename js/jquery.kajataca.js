@@ -507,3 +507,51 @@ document.onmousedown = right;
 /*Mensajes de Alerta en el sistema */
 
 const errorAlCargarPorAjax = () => "Problemas Tecnicos... Por favor notificar al 04145235969"
+
+
+
+
+/*
+	
+	Manejando  AJAX 
+
+ */
+
+const ajax = function ajax( archivo, funcionAnonima , variables   ) {
+		
+
+
+		$.ajax({
+			url: 'ajax/'+url,
+			type: 'POST',
+			data: variables
+			})
+			.done(function(resp) {
+				
+				funcionAnonima(resp)
+
+				
+
+			})
+			.fail(function(request) {
+				modalImagen(errorAlCargarPorAjax)
+		})
+}
+
+const ajaxModal = function ajax( url, funcionAnonima , variables   ) {
+		$.ajax({
+			url: 'ajax/'+url,
+			type: 'POST',
+			data: variables
+			})
+			.done(function(resp) {
+				
+				funcionAnonima(resp)
+
+				
+
+			})
+			.fail(function(request) {
+				modalImagen(errorAlCargarPorAjax)
+		})
+}

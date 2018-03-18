@@ -1,6 +1,6 @@
 let Menu = function(){
 
-
+ 
 	$("#home").animarBoton();
 
 	/*------------ Rutas  --------*/
@@ -135,6 +135,11 @@ let Menu = function(){
 	videoDeAyuda(0)
 	
 	//-------------------------------------
+	
+
+	ajax("contenido/historia.html", function(e){
+		alert(e)
+	} , null  )
 
 
 } 
