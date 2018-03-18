@@ -97,36 +97,34 @@ let Menu = function(){
 	
 	/*----------CArgar Modal--------------*/
 
-	$("#config1").click(function(event) {
 
-		$.ajax({url: 'vista/modal/cerveza.php'})
-		.done(function(request) {
-			$("#modal_cervezeria").html(request)
+	$("#config1").click( () =>
 
-			$(".close").borrar("#modal_cervezeria")
-			$(".cerrar").borrar("#modal_cervezeria")
+		ajax(
+			"vista/modal/cerveza.php", 
+			
+			(request)=>{
 
-		})
-		.fail(function() {
-			modalImagen("Error en el Server al Cargar Pagina")
-		})
-		
-	});
+				$("#modal_cervezeria").html(request)
+				$(".cerrar").borrar("#modal_cervezeria")
+				
+			} , null  ) 
+		);
 	
 	
 	
-	$("#config2").click(function(event) {
+	$("#config2").click( () =>
 
-		ajax("vista/modal/kajataca.php", function(request){
-			$("#modal_kajataca").html(request)
+		ajax(
+			"vista/modal/kajataca.php", 
+			
+			(request)=>{
 
-			$(".close").borrar("#modal_kajataca")
-			$(".cerrar").borrar("#modal_kajataca")
+				$("#modal_kajataca").html(request)
+				$(".cerrar").borrar("#modal_kajataca")
 
-
-	} , null  )
-		
-	});
+			} , null  ) 
+		);
 
 
 
@@ -136,9 +134,7 @@ let Menu = function(){
 	//-------------------------------------
 	
 
-	ajax("ajax/contenido/historia.html", function(e){
-		alert(e)
-	} , null  )
+	
 
 
 } 

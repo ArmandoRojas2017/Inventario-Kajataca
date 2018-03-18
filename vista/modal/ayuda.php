@@ -35,7 +35,7 @@
                 <script> 
 
                   $("#historia").load(<?= "'storage/ayuda/". $_GET['guia']."'" ?>);
-                    alert(<?= "'storage/ayuda/". $_GET['guia']."'" ?>)
+                   
                  </script>
               </div>
               <!-- fin de guia de ayuda -->

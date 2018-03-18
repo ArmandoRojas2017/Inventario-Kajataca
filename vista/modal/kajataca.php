@@ -3,7 +3,7 @@
 <div class="modal-dialog" role="document">
 <div class="modal-content">
 <div class="modal-header fondo_rojo">
-<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+<button type="button" class="close cerrar" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
 </button>
 <h4 class="modal-title text-center color_blanco">
 Kajataca 

@@ -177,7 +177,7 @@ $(function(){
 
 					$(this).addClass('WOW '+tipo);
 			 		new WOW().init()
-
+			 		setTimeout( $(this).removeClass('WOW '+tipo), 3000 )
 
 				})
 			},
@@ -399,7 +399,7 @@ function soloClaves(){
  
 /* Invocar ayuda */
 
-const videoDeAyuda = function( id ) {
+const videoDeAyuda = ( id ) => {
 
 	let objecto = {}
 
