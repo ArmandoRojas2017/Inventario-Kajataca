@@ -27,7 +27,7 @@
 		protected $registros;
 
 		public function establecer_conexion(){
-			$this->conexion=new PDO("pgsql:host=".HOST."; dbname=".DATABASE,USER,PASS);
+			$this->conexion=new PDO("mysql:host=".HOST."; dbname=".DATABASE,USER,PASS);
 			//Aquí establecemos el modo de error en modo warning osea que nos aparezca una ventana
 			//en caso de que ocurra un error
 			$this->conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_WARNING);

@@ -22,15 +22,18 @@
     <?php for( $i = 0; $i < count($contenido); $i++ ): ?>
   
   <tr>
-      <?php foreach (   $contenido[$i] as $texto ): ?>
-   	 <td style="text-align: left;">
-      		<?= $texto ?>
-    	</td>
-      <?php endforeach ?>
 
-      <td>
+      <?php foreach (   $contenido[$i] as $key => $texto ): ?>
+   	
+      <?php if($key != 'status') ?>
+        <td style="text-align: left;">
+      		  <?= $texto ?>
+    	   </td>
+
+       <?php else: ?>
+            <td>
             
-          <?php if (($status[$i]) == 1): ?>
+          <?php if (($texto) == 1): ?>
             <h6 class="btn btn-success btn-sm" style="display: inline;  ">
               Activo
             </h6>
@@ -46,10 +49,15 @@
 
           </button>
 
-        
+          </td>
 
 
-      </td>
+      <?php endif: ?>
+
+
+      <?php endforeach ?>
+
+    
 
   </tr>
 
