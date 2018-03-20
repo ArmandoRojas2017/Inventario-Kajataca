@@ -8,6 +8,7 @@
 		})
 		.done(function(request) {
 
+
 			$("#modal_consulta").html(request)
 			
 			$(".cerrar").borrar("#modal_consulta")

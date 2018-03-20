@@ -20,15 +20,23 @@
 
   <tbody>
     <?php for( $i = 0; $i < count($contenido); $i++ ): ?>
-  
+    
+       <?php $contador = 0 ?>
   <tr>
 
       <?php foreach (   $contenido[$i] as $key => $texto ): ?>
    	
-      <?php if($key != 'status') ?>
+      <?php if($key != 'status'): ?>
         <td style="text-align: left;">
       		  <?= $texto ?>
     	   </td>
+
+         <?php if($contador == 0) {
+
+                  $id = $texto; 
+                  $contador++; 
+              } 
+          ?>
 
        <?php else: ?>
             <td>
@@ -44,7 +52,7 @@
           <?endif  ?>
          
           <!-- Boton de Editar y Desactivar -->
-          <button class="btn btn-default "  onclick="return verProducto(this.value)"  value=<?= $contenido[$i]['id'] ?>   > 
+          <button class="btn btn-default "  onclick="return verProducto(this.value)"  value=<?= $id ?>   > 
             <i class="glyphicon glyphicon-eye-open" > </i>  
 
           </button>
@@ -52,7 +60,7 @@
           </td>
 
 
-      <?php endif: ?>
+      <?php endif ?>
 
 
       <?php endforeach ?>

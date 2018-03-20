@@ -5,12 +5,13 @@
 	require_once '../../modelo/Usuario.php'; //llamar al modelo
 	
 	$modelo = new Usuario(); // instanciar el objecto
+	$modelo->consult_by("id_usuarios", $_POST['id'] );
 
-	$formulario = $modelo->getId($_POST['id']);
+	$formulario = $modelo->get_registros();
 
 	$datos =  array(
 				
-				'titulo' =>  $formulario['nick']
+				'titulo' =>  $formulario[0]['nick']
 
 			);
 

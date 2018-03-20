@@ -5,6 +5,9 @@
 	$opciones = $menu->getOpciones(); // obtener opciones del menus
 	$usuario = new Usuario(); // creacion del objecto usuario
 
+
+	
+
 	$encabezado = array(
 
 			array('texto' => 'Id' , 'filtro' => 'id' ),
@@ -15,12 +18,12 @@
 		);
 
 	
-	$contenido = $usuario->get(); // obtener array con los datos
+	$contenido = $usuario->get_all_campos(" id_usuarios , nombre, nick , clave, status  "); // obtener array con los datos
 
-	$status = $usuario->getStatus();
+	
 
 
 
-	view("usuario",compact('opciones','encabezado','contenido','status'));
+	view("usuario",compact('opciones','encabezado','contenido'));
 	 
  ?>
