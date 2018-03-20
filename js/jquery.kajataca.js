@@ -402,8 +402,11 @@ function soloClaves(){
 const videoDeAyuda = ( id ) => {
 
 	let objecto = {}
+	// direccion donde se encuentra el archivo json para configurar video y guia 
+	let url_archivoJSON = 'ajax/configuracion/ayuda.json'
+	let url_modal = 'vista/modal/ayuda.php'
 
-	$.getJSON('ajax/configuracion/ayuda.json', 
+	$.getJSON(url_archivoJSON , 
 		function(json) {
 		
 		objecto = json[id]
@@ -413,7 +416,7 @@ const videoDeAyuda = ( id ) => {
 
 		$.ajax(
 			{
-				url: 'vista/modal/ayuda.php',
+				url: url_modal,
 				data: {
 				
 					titulo : objecto.titulo,
@@ -508,6 +511,8 @@ document.onmousedown = right;
 
 const errorAlCargarPorAjax = () => "Problemas Tecnicos... Por favor notificar al 04145235969"
 
+
+//-------------------------------------------------
 
 
 

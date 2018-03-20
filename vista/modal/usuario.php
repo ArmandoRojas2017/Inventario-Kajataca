@@ -18,6 +18,7 @@
 <div class="modal-body">
 
 
+<?= $formulario['nick']  ?>
 
 <div class="modal-footer">
   <?php componentes('botoneraModal') ?>

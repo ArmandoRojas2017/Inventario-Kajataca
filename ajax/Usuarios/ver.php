@@ -6,12 +6,17 @@
 	
 	$modelo = new Usuario(); // instanciar el objecto
 
+	$formulario = $modelo->getId($_POST['id']);
+
 	$datos =  array(
 				
-				'titulo' => "Usuario con ID -> "
+				'titulo' =>  $formulario['nick']
 
 			);
-	view("modal/usuario",compact('datos'))
+
+
+
+	view("modal/usuario",compact('datos','formulario'))
 	
 	
  ?>

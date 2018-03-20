@@ -64,6 +64,32 @@
 			return $array; 
 		}
 
+
+		function getId($id){
+
+			$sql = "SELECT * FROM usuarios, roles where usuarios.id_roles = roles.id_roles and  usuarios.id_usuarios = $id " ;
+
+			$db = new DB(); 
+
+			$db->consulta($sql);
+
+			$array = null;
+
+			if($db->getCantidad() > 0){
+
+				$array['id'] = $db->getResultado('id');
+				$array['nombre'] = $db->getResultado('nombre');
+				$array['nick'] = $db->getResultado('nick');
+				$array['rol'] = $db->getResultado('rol');
+				$array['status'] = $db->getResultado('status');
+			}
+
+			$db->cerrar();
+
+			return $array; 
+
+		}
+
 		function getStatus(){
 
 			return $this->status;
