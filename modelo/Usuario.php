@@ -1,14 +1,14 @@
 <?php 
-	if(file_exists('../../modelo/DB.php')) 
-		require_once ('../../modelo/DB.php');
-	elseif (file_exists('../modelo/DB.php')) {
-		require_once ('../modelo/DB.php');
+	if(file_exists('../../modelo/modelo_base.php')) 
+		require_once ('../../modelo/modelo_base.php');
+	elseif (file_exists('../modelo/modelo_base.php')) {
+		require_once ('../modelo/modelo_base.php');
 	}
-	elseif (file_exists('modelo/DB.php')   ) {
-		require_once ('modelo/DB.php');
+	elseif (file_exists('modelo/modelo_base.php')   ) {
+		require_once ('modelo/modelo_base.php');
 	}
-	elseif (file_exists('../../../modelo/DB.php')   ) {
-		require_once ('../../../modelo/DB.php');
+	elseif (file_exists('../../../modelo/modelo_base.php')   ) {
+		require_once ('../../../modelo/modelo_base.php');
 	}
 	else 
 		exit(-1); 
@@ -23,7 +23,7 @@
 	*/
 	
 
-	class Usuario{
+	class Usuario extends Modelo{
 
 	
 
