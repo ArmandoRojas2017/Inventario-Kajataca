@@ -605,3 +605,21 @@ function insertar_Hora_NombreDeUsuario(idHora , idNombre_Usuario){
 	
 	setTimeout( () => $(idNombre_Usuario).html(localStorage.nombre)  ,0500)
 }
+
+
+/* Mensaje de Ayuda del sistema */
+
+function mensajesFrontend(url){
+
+	
+	
+	$.getJSON(url, {}, function(json, textStatus) {
+		return json
+	});
+
+	
+}
+
+
+
+//---------------------------------

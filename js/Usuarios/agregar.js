@@ -1,6 +1,32 @@
 $(document).ready(function() {
 
 var interruptor = 0
+
+
+var mensajes; 
+
+
+
+ajax("ajax/configuracion/agregarUsuario.json",(res) =>{
+
+ 	localStorage.mensajes =  res
+
+ 	
+}, null)
+
+
+setTimeout( 
+() =>{
+	mensajes = localStorage.mensajes
+	alert(mensajes)	
+}
+
+	, 1000)
+
+
+
+
+
 	
 Menu(); //invocamos los scripts del menu 
 
@@ -52,8 +78,15 @@ $(".glyphicon-eye-open").css('cursor', 'pointer');
 /*Verifica los campos*/
 setInterval( () =>{
 
+
+		if(cedula.val().length < 5) 
+			$("#error1").html("hola")
+		else 
+			$("#error1").html("")
+
+		/* Activar el boton de guardar */
 		if(
-			(cedula.val().length > 7 ) &&
+			(cedula.val().length > 5 ) &&
 			(nombre.val().length > 2 ) &&
 			(nick.val().length > 8 ) &&
 			(clave.val().length > 8 ) &&
@@ -75,7 +108,13 @@ setInterval( () =>{
 			interruptor = 0
 		}
 
+		//---------------------------------------
+
 } , 500  )
+
+
+
+
 
 $("#botonGuardar").click(() => {
 
