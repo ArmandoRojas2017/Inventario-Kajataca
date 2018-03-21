@@ -541,5 +541,39 @@ const ajax = function ajax( archivo, funcionAnonima , variables   ) {
 }
 
 
+/*Invoca un modal, mostrando resultados de una consulta a bd*/
+const consultaIndividual = (val , url) =>{
+		
+		ajax( url , 		
+			function(request){
+				$("#modal_consulta").html(request)
+				$(".cerrar").borrar("#modal_consulta")
+			}, { id: val }  );
+}
+
+
 
 //------------------------------------------------------
+
+
+/*Manipulacion de tablas*/
+
+function tablas(){
+
+		$("#dynatable-query-search-").addClass("form-control")
+	var dynatable = $('#search-example').dynatable().data('dynatable');
+
+/*
+   $('#armando').change( function() {
+
+  var value = $(this).val();
+  
+  if (value === "") {
+    dynatable.queries.remove("nick");
+  } else {
+    dynatable.queries.add("nick",value);
+  }
+    dynatable.process();
+  } )
+*/
+}
