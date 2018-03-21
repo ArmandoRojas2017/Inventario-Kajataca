@@ -161,6 +161,15 @@ $("#cambiar")
 	})
 
 //-------------------
+
+
+setInterval( function(){
+
+ if (  ($("input[name=usuario]").val().length > 4) && ($("input[name=clave]").val().length > 4) )
+ 	$("#ingresar").disabled(false);
+
+
+}   , 100);
 	
 
 });

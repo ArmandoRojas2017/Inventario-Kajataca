@@ -71,15 +71,10 @@ let Menu = function(){
 	.done(function(resp) {
 		
 		
-		if(resp == 1){ 
-			// muestra mensaje
-			mensajeNotify({  mensaje: "Usuario Verificado...."})
-		}
-		else{ 
+		if(resp != 1){ 
+
 			$("#verificar").html(resp) // agrega la respuesta negativa
 			localStorage.clear() // limpiar
-
-
 
 		}
 

@@ -260,9 +260,9 @@ $(function(){
 		longitud: function(boton , arreglo ){
 
 					return this.each(function(){
-						$(this).keydown(function() {
+						$(this).keyup(function() {
 				
-								if (  $(this).val().length < arreglo['min']){
+								if (  $(this).val().length < arreglo['min'] + 1){
 
 									var texto = 'Debe ser mayor a '+arreglo['min']+' caracteres ';
 									mensajeNotify({mensaje:texto, tipo:'danger'});
@@ -279,9 +279,9 @@ $(function(){
 									boton.disabled(true);
 
 								}else{
-										mensajeNotify({mensaje:'Campo Listo '});
+										
 										$(this).sombra('green'); 
-										boton.disabled(false);	
+									
 								}// ELSE
 
 						});							
