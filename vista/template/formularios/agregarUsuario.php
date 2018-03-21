@@ -115,7 +115,7 @@ Repita la Respuesta
 <span id=ver4 class="glyphicon glyphicon-eye-open"></span>
 </label>
 <div class="col-sm-6">
-<input type="password" class="form-control" id="inputCedulainputRespuesta2" placeholder="Ejemplo: Ensalada de Pollo :v">
+<input type="password" class="form-control" id="inputRespuesta2" placeholder="Ejemplo: Ensalada de Pollo :v">
 	
 </div>
 </div>

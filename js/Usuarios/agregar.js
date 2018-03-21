@@ -2,26 +2,21 @@ $(document).ready(function() {
 
 var interruptor = 0
 
+var mensajes = {
 
-var mensajes; 
+	alerta1 : "La Cédula debe ser mayor a 5 numeros",
+	alerta2 : "El nombre debe llevar al menos 3 caracteres ",
+	alerta3 : "El nick debe tener al menos 8 caracteres ",
+	alerta4 : "La contraseña debe poseer al menos 8 caracteres",
+	alerta5 : "La contraseña no coinciden",
+	alerta6 : "La pregunta secreta debe llevar al menos 10 caracteres",
+	alerta7 : "Respuesta secreta debe poseer al menos 3 caracteres",
+	alerta8 : "No coinciden las respuestas secretas",
 
 
 
-ajax("ajax/configuracion/agregarUsuario.json",(res) =>{
-
- 	localStorage.mensajes =  res
-
- 	
-}, null)
-
-
-setTimeout( 
-() =>{
-	mensajes = localStorage.mensajes
-	alert(mensajes)	
 }
 
-	, 1000)
 
 
 
@@ -79,10 +74,100 @@ $(".glyphicon-eye-open").css('cursor', 'pointer');
 setInterval( () =>{
 
 
-		if(cedula.val().length < 5) 
-			$("#error1").html("hola")
-		else 
+		/*Valida Minima cantidad de carecteres */
+		
+		//valida la cedula 
+		if(cedula.val().length < 5){
+			$("#error1").html(mensajes.alerta1)
+			cedula.sombra("red")
+		}
+		else {
 			$("#error1").html("")
+			cedula.sombra(false)
+		}
+
+
+		//valida nombre  
+		if(nombre.val().length < 5){
+			$("#error2").html(mensajes.alerta2)
+			nombre.sombra("red")
+		}
+		else {
+			$("#error2").html("")
+			nombre.sombra(false)
+		}
+
+
+		//valida nick 
+		if(nick.val().length < 5){
+			$("#error3").html(mensajes.alerta3)
+			nick.sombra("red")
+		}
+		else {
+			$("#error3").html("")
+			nick.sombra(false)
+		}
+
+
+		//valida clave
+		if(clave.val().length < 7){
+			$("#error5").html(mensajes.alerta4)
+			clave.sombra("red")
+		}
+		else {
+			$("#error5").html("")
+			clave.sombra(false)
+		}
+
+
+		//valida clave2
+		if(clave.val() != clave2.val() ){
+			$("#error6").html(mensajes.alerta5)
+			clave2.sombra("red")
+		}
+		else {
+			$("#error6").html("")
+			clave2.sombra(false)
+		}
+
+
+		//pregunta secreta
+		if(pregunta.val().length < 10 ){
+			$("#error7").html(mensajes.alerta6)
+			pregunta.sombra("red")
+		}
+		else {
+			$("#error7").html("")
+			pregunta.sombra(false)
+		}
+
+		//respuesta secreta
+		if(respuesta1.val().length < 10 ){
+			$("#error8").html(mensajes.alerta7)
+			respuesta1.sombra("red")
+		}
+		else {
+			$("#error8").html("")
+			respuesta1.sombra(false)
+		}
+
+		//respuesta secreta 2
+		if(respuesta2.val() != respuesta1.val() ){
+			$("#error9").html(mensajes.alerta8)
+			respuesta2.sombra("red")
+		}
+		else {
+			$("#error9").html("")
+			respuesta2.sombra(false)
+		}
+
+
+
+
+
+		//---------------------------------------
+
+		
 
 		/* Activar el boton de guardar */
 		if(
@@ -110,10 +195,10 @@ setInterval( () =>{
 
 		//---------------------------------------
 
+
+
+
 } , 500  )
-
-
-
 
 
 $("#botonGuardar").click(() => {
