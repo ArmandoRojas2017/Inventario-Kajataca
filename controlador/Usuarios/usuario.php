@@ -6,6 +6,9 @@
 	$usuario = new Usuario(); // creacion del objecto usuario
 
 
+	$titulo = "Consultar Usuarios"; // registrar un nuevo usuario
+	$icono = "search"; // agregar icono
+
 	
 
 	$encabezado = array(
@@ -24,6 +27,6 @@
 
 
 
-	view("usuario",compact('opciones','encabezado','contenido'));
+	view("usuario",compact('opciones','titulo','icono','encabezado','contenido'));
 	 
  ?>

@@ -9,6 +9,31 @@
 		protected $controller;	
 		protected $js;	
 
+
+
+		/*Rutas*/
+
+		protected function establecerRutas(){
+
+			$this->rutas = array( 
+				
+				'index' => array( 'controller' => 'index' , 'js' => 'index'  ) ,
+				'home' => array( 'controller' => 'home' , 'js' => 'home'  ) ,
+				'usuario' => array( 'controller' => 'Usuarios/usuario' , 'js' => 'usuarios'  ) ,
+				'agregarUsuario' => array( 'controller' => 'Usuarios/agregar' , 'js' => 'Usuarios/agregar'  ) ,
+				'404' => array( 'controller' => '404') 
+
+				); 
+
+
+			/* Establecer lista de Rutas */
+
+			$i = 0; 
+
+			foreach ($this->rutas as $key => $value) 
+				$this->lista[$i++] = $key;
+		}
+
 		// verifica si existe
 
 		function __construct($url)
@@ -45,28 +70,7 @@
 			return $this->js; 
 		}
 
-		/*Rutas*/
-
-		protected function establecerRutas(){
-
-			$this->rutas = array( 
-				
-				'index' => array( 'controller' => 'index' , 'js' => 'index'  ) ,
-				'home' => array( 'controller' => 'home' , 'js' => 'home'  ) ,
-				'usuario' => array( 'controller' => 'usuario' , 'js' => 'usuario'  ) ,
-				'usuario/consulta' => array( 'controller' => 'usuario' , 'js' => 'usuario'  ) ,
-				'404' => array( 'controller' => '404') 
-
-				); 
-
-
-			/* Establecer lista de Rutas */
-
-			$i = 0; 
-
-			foreach ($this->rutas as $key => $value) 
-				$this->lista[$i++] = $key;
-		}
+	
 
 
 		

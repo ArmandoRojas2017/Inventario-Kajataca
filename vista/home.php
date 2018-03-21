@@ -2,7 +2,7 @@
 <div class="separacion"></div>
 <div class="container"> 
 	<div class="row">
-		<div class="jumbotron text-center">
+		<div class="jumbotron well text-center">
 			<h1 >
 				
 					¡Hola! <br>

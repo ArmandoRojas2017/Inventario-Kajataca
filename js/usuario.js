@@ -15,7 +15,7 @@ $(document).ready(function() {
 
 
 	// asignamos ruta
-	$("#botonRegistrar").ruta("nuevoUsuario")
+	$("#botonRegistrar").ruta("agregarUsuario")
 
 	
 	Menu()
