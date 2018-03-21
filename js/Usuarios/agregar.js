@@ -47,5 +47,20 @@ pregunta.validCampo(soloLetras())
 $(".glyphicon-eye-open").css('cursor', 'pointer');
 
 
+/*Verifica los campos*/
+setInterval( () =>{
+
+		if(cedula.val().length > 2 )
+		$("#botonGuardar").disabled(false);
+
+} , 500  )
+
+$("#botonGuardar").click(() => {
+
+
+
+});
+
+
 
 });
