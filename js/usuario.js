@@ -34,17 +34,18 @@ $(document).ready(function() {
 	var dynatable = $('#search-example').dynatable().data('dynatable');
 
 /*
-$('#search-year').change( function() {
+   $('#armando').change( function() {
+
   var value = $(this).val();
+  
   if (value === "") {
-    dynatable.queries.remove("year");
+    dynatable.queries.remove("nick");
   } else {
-    dynatable.queries.add("year",value);
+    dynatable.queries.add("nick",value);
   }
-  dynatable.process();
-});*/
-
-
+    dynatable.process();
+  } )
+*/
 
 	
 	Menu()

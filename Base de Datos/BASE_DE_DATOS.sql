@@ -446,4 +446,4 @@ insert distribuidora (id_empresas , descripcion , nombre , telefono ) values (2,
 
 
 
-drop database Mi_Cerenis_Cabrera
+drop database Mi_Cerenis_Cabrera;

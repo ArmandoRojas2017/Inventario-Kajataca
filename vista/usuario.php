@@ -11,7 +11,13 @@
 	</div>
 	<div class="row">
 
-
+			<select id="armando" name="nick">
+  <option></option>
+  <option>Focus</option>
+  <option>PANDITA</option>
+  <option>2008</option>
+  <option>2013</option>
+</select>
 			<?php if(!$botonera) componentes("botoneraTabla")  ?>
 			<?php componentes('tabla',compact('encabezado','contenido','status')) ?>
 		
