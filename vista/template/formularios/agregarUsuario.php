@@ -1,11 +1,21 @@
 <form class="form-horizontal">
 
+
+<label for="ci" class="col-sm-offset-5 control-label text-danger">
+Cedula de Identidad
+</label>
+
 <div class="form-group">
 <label for="ci" class="col-sm-4 control-label">Cedula de Identidad</label>
 <div class="col-sm-6">
 <input type="text" class="form-control" id="inputCedula" placeholder="Ejemplo: 26059573">
 </div>
 </div>
+
+
+
+
+
 
 
 <div class="form-group">

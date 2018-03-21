@@ -1,4 +1,6 @@
 $(document).ready(function() {
+
+var interruptor = 0
 	
 Menu(); //invocamos los scripts del menu 
 
@@ -50,8 +52,28 @@ $(".glyphicon-eye-open").css('cursor', 'pointer');
 /*Verifica los campos*/
 setInterval( () =>{
 
-		if(cedula.val().length > 2 )
-		$("#botonGuardar").disabled(false);
+		if(
+			(cedula.val().length > 7 ) &&
+			(nombre.val().length > 2 ) &&
+			(nick.val().length > 8 ) &&
+			(clave.val().length > 8 ) &&
+			(clave.val() == clave2.val() ) 
+
+			){
+
+
+			$("#botonGuardar").disabled(false)
+
+			if(interruptor == 0){
+				mensajeNotify( {mensaje: "Listo..."} )
+				interruptor = 1
+			}
+
+		}
+		else {
+			$("#botonGuardar").disabled(true);
+			interruptor = 0
+		}
 
 } , 500  )
 
