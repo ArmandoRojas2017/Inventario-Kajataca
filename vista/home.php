@@ -47,7 +47,7 @@
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2 ">
 			
-			<?php componentes('galeria')  ?>
+			<?php componentes('galeria',compact('imagenes'))  ?>
 
 		</div>
 	</div>
