@@ -70,7 +70,7 @@
 
 	
 
-	<footer>  En caso de Emergencia Click Aqui   </footer>s
+	<footer> Armando Rojas 2018   </footer>
 
 
 </section>

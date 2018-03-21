@@ -16,17 +16,13 @@
 
 <div class="item active">
 <img src=<?= $imagenes[0] ?> alt="..." class="img-thumbnail">
-<div class="carousel-caption">
-	<?= $imagenes[0] ?>
-</div>
+
 </div>
 
 <?php for ($i=1; $i < count($imagenes); $i++): ?>
 <div class="item">
 <img src=<?= $imagenes[$i] ?> alt="...">
-<div class="carousel-caption">
-...
-</div>
+
 </div>
 <?php endfor ?>
 
@@ -42,3 +38,10 @@
 <span class="sr-only">Siguiente</span>
 </a>
 </div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>

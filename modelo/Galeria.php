@@ -27,7 +27,7 @@
 		protected function imagenes($arreglo = false){
 
 			if(!$arreglo)
-				$this->imagenes =  array( "Negocio.jpg" , "ar.jpg" , "kajataca.jpg"  );
+				$this->imagenes =  array( "negocio.jpeg" , "kajataca2.jpg" , "fsociety2.png"  );
 			else 
 				$this->imagenes =  $arreglo;
 

@@ -45,7 +45,7 @@
 	</div>
 
 	<div class="row">
-		<div class="col-md-8 col-md-offset-2 ">
+		<div class="col-md-10 col-md-offset-1 ">
 			
 			<?php componentes('galeria',compact('imagenes'))  ?>
 
@@ -53,6 +53,6 @@
 	</div>
 </div>
 
-
+<footer> Armando Rojas 2018   </footer>
 
 
