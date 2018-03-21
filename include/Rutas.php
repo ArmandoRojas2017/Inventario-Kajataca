@@ -19,8 +19,9 @@
 				
 				'index' => array( 'controller' => 'index' , 'js' => 'index'  ) ,
 				'home' => array( 'controller' => 'home' , 'js' => 'home'  ) ,
-				'usuario' => array( 'controller' => 'Usuarios/usuario' , 'js' => 'usuarios'  ) ,
-				'agregarUsuario' => array( 'controller' => 'Usuarios/agregar' , 'js' => 'Usuarios/agregar'  ) ,
+				'usuario' => array( 'controller' => 'Usuarios/usuario' , 'js' => 'usuario'  ) ,
+				'agregarUsuario' => array( 'controller' => 'Usuarios/agregar' , 'js' => 'Usuarios/agregar'  ),
+				'cerrar' => array( 'controller' => 'cerrar'  ),
 				'404' => array( 'controller' => '404') 
 
 				); 

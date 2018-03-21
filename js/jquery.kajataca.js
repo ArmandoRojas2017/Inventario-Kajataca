@@ -577,3 +577,17 @@ function tablas(){
   } )
 */
 }
+
+
+/* Insertar hora y nombre de Usuario */
+
+function insertar_Hora_NombreDeUsuario(idHora , idNombre_Usuario){
+	
+	setInterval(function(){
+
+		$(idHora).html(miTiempo.hora_local())
+
+	}, 1000);
+	
+	setTimeout( () => $(idNombre_Usuario).html(localStorage.nombre)  ,0500)
+}

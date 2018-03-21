@@ -8,12 +8,13 @@
 
 	$titulo = "Registrar un Nuevo Usuario"; // registrar un nuevo usuario
 	$icono = "plus-sign"; // agregar icono
+	$formulario = "formularios/agregarUsuario"; // invocar la direccion del formulario
 
 
 	
 
 
 
-	view("agregarUsuario",compact('opciones','titulo','icono'));
+	view("agregarUsuario",compact('opciones','titulo','icono','formulario'));
 	 
  ?>
