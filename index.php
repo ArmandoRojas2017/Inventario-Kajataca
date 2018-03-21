@@ -1,6 +1,11 @@
 <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 
-<?php  require_once 'include/Helpers.php' ?>
+<?php  
+
+require_once 'include/Helpers.php'; 
+require_once 'include/Rutas.php'; 
+
+?>
 
 <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 <!DOCTYPE html>
@@ -46,10 +51,9 @@
 <?php 
 
 $url = empty($_GET['url']) ?  'index':$_GET['url'];
+$rutas = new Rutas($url);
 
-
-
-if( !controller($url) ) view('404');
+if ( !controller( $rutas->getController() ) ) view('404');
 
 
 
@@ -74,9 +78,9 @@ if( !controller($url) ) view('404');
 
 <!-- Script para cada Pagina  -->
 
-<?php if( file_exists("js/".$url.".js")  ): ?>
+<?php if( file_exists("js/".$rutas->getJs().".js")  ): ?>
 	
-	<script src=<?= "'js/".$url.".js'" ?>  > </script>
+	<script src=<?= "'js/".$rutas->getJs().".js'" ?>  > </script>
 
 <?php endif ?>
 

@@ -10,8 +10,12 @@ $(document).ready(function() {
 
 
 	
-
+	//invocamos mejoras a las tablas
 	tablas();
+
+
+	// asignamos ruta
+	$("#botonRegistrar").ruta("nuevoUsuario")
 
 	
 	Menu()
