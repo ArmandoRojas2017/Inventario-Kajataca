@@ -1,9 +1,8 @@
 <form class="form-horizontal">
 
 
-<label for="ci" class="col-sm-offset-5 control-label text-danger">
-Cedula de Identidad
-</label>
+<label for="ci" class="col-sm-offset-5 control-label text-danger" id=error1 >
+</label> 
 
 <div class="form-group">
 <label for="ci" class="col-sm-4 control-label">Cedula de Identidad</label>
@@ -14,7 +13,8 @@ Cedula de Identidad
 
 
 
-
+<label for="ci" class="col-sm-offset-5 control-label text-danger" id=error2 >
+</label> 
 
 
 
@@ -25,12 +25,18 @@ Cedula de Identidad
 </div>
 </div>
 
+<label for="ci" class="col-sm-offset-5 control-label text-danger" id=error3 >
+</label> 
+
 <div class="form-group">
 <label for="inputNick" class="col-sm-4 control-label">Nombre de Usuario </label>
 <div class="col-sm-6">
 <input type="text" class="form-control" id="inputNick" placeholder="Ejemplo: Unicornio123">
 </div>
 </div>
+
+<label for="ci" class="col-sm-offset-5 control-label text-danger" id=error4 >
+</label> 
 
 
 <div class="form-group">
@@ -40,6 +46,11 @@ Cedula de Identidad
 </div>
 </div>
 
+
+<label for="ci" class="col-sm-offset-5 control-label text-danger" id=error5 >
+</label> 
+
+
 <div class="form-group">
 <label for="clave" class="col-sm-4 control-label">Contraseña <span id=ver1 class="glyphicon glyphicon-eye-open"></span> </label>
 <div class="col-sm-6">
@@ -47,6 +58,11 @@ Cedula de Identidad
 	
 </div>
 </div>
+
+
+<label for="ci" class="col-sm-offset-5 control-label text-danger" id=error6 >
+</label> 
+
 
 <div class="form-group">
 <label for="ci" class="col-sm-4 control-label">
@@ -60,6 +76,10 @@ Repita Contraseña
 </div>
 </div>
 
+<label for="ci" class="col-sm-offset-5 control-label text-danger" id=error7 >
+</label> 
+
+
 <div class="form-group">
 <label for="ci" class="col-sm-4 control-label">Pregunta Secreta</label>
 <div class="col-sm-6">
@@ -67,6 +87,11 @@ Repita Contraseña
 	
 </div>
 </div>
+
+
+<label for="ci" class="col-sm-offset-5 control-label text-danger" id=error8 >
+</label> 
+
 
 <div class="form-group">
 <label for="ci" class="col-sm-4 control-label">
@@ -78,6 +103,11 @@ Respuesta a la pregunta Secreta
 	
 </div>
 </div>
+
+
+<label for="ci" class="col-sm-offset-5 control-label text-danger" id=error9 >
+</label> 
+
 
 <div class="form-group">
 <label for="ci" class="col-sm-4 control-label">
