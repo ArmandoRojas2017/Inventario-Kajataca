@@ -12,6 +12,8 @@
 
 
 
+ 
+
 /*Utilizacion de Modal con SweetAlert2*/
 function modalImagen(texto){
 			swal({
@@ -471,7 +473,7 @@ const videoDeAyuda = ( id ) => {
 
 		})
 		.fail(function() {
-			modalImagen("Error en el Server al Cargar Pagina")
+			modalImagen(errorAlCargarPorAjax())
 		})
 		
 	});
@@ -491,7 +493,7 @@ function clickDerecho(){
      
       if (navigator.appName == 'Netscape' && e.which == 3) {
          
-         modalImagen(" ¡¡¡Esta prohibido usar el click derecho!!! ")
+         modalImagen(mensajeValidacionClickDerecho())
         
          return false;
       }
@@ -507,12 +509,6 @@ document.onmousedown = right;
 
 }
 
-/*Mensajes de Alerta en el sistema */
-
-const errorAlCargarPorAjax = () => "Problemas Tecnicos... Por favor notificar al 04145235969"
-
-
-//-------------------------------------------------
 
 
 

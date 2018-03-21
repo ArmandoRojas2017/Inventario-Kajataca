@@ -72,6 +72,7 @@ if ( !controller( $rutas->getController() ) ) view('404');
 <script src="vendor/select/bootstrap-select.js" > </script>
 <script src="vendor/sweetAlert2/sweetalert2.js" > </script>
 
+<script src="js/mensajes.js" > </script>
 <script src="js/jquery.kajataca.js" > </script>
 
 <script src="js/Menu.js" > </script>

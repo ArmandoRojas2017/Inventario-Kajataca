@@ -39,7 +39,11 @@
 </div>
 
 <div class="form-group">
-<label for="ci" class="col-sm-4 control-label">Repita Contraseña  <span id=ver2 class="glyphicon glyphicon-eye-open"></span> </label>
+<label for="ci" class="col-sm-4 control-label">
+Repita Contraseña  
+<span id=ver2 class="glyphicon glyphicon-eye-open"></span> 
+</label>
+
 <div class="col-sm-6">
 <input type="password" class="form-control" id="inputClave2" placeholder="Ejemplo: Azhk123ñP">
 	
@@ -55,17 +59,23 @@
 </div>
 
 <div class="form-group">
-<label for="ci" class="col-sm-4 control-label">Respuesta a la pregunta Secreta</label>
+<label for="ci" class="col-sm-4 control-label">
+Respuesta a la pregunta Secreta
+<span id=ver3 class="glyphicon glyphicon-eye-open"></span>
+</label>
 <div class="col-sm-6">
-<input type="password" class="form-control" id="inputCedula" placeholder="Ejemplo: Ensalada de Pollo :v">
+<input type="password" class="form-control" id="inputRespuesta1" placeholder="Ejemplo: Ensalada de Pollo :v">
 	
 </div>
 </div>
 
 <div class="form-group">
-<label for="ci" class="col-sm-4 control-label">Repita la Respuesta</label>
+<label for="ci" class="col-sm-4 control-label">
+Repita la Respuesta
+<span id=ver4 class="glyphicon glyphicon-eye-open"></span>
+</label>
 <div class="col-sm-6">
-<input type="password" class="form-control" id="inputCedula" placeholder="Ejemplo: Ensalada de Pollo :v">
+<input type="password" class="form-control" id="inputCedulainputRespuesta2" placeholder="Ejemplo: Ensalada de Pollo :v">
 	
 </div>
 </div>

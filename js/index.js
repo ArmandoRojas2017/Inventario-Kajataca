@@ -35,9 +35,9 @@ $(document).ready(function() {
   
   $("input[name=clave]").validCampo(soloClaves()) // solo acepta letras y numeros 
 
-  $("input[name=usuario]").longitud($("#ingresar") , {max:45,min:4})
+  $("input[name=usuario]").longitud($("#ingresar") , {max:12,min:4})
 
-  $("input[name=clave]").longitud($("#ingresar") , {max:45,min:4})
+  $("input[name=clave]").longitud($("#ingresar") , {max:12,min:4})
 
 
 
@@ -108,7 +108,7 @@ $("input[name=clave]").tooltip({titulo:"¡¡¡Escribe Aqui!!!", contenido:"Ingre
 $("#ingresar")
 .tooltip(
 			{
-				titulo:"¡¡¡Haz Click Aqui!!!" ,
+				titulo:mensajesIndex.tituloBoton ,
 				contenido: "Si haces click aqui verificara tu usuario y clave, si son correctos ingresaras al sistema" 
 			}
 		)
@@ -116,7 +116,7 @@ $("#ingresar")
 $("#cambiar")
 .tooltip(
 			{
-				titulo:"¡¡¡Haz Click Aqui!!!" ,
+				titulo:mensajesIndex.tituloBoton ,
 				contenido: "¿Haz olvidado tu clave? no te preocupes, haz click aqui para ingresar al sistema de recuperacion de claves" 
 			}
 		)
