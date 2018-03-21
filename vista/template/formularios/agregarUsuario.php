@@ -1,28 +1,80 @@
 <form class="form-horizontal">
+
 <div class="form-group">
-<label for="inputEmail3" class="col-sm-2 control-label">Email</label>
-<div class="col-sm-10">
-<input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+<label for="ci" class="col-sm-4 control-label">Cedula de Identidad</label>
+<div class="col-sm-6">
+<input type="text" class="form-control" id="inputCedula" placeholder="Ejemplo: 26059573">
 </div>
 </div>
+
+
 <div class="form-group">
-<label for="inputPassword3" class="col-sm-2 control-label">Password</label>
-<div class="col-sm-10">
-<input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+<label for="nombre" class="col-sm-4 control-label">Nombre y Apellido</label>
+<div class="col-sm-6">
+<input type="text" class="form-control" id="inputNombre" placeholder="Ejemplo: Armando Rojas">
 </div>
 </div>
+
 <div class="form-group">
-<div class="col-sm-offset-2 col-sm-10">
-<div class="checkbox">
-<label>
-<input type="checkbox"> Remember me
-</label>
+<label for="inputNick" class="col-sm-4 control-label">Nombre de Usuario </label>
+<div class="col-sm-6">
+<input type="text" class="form-control" id="inputNick" placeholder="Ejemplo: Unicornio123">
 </div>
 </div>
-</div>
+
+
 <div class="form-group">
-<div class="col-sm-offset-2 col-sm-10">
-<button type="submit" class="btn btn-default">Sign in</button>
+<label for="ci" class="col-sm-4 control-label">Rol</label>
+<div class="col-sm-6">
+	<select name="rol" id="rol" class="form-control"></select>
 </div>
 </div>
+
+<div class="form-group">
+<label for="clave" class="col-sm-4 control-label">Contraseña <span id=ver1 class="glyphicon glyphicon-eye-open"></span> </label>
+<div class="col-sm-6">
+<input type="password" class="form-control" id="inputClave" placeholder="Ejemplo: Azhk123ñP">
+	
+</div>
+</div>
+
+<div class="form-group">
+<label for="ci" class="col-sm-4 control-label">Repita Contraseña  <span id=ver2 class="glyphicon glyphicon-eye-open"></span> </label>
+<div class="col-sm-6">
+<input type="password" class="form-control" id="inputClave2" placeholder="Ejemplo: Azhk123ñP">
+	
+</div>
+</div>
+
+<div class="form-group">
+<label for="ci" class="col-sm-4 control-label">Pregunta Secreta</label>
+<div class="col-sm-6">
+<input type="text" class="form-control" id="inputPregunta" placeholder="Ejemplo: ¿Comida Favorita?">
+	
+</div>
+</div>
+
+<div class="form-group">
+<label for="ci" class="col-sm-4 control-label">Respuesta a la pregunta Secreta</label>
+<div class="col-sm-6">
+<input type="password" class="form-control" id="inputCedula" placeholder="Ejemplo: Ensalada de Pollo :v">
+	
+</div>
+</div>
+
+<div class="form-group">
+<label for="ci" class="col-sm-4 control-label">Repita la Respuesta</label>
+<div class="col-sm-6">
+<input type="password" class="form-control" id="inputCedula" placeholder="Ejemplo: Ensalada de Pollo :v">
+	
+</div>
+</div>
+
+
+
+
+
+
+
+
 </form>
