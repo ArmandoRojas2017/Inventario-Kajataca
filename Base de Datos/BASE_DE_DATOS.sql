@@ -13,6 +13,39 @@ create database Mi_Cerenis_Cabrera;
 
 use Mi_Cerenis_Cabrera;
 
+create table modulos (
+
+	id_modulos int unsigned auto_increment,
+	descripcion varchar(100) not null unique,
+	fecha_c datetime default now(),
+	fecha_m datetime default now(),
+	status TINYINT(1) default 1, 
+	
+	primary key (id_modulos)
+
+);
+
+create table sub_modulos (
+
+	id_sub_modulos int unsigned auto_increment,
+	id_modulos int unsigned,
+	descripcion varchar(100) not null unique,
+	fecha_c datetime default now(),
+	fecha_m datetime default now(),
+	status TINYINT(1) default 1, 
+	
+	primary key (id_sub_modulos),
+
+	constraint pk49
+
+		foreign key 
+
+			( id_modulos ) references  modulos (id_modulos)
+
+);
+
+
+
 create table roles (
 
 	id_roles int unsigned auto_increment,
@@ -22,6 +55,25 @@ create table roles (
 	status TINYINT(1) default 1, 
 	
 	primary key (id_roles)
+
+);
+
+create table permisos(
+
+	id_roles int unsigned,
+	id_sub_modulos int unsigned,
+
+	constraint pk50
+
+		foreign key 
+
+			( id_roles ) references  roles (id_roles),
+	
+	constraint pk51
+
+		foreign key 
+
+			( id_sub_modulos ) references  sub_modulos (id_sub_modulos)
 
 );
 
