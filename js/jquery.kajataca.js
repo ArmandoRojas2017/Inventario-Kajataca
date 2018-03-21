@@ -332,6 +332,19 @@ $(function(){
 
 
 		//---------------------------------
+		//
+		/* borrar Area */
+			verificarClave: function(clave){
+
+				return this.each(function(){
+
+					$(this).click( () => $(nodo).html("") );
+				});
+			},
+
+
+
+		//---------------------------------
 		
 
 		/*Prueba de alerta  */
@@ -390,6 +403,11 @@ function soloLetras_Numeros(){
 function soloNumeros(){
 
 	return "{1234567890}"
+}
+
+function soloLetras(){
+
+	return "{ABCDEFGHIJKMNLOPQRSTUVWXYZÑab cdefghijklmnopqrstuvwxyzñ}"
 }
 
 function soloClaves(){
