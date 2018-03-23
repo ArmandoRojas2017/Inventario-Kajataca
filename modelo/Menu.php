@@ -43,17 +43,9 @@
 
 		}
 
-		public function getOpciones($id = 0){
+		protected function gestion(){
 
-				// modificar posteriormente
-				
-				$operaciones = $this->operaciones();
-
-				$opciones =  array( 
-						$operaciones 
-					 ,
-
-					 	 array('titulo' => 'Gestion', 
+			return  array('titulo' => 'Gestion', 
 					 	 	'icono' => 'paperclip',
 					 		'contenido' => array( 
 					 								"usuario" => array( 'texto' => 'Usuarios' , 
@@ -67,9 +59,14 @@
 					 													 'icono' => 'barcode'  
 					 													)
 					 							 )  
-					 		),
+					 		);
 
-					 	  array('titulo' => 'Reportes', 
+
+		}
+
+		protected function reportes(){
+
+			return array('titulo' => 'Reportes', 
 					 	  	'icono' => 'print',
 					 		'contenido' => array( 
 					 								"reporte1" => array( 'texto' => 'Stock de Articulos' , 
@@ -86,10 +83,12 @@
 					 													),
 												
 					 							 )  
-					 		),
+					 		);
+		}
 
+		public function informacion(){
 
-					 	   array('titulo' => 'Informacion', 
+			return    array('titulo' => 'Informacion', 
 					 	  	'icono' => 'exclamation-sign',
 					 		'contenido' => array( 
 					 								"config1" => array( 'texto' => 'Acerca de la Cervezeria la Preferida' , 
@@ -106,15 +105,22 @@
 					 													),
 												
 					 							 )  
-					 		),
+					 		);
+		}
 
+		public function getOpciones($id = 0){
 
+				// modificar posteriormente
+			
 
-
-				
+				return  array( 
+						
+						$this->operaciones(), $this->gestion(),  
+						$this->reportes()  ,  $this->informacion()
+			
 					 ); 
 
-				return $opciones; 
+			
 		}
 
 
