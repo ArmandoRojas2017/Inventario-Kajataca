@@ -24,7 +24,13 @@ if(file_exists('../../config/DB.php'))
 	else 
 		exit("NO EXISTE LA CONEXION CON LA CONFIGURACION");
 
+/*
+	
+	1 = Correcto
+	-1 = Error 
+	-2 = duplicado 
 
+ */
 
 
 abstract class Modelo{
@@ -62,7 +68,7 @@ abstract class Modelo{
 			return $arreglo_preparado;
 		}
 
-		public function consult_by($campo,$valor){
+		public function consult($datos=array()){
 
 			if($this->sql['consult'] == -1)
 				return $this->error;
@@ -70,20 +76,24 @@ abstract class Modelo{
 
 				//Creamos el sql
 				$sql= $this->sql['consult'];
+				try{
 				//Establecemos la conexion con la función establecer_conexion
 				$this->establecer_conexion(PDO::ERRMODE_WARNING);
 				//Preparamos la consulta con la función prepare de PDO para así evitar inyecciones sql
 				$resultado=$this->conexion->prepare($sql);
 				//Ejecutamos la consulta pasándole el valor de búsqueda
-				$resultado->execute(array(':valor'=>$valor));
+				$resultado->execute($this->get_prepare_array($datos));
 				//Y luego almacenamos el resultado de la consulta en un array bidimensional
 				$registros=$resultado->fetchAll(PDO::FETCH_ASSOC);
 				//Luego liberamos los recursos ocupados por el resultado
 				$resultado->closeCursor();
-				//Luego cerramos la conexión igualándola a null
+						//Luego cerramos la conexión igualándola a null
 				$this->conexion=null;
 				//Y finalmente devolvemos los registros de la consulta
 				return $registros;
+					// captura el error 
+				}catch(Exception $e){  return -1;  }
+
 			}
 		}
 
@@ -112,10 +122,12 @@ abstract class Modelo{
 		}
 
 		//modificar las consultas 
-		public function set_sql_array($sql){
+		protected function set_sql_array($sql){
 
 			if($sql['get'] != "" ) $this->sql['get'] = $sql['get'];
 			if($sql['consult'] != "" ) $this->sql['consult'] = $sql['consult'];
+			if($sql['insert'] != "" ) $this->sql['insert'] = $sql['insert'];
+			if($sql['edit'] != "" ) $this->sql['edit'] = $sql['edit'];
 		
 		}
 
@@ -148,16 +160,29 @@ abstract class Modelo{
 				return $this->error;
 			else {
 			$sql="UPDATE $this->tabla SET descripcion=:descripcion,fecha_m=NOW(),estado=:estado WHERE id=:id";
-			//Establecemos la conexión sql con un modo de error de alerta
-			$this->establecer_conexion(PDO::ERRMODE_WARNING);
-			//Preparamos la consulta
-			$resultado=$this->conexion->prepare($sql);
-			//Y la ejecutamos finalmente
-			$resultado->execute($this->get_prepare_array($datos));
-			//Liberamos los resursos ocupados por el resultado con la función closeCursor
-			$resultado->closeCursor();
-			//Y cerramos la conexión igualándola a null
-			$this->conexion=null;
+			
+			$this->establecer_conexion(PDO::ERRMODE_EXCEPTION);
+				//Luego hacemos un try catch para capturar el error en caso de que ocurra
+				try{
+					//Preparamos la consulta
+					$resultado=$this->conexion->prepare($sql);
+					//Para luego ejecutarla
+					$resultado->execute($this->get_prepare_array($datos));
+					//Liberamos los recursos ocupados por el resultado
+					$resultado->closeCursor();
+					//Y luego cerramos la conexión
+					$conexion=null;
+					//Y en caso de que todo haya ido bién devolvemos un mensaje notificando la situación
+					return 1;
+
+				}catch(Exception $e){
+					//En caso de que haya una nueva cédula y esta exista
+					if ($e->getMessage()=="SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '".$datos['ci']."' for key 'PRIMARY'")
+						return -2;
+					//En caso de otro tipo de error
+					return -1;
+				}
+
 			}
 		}
 

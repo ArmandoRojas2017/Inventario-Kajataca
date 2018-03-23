@@ -2,23 +2,23 @@
 //activar sesion
 session_start();
 
-if(file_exists('../../modelo/DB.php')) 
-		require_once ('../../modelo/DB.php');
-	elseif (file_exists('../modelo/DB.php')) {
-		require_once ('../modelo/DB.php');
+if(file_exists('../../modelo/Usuario.php')) 
+		require_once ('../../modelo/Usuario.php');
+	elseif (file_exists('../modelo/Usuario.php')) {
+		require_once ('../modelo/Usuario.php');
 	}
-	elseif (file_exists('modelo/DB.php')   ) {
-		require_once ('modelo/DB.php');
+	elseif (file_exists('modelo/Usuario.php')   ) {
+		require_once ('modelo/Usuario.php');
 	}
-	elseif (file_exists('../../../modelo/DB.php')   ) {
-		require_once ('../../../modelo/DB.php');
+	elseif (file_exists('../../../modelo/Usuario.php')   ) {
+		require_once ('../../../modelo/Usuario.php');
 	}
 	else 
-		exit("CONEXION A LA BASE DE DATOS NO ENCONTRADA EN ESTE SERVIDOR: LLAMAR AL 0414-5235969 PARA MAS INFORMACION");
+		exit("BASE DE DATOS NO ENCONTRADA EN ESTE SERVIDOR: LLAMAR AL 0414-5235969 PARA MAS INFORMACION");
 
 
 
-	class Acceso
+	class Acceso extends Usuario
 	{
 		var $datos; 
 		// ingreso al sistema 
@@ -26,13 +26,13 @@ if(file_exists('../../modelo/DB.php'))
 
 		// clave encriptada
 			$pass = md5($pass); 
-		//sentencia SQL
-			$sql = "SELECT * FROM usuarios, roles  where nick='$user' AND clave='$pass'  AND usuarios.id_roles = roles.id_roles" ;
+		
+			
 		// conexion a Base de Datos 
-			$db = new DB();
+			
 
 		// realiza consulta
-		 	$db->consulta($sql ); 
+		 	
 
 		//verifica si a un usuario 
 
@@ -59,12 +59,16 @@ if(file_exists('../../modelo/DB.php'))
 		 	return $db->getCantidad();
 		}
 
-		function get($dato){
+		public function __construct(){
 
-			if ($dato == "id") return $this->datos['id']; 
-			elseif ($dato == "nombre" ) return $this->datos['nombre']; 
-			else return $this->datos['tipo']; 
+			parent::__construct();
+			//sentencia SQL
+			$sql = "SELECT id_usuarios, nombre, nick, descripcion FROM usuarios, roles  where nick=:nick AND clave= :pass  AND usuarios.id_roles = roles.id_roles" ;
+			// modificar el metodo insert 
+			$this->set_sql_array(array( 'consult' => $sql ));
 		}
+
+		
 	}
 
 
