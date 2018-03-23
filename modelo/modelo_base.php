@@ -34,6 +34,7 @@ if(file_exists('../../config/DB.php'))
 
 		protected $conexion;
 		protected $tabla;
+		protected $cerenis; 
 
 		//Declaración de funciones abstractas de inserción y modificación ya que las diferentes
 		//clases que hereden de modelo la implementarán de formas distintas
@@ -104,6 +105,7 @@ if(file_exists('../../config/DB.php'))
 
 		public function __construct($tabla){
 			$this->tabla=$tabla;
+			$this->cerenis = "hola";
 		}
 
 		public function __destruct(){unset($this);}

@@ -3,7 +3,9 @@
 	require_once 'modelo/Usuario.php'; 
 
 	$opciones = $menu->getOpciones(); // obtener opciones del menus
-	$usuario = new Usuario(); // creacion del objecto usuario
+	$modelo = new Usuario(); // creacion del objecto usuario
+
+	$modelo->preparar_consulta();
 
 
 	$titulo = "Consultar Usuarios"; // registrar un nuevo usuario
@@ -21,7 +23,7 @@
 		);
 
 	
-	$contenido = $usuario->get_campos(" id_usuarios , nombre, nick , clave, status  "); // obtener array con los datos
+	$contenido = $modelo->get_array(); // obtener array con los datos
 
 	
 
