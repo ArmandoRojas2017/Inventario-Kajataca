@@ -1,5 +1,5 @@
 <div class="col-sm-1">
-<label class="form-control" > Rol </label>
+<label class=" control-label form-control " > Rol </label>
 
 </div>
 

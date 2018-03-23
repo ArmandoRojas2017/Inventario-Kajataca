@@ -8,7 +8,11 @@
 </div>
 
 <div class="col-sm-2">
-<select name="status" id="status" class="form-control"></select>
+<select name="status" id="status" class="form-control">
+	<option value="1">ACTIVOS</option>
+	<option value="0">DESACTIVADOS</option>
+	<option value="3">TODOS</option>
+</select>
 </div>
 
 <?php if($select) componentes($select) ?>

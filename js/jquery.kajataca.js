@@ -575,15 +575,7 @@ const consultaIndividual = (val , url) =>{
 function tablas(){
 
 		$("#dynatable-query-search-").addClass("form-control")
-	var dynatable = $('#search-example').dynatable({
-		 dataset: {
-    ajax: true,
-    ajaxUrl: 'ajax/prueba.json',
-    ajaxOnLoad: true,
-    records: []
-  }
-
-	}).data('dynatable');
+	var dynatable = $('#search-example').dynatable().data('dynatable');
 
 /*
    $('#armando').change( function() {
