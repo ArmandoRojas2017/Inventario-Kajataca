@@ -21,7 +21,7 @@
 		);
 
 	
-	$contenido = $usuario->get_all_campos(" id_usuarios , nombre, nick , clave, status  "); // obtener array con los datos
+	$contenido = $usuario->get_campos(" id_usuarios , nombre, nick , clave, status  "); // obtener array con los datos
 
 	
 

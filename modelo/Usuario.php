@@ -89,7 +89,28 @@
 			return $registros;
 		}
 
-		public function get_usuario($nick,$clave){
+		// realiza una consulta con campos especificos 
+		public function get_campos($campos = "*"){
+			//Creamos la consulta sql
+			$sql="SELECT $campos FROM {$this->tabla},rol WHERE usuario.id_usuarios=id";
+			//Establecemos la conexión
+			$this->establecer_conexion(PDO::ERRMODE_WARNING);
+			//Luego preparamos la consulta
+			$resultado=$this->conexion->prepare($sql);
+			//Para luego ejecutarla
+			$resultado->execute(array());
+			//Luego almacenamos el resultado en la variable registro
+			$registros=$resultado->fetchAll(PDO::FETCH_ASSOC);
+			//Liberamos los recursos ocupados por el resultado y cerramos la conexión
+			$resultado->closeCursor();
+			$this->conexion=null;
+			//Y finalmente devolvemos los registros devueltos por la consulta
+			return $registros;
+		}
+
+
+		// verificar un usuario 
+		public function autorizar($nick,$clave){
 			//Creamos la consulta sql
 			$sql="SELECT ci,nombre,nick,{$this->tabla}.fecha_c,{$this->tabla}.fecha_m,{$this->tabla}.estado,descripcion AS rol FROM {$this->tabla},rol WHERE id_rol=id AND nick=:nick AND clave=:clave";
 			//Luego establecemos la conexión con la base de Datos
