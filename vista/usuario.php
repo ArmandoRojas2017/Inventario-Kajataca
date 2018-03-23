@@ -1,4 +1,8 @@
-<?php componentes('menu',compact('opciones')); ?>
+<?php 
+
+componentes('menu',compact('opciones')); ?>
+
+
 <div class="separacion"></div>
 <div class="container"> 
 
@@ -7,8 +11,8 @@
 	<div class="row">
 
 		
-			<?php if(!$botonera) componentes("botoneraTabla")  ?>
-			<?php componentes('tabla',compact('encabezado','contenido','status')) ?>
+			<?php if(!$botonera) componentes("botoneraTabla",compact("select"))  ?>
+			<?php componentes('tabla',compact('encabezado','contenido')) ?>
 		
 		</div>
 	</div>

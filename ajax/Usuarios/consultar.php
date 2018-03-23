@@ -1,18 +1,14 @@
 <?php 
-	require_once 'controlador/Menu.php'; 
-	require_once 'modelo/Usuario.php'; 
 
-	$opciones = $menu->getOpciones(); // obtener opciones del menus
+	require_once '../../include/Helpers.php'; 
+	require_once '../../modelo/Usuario.php'; 
+
+
 	$modelo = new Usuario(); // creacion del objecto usuario
-
-	$modelo->preparar_consulta();
-
 
 	$titulo = "Consultar Usuarios"; // registrar un nuevo usuario
 	$icono = "search"; // agregar icono
-
-	$select = "select/selectUsuarios"; //ruta del select 
-
+	$menu = false;	
 	
 
 	$encabezado = array(
@@ -31,6 +27,8 @@
 
 
 
-	view("usuario",compact('opciones','titulo','icono','encabezado','contenido','select'));
+	view("template/tabla",compact('opciones','titulo','icono','encabezado','contenido','menu'))
+
+	;
 	 
  ?>
