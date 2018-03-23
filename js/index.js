@@ -83,8 +83,10 @@ $("#ingresar").click(function() {
 		else{
 			mensajeNotify({mensaje:'Error en el Server...', tipo:'warning'})
 			modalImagen("LLamar al 0414-5235969 para solucionar el Error.."+$request);
+
 		}
 
+		
 	
 	})
 	.fail(function() {
