@@ -1,5 +1,37 @@
 <?php 
+
+	//activar sesion
+session_start();
+
+// Buscar la configuracion
+
+if(file_exists('../../config/DB.php')) 
+		require_once ('../../config/DB.php');
+	elseif (file_exists('../config/DB.php')) {
+		require_once ('../config/DB.php');
+	}
+
+	elseif (file_exists('../../../config/DB.php')   ) {
+		require_once ('../../../config/DB.php');
+	}
+	elseif (file_exists('../config/DB.php')   ) {
+		require_once ('../config/DB.php');
+	}
+	elseif (file_exists('config/DB.php')   ) {
+		require_once ('config/DB.php');
+	}
+	else 
+		exit("NO EXISTE LA CONEXION CON LA CONFIGURACION");
+
+
+	// Status 
+	// true = 1
+	// false = 0
+
+
+
 	abstract class Modelo{
+
 		protected $conexion;
 		protected $tabla;
 

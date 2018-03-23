@@ -1,4 +1,20 @@
 <?php 
+
+	if(file_exists('../../modelo/modelo_base.php')) 
+		require_once ('../../modelo/modelo_base.php');
+	elseif (file_exists('../modelo/modelo_base.php')) {
+		require_once ('../modelo/modelo_base.php');
+	}
+	elseif (file_exists('modelo/modelo_base.php')   ) {
+		require_once ('modelo/modelo_base.php');
+	}
+	elseif (file_exists('../../../modelo/modelo_base.php')   ) {
+		require_once ('../../../modelo/modelo_base.php');
+	}
+	else 
+		exit("No EXISTE LA CONEXION CON EL MODELO");
+
+
 	class Usuario extends Modelo{
 
 		public function insertar($datos=array()){
