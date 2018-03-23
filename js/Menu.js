@@ -5,8 +5,8 @@ let Menu = function(){
 
 	/*------------ Rutas  --------*/
 	$("#usuario").ruta("usuario")
-	
 	$("#ver").ruta("verPerfil")
+	$("#roles").ruta("roles")
 
 	
 

@@ -22,7 +22,7 @@
 			//Dentro del constructor llama al constructor de la clase padre
 			$this->tabla = "rol"; 
 
-			$this->sql['get'] = "SELECT * FROM roles";
+			$this->sql['get'] = "SELECT id_roles, descripcion, status FROM roles";
 		}
 	}
  ?>

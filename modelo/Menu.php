@@ -57,7 +57,11 @@
 					 													),
 													"articulo" => array( 'texto' => 'Articulos' , 
 					 													 'icono' => 'barcode'  
-					 													)
+					 													),
+													"roles" => array(
+															'texto' => "Roles de Usuarios",
+															'icono' => "eye-open"
+														)
 					 							 )  
 					 		);
 
