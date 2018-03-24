@@ -210,7 +210,17 @@ setInterval( () =>{
 
 $("#botonGuardar").click(() => {
 
+	ajax("ajax/Usuarios/registrar.php", function(resp){
+		alert(resp)
+	}, { 
 
+		id : cedula.val(),
+		nombre : nombre.val(),
+		nick : nick.val(),
+		clave: clave.val(),
+		pregunta: pregunta.val(),
+		respuesta : respuesta1.val()
+	})
 
 });
 

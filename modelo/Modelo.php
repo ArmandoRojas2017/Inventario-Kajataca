@@ -132,24 +132,30 @@ abstract class Modelo{
 		}
 
 
-		public function insertar($datos=array()){
+		public function insert($datos=array()){
 
 			if($this->sql['insert'] == -1)
 				return $this->error;
 			else {
-			//Creamos la consulta sql a ejecutar en nuestro caso una inserción
-			$sql="INSERT INTO $this->tabla (descripcion)
-			 VALUES (:descripcion)";
-			 //Establecemos la conexión con la base de Datos
-			 $this->establecer_conexion(PDO::ERRMODE_WARNING);
-			 //Preparamos la consulta para que pueda ser ejecutada
-			 $resultado=$this->conexion->prepare($sql);
-			 //Y finalmente la ejecutamos
-			 $resultado->execute(array(':descripcion'=>$datos['descripcion']));
-			 //Luego liberamos los recursos ocupados por nuestro resultado
-			 $resultado->closeCursor();
-			 //Luego cerramos la conexión igualándola a null
-			 $this->$conexion=null;
+
+				try{
+					//Creamos la consulta sql a ejecutar en nuestro caso una inserción
+					$sql=$this->sql['insert'];
+					 //Establecemos la conexión con la base de Datos
+					 $this->establecer_conexion(PDO::ERRMODE_WARNING);
+					 //Preparamos la consulta para que pueda ser ejecutada
+					 $resultado=$this->conexion->prepare($sql);
+					 //Y finalmente la ejecutamos
+					 $resultado->execute($this->get_prepare_array($datos));
+					 //Luego liberamos los recursos ocupados por nuestro resultado
+					 $resultado->closeCursor();
+			
+
+					 return 1;
+
+				}catch(Exception $e){
+					return -1; 
+				}
 			}
 		}
 

@@ -7,25 +7,11 @@
 	$modelo = new Usuario(); // instanciar el objecto
 	$modelo->preparar_consulta();
 
-	$datos = array(   );
+	$datos = array( "id" => $_POST['id'] ,  "nick" => $_POST['nick']  , "nombre" => $_POST['nombre']  , "pregunta" => $_POST['pregunta'] , "respuesta" => $_POST['respuesta'] , "clave" => $_POST['clave'] , "tipo" => 1 );
 
-	$form = $modelo->insert($datos);
+	$modelo->insert($datos);
 
-
-
-	$inputs = 	$form[0] ; 
-
-	$datos =  array(
-				
-				'titulo' =>  $form[0]['nick']
-
-			);
-
-	$formulario = 'formularios/agregarUsuario';
-
-
-
-	view("modal/usuario",compact('datos','formulario','form','inputs'))
+	
 	
 	
  ?>
