@@ -26,13 +26,19 @@ $(document).ready(function() {
 
 	// realizar busqueda por filtrado 
 	
-	$("#rol").change(function(event) {
-		
+	$("#rol").change(()=>filtrado());
+	$("#status").change(()=>filtrado());
+
+	// filtrado de busqueda con los select de la tabla
+
+	let filtrado = () =>{
+
 		ajax("ajax/Usuarios/consultar.php",function(rsp){
 
-			alert(rsp)
-		},null)
-	});
+			$("#search-example").html(rsp)
+		}, { rol: $("#rol").val() , status: $("#status").val() } )
+
+	}
 
 
 	

@@ -38,17 +38,30 @@
 
 			if(!$search){
 
-				if( ($_POST['rol'] == 3)  and  ($_POST['status'] == 3) )
+				if( ($post['rol'] == 0)  and  ($post['status'] == 3) ){
 
-					$this->sql['consult'] = "SELECT id_usuarios, nombre, nick, roles.descripcion as tipo, usuarios.status FROM Usuarios, roles WHERE roles.id_roles = usuarios.id_roles ";
+					$this->sql['get'] = "SELECT id_usuarios, nombre, nick, roles.descripcion as tipo, usuarios.status FROM Usuarios, roles WHERE roles.id_roles = usuarios.id_roles ";
 
-				elseif ( ($_POST['rol'] != 3)  and  ($_POST['status'] == 3)  )
+					return false;
+				}
+
+				elseif ( ($post['rol'] != 0)  and  ($post['status'] == 3)  ){
+
 					$this->sql['consult'] = "SELECT id_usuarios, nombre, nick, roles.descripcion as tipo, usuarios.status FROM Usuarios, roles WHERE roles.id_roles = usuarios.id_roles and Usuarios.id_roles = :rol ";
+					
+					return array( 'rol' => $post['rol'] );
+				}
+				
+				elseif ( ($post['rol'] == 0)  and  ($post['status'] != 3)  ){
 
-				elseif ( ($_POST['rol'] == 3)  and  ($_POST['status'] != 3)  )
 					$this->sql['consult'] = "SELECT id_usuarios, nombre, nick, roles.descripcion as tipo, usuarios.status FROM Usuarios, roles WHERE roles.id_roles = usuarios.id_roles and Usuarios.status = :status ";
-				else
+					return array('status' => $post['status'] );
+				}
+				else{
+
 					$this->sql['consult'] = "SELECT id_usuarios, nombre, nick, roles.descripcion as tipo, usuarios.status FROM Usuarios, roles WHERE roles.id_roles = usuarios.id_roles and Usuarios.status = :status and  Usuarios.id_roles = :rol ";
+					return array('status' => $post['status'] , 'rol' => $post['rol'] );
+				}
 
 			}
 		}

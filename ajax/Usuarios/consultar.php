@@ -9,6 +9,7 @@
 	$titulo = "Consultar Usuarios"; // registrar un nuevo usuario
 	$icono = "search"; // agregar icono
 	$menu = false;	
+	$contenido = [];
 	
 
 	$encabezado = array(
@@ -20,8 +21,14 @@
 			
 		);
 
-	
-	$contenido = $modelo->get_array(); // obtener array con los datos
+	$opc = $modelo->preparar_consulta_like($_POST);
+
+	if(!$opc)
+		$contenido = $modelo->get_array();
+	else 
+
+	 // obtener array con los datos
+		$contenido = $modelo->consult($opc); // obtener array con los datos
 
 	
 
