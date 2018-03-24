@@ -34,6 +34,25 @@
 
 		}
 
+		public function preparar_consulta_like($post , $search = false){
+
+			if(!$search){
+
+				if( ($_POST['rol'] == 3)  and  ($_POST['status'] == 3) )
+
+					$this->sql['consult'] = "SELECT id_usuarios, nombre, nick, roles.descripcion as tipo, usuarios.status FROM Usuarios, roles WHERE roles.id_roles = usuarios.id_roles ";
+
+				elseif ( ($_POST['rol'] != 3)  and  ($_POST['status'] == 3)  )
+					$this->sql['consult'] = "SELECT id_usuarios, nombre, nick, roles.descripcion as tipo, usuarios.status FROM Usuarios, roles WHERE roles.id_roles = usuarios.id_roles and Usuarios.id_roles = :rol ";
+
+				elseif ( ($_POST['rol'] == 3)  and  ($_POST['status'] != 3)  )
+					$this->sql['consult'] = "SELECT id_usuarios, nombre, nick, roles.descripcion as tipo, usuarios.status FROM Usuarios, roles WHERE roles.id_roles = usuarios.id_roles and Usuarios.status = :status ";
+				else
+					$this->sql['consult'] = "SELECT id_usuarios, nombre, nick, roles.descripcion as tipo, usuarios.status FROM Usuarios, roles WHERE roles.id_roles = usuarios.id_roles and Usuarios.status = :status and  Usuarios.id_roles = :rol ";
+
+			}
+		}
+
 		
 
 	}

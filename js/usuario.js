@@ -18,10 +18,23 @@ $(document).ready(function() {
 	$("#botonRegistrar").ruta("agregarUsuario")
 
 
+	// asignar roles al select 
 	ajax("ajax/Roles/select.php",function(resp){
 
 		$("#rol").html(resp)
 	},null)
+
+	// realizar busqueda por filtrado 
+	
+	$("#rol").change(function(event) {
+		
+		ajax("ajax/Usuarios/consultar.php",function(rsp){
+
+			alert(rsp)
+		},null)
+	});
+
+
 	
 	Menu()
 });
