@@ -8,8 +8,8 @@
 
 	$opc = $modelo->get_array();
  ?>
-
-
+	<option value="">TODOS</option>
+	
  	<?php for ($i=0; $i < count($opc) ; $i++):?>
 
  	<option <?= value($opc[$i]['id_roles']) ?>>

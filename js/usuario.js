@@ -17,6 +17,11 @@ $(document).ready(function() {
 	// asignamos ruta
 	$("#botonRegistrar").ruta("agregarUsuario")
 
+
+	ajax("ajax/Roles/select.php",function(resp){
+
+		$("#rol").html(resp)
+	},null)
 	
 	Menu()
 });
