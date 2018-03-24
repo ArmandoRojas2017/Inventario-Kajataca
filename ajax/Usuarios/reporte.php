@@ -4,10 +4,14 @@ require('../../modelo/ReportesFPDF.php');
 require('../../modelo/Usuario.php');
 
 $modelo = new Usuario();
-$modelo->preparar_consulta();
+$opc = $modelo->preparar_consulta_like($_GET);
 $datos = [];
+$arreglo = [];
 
-$arreglo = $modelo->get_array();
+if(!$opc)
+	$arreglo = $modelo->get_array();
+else 
+	$arreglo = $modelo->consult($opc);
 
 for ($i=0; $i < count($arreglo); $i++) { 
 	

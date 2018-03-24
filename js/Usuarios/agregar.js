@@ -16,7 +16,14 @@ var mensajes = {
 
 
 }
+//boton salir para volver al consultar
+$("#botonSalir").ruta("usuario")
 
+// asignar roles al select 
+	ajax("ajax/Roles/select.php",function(resp){
+
+		$("#rol").html(resp)
+	},null)
 
 
 

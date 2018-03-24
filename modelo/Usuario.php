@@ -31,39 +31,44 @@
 			$this->sql['get'] = "select id_usuarios, nombre, nick, roles.descripcion as tipo, usuarios.status from Usuarios, roles WHERE roles.id_roles = usuarios.id_roles ";
 			
 			$this->sql['consult'] = "select * from Usuarios, roles WHERE roles.id_roles = usuarios.id_roles AND id_usuarios=:id ";
+			
+			$this->sql['insert'] = "INSERT into usuarios (id_usuarios, nick, nombre,clave,pregunta,respuesta, id_roles) values(:id , :nick, :nombre, md5( :clave ) , :pregunta , md5( :respuesta ), :tipo )";
 
 		}
 
+
+
 		public function preparar_consulta_like($post , $search = false){
+
+			$sql = "SELECT id_usuarios, nombre, nick, roles.descripcion as tipo, usuarios.status FROM Usuarios, roles WHERE roles.id_roles = usuarios.id_roles ";
 
 			if(!$search){
 
 				if( ($post['rol'] == 0)  and  ($post['status'] == 3) ){
 
-					$this->sql['get'] = "SELECT id_usuarios, nombre, nick, roles.descripcion as tipo, usuarios.status FROM Usuarios, roles WHERE roles.id_roles = usuarios.id_roles ";
-
+					$this->sql['get'] = $sql;
 					return false;
 				}
 
 				elseif ( ($post['rol'] != 0)  and  ($post['status'] == 3)  ){
 
-					$this->sql['consult'] = "SELECT id_usuarios, nombre, nick, roles.descripcion as tipo, usuarios.status FROM Usuarios, roles WHERE roles.id_roles = usuarios.id_roles and Usuarios.id_roles = :rol ";
-					
+					$this->sql['consult'] = $sql." AND Usuarios.id_roles = :rol ";
 					return array( 'rol' => $post['rol'] );
 				}
 				
 				elseif ( ($post['rol'] == 0)  and  ($post['status'] != 3)  ){
 
-					$this->sql['consult'] = "SELECT id_usuarios, nombre, nick, roles.descripcion as tipo, usuarios.status FROM Usuarios, roles WHERE roles.id_roles = usuarios.id_roles and Usuarios.status = :status ";
+					$this->sql['consult'] = $sql." and Usuarios.status = :status ";
 					return array('status' => $post['status'] );
 				}
 				else{
 
-					$this->sql['consult'] = "SELECT id_usuarios, nombre, nick, roles.descripcion as tipo, usuarios.status FROM Usuarios, roles WHERE roles.id_roles = usuarios.id_roles and Usuarios.status = :status and  Usuarios.id_roles = :rol ";
+					$this->sql['consult'] =  $sql."AND Usuarios.status = :status AND  Usuarios.id_roles = :rol ";
 					return array('status' => $post['status'] , 'rol' => $post['rol'] );
 				}
 
-			}
+			}// sin $search
+			
 		}
 
 		

@@ -80,7 +80,7 @@ create table permisos(
 
 create table usuarios (
 
-	id_usuarios int unsigned auto_increment,
+	id_usuarios int unsigned ,
 	id_roles int unsigned,
 	nick varchar(12) not null unique,
 	nombre varchar(100) not null,
@@ -345,49 +345,49 @@ insert into roles (descripcion) values ("Administrador");
 /*Usuarios*/
 
 insert into usuarios 
-	(nick, nombre,clave,pregunta,
+	(id_usuarios, nick , nombre,clave,pregunta,
 		respuesta, id_roles) values
-	('ARMANDO2018',"ARMANDOROJAS", md5('12345678') , '¿Eres Chavizta?' ,
+	(26059573, 'ARMANDO2018',"ARMANDOROJAS", md5('12345678') , '¿Eres Chavizta?' ,
 		'TU ERES MARICO', 1 );
 
 insert into usuarios 
-	(nick, nombre,clave,pregunta,
+	(id_usuarios, nick , nombre,clave,pregunta,
 		respuesta, id_roles) values
-	('CAPERUCITA',"NELSIBETH DE MADURO", md5('12345678') , '¿Eres Chavizta?' ,
+	(2,'CAPERUCITA',"NELSIBETH DE MADURO", md5('12345678') , '¿Eres Chavizta?' ,
 		'TU ERES MARICO', 2 );
 
 insert into usuarios 
-	(nick, nombre,clave,pregunta,
+	(id_usuarios, nick , nombre,clave,pregunta,
 		respuesta, id_roles) values
-	('CRISTIANK',"CRISTIAN HEREDIA", md5('12345678') , '¿Eres Chavizta?' ,
-		'TU ERES MARICO', 2 );
-
-
-insert into usuarios 
-	(nick, nombre,clave,pregunta,
-		respuesta, id_roles) values
-	('PANDITA',"CERENIS CABRERA", md5('12345') , '¿Eres Chavizta?' ,
+	(3,'CRISTIANK',"CRISTIAN HEREDIA", md5('12345678') , '¿Eres Chavizta?' ,
 		'TU ERES MARICO', 2 );
 
 
 insert into usuarios 
-	(nick, nombre,clave,pregunta,
+	(id_usuarios, nick , nombre,clave,pregunta,
 		respuesta, id_roles) values
-	('PELUCA',"VILMARYS CASTILLO", md5('12345678') , '¿Eres Chavizta?' ,
+	(4,'PANDITA',"CERENIS CABRERA", md5('12345') , '¿Eres Chavizta?' ,
 		'TU ERES MARICO', 2 );
 
 
 insert into usuarios 
-	(nick, nombre,clave,pregunta,
+	(id_usuarios, nick , nombre,clave,pregunta,
 		respuesta, id_roles) values
-	('CHRISTO2018',"CHRISTOPHER SIVIRA", md5('12345678') , '¿Eres Chavizta?' ,
+	(5,'PELUCA',"VILMARYS CASTILLO", md5('12345678') , '¿Eres Chavizta?' ,
 		'TU ERES MARICO', 2 );
 
 
 insert into usuarios 
-	(nick, nombre,clave,pregunta,
+	(id_usuarios, nick , nombre,clave,pregunta,
 		respuesta, id_roles) values
-	('PUCHI2018',"ARGENIS RODRIGUES", md5('12345678') , '¿Eres Chavizta?' ,
+	(6,'CHRISTO2018',"CHRISTOPHER SIVIRA", md5('12345678') , '¿Eres Chavizta?' ,
+		'TU ERES MARICO', 2 );
+
+
+insert into usuarios 
+	(id_usuarios, nick , nombre,clave,pregunta,
+		respuesta, id_roles) values
+	(7,'PUCHI2018',"ARGENIS RODRIGUES", md5('12345678') , '¿Eres Chavizta?' ,
 		'TU ERES MARICO', 2 );
 
 /* Eventos*/

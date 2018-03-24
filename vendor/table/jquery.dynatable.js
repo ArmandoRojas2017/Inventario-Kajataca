@@ -1155,9 +1155,9 @@
           .attr('data-dynatable-query', query)
           .bind(event, queryFunction)
           .bind('keypress', function(e) {
-         
+            if (e.which == 13) {
               queryFunction.call(this, e);
-            
+            }
           });
 
         if (settings.dataset.queries[query]) { $this.val(decodeURIComponent(settings.dataset.queries[query])); }
@@ -1218,10 +1218,10 @@
           obj.queries.runSearch($(this).val());
         })
         .bind('keypress', function(e) {
-        
+          if (e.which == 13) {
             obj.queries.runSearch($(this).val());
             e.preventDefault();
-         
+          }
         });
       return $searchSpan;
     };

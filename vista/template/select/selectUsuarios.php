@@ -4,5 +4,7 @@
 </div>
 
 <div class="col-sm-2">
-<select name="status" id="rol" class="form-control"></select>
+<select name="status" id="rol" class="form-control">
+		<option value="">TODOS</option>
+</select>
 </div>

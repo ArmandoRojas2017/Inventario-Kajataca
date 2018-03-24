@@ -21,7 +21,7 @@ $(document).ready(function() {
 	// asignar roles al select 
 	ajax("ajax/Roles/select.php",function(resp){
 
-		$("#rol").html(resp)
+		$("#rol").append(resp)
 	},null)
 
 	// realizar busqueda por filtrado 
@@ -46,10 +46,9 @@ $(document).ready(function() {
 
 	$("#botonImprimir").click(()=> {
 		
-		let buscador = "&"+$("#dynatable-query-search-search-example").val().toString();
-
+		let buscador = "&search="+$("#dynatable-query-search-search-example").val().toString();
 		let variables = "status="+$("#status").val().toString()+"&rol="+$("#rol").val().toString()
-		window.open("ajax/Usuarios/reporte.php?"+variables+buscador)
+		window.open("ajax/Usuarios/reporte.php"+"?"+variables)
 	});
 
 
