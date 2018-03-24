@@ -1155,7 +1155,7 @@
           .attr('data-dynatable-query', query)
           .bind(event, queryFunction)
           .bind('keypress', function(e) {
-            
+         
               queryFunction.call(this, e);
             
           });
@@ -1218,10 +1218,10 @@
           obj.queries.runSearch($(this).val());
         })
         .bind('keypress', function(e) {
-          if (e.which == 13) {
+        
             obj.queries.runSearch($(this).val());
             e.preventDefault();
-          }
+         
         });
       return $searchSpan;
     };

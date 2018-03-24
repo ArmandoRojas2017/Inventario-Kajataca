@@ -1,3 +1,5 @@
+<?php if($inputs)extract($inputs) ?>
+
 <form class="form-horizontal">
 
 
@@ -7,7 +9,7 @@
 <div class="form-group">
 <label for="ci" class="col-sm-4 control-label">Cedula de Identidad</label>
 <div class="col-sm-6">
-<input type="text" class="form-control" id="inputCedula" placeholder="Ejemplo: 26059573">
+<input  type="text" class="form-control" id="inputCedula" placeholder="Ejemplo: 26059573" <?= value($id_usuarios) ?> >
 </div>
 </div>
 
@@ -21,7 +23,7 @@
 <div class="form-group">
 <label for="nombre" class="col-sm-4 control-label">Nombre y Apellido</label>
 <div class="col-sm-6">
-<input type="text" class="form-control" id="inputNombre" placeholder="Ejemplo: Armando Rojas">
+<input type="text" class="form-control" id="inputNombre" placeholder="Ejemplo: Armando Rojas" <?= value($nombre) ?> >
 </div>
 </div>
 
@@ -31,7 +33,7 @@
 <div class="form-group">
 <label for="inputNick" class="col-sm-4 control-label">Nombre de Usuario </label>
 <div class="col-sm-6">
-<input type="text" class="form-control" id="inputNick" placeholder="Ejemplo: Unicornio123">
+<input type="text" class="form-control" id="inputNick" placeholder="Ejemplo: Unicornio123" <?= value($nick) ?>>
 </div>
 </div>
 
@@ -54,7 +56,7 @@
 <div class="form-group">
 <label for="clave" class="col-sm-4 control-label">Contraseña <span id=ver1 class="glyphicon glyphicon-eye-open"></span> </label>
 <div class="col-sm-6">
-<input type="password" class="form-control" id="inputClave" placeholder="Ejemplo: Azhk123ñP">
+<input type="password" class="form-control" id="inputClave" placeholder="Ejemplo: Azhk123ñP" >
 	
 </div>
 </div>

@@ -29,8 +29,12 @@
 		public function preparar_consulta(){
 			
 			$this->sql['get'] = "select id_usuarios, nombre, nick, roles.descripcion as tipo, usuarios.status from Usuarios, roles WHERE roles.id_roles = usuarios.id_roles ";
+			
+			$this->sql['consult'] = "select * from Usuarios, roles WHERE roles.id_roles = usuarios.id_roles AND id_usuarios=:id ";
 
 		}
+
+		
 
 	}
  ?>

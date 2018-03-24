@@ -46,7 +46,7 @@ function FancyTable($data)
 	$fill = false;
 
 	$this->Cell(80);
-	$this->Image('../libs/fpdf/logo.png',-2);
+	$this->Image('../../libs/fpdf/logo.png',-2);
 	$this->Cell(80);
 	$this->Ln();
 	

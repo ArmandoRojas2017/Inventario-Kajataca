@@ -24,5 +24,11 @@
 
 			$this->sql['get'] = "SELECT id_roles, descripcion, status FROM roles";
 		}
+
+		public function preparar_consulta(){
+
+			$this->sql['get'] = "SELECT id_roles, descripcion FROM roles WHERE status=1";
+
+		}
 	}
  ?>

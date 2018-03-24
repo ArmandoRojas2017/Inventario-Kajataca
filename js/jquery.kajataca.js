@@ -577,6 +577,8 @@ function tablas(){
 		$("#dynatable-query-search-").addClass("form-control")
 	var dynatable = $('#search-example').dynatable().data('dynatable');
 
+	$("#dynatable-query-search-search-example").tooltip({titulo:"Barra de Busqueda" , contenido:"Escribe un texto y presiona la tecla ENTER para iniciar la busqueda" })
+	$("#dynatable-query-search-search-example").css('cursor', 'pointer');
 /*
    $('#armando').change( function() {
 

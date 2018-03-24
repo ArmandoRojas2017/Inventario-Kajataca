@@ -97,6 +97,12 @@
 	}
 
 
+	function value($valor){
+
+		return "value='".$valor."'"; 
+	}
+
+
 
 
  ?>
