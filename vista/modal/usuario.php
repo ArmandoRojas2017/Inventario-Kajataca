@@ -21,7 +21,7 @@
 <?php componentes("".$formulario,compact('inputs')) ?>
 
 <div class="modal-footer">
-  <?php componentes('botoneraModal') ?>
+  <?php componentes('botoneraModal',compact('estado')) ?>
 </div>
 
 </div><!-- /.modal-content -->
@@ -29,6 +29,5 @@
 </div><!-- /.modal -->
 </div>
 
-<script src=js/Usuarios/agregar.js > </script>
 
 

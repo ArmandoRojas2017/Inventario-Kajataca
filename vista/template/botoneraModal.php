@@ -11,7 +11,7 @@
 </button>       
 
 <button id=botonEstado type="button" class="btn btn-danger" data-dismiss="modal"  >
-  <?= $estado="Desactivar" ?> 
+ 	Cambiar de Estado
 </button>
   
 <button id=botonCerrar type="button" class="btn btn-default cerrar" data-dismiss="modal"  >

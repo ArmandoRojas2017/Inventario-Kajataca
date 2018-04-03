@@ -3,7 +3,7 @@
 <form class="form-horizontal">
 
 
-<label for="ci" class="col-sm-offset-5 control-label text-danger" id=error1 >
+<label for="ci" class="col-sm-offset-5 control-label text-danger oculto" id=error1 >
 </label> 
 
 <div class="form-group">
@@ -15,7 +15,7 @@
 
 
 
-<label for="ci" class="col-sm-offset-5 control-label text-danger" id=error2 >
+<label for="ci" class="col-sm-offset-5 control-label text-danger oculto" id=error2 >
 </label> 
 
 
@@ -27,7 +27,7 @@
 </div>
 </div>
 
-<label for="ci" class="col-sm-offset-5 control-label text-danger" id=error3 >
+<label for="ci" class="col-sm-offset-5 control-label text-danger oculto" id=error3 >
 </label> 
 
 <div class="form-group">
@@ -37,7 +37,7 @@
 </div>
 </div>
 
-<label for="ci" class="col-sm-offset-5 control-label text-danger" id=error4 >
+<label for="ci" class="col-sm-offset-5 control-label text-danger oculto" id=error4 >
 </label> 
 
 
@@ -49,11 +49,11 @@
 </div>
 
 
-<label for="ci" class="col-sm-offset-5 control-label text-danger" id=error5 >
+<label for="ci" class="col-sm-offset-5 control-label text-danger oculto" id=error5 >
 </label> 
 
 
-<div class="form-group">
+<div class="form-group oculto">
 <label for="clave" class="col-sm-4 control-label">Contraseña <span id=ver1 class="glyphicon glyphicon-eye-open"></span> </label>
 <div class="col-sm-6">
 <input type="password" class="form-control" id="inputClave" placeholder="Ejemplo: Azhk123ñP" >
@@ -62,27 +62,27 @@
 </div>
 
 
-<label for="ci" class="col-sm-offset-5 control-label text-danger" id=error6 >
+<label for="ci" class="col-sm-offset-5 control-label text-danger oculto" id=error6 >
 </label> 
 
 
-<div class="form-group">
+<div class="form-group oculto">
 <label for="ci" class="col-sm-4 control-label">
 Repita Contraseña  
 <span id=ver2 class="glyphicon glyphicon-eye-open"></span> 
 </label>
 
 <div class="col-sm-6">
-<input type="password" class="form-control" id="inputClave2" placeholder="Ejemplo: Azhk123ñP">
+<input type="password" class="form-control" id="inputClave2" placeholder="Ejemplo: Azhk123ñP ">
 	
 </div>
 </div>
 
-<label for="ci" class="col-sm-offset-5 control-label text-danger" id=error7 >
+<label for="ci" class="col-sm-offset-5 control-label text-danger oculto" id=error7 >
 </label> 
 
 
-<div class="form-group">
+<div class="form-group oculto">
 <label for="ci" class="col-sm-4 control-label">Pregunta Secreta</label>
 <div class="col-sm-6">
 <input type="text" class="form-control" id="inputPregunta" placeholder="Ejemplo: ¿Comida Favorita?">
@@ -91,11 +91,11 @@ Repita Contraseña
 </div>
 
 
-<label for="ci" class="col-sm-offset-5 control-label text-danger" id=error8 >
+<label for="ci" class="col-sm-offset-5 control-label text-danger oculto" id=error8 >
 </label> 
 
 
-<div class="form-group">
+<div class="form-group oculto">
 <label for="ci" class="col-sm-4 control-label">
 Respuesta a la pregunta Secreta
 <span id=ver3 class="glyphicon glyphicon-eye-open"></span>
@@ -107,12 +107,12 @@ Respuesta a la pregunta Secreta
 </div>
 
 
-<label for="ci" class="col-sm-offset-5 control-label text-danger" id=error9 >
+<label for="ci" class="col-sm-offset-5 control-label text-danger oculto" id=error9 >
 </label> 
 
 
 <div class="form-group">
-<label for="ci" class="col-sm-4 control-label">
+<label for="ci" class="col-sm-4 control-label oculto">
 Repita la Respuesta
 <span id=ver4 class="glyphicon glyphicon-eye-open"></span>
 </label>

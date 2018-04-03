@@ -77,6 +77,8 @@ if ( !controller( $rutas->getController() ) ) view('404');
 
 <script src="js/Menu.js" > </script>
 
+<script src="js/validacion_formulario.js" > </script>
+
 <!-- Script para cada Pagina  -->
 
 <?php if( file_exists("js/".$rutas->getJs().".js")  ): ?>

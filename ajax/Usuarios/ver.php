@@ -26,3 +26,5 @@
 	
 	
  ?>
+
+ <script src="js/Usuarios/editar.js" > </script>
