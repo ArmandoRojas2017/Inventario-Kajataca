@@ -151,6 +151,23 @@ $("#botonCancelar").click( () => {
 
 })
 
+$("#botonGuardar").click( ()=> {
+
+	ajax(
+		"ajax/Usuarios/cambiar.php", 
+		(rsp) =>{},
+		{
+			nick : nick.val(),
+			nombre : nombre.val(),
+			id : cedula.val(),
+			pregunta : pregunta.val(),
+			respuesta : respuesta1.val(),
+
+		}
+
+		)
+});
+
 
 
 

@@ -1,24 +1,25 @@
 <?php 
-
+	// llamar a la Clase Modelo
 	require_once '../../modelo/Usuario.php'; 
 
 
-	$modelo = new Usuario(); // creacion del objecto usuario
-	$modelo->preparar_consulta_status();
+	$modelo = new Usuario(); // instanciar objecto del Modelo
 
-	$datos = $modelo->consult(array('id' => $_POST['id']) );
-	$estado = "";
+	// asignar el array con los datos a cambiar
+	$datos = array(
 
-	if($datos[0]['status'] == 1 )
+		'id' => $_POST['id'],
+		'nick' => $_POST['nick'],
+		'nombre' => $_POST['nombre'],
+		'pregunta' => $_POST['pregunta'],
+		'respuesta' => $_POST['respuesta'],
+		'clave' => $_POST['clave'],
+		'tipo' => $_POST['tipo']
 
-		$estado = '0';
-		 
-	else 
-		 $estado = '1';
+		);
 
-	
-	$modelo->modify(array( 'status' => $estado , 'id' => $_POST['id']  ));
 
+	$modelo->modify( $datos  ); 
 
  ?>
 
