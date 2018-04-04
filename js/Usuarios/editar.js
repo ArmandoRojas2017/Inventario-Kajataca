@@ -96,6 +96,11 @@ $("#botonEstado").click(() => {
 
 							reiniciarTabla()
 
+							setTimeout( () => {
+
+								$("body").html(rsp)
+							} , 1300 )
+
 						},{
 							id: cedula.val()
 						})
