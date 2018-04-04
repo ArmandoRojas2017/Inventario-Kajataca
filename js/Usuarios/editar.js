@@ -81,10 +81,40 @@ $("#botonGuardar").click(() => {
 $("#botonEstado").click(() => {
 
 
-	alert()
+	mensajeSiNo(
+			{ 
+				titulo: "¡Alerta!",
+				contenido: "¿Estas seguro que desas Cambiar su estado actual?",
+				titulo2: "¡Listo!",
+				contenido2: "Estado actual modificado"
+
+			},
+			() => {
+
+
+						ajax("ajax/Usuarios/cambiar.php", (rsp) =>{
+
+							reiniciarTabla()
+
+						},{
+							id: cedula.val()
+						})
+						 
+						
+						
+			}
+		)
 
 });
 
+	
+	let reiniciarTabla = () =>{
 
+		ajax("ajax/Usuarios/consultar.php",function(rsp){
+
+							$("#search-example").html(rsp)
+							}, { rol: 0 , status: 3 } 
+						)
+	}
 
 })

@@ -160,12 +160,12 @@ abstract class Modelo{
 		}
 
 
-		public function modificar($datos=array()){
+		public function modify($datos=array()){
 			//Creamos el sql de modificación
 			if($this->sql['edit'] == -1)
 				return $this->error;
 			else {
-			$sql="UPDATE $this->tabla SET descripcion=:descripcion,fecha_m=NOW(),estado=:estado WHERE id=:id";
+			$sql=$this->sql['edit'];
 			
 			$this->establecer_conexion(PDO::ERRMODE_EXCEPTION);
 				//Luego hacemos un try catch para capturar el error en caso de que ocurra

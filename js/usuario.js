@@ -1,4 +1,4 @@
-const verProducto = (val) =>{
+var verProducto = (val) =>{
 
 		url = 'ajax/Usuarios/ver.php'
 		consultaIndividual(val,url)

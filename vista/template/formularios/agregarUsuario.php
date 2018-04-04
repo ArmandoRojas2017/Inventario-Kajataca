@@ -125,8 +125,15 @@ Repita la Respuesta
 
 
 
-
-
-
+ <?php if (($status) == 1): ?>
+            <h6 class="btn btn-success btn-sm" style="display: inline;  ">
+              Activo
+            </h6>
+          <?php else: ?>
+            <h6 class="btn btn-info btn-sm" style="display: inline;  ">
+            Desactivado
+            </h6>
+          <?endif  ?>
+<?= $status  ?>
 
 </form>

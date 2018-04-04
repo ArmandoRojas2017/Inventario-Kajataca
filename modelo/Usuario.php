@@ -30,10 +30,19 @@
 			
 			$this->sql['get'] = "select id_usuarios, nombre, nick, roles.descripcion as tipo, usuarios.status from Usuarios, roles WHERE roles.id_roles = usuarios.id_roles ";
 			
-			$this->sql['consult'] = "select * from Usuarios, roles WHERE roles.id_roles = usuarios.id_roles AND id_usuarios=:id ";
+			$this->sql['consult'] = "select id_usuarios, nombre, nick, descripcion as rol, Usuarios.status as status from Usuarios, roles WHERE roles.id_roles = usuarios.id_roles AND id_usuarios=:id ";
 			
 			$this->sql['insert'] = "INSERT into usuarios (id_usuarios, nick, nombre,clave,pregunta,respuesta, id_roles) values(:id , :nick, :nombre, md5( :clave ) , :pregunta , md5( :respuesta ), :tipo )";
+			
+			
 
+		}
+
+		public function preparar_consulta_status(){
+
+			$this->sql['consult'] = "select * from Usuarios WHERE id_usuarios=:id ";
+
+			$this->sql['edit'] = "UPDATE usuarios set status = :status where id_usuarios = :id";
 		}
 
 
