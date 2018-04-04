@@ -3,15 +3,15 @@
 	la base de datos se llama igual que mi novia <3
 
 	by: Armando Rojas - 2018 
-
+ 
 	1 = TRUE 
 	0 = FALSE 
 
  */
 
-create database Mi_Cerenis_Cabrera;
+create database Cerenis;
 
-use Mi_Cerenis_Cabrera;
+use Cerenis;
 
 create table modulos (
 
@@ -24,6 +24,8 @@ create table modulos (
 	primary key (id_modulos)
 
 );
+
+
 
 create table sub_modulos (
 
@@ -43,6 +45,34 @@ create table sub_modulos (
 			( id_modulos ) references  modulos (id_modulos)
 
 );
+
+/*
+
+ ##############
+	Modulos y sub modulos
+############### 
+
+*/
+insert into modulos (descripcion) values ('usuarios');
+
+
+/*modulo usuarios*/
+insert into sub_modulos ( id_modulos , descripcion) 
+	values ( 1 , 'consultar');
+
+insert into sub_modulos ( id_modulos , descripcion) 
+	values ( 1 , 'imprimir');
+
+
+insert into sub_modulos ( id_modulos , descripcion) 
+	values (1 , 'registrar');
+
+insert into sub_modulos ( id_modulos , descripcion) 
+	values (1 , 'modificar');
+
+insert into sub_modulos ( id_modulos , descripcion) 
+	values (1 , 'desactivar');
+
 
 
 
