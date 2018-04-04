@@ -54,7 +54,7 @@
 			 */
 			$usuario = 0;
 
-			if($this->permisos->consultar(1) == 1 )
+			if($this->permisos->consultar(1) == -1 )
 				$usuario =  array( 'texto' => 'Usuarios' , 'icono' => 'user'  ); 
 
 			

@@ -17,7 +17,8 @@
 		exit("BASE DE DATOS NO ENCONTRADA EN ESTE SERVIDOR: LLAMAR AL 0414-5235969 PARA MAS INFORMACION");
 
 
-	if($_SESSION['autenticado'] == -1) header("location:?url=index&msg=1");
+	if($_SESSION['autenticado'] == -1) 
+		echo "<script> window.location.href='?url=index'  </script>";
 
 	class Permisos extends Modelo{
 
@@ -34,11 +35,12 @@
 
 			$registro = 
 				$this->consult(array(  
-					'id' => $_SESSION['tipo'] , 
+					'id' => $_SESSION['id_roles'] , 
 					'modulo' => $id_sub_modulo 
 					));
-			
-			echo $registro[0];
+
+				
+
 
 
 			if (count($registro) > 0)
