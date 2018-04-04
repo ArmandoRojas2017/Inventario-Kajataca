@@ -22,7 +22,8 @@
 
 /*Estilo para el sistema*/
 
-.pag404 {
+
+.pag404{
 	background: url('../images/imagen.jpg');
 	height: 100%;
 	background-attachment: fixed;
@@ -35,7 +36,20 @@
 	width: 100%;
 }
 
-.pag404 h1{
+.pag505{
+	background: url('../images/cerenis.jpg');
+	height: 100%;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: center top;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	overflow: hidden;
+	width: 100%;
+}
+
+.pag404 h1, .pag505 h1{
 	text-align: center;
 	padding: .3em;
 	width: 80%;
