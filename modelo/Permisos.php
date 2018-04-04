@@ -49,10 +49,16 @@
 				return -1;
 		}
 
+		function validaPantalla($id_sub_modulo){
+				// denegar servicio
+			if($this->consultar($id_sub_modulo) != -1) {
+				view("404");
+				exit();
+			}
+		}
+
 
 	}
 
 
-	$p = new Permisos();
-	echo $p->consultar(1);
  ?>

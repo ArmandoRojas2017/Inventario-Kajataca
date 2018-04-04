@@ -1,6 +1,14 @@
 <?php 
 	require_once 'controlador/Menu.php'; 
+	require_once 'modelo/Permisos.php';
 	require_once 'modelo/Usuario.php'; 
+
+	const MODULO_CONSULTAR_USUARIO = 1;
+
+	$permisos = new Permisos(); 
+
+
+	$permisos->validaPantalla(MODULO_CONSULTAR_USUARIO);
 
 	$opciones = $menu->getOpciones(); // obtener opciones del menus
 	$modelo = new Usuario(); // creacion del objecto usuario
