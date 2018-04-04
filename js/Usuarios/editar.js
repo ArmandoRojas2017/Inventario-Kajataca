@@ -16,19 +16,42 @@ $(document).ready(function() {
 	let respuesta1 = $("#inputRespuesta1")
 	let respuesta2 = $("#inputRespuesta2")
 
+
+	// funcion para controlar los inputs del formulaio
+	
+	let inputs = (estado) =>{
 	// al abrir el modal desactiva los paneles 
-	$("input").disabled(true)
-	$("select").disabled(true)
-	// esconde los inputs de respuesta
-	respuesta1.css('display', 'none');
-	respuesta2.css('display', 'none');
-	clave.css('display', 'none');
-	clave2.css('display', 'none');
-	pregunta.css('display', 'none');
+	$("input").disabled(!estado)
+	$("select").disabled(!estado)
+
+	if(!estado){
+		// esconde los inputs de respuesta
+		respuesta1.addClass('invisible')
+		respuesta2.addClass('invisible')
+		clave.addClass('invisible')
+		clave2.addClass('invisible')
+		pregunta.addClass('invisible')
+		$(".oculto").addClass('invisible')
+
+	}else{
+
+		respuesta1.removeClass('invisible')
+		respuesta2.removeClass('invisible')
+		clave.removeClass('invisible')
+		clave2.removeClass('invisible')
+		pregunta.removeClass('invisible')
+		$(".oculto").removeClass('invisible')
+
+	}
+		
+
 	
 
-	$(".oculto").css('display', 'none');
+	}
 	
+
+
+	inputs(false)
 
 	// cerrar el modal activa los inputs y select
 
@@ -60,23 +83,7 @@ insertar_Hora_NombreDeUsuario("#mi_reloj" , "#nombre_usuario")
 
 
 
-$("#botonGuardar").click(() => {
-
-	ajax("ajax/Usuarios/registrar.php", function(resp){
-		alert(resp)
-	}, { 
-
-		id : cedula.val(),
-		nombre : nombre.val(),
-		nick : nick.val(),
-		clave: clave.val(),
-		pregunta: pregunta.val(),
-		respuesta : respuesta1.val()
-	})
-
-});
-
-
+// Editar estado de un Usuario
 
 $("#botonEstado").click(() => {
 
@@ -112,7 +119,43 @@ $("#botonEstado").click(() => {
 
 });
 
+
+// Modificar un usuario
+$("#botonEditar").click(()=>{
 	
+	$(".cerrar").addClass('invisible')
+	$("#botonEditar").addClass('invisible')
+	$("#botonEstado").addClass('invisible')
+	
+	$("#botonGuardar").removeClass('invisible');
+	$("#botonCancelar").removeClass('invisible');
+
+	inputs(true)
+
+})
+
+
+// boton cancelar 
+
+$("#botonCancelar").click( () => {
+
+
+	$(".cerrar").removeClass('invisible');
+	$("#botonEditar").removeClass('invisible')
+	$("#botonEstado").removeClass('invisible')
+
+	$("#botonGuardar").addClass('invisible')
+	$("#botonCancelar").addClass('invisible')
+
+	inputs(false)
+
+})
+
+
+
+
+
+// Reiniciar tabla 
 	let reiniciarTabla = () =>{
 
 		ajax("ajax/Usuarios/consultar.php",function(rsp){

@@ -1,6 +1,6 @@
 var usuarios_validaciones = function usuarios_validaciones( ){
 
-	var interruptor = 0
+	let interruptor = 0
 
 	
 	// mensajes 
@@ -186,8 +186,11 @@ setInterval( () =>{
 				interruptor = 1
 			}
 
+			alert()
+
 		}
 		else {
+
 			$("#botonGuardar").disabled(true);
 			interruptor = 0
 		}
