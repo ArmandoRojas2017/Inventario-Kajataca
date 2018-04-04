@@ -18,6 +18,7 @@ if(file_exists('../../modelo/Usuario.php'))
 
 
 
+
 	class Acceso extends Usuario
 	{
 		
@@ -44,6 +45,7 @@ if(file_exists('../../modelo/Usuario.php'))
 			 		$_SESSION['id'] = $registro[0]['id_usuarios'];
 			 		$_SESSION['nick'] = $registro[0]['nick'];
 			 		$_SESSION['tipo'] = $registro[0]['descripcion'];
+			 		$_SESSION['id_roles'] = $registro[0]['id_roles'];
 
 			 		$_SESSION['autenticado'] = ENCONTRADO;
 			 	
@@ -62,7 +64,7 @@ if(file_exists('../../modelo/Usuario.php'))
 
 			parent::__construct();
 			//sentencia SQL
-			$sql = "SELECT id_usuarios, nombre, nick, descripcion FROM usuarios, roles  where nick=:nick AND clave= :clave" ;
+			$sql = "SELECT id_usuarios, nombre, nick, descripcion, id_roles FROM usuarios, roles  where nick=:nick AND clave= :clave" ;
 			// modificar el metodo insert 
 			$this->set_sql_array(array( 'consult' => $sql ));
 		}
