@@ -32,7 +32,14 @@
 
 		function consultar( $id_sub_modulo ){
 
-			$registro = $this->consult(array(  'id' => $_SESSION['tipo'] , 'modulo' => $id_sub_modulo ));
+			$registro = 
+				$this->consult(array(  
+					'id' => $_SESSION['tipo'] , 
+					'modulo' => $id_sub_modulo 
+					));
+			
+			echo $registro[0];
+
 
 			if (count($registro) > 0)
 				return 1;
@@ -42,4 +49,8 @@
 
 
 	}
+
+
+	$p = new Permisos();
+	echo $p->consultar(1);
  ?>
