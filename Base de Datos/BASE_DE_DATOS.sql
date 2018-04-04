@@ -107,6 +107,16 @@ create table permisos(
 
 );
 
+/*
+	Rol => administrador , id => 2
+	Permiso => 1..5 Usuarios = acceso denegado
+ */
+insert permisos values(2,1);
+insert permisos values(2,2);
+insert permisos values(2,3);
+insert permisos values(2,4);	
+insert permisos values(2,5);
+
 
 create table usuarios (
 
