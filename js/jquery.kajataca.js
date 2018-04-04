@@ -625,3 +625,26 @@ function mensajesFrontend(url){
 
 
 //---------------------------------
+
+
+
+
+/**
+ * @param String name
+ * @return String
+ */
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+    results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+/*
+a función getParameterByName recibe un parámetro del tipo String (cadena de texto) que va a ser 
+utilizado para evaluar por medio de una expresión regular que busque todo el contenido entre el 
+final de la cadena recibida seguido por un símbolo de igual (=) y el final de la cadena a donde 
+buscar (location.search) o hasta encontrar el símbolo «et» también conocido como «ampersand» (&).
+ Al final dicho texto encontrado decodificado y devuelto. 
+En el remoto caso de no encontrar coincidencias, devolverá una cadena vacía.
+ */

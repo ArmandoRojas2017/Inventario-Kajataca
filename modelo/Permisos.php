@@ -27,22 +27,19 @@
 
 			$this->tabla = "permisos";
 			
-			$this->sql['get'] = "select * from permisos";
+			$this->sql['consult'] = "select * from permisos where  id_roles = :id and id_sub_modulos = :modulo ";
 		}
 
-		function consultar( $permisos){
+		function consultar( $id_sub_modulo ){
 
-			$_SESSION['tipo']
+			$registro = $this->consult(array($_SESSION['tipo'] , $id_sub_modulo ));
+
+			if (count($registro) > 0)
+				return 1;
+			else 
+				return -1;
 		}
 
-
-
-
-
-			
-		
-
-		
 
 	}
  ?>
