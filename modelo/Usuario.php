@@ -26,7 +26,7 @@
 			$this->sql['get'] = "select * from usuarios";
 
 			$this->sql['edit'] = 
-				"UPDATE usuarios set nick=:nick , nombre=:nombre , clave=md5(:clave) , pregunta=:pregunta , respuesta=md5(:respuesta) , tipo=:tipo, fecha_m=now() where id_usuarios=:id_usuarios ";
+				"UPDATE usuarios set nick=:nick , nombre=:nombre , clave=md5(:clave) , pregunta=:pregunta , respuesta=md5(:respuesta) , id_roles=:tipo, fecha_m=now() where id_usuarios= :id ";
 		}
 
 		public function preparar_consulta(){
