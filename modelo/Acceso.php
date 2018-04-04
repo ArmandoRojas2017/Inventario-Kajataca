@@ -64,7 +64,7 @@ if(file_exists('../../modelo/Usuario.php'))
 
 			parent::__construct();
 			//sentencia SQL
-			$sql = "SELECT id_usuarios, nombre, nick, descripcion, id_roles FROM usuarios, roles  where nick=:nick AND clave= :clave" ;
+			$sql = "SELECT id_usuarios, nombre, nick, descripcion, usuarios.id_roles FROM usuarios, roles  where nick=:nick AND clave= :clave" ;
 			// modificar el metodo insert 
 			$this->set_sql_array(array( 'consult' => $sql ));
 		}

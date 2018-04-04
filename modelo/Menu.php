@@ -10,16 +10,19 @@
 		protected $opciones; 
 		protected $permisos; 
 
+
 		// captura el id del usuario 
 		public function __construct($id){
 
-			$this->id = $id; 
+			$this->id = $_SESSION['id'];
+			$this->permisos = new Permisos();
 		}
 
 		// devuelve las opciones del usuario 
 		public function get(){
 
 			return $this->opciones;
+
 		}
 
 		protected function operaciones(){
@@ -46,13 +49,21 @@
 		}
 
 		protected function gestion(){
+			/*
+				1 = sub modulo consultar usuarios
+			 */
+			$usuario = 0;
+
+			if($this->permisos->consultar(1) == 1 )
+				$usuario =  array( 'texto' => 'Usuarios' , 'icono' => 'user'  ); 
+
+			
+
 
 			return  array('titulo' => 'Gestion', 
 					 	 	'icono' => 'paperclip',
 					 		'contenido' => array( 
-					 								"usuario" => array( 'texto' => 'Usuarios' , 
-					 													 'icono' => 'user'  
-					 													) ,
+					 								"usuario" => $usuario ,
 
 													"proveedor" => array( 'texto' => 'Proveedores' , 
 					 													 'icono' => 'folder-close'  

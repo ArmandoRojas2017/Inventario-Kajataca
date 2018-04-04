@@ -32,7 +32,7 @@
 
 		function consultar( $id_sub_modulo ){
 
-			$registro = $this->consult(array($_SESSION['tipo'] , $id_sub_modulo ));
+			$registro = $this->consult(array(  'id' => $_SESSION['tipo'] , 'modulo' => $id_sub_modulo ));
 
 			if (count($registro) > 0)
 				return 1;

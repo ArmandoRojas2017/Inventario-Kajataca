@@ -73,6 +73,9 @@ insert into sub_modulos ( id_modulos , descripcion)
 insert into sub_modulos ( id_modulos , descripcion) 
 	values (1 , 'desactivar');
 
+insert into sub_modulos ( id_modulos , descripcion) 
+	values (1 , 'TODO');
+
 
 
 
@@ -116,6 +119,7 @@ insert permisos values(2,2);
 insert permisos values(2,3);
 insert permisos values(2,4);	
 insert permisos values(2,5);
+insert permisos values(2,6);
 
 
 create table usuarios (
