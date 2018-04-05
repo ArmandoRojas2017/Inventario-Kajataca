@@ -183,6 +183,7 @@ $("#cambiar").click(
 				(rsp) => {
 
 					$("#area").html(rsp)
+					$(".cerrar").animar('bouceIn')
 					$(".cerrar").borrar("#area")
 				},
 			
