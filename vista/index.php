@@ -75,3 +75,5 @@
 
 </section>
 
+<div id=area > </div>
+
