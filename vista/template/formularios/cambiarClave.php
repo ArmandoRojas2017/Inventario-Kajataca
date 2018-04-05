@@ -12,7 +12,7 @@
  </label>
 
 <div class="col-sm-6">
-<input type="text" class="form-control" id="inputNick" placeholder="Ejemplo: 26059573" >
+<input type="text" class="form-control" id="cedula" placeholder="Ejemplo: 26059573" >
 </div>
 </div>
 
@@ -24,18 +24,15 @@
 <div class="form-group campo2">
 
 <label for="inputNick" id=pregunta  class="col-sm-4 control-label">
-  Pregunta 
+  ¿MI NOVIA? 
  </label>
 
 <div class="col-sm-6">
-<input type="password" class="form-control " id="inputRespuesta" placeholder="Ejemplo: Unicornio123" >
+<input type="password" class="form-control " id="inputRespuesta" placeholder="Ejemplo: CERENIS CABRERA" >
 </div>
 </div>
 
 
-
-<label for="ci" class="col-sm-offset-5 control-label text-danger oculto campo3" id=error3 >
-</label> 
 
 
 
@@ -45,12 +42,43 @@
  </label>
 
  <div class="col-sm-6">
-<input type="password" class="form-control " id="inputRespuesta" placeholder="Ejemplo: Unicornio123" >
+<input type="password" class="form-control " id="inputRespuesta" placeholder="Ejemplo: ARMANDO2018" >
 </div>
 
 
 
 </div>
+
+
+<label for="ci" class="col-sm-offset-5 control-label text-danger oculto campo3" id=error3 >
+</label> 
+
+<div class="form-group campo3">
+<label for="inputNick" class="col-sm-4 control-label">
+  Nueva Contraseña
+ </label>
+
+ <div class="col-sm-6">
+<input type="password" class="form-control " id="inputClave" placeholder="Ejemplo: ********" >
+</div>
+
+</div>
+
+
+<label for="ci" class="col-sm-offset-5 control-label text-danger oculto campo3" id=error4 >
+</label> 
+
+<div class="form-group campo3">
+<label for="inputClave2" class="col-sm-4 control-label">
+  Repita Contraseña
+ </label>
+
+ <div class="col-sm-6">
+<input type="password" class="form-control " id="inputClave2" placeholder="Ejemplo: *******" >
+</div>
+
+</div>
+
 
 
 </div>
