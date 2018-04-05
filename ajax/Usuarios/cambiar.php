@@ -18,8 +18,10 @@
 
 		);
 
+	var_dump($datos);
 
-	$modelo->modify( $datos  ); 
+	
+	echo $modelo->modify( $datos  ); 
 
  ?>
 

@@ -7,15 +7,17 @@
 
 $(document).ready(function() {
 	
-	let nombre = $("#inputNombre")
-	let cedula = $("#inputCedula")
-	let nick = $("#inputNick")
-	let clave = $("#inputClave")
-	let clave2 = $("#inputClave2")
-	let pregunta = $("#inputPregunta")
-	let respuesta1 = $("#inputRespuesta1")
-	let respuesta2 = $("#inputRespuesta2")
+	var nombre = $("#inputNombre")
+	var cedula = $("#inputCedula")
+	var nick = $("#inputNick")
+	var clave = $("#inputClave")
+	var clave2 = $("#inputClave2")
+	var pregunta = $("#inputPregunta")
+	var respuesta1 = $("#inputRespuesta1")
+	var respuesta2 = $("#inputRespuesta2")
 
+
+	
 
 	// funcion para controlar los inputs del formulaio
 	
@@ -99,14 +101,14 @@ $("#botonEstado").click(() => {
 			() => {
 
 
-						ajax("ajax/Usuarios/cambiar.php", (rsp) =>{
+						ajax("ajax/Usuarios/editar.php", (rsp) =>{
 
-							reiniciarTabla()
-
+						
+							mensajeOk({titulo : 'Estado Cambiado' , contenido: `El estado del Usuario ${nick.val()} fue cambiado ` });
 							setTimeout( () => {
 
 								$("body").html(rsp)
-							} , 1300 )
+							} , 3000 )
 
 						},{
 							id: cedula.val()
@@ -131,6 +133,7 @@ $("#botonEditar").click(()=>{
 	$("#botonCancelar").removeClass('invisible');
 
 	inputs(true)
+	cedula.disabled(true)
 
 })
 
@@ -153,15 +156,23 @@ $("#botonCancelar").click( () => {
 
 $("#botonGuardar").click( ()=> {
 
+
 	ajax(
 		"ajax/Usuarios/cambiar.php", 
-		(rsp) =>{},
+		(rsp) =>{
+
+			
+			mensajeOk({titulo : 'Usuario Modificado' , contenido: 'El usuario fue modificado exitosamente'});
+			setTimeout( () => {$("#verificar").html(rsp) } , 1000 ) 
+
+		},
 		{
 			nick : nick.val(),
 			nombre : nombre.val(),
 			id : cedula.val(),
 			pregunta : pregunta.val(),
 			respuesta : respuesta1.val(),
+			tipo :  $("#rol").val(),
 
 		}
 

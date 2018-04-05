@@ -186,7 +186,7 @@ setInterval( () =>{
 				interruptor = 1
 			}
 
-			alert()
+			
 
 		}
 		else {

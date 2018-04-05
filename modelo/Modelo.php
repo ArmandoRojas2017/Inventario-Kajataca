@@ -165,7 +165,7 @@ abstract class Modelo{
 			if($this->sql['edit'] == -1)
 				return $this->error;
 			else {
-			echo $sql=$this->sql['edit'];
+			$sql=$this->sql['edit'];
 			
 			$this->establecer_conexion(PDO::ERRMODE_EXCEPTION);
 				//Luego hacemos un try catch para capturar el error en caso de que ocurra

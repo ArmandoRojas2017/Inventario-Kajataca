@@ -87,6 +87,23 @@ swal({
 });
 
 }
+
+
+function mensajeOk( arreglo  ){
+
+	swal({
+	  title: arreglo['titulo'],
+	  text: arreglo['contenido'],
+	  type: 'success',
+	  confirmButtonColor: '#3085d6',
+	  confirmButtonText: 'OK'
+
+	})
+
+}
+
+
+
 //------------------------------------------
 
 /*
