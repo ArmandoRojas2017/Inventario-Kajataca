@@ -1,4 +1,4 @@
-/*
+ /*
 	Plugin del funcionamiento visual del software
 	El cual integra cada vendor de manera practica y limpia 
 
@@ -145,6 +145,11 @@ $(function(){
 
   	});
 }
+
+
+//
+
+const mensajeError = "Error fatal en el Servidor llamar al 0414-5235969"
 
 
 
@@ -508,7 +513,7 @@ const videoDeAyuda = ( id ) => {
 
 		})
 		.fail(function() {
-			modalImagen(errorAlCargarPorAjax())
+			modalImagen(mensajeError)
 		})
 		
 	});
@@ -567,7 +572,7 @@ const ajax = function ajax( archivo, funcionAnonima , variables   ) {
 
 			})
 			.fail(function(request) {
-				modalImagen(errorAlCargarPorAjax())
+				modalImagen(mensajeError)
 		})
 }
 
