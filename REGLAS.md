@@ -1,6 +1,6 @@
-##Validación de Formulario
+# Validación de Formulario
 
-# Nombre:
+## Nombre:
 
 * Longitud minima 3 caracteres
 * Longitud maxima 20 caracteres 
