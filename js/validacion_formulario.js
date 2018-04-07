@@ -3,6 +3,35 @@ var validaciones_generales = function validaciones_generales(){
 
 
  	 $("input").noCopiar() // no copiar y pegar 
+ 	 clickDerecho() // no permite clcik derecho 
+}
+
+
+
+var login_validaciones = function login_validaciones(){
+
+	/* Bloquear Boton de Ingresar */
+
+	$("#ingresar").disabled(true)
+//--------------------------------
+
+
+
+/*----- Validar Campos de Usuario y Clave  -------------*/
+
+  $("input[name=usuario]").mayuscula().longitudMax(12) // texto en mayuscula 
+  $("input[name=clave]").mayuscula().longitudMax(12) // texto en mayuscula 
+  
+  $("input[name=usuario]").validCampo(soloLetras_Numeros()) // solo acepta letras y numeros 
+  
+  $("input[name=clave]").validCampo(soloClaves()) // solo acepta letras y numeros 
+
+  $("input[name=usuario]").longitud($("#ingresar") , {max:12,min:4})
+
+  $("input[name=clave]").longitud($("#ingresar") , {max:12,min:4})
+ //----------------------------------------------------------------------------------------
+
+
 }
 
 
@@ -10,7 +39,7 @@ var usuarios_validaciones = function usuarios_validaciones( ){
 
 	let interruptor = 0
 
-	
+	validaciones_generales()
 	// mensajes 
 	let mensajes = {
 
