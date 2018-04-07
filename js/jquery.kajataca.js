@@ -1,4 +1,4 @@
- /*
+/*
 	Plugin del funcionamiento visual del software
 	El cual integra cada vendor de manera practica y limpia 
 

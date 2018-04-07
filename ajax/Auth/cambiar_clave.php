@@ -21,10 +21,7 @@
 
 		case '2':
 			
-			if(count($datos) > 0)
-				echo "1";
-			else 
-				echo "-1";
+			echo $datos[0]['pregunta']; 
 
 			break;
 		

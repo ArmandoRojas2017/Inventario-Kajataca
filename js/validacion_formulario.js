@@ -1,3 +1,11 @@
+var validaciones_generales = function validaciones_generales(){
+
+
+
+ 	 $("input").noCopiar() // no copiar y pegar 
+}
+
+
 var usuarios_validaciones = function usuarios_validaciones( ){
 
 	let interruptor = 0

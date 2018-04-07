@@ -27,6 +27,8 @@
 							</div>
 						</div>
 
+
+
 						<div class="form-group">
 							<div class="col-md-4 col-md-offset-1 col-sm-offset-2 col-sm-2">
 								<label class="form-control">
@@ -41,6 +43,8 @@
 						</div>
 
 					</form>
+
+					
 				</div>
 				<div class="panel-footer">
 				<div class="row">

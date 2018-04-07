@@ -26,7 +26,6 @@ $(document).ready(function() {
 
 /*----- Validar Campos de Usuario y Clave  -------------*/
 
-  $("input").noCopiar() // no copiar y pegar 
 
   $("input[name=usuario]").mayuscula().longitudMax(12) // texto en mayuscula 
   $("input[name=clave]").mayuscula().longitudMax(12) // texto en mayuscula 
