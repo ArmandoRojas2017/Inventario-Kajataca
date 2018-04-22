@@ -8,6 +8,7 @@
 	{
 		
 		protected $menu;
+		protected $controlador;
 
 		function __construct()
 		{	

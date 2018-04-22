@@ -2,11 +2,6 @@
 //activar sesion
 session_start();
 
-
-
-
-
-
 	class Acceso extends Modelo
 	{
 		
