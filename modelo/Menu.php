@@ -14,7 +14,7 @@
 
 
 		// captura el id del usuario 
-		public function __construct($id){
+		public function __construct(){
 
 			$this->id = $_SESSION['id'];
 			$this->permisos = new Permisos();

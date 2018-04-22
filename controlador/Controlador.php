@@ -17,8 +17,40 @@
 		
 				require $file;
 			
-			}	
+			}
+
+			$this->menu = new Menu(); 	
 		}
+
+
+		// funcion para agregar al compact,
+		// el cual es utilizado para pasar variables a la vista 
+		public function addToCompact($datos=array()){
+		
+		// Opciones del Menu para La Vista 
+			$opciones = $this->menu->getOpciones();
+		
+
+			$x = array('opciones');
+
+			if (count($datos) > 0 ){
+
+				extract($datos);
+
+
+				foreach ($datos as $key => $value) {
+					
+					array_push($x, $key);
+				}
+
+			}   
+				
+
+			return compact($x);
+		}// fin de la funcion
+
+
+
 	}
 
 
