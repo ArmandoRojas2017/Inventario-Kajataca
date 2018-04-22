@@ -1,7 +1,5 @@
 <?php 
-	/*controlador base*/
-	require_once 'config/Rutas.php'; 
-	require_once 'config/Errores.php'; 
+	
 
 	
 	abstract class Controlador 

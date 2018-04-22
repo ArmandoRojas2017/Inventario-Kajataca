@@ -8,8 +8,20 @@
 		protected $lista;	
 		protected $controller;	
 		protected $js;	
+		protected $method;	
 
+		/* load drivers */
 
+		protected function loadDrivers(){
+
+			$array = glob(RUTAS['controller']."*.php");
+			foreach (  $array as $file  ) { 
+		
+				require_once $file;
+			
+			}
+
+		}
 
 		/*Rutas*/
 
@@ -17,8 +29,14 @@
 
 			$this->rutas = array( 
 				
-				'index' => array( 'controller' => 'index' , 'js' => 'index'  ) ,
+				'index' => array( 
+					'controller' => 'index' , 
+					'js' 	 	 => 'index' ,
+					'method' 	 => 'get' 
+				) ,
+
 				'home' => array( 'controller' => 'home' , 'js' => 'home'  ) ,
+
 				'usuario' => array( 'controller' => 'Usuarios/usuario' , 'js' => 'usuario'  ) ,
 				'agregarUsuario' => array( 'controller' => 'Usuarios/agregar' , 'js' => 'Usuarios/agregar'  ),
 				'cerrar' => array( 'controller' => 'cerrar'  ),
@@ -38,9 +56,12 @@
 
 		// verifica si existe
 
-		function __construct($url)
+		function __construct()
 		{	
+
+			$url = $_GET['url'];
 			$this->establecerRutas();
+			$this->loadDrivers();
 
 			$encontrado = null; 
 
@@ -53,6 +74,7 @@
 
 				$this->js = $this->rutas[$url]['js'];
 				$this->controller = $this->rutas[$url]['controller'];
+				$this->method = $this->rutas[$url]['method'];
 
 			}else{
 
@@ -65,11 +87,25 @@
 	
 
 		public function getController(){
-			return $this->controller; 
+			//controller name
+			$controller = $this->controller; 
+			//name of the method
+			$method = $this->method; 
+
+			// create the object 
+			$object = new $controller();
+
+			//call method
+			$object->$method();
 		}
 
 		public function getJs(){
 			return $this->js; 
+		}
+
+		public getClassMethod(){
+
+
 		}
 
 	

@@ -15,12 +15,12 @@ class Acceso extends Controlador
 		$this->controlador = new Acceso();
 	}
 
-	function pedirAcceso($_POST){
+	function pedirAcceso(){
 
 		if( $this->controlador->validarIngreso( $_POST['usuario'] , $_POST['clave']   ) > 0 )
 		return 1; // affirmative answer
 	else 
-		echo -1; // negative answer
+		return -1; // negative answer
 
 
 
