@@ -1,6 +1,7 @@
 <?php 
 	/*controlador base*/
-	require_once 'modelo/Menu.php'; 
+	require_once 'config/Rutas.php'; 
+	require_once 'config/Errores.php'; 
 
 	
 	abstract class Controlador 
@@ -8,9 +9,15 @@
 		
 		protected $menu;
 
-		function __construct($id = 0)
-		{
-			$this->menu = new Menu($id); 
+		function __construct()
+		{	
+
+			$array = glob(RUTAS['model']."*.php");
+			foreach (  $array as $file  ) { 
+		
+				require $file;
+			
+			}	
 		}
 	}
 

@@ -2,23 +2,7 @@
 
 	session_start();
 
-	if(file_exists('../../modelo/Modelo.php')) 
-		require_once ('../../modelo/Modelo.php');
-	elseif (file_exists('../modelo/Modelo.php')) {
-		require_once ('../modelo/Modelo.php');
-	}
-	elseif (file_exists('modelo/Modelo.php')   ) {
-		require_once ('modelo/Modelo.php');
-	}
-	elseif (file_exists('../../../modelo/Modelo.php')   ) {
-		require_once ('../../../modelo/Modelo.php');
-	}
-	else 
-		exit("BASE DE DATOS NO ENCONTRADA EN ESTE SERVIDOR: LLAMAR AL 0414-5235969 PARA MAS INFORMACION");
 
-
-	if($_SESSION['autenticado'] == -1) 
-		echo "<script> window.location.href='?url=index'  </script>";
 
 	class Permisos extends Modelo{
 
@@ -28,7 +12,7 @@
 
 			$this->tabla = "permisos";
 			
-			$this->sql['consult'] = "select * from permisos where  id_roles = :id and id_sub_modulos = :modulo ";
+			$this->sql = "select * from permisos where  id_roles = :id and id_sub_modulos = :modulo ";
 		}
 
 		function consultar( $id_sub_modulo ){

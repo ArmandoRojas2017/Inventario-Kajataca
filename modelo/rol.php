@@ -1,18 +1,6 @@
 <?php 
 
-	if(file_exists('../../modelo/Modelo.php')) 
-		require_once ('../../modelo/Modelo.php');
-	elseif (file_exists('../modelo/Modelo.php')) {
-		require_once ('../modelo/Modelo.php');
-	}
-	elseif (file_exists('modelo/Modelo.php')   ) {
-		require_once ('modelo/Modelo.php');
-	}
-	elseif (file_exists('../../../modelo/Modelo.php')   ) {
-		require_once ('../../../modelo/Modelo.php');
-	}
-	else 
-		exit("BASE DE DATOS NO ENCONTRADA EN ESTE SERVIDOR: LLAMAR AL 0414-5235969 PARA MAS INFORMACION");
+
 
 	class Rol extends Modelo{
 

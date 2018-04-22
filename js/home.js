@@ -17,6 +17,23 @@ Menu(); //invocamos los scripts del menu
 	//--------------------------------
 
 	
+	/*Reproducto de Audio*/
+
+	ajax("ajax/configuracion/Canciones.json",
+
+		function(json){
+
+			let indice = numeroAleatorio()
+
+		 		$("#tituloPista").html(json[indice].titulo)  
+		 		$("#pista").html('<audio  src="'+json[indice].url+'" autoplay controls></audio>')  
+		}
+		,null)
+
+	//-----------------
+
+
+
 
 });
 

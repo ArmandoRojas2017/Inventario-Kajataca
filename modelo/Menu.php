@@ -1,6 +1,6 @@
 <?php 
 	
-	require_once 'modelo/Permisos.php';
+	
 
 	/*Establecer Menu */
 

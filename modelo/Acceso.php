@@ -2,24 +2,12 @@
 //activar sesion
 session_start();
 
-if(file_exists('../../modelo/Usuario.php')) 
-		require_once ('../../modelo/Usuario.php');
-	elseif (file_exists('../modelo/Usuario.php')) {
-		require_once ('../modelo/Usuario.php');
-	}
-	elseif (file_exists('modelo/Usuario.php')   ) {
-		require_once ('modelo/Usuario.php');
-	}
-	elseif (file_exists('../../../modelo/Usuario.php')   ) {
-		require_once ('../../../modelo/Usuario.php');
-	}
-	else 
-		exit("BASE DE DATOS NO ENCONTRADA EN ESTE SERVIDOR: LLAMAR AL 0414-5235969 PARA MAS INFORMACION");
 
 
 
 
-	class Acceso extends Usuario
+
+	class Acceso extends Modelo
 	{
 		
 		// ingreso al sistema 
@@ -62,11 +50,10 @@ if(file_exists('../../modelo/Usuario.php'))
 
 		public function __construct(){
 
-			parent::__construct();
 			//sentencia SQL
-			$sql = "SELECT id_usuarios, nombre, nick, descripcion, usuarios.id_roles FROM usuarios, roles  where nick=:nick AND clave= :clave" ;
-			// modificar el metodo insert 
-			$this->set_sql_array(array( 'consult' => $sql ));
+			$this->sql = "SELECT id_usuarios, nombre, nick, descripcion, usuarios.id_roles FROM usuarios, roles  where nick=:nick AND clave= :clave" ;
+
+			
 		}
 
 		

@@ -1,4 +1,5 @@
 <?php 
+/*
 	class Modulo extends Modelo{
 		//Función que inserta un nuevo módulo
 		public function insertar($datos=array()){
@@ -55,4 +56,5 @@
 			parent::__construct("modulo");
 		}
 	}
+	*/
  ?>

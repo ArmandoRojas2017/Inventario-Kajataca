@@ -34,8 +34,8 @@
 						 </div>
 				 </div>
 
-				 <div class="panel-body text-center" id=pista >
-				 	<audio src="storage/cere.mp3" autoplay controls></audio>
+				 <div class="panel-body text-center" id=pista  >
+				 	
 				 	
 				 </div>
 				

@@ -1,4 +1,4 @@
-<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+
 
 <?php  
 
@@ -7,7 +7,6 @@ require_once 'include/Rutas.php';
 
 ?>
 
-<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 <!DOCTYPE html>
 <html>
 <head>
@@ -64,19 +63,13 @@ if ( !controller( $rutas->getController() ) ) view('404');
 <script src="vendor/bootstrap/js/bootstrap.min.js" > </script>
 <script src="vendor/wow/wow.js" > </script>
 <script src="vendor/table/jquery.dynatable.js" > </script>
-
 <script src="vendor/jquery-flyout-master/jquery.flyout.js" > </script>
-
 <script src="vendor/notify-bootstrap/bootstrap-notify.min.js" > </script>
-
 <script src="vendor/select/bootstrap-select.js" > </script>
 <script src="vendor/sweetAlert2/sweetalert2.js" > </script>
-
 <script src="js/mensajes.js" > </script>
 <script src="js/jquery.kajataca.js" > </script>
-
 <script src="js/Menu.js" > </script>
-
 <script src="js/validacion_formulario.js" > </script>
 
 <!-- Script para cada Pagina  -->

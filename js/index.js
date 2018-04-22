@@ -172,24 +172,7 @@ setInterval( function(){
 
 }   , 100);
 	
-/*Cambiar Clave */
 
-$("#cambiar").click( 
-		() => {
-			
-			ajax(
-				"ajax/Usuarios/cambiar_clave.php",
-				(rsp) => {
-
-					$("#area").html(rsp)
-					$(".cerrar").animar('bouceIn')
-					$(".cerrar").borrar("#area")
-				},
-			
-				)
-			
-		}
-	)
 
 });
 

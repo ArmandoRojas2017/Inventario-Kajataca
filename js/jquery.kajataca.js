@@ -149,13 +149,16 @@ $(function(){
 
 //
 
-const mensajeError = "Error fatal en el Servidor llamar al 0414-5235969"
+var mensajeError = function(){ return "Error fatal en el Servidor llamar al 0414-5235969" }
 
 
 
+var numeroAleatorio = function() {
 
+	return Math.round(Math.random() * 10)
+}
 
-(function($){
+;(function($){
 
 	$.fn.extend({
 
