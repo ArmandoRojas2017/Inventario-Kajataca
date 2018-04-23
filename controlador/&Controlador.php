@@ -10,6 +10,7 @@
 		protected $menu;
 		protected $controlador;
 
+
 		function __construct()
 		{	
 
@@ -51,6 +52,11 @@
 
 		}// fin de la funcion
 
+		public function vista($view, $datos=array()){
+
+			view($view, $this->addToCompact($datos) );
+		}
+
 
 		public function getMethod($method){
 			//controller name
@@ -61,6 +67,18 @@
 
 			//call method
 			return $object->$method();
+		}
+
+		// verificar Acceso
+
+		public function acceso($modulo){
+
+
+			$permisos = new Permisos(); 
+
+			if ($permisos->validaPantalla($modulo) == 1 )
+				view("505");
+
 		}
 
 

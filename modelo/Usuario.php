@@ -2,7 +2,7 @@
 
 class Usuario extends Modelo{
 
-/*
+
 
 		public function __construct(){
 
@@ -14,9 +14,17 @@ class Usuario extends Modelo{
 				"UPDATE usuarios set nick=:nick , nombre=:nombre , clave=md5(:clave) , pregunta=:pregunta , respuesta=md5(:respuesta) , id_roles=:tipo, fecha_m=now() where id_usuarios= :id ";
 		}
 
+		public function get_tabla(){
+			
+			$this->sql = "select id_usuarios, nombre, nick, roles.descripcion as tipo, usuarios.status from Usuarios, roles WHERE roles.id_roles = usuarios.id_roles ";
+
+			return $this->consult();
+
+		}
+
 		public function preparar_consulta(){
 			
-			$this->sql['get'] = "select id_usuarios, nombre, nick, roles.descripcion as tipo, usuarios.status from Usuarios, roles WHERE roles.id_roles = usuarios.id_roles ";
+			
 			
 			$this->sql['consult'] = "select id_usuarios, nombre, nick, descripcion as rol, Usuarios.status as status from Usuarios, roles WHERE roles.id_roles = usuarios.id_roles AND id_usuarios=:id ";
 			
@@ -68,7 +76,7 @@ class Usuario extends Modelo{
 			
 		}
 
-		
-*/
+	
+
 	}
  ?>

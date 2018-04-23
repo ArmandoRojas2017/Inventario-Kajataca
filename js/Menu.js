@@ -13,7 +13,7 @@ let Menu = function(){
 	$("#cerrar").click(function() {
 
 		localStorage.clear()	
-		$("#cerrar").ruta("cerrar")
+		window.location.href = '?url=salir';
 	});
 
 	//-------------------------------------

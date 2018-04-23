@@ -1,16 +1,15 @@
 <?php 
-/*
-	require_once 'controlador/Menu.php'; 
-	require_once 'modelo/Galeria.php';
 
 
+	class Principal extends Controlador
+	{
+		
+		function get()
+		{
+			$galeria = new Galeria();
+			
 
-	$galeria = new Galeria(); 
-
-	$imagenes = $galeria->get();  
-	
-	$opciones = $menu->getOpciones();
-
-	view("home",compact('opciones','imagenes'));
-	 */
+			view("home",$this->addToCompact(array( 'imagenes' => $galeria->get() ) ));
+		}
+	}
  ?>

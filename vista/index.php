@@ -10,6 +10,13 @@
 					</div>
 				</div>
 				<div class="panel-body">
+
+					<div class="col-md-8 col-md-offset-2 ">
+					<img src="images/logo.gif" class="img-responsive img-thubnails">
+				</div>
+
+
+
 					<form method="post" class="form-horizontal">
 						
 						<!-- Usuario  -->
@@ -23,7 +30,16 @@
 							</div>
 
 							<div class="col-sm-6">
-							<input type="text" class="form-control" name="usuario"  >
+							
+							
+							 <div class="input-group">
+	      						
+	      						<input type="text" class="form-control" name="usuario"  >
+	      						<div class="input-group-addon">
+	      							<i class="glyphicon glyphicon-user" ></i>
+	      						</div>
+	    					</div>
+
 							</div>
 						</div>
 

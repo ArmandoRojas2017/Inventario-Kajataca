@@ -35,6 +35,21 @@
 					'js' 	 	 => 'login' ,
 					'method' 	 => 'get' 
 				) ,
+				'home' => array( 
+					'controller' => 'Principal' , 
+					'js' => 'home',
+					'method' 	 => 'get' 
+				),
+				'usuario' => array( 
+					'controller' => 'UsuariosControlador' , 
+					'js' => 'usuario',
+					'method' 	 => 'get' 
+				),
+				'agregarUsuario' => array( 
+					'controller' => 'UsuariosControlador' , 
+					'js' => 'Usuarios/agregar',
+					'method' 	 => 'getAgregar' 
+				),
 				// Verifica usuario y clave por Ajax 
 				'verifica' => array( 
 					'controller' => 'AccesoControlador' , 
@@ -46,14 +61,7 @@
 					'method' 	 => 'salir' 
 				) ,
 
-				'home' => array( 'controller' => 'home' , 'js' => 'home'  ) ,
-
-				'usuario' => array( 'controller' => 'Usuarios/usuario' , 'js' => 'usuario'  ) ,
-				'agregarUsuario' => array( 'controller' => 'Usuarios/agregar' , 'js' => 'Usuarios/agregar'  ),
-				'cerrar' => array( 'controller' => 'cerrar'  ),
-				'404' => array( 'controller' => '404') ,
-				'roles' => array( 'controller' => 'Roles/ver' , 'js' => 'roles'  ) ,
-
+			
 				); 
 
 
