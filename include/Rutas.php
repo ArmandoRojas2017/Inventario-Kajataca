@@ -15,6 +15,7 @@
 		protected function loadDrivers(){
 
 			$array = glob(RUTAS['controller']."*.php");
+			
 			foreach (  $array as $file  ) { 
 		
 				require_once $file;
@@ -29,10 +30,20 @@
 
 			$this->rutas = array( 
 				
-				'index' => array( 
-					'controller' => 'index' , 
-					'js' 	 	 => 'index' ,
+				'login' => array( 
+					'controller' => 'login' , 
+					'js' 	 	 => 'login' ,
 					'method' 	 => 'get' 
+				) ,
+				// Verifica usuario y clave por Ajax 
+				'verifica' => array( 
+					'controller' => 'AccesoControlador' , 
+					'js' => 'no',
+					'method' 	 => 'pedirAcceso' 
+				),
+				'salir' => array( 
+					'controller' => 'AccesoControlador' , 
+					'method' 	 => 'salir' 
 				) ,
 
 				'home' => array( 'controller' => 'home' , 'js' => 'home'  ) ,
@@ -59,7 +70,7 @@
 		function __construct()
 		{	
 
-			$url = $_GET['url'];
+			$url = empty($_GET['url']) ?  'login':$_GET['url'];
 			$this->establecerRutas();
 			$this->loadDrivers();
 
@@ -103,20 +114,13 @@
 			return $this->js; 
 		}
 
-		public getClassMethod(){
-
-
-		}
-
-	
-
 
 		
 	}
 
 	
 
-	
+	$rutas = new Rutas();
 
 
 

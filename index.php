@@ -1,16 +1,17 @@
 
 
 <?php  
+session_start();
+require_once 'config/Config.php';
 
-require_once 'config/Rutas.php'; 
-require_once 'config/Errores.php';  
 require_once 'include/Helpers.php'; 
+
 require_once 'include/Rutas.php';
+
 /*controlador base*/
-
-
 ?>
 
+<?php if ($rutas->getJs() != "no" ): ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -48,20 +49,12 @@ require_once 'include/Rutas.php';
 </head>
 
 <body>
+<?php endif ?>
 
 
+<?php $rutas->getController() ?>
 
-<?php 
-
-$url = empty($_GET['url']) ?  'index':$_GET['url'];
-$rutas = new Rutas($url);
-
-if ( !controller( $rutas->getController() ) ) view('404');
-
-
-
-
-?>
+<?php if ($rutas->getJs() != "no" ): ?>
 	
 <script src="vendor/jquery/crazy.js" > </script>
 <script src="vendor/bootstrap/js/bootstrap.min.js" > </script>
@@ -86,6 +79,13 @@ if ( !controller( $rutas->getController() ) ) view('404');
 
 
 
+<script type="text/javascript"> 
+
+	localStorage.ajax = <?= "'". RUTAS['ajax'] . "'"  ?>
+</script>
+
 </body>
 </html>
+
+<?php endif ?>
 

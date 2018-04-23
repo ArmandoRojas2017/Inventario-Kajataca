@@ -2,6 +2,8 @@
 	
 
 	
+
+
 	abstract class Controlador 
 	{
 		
@@ -46,7 +48,20 @@
 				
 
 			return compact($x);
+
 		}// fin de la funcion
+
+
+		public function getMethod($method){
+			//controller name
+			$controller = $this->controller; 
+
+			// create the object 
+			$object = new $controller();
+
+			//call method
+			return $object->$method();
+		}
 
 
 

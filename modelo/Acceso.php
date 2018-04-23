@@ -1,6 +1,6 @@
 <?php 
-//activar sesion
-session_start();
+
+
 
 	class Acceso extends Modelo
 	{
@@ -50,6 +50,8 @@ session_start();
 
 			
 		}
+
+		
 
 		
 	}

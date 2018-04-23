@@ -58,37 +58,35 @@ $("#ingresar").click(function() {
 	}
 	
 
-
-
 	$.ajax({
-	url: 'ajax/Auth/Autenticar.php',
+	url: localStorage.ajax+'verifica',
 	type: 'POST',
 	data: objecto,
 	
 	})
 	.done(function($request) {
 
-		if($request == 1){
+		if($request.trim() == 1){
 			
 			mensajeNotify({mensaje:'Encontrado' })
 
 			window.location.href = '?url=home'
 
 		}
-		else if($request == -1){
+		else if($request.trim() == -1){
 			mensajeNotify({mensaje:'Usuario o Clave Invalida', tipo:'danger'})
 
 		}
 		else{
 			mensajeNotify({mensaje:'Error en el Server...', tipo:'warning'})
-			modalImagen("LLamar al 0414-5235969 para solucionar el Error.."+$request);
+			modalImagen("LLamar al 0414-5235969 para solucionar el Error.."+$request.trim());
 
 		}
 
 		
 	
 	})
-	.fail(function() {
+	.fail(function(e) {
 		mensajeNotify({mensaje:'Error en la conexion', tipo:'danger'})
 
 	})
