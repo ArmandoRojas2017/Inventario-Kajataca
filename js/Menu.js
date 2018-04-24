@@ -26,7 +26,7 @@ let Menu = function(){
 	/*------------ Obtener Nombre de Usuario --------*/
 		let obtenerUsuario = () => {
 			$.ajax({
-			url: 'ajax/Auth/ObtenerNombreDeUsuario.php',
+			url: localStorage.ajax +'nombreDeUsuario',
 			type: 'POST'
 			})
 			.done(function(resp) {
@@ -64,7 +64,7 @@ let Menu = function(){
 
 		
 	$.ajax({
-		url: 'ajax/Auth/Verificar.php',
+		url: '?url=verificarEstado',
 		type: 'POST',
 		data: {nombre :val }
 	})
@@ -83,6 +83,7 @@ let Menu = function(){
 	.fail((request) =>
 		// muestra mensaje en 
 		modalImagen("Error en el Server")
+
 	)
 
 	}

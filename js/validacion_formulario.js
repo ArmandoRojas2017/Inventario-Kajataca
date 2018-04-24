@@ -31,6 +31,7 @@ var login_validaciones = function login_validaciones(){
   $("input[name=clave]").longitud($("#ingresar") , {max:12,min:4})
  //----------------------------------------------------------------------------------------
 
+	 validaciones_generales()
 
 }
 

@@ -126,7 +126,7 @@ $("#cambiar")
 /*---------Verificar si esta ya ingreso al sistema-------------------*/
 	
 	$.ajax({
-		url: 'ajax/Auth/Verificar.php',
+		url: '?url=verificarEstado',
 		type: 'POST'
 	})
 	.done(function(resp) {
@@ -149,17 +149,8 @@ $("#cambiar")
 
 
 
-/* Efectos al Footer*/
-
-	$("footer").click(function(){
-
-		$("footer").animar("shake")
-
-		window.open('https://platzi.com/@ArmandoRojas2017/')
-
-	})
-
-//-------------------
+footer()
+login_validaciones()
 
 
 setInterval( function(){

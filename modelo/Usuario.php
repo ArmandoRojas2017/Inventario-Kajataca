@@ -3,6 +3,20 @@
 class Usuario extends Modelo{
 
 
+		public function get_tabla(){
+			
+			$this->sql = "select id_usuarios, nombre, nick, roles.descripcion as tipo, usuarios.status from Usuarios, roles WHERE roles.id_roles = usuarios.id_roles ";
+
+			return $this->consult();
+
+		}
+
+		public function add($datos){
+
+			$this->sql = "INSERT into usuarios (id_usuarios, nick, nombre,clave,pregunta,respuesta, id_roles) values(:id , :nick, :nombre, md5( :clave ) , :pregunta , md5( :respuesta ), :tipo )";
+
+			return $this->consult($datos); 
+		}
 
 		public function __construct(){
 
@@ -14,25 +28,10 @@ class Usuario extends Modelo{
 				"UPDATE usuarios set nick=:nick , nombre=:nombre , clave=md5(:clave) , pregunta=:pregunta , respuesta=md5(:respuesta) , id_roles=:tipo, fecha_m=now() where id_usuarios= :id ";
 		}
 
-		public function get_tabla(){
-			
-			$this->sql = "select id_usuarios, nombre, nick, roles.descripcion as tipo, usuarios.status from Usuarios, roles WHERE roles.id_roles = usuarios.id_roles ";
 
-			return $this->consult();
 
-		}
 
-		public function preparar_consulta(){
-			
-			
-			
-			$this->sql['consult'] = "select id_usuarios, nombre, nick, descripcion as rol, Usuarios.status as status from Usuarios, roles WHERE roles.id_roles = usuarios.id_roles AND id_usuarios=:id ";
-			
-			$this->sql['insert'] = "INSERT into usuarios (id_usuarios, nick, nombre,clave,pregunta,respuesta, id_roles) values(:id , :nick, :nombre, md5( :clave ) , :pregunta , md5( :respuesta ), :tipo )";
-			
-			
-
-		}
+	
 
 		public function preparar_consulta_status(){
 
@@ -51,24 +50,24 @@ class Usuario extends Modelo{
 
 				if( ($post['rol'] == 0)  and  ($post['status'] == 3) ){
 
-					$this->sql['get'] = $sql;
+					$this->sql = $sql;
 					return false;
 				}
 
 				elseif ( ($post['rol'] != 0)  and  ($post['status'] == 3)  ){
 
-					$this->sql['consult'] = $sql." AND Usuarios.id_roles = :rol ";
+					$this->sql = $sql." AND Usuarios.id_roles = :rol ";
 					return array( 'rol' => $post['rol'] );
 				}
 				
 				elseif ( ($post['rol'] == 0)  and  ($post['status'] != 3)  ){
 
-					$this->sql['consult'] = $sql." and Usuarios.status = :status ";
+					$this->sql = $sql." and Usuarios.status = :status ";
 					return array('status' => $post['status'] );
 				}
 				else{
 
-					$this->sql['consult'] =  $sql."AND Usuarios.status = :status AND  Usuarios.id_roles = :rol ";
+					$this->sql =  $sql."AND Usuarios.status = :status AND  Usuarios.id_roles = :rol ";
 					return array('status' => $post['status'] , 'rol' => $post['rol'] );
 				}
 

@@ -102,6 +102,24 @@ function mensajeOk( arreglo  ){
 
 }
 
+/*Pie de Pagina*/
+function footer(){
+	/* Efectos al Footer*/
+
+	$("footer").click(function(){
+
+		$("footer").animar("shake")
+		
+		setTimeout( 
+			() =>{window.open('https://mrrojas.github.io/Portafolio/')}  , 
+			1000 
+			)
+
+	})
+
+}
+
+//-------------------
 
 
 //------------------------------------------

@@ -6,15 +6,22 @@
 			<div class="panel  panel-info sombra_roja ">
 				<div class="panel-footer">
 					<div class="panel-title text-center text">
+						<h3>
 					 Iniciar Sessión <i class="glyphicon glyphicon-user"> </i>  
+					</h3>
 					</div>
 				</div>
 				<div class="panel-body">
 
-					<div class="col-md-8 col-md-offset-2 ">
-					<img src="images/logo.gif" class="img-responsive img-thubnails">
-				</div>
 
+
+					<div class="col-md-8 col-md-offset-2 ">
+					<img src="images/logo.gif" class="img-responsive img-thumbnail">
+					</div>
+					
+					<div class="col-md-8 col-md-offset-2 ">
+						<div class="separacion"></div>
+					</div>
 
 
 					<form method="post" class="form-horizontal">
@@ -22,6 +29,7 @@
 						<!-- Usuario  -->
 
 						<div class="form-group">
+
 							<div class="col-md-4 col-md-offset-1  col-sm-2 col-sm-offset-2">
 								<label class="form-control" id=labelUsuario >
 								Usuario:
@@ -54,7 +62,17 @@
 							</div>
 
 							<div class="col-sm-6">
+						<div class="input-group">
+
 							<input type="password" class="form-control" name="clave" >
+
+							<div class="input-group-addon">
+	      							
+
+	      							<i class="glyphicon glyphicon-lock" ></i>
+	      						</div>
+	    				</div>
+
 							</div>
 						</div>
 
@@ -65,7 +83,7 @@
 				<div class="panel-footer">
 				<div class="row">
 					<div class="col-sm-offset-1 col-sm-4">
-							<button class="btn btn-block btn-success" id=ingresar > Ingresar </button>
+							<button class="btn btn-block btn-primary" id=ingresar > Ingresar </button>
 					</div>
 					<div class="col-sm-6">
 							<button class="btn btn-block btn-danger" id=cambiar > Cambiar Contraseña</button>

@@ -32,9 +32,26 @@ class AccesoControlador extends Controlador
 		$_SESSION['nick'] = -1; 
 		header('location:?url=login');
 	}
+
+
+	function obtenerUsuario(){
+
+		$resultado = -1; 
+
+		if($_SESSION['nombre'])
+			 $resultado = $_SESSION['nombre']; 
+
+		echo $resultado; 
+	}
+
+	function verificar_estado(){
+
+		if (  $_SESSION['autenticado'] == 1  )echo VERIFICADO;
+		else echo NO_VERIFICADO; 
+	}
 }
 
-
+  
 
 
 

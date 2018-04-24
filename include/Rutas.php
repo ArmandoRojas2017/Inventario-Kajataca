@@ -60,6 +60,21 @@
 					'controller' => 'AccesoControlador' , 
 					'method' 	 => 'salir' 
 				) ,
+				'usuarioNuevo' => array( 
+					'controller' => 'UsuariosControlador' , 
+					'js' => 'no',
+					'method' 	 => 'addUsuario' 
+				),
+				'nombreDeUsuario' => array( 
+					'controller' => 'AccesoControlador' , 
+					'js' => 'no',
+					'method' 	 => 'obtenerUsuario' 
+				),
+				'verificarEstado' => array( 
+					'controller' => 'AccesoControlador' , 
+					'js' => 'no',
+					'method' 	 => 'verificar_estado' 
+				),
 
 			
 				); 

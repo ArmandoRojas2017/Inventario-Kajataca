@@ -32,5 +32,9 @@
 	 const NO_ENCONTRADO = -1; 
 
 
+	const NO_VERIFICADO = "<script>window.location.href = '?url=salir'</script>'"; 
+	const VERIFICADO = 1; 
+
+
 
  ?>

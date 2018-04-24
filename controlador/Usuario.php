@@ -11,7 +11,7 @@
 			$this->acceso(MODULOS['consultar_usuario']);
 
 			$modelo = new Usuario();
-			$modelo->preparar_consulta();
+		
 
 			$encabezado = array(
 
@@ -53,6 +53,27 @@
 
 				);
 			$this->vista("agregarUsuario",$datos);
+
+		}
+
+		// ajax
+
+		public function addUsuario(){
+
+			$modelo = new Usuario(); // instanciar el objecto
+			$this->acceso(MODULOS['agregar_usuario']);
+
+
+			$datos = array( 
+				"id"        => $_POST['id'] ,  
+				"nick"      => $_POST['nick']  , 
+				"nombre"    => $_POST['nombre']  , 
+				"pregunta"  => $_POST['pregunta'] , 
+				"respuesta" => $_POST['respuesta'] , 
+				"clave"     => $_POST['clave'] , 
+				"tipo"      => 1 );
+
+			return $modelo->add($datos);
 
 		}
 		

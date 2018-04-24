@@ -32,7 +32,7 @@ let respuesta2 = $("#inputRespuesta2")
 
 $("#botonGuardar").click(() => {
 
-	ajax("ajax/Usuarios/registrar.php", function(resp){
+	ajax( localStorage.ajax+'usuarioNueveo' , function(resp){
 		alert(resp)
 	}, { 
 
