@@ -9,7 +9,8 @@
 		
 		protected $menu;
 		protected $modelo;
-		protected $logs; 
+		protected $logs;
+		protected $reportes; 
 
 
 		function __construct($modelo=null)
@@ -25,6 +26,8 @@
 
 			$this->menu = new Menu(); 
 			$this->logs = new Logs(); 
+			$this->reportes = new ReportesFPDF();
+
 
 			if($modelo != null)
 				$this->modelo = new $modelo(); 
@@ -103,6 +106,17 @@
 
 			if ($permisos->validaPantalla($modulo) == 1 )
 				view("505");
+
+		}
+
+
+		public function getReporte($titulo , $data ){
+
+			$this->reportes->SetFont('Arial','',14);
+			$this->reportes->AddPage();
+			$this->reportes->Estado($data,$titulo);
+			$this->reportes->Output();
+
 
 		}
 

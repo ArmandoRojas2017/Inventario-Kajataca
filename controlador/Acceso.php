@@ -29,7 +29,9 @@ class AccesoControlador extends Controlador
 	}
 
 	function salir(){
-
+		
+		$this->addLog(EVENTOS['ingresar_sistema']);
+		
 		$_SESSION['id'] = -1; 
 		$_SESSION['autenticado'] = -1; 
 		$_SESSION['nombre'] = -1; 

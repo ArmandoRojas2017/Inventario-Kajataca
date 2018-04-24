@@ -9,16 +9,8 @@
 
  */
 
-$ruta= "libs/fpdf/fpdf.php";
+require("libs/fpdf/fpdf.php");
 
-if(file_exists($ruta)) 
-		require($ruta);
-elseif(file_exists("../".$ruta)) 
-		require("../".$ruta);
-elseif(file_exists("../../".$ruta)) 
-		require("../../".$ruta);
-else 
-	exit("BASE DE DATOS NO ENCONTRADA EN ESTE SERVIDOR: LLAMAR AL 0414-5235969 PARA MAS INFORMACION");
 
 class ReportesFPDF extends FPDF
 {
