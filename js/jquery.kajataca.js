@@ -106,12 +106,14 @@ function mensajeOk( arreglo  ){
 function footer(){
 	/* Efectos al Footer*/
 
+	
+
 	$("footer").click(function(){
 
 		$("footer").animar("shake")
 		
 		setTimeout( 
-			() =>{window.open('https://mrrojas.github.io/Portafolio/')}  , 
+			() =>{window.location.href = 'https://mrrojas.github.io/Portafolio/' }  , 
 			1000 
 			)
 
@@ -669,7 +671,12 @@ function mensajesFrontend(url){
 
 //---------------------------------
 
+// mensaje para el logs
 
+var logs = function(eventos){
+
+	ajax('?url=logs', function(resp){},{evento: eventos});
+}
 
 
 /**

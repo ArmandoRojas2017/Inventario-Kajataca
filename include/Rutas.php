@@ -29,22 +29,26 @@
 		protected function establecerRutas(){
 
 			$this->rutas = array( 
-				
+			
+				// pantalla de acceso
 				'login' => array( 
 					'controller' => 'login' , 
 					'js' 	 	 => 'login' ,
 					'method' 	 => 'get' 
 				) ,
+				// pantalla de inicio
 				'home' => array( 
 					'controller' => 'Principal' , 
 					'js' => 'home',
 					'method' 	 => 'get' 
 				),
+				// pantalla de consulta general de usuarios
 				'usuario' => array( 
 					'controller' => 'UsuariosControlador' , 
 					'js' => 'usuario',
 					'method' 	 => 'get' 
 				),
+				// formulario de usuarios
 				'agregarUsuario' => array( 
 					'controller' => 'UsuariosControlador' , 
 					'js' => 'Usuarios/agregar',
@@ -56,20 +60,24 @@
 					'js' => 'no',
 					'method' 	 => 'pedirAcceso' 
 				),
+				// salir del sistema por ajax
 				'salir' => array( 
 					'controller' => 'AccesoControlador' , 
 					'method' 	 => 'salir' 
 				) ,
+				// agregar un nuevo usuario por ajax
 				'usuarioNuevo' => array( 
 					'controller' => 'UsuariosControlador' , 
 					'js' => 'no',
 					'method' 	 => 'addUsuario' 
 				),
+				// obtener nombre de usuario por ajax
 				'nombreDeUsuario' => array( 
 					'controller' => 'AccesoControlador' , 
 					'js' => 'no',
 					'method' 	 => 'obtenerUsuario' 
 				),
+				// verificar usuario por Ajax 
 				'verificarEstado' => array( 
 					'controller' => 'AccesoControlador' , 
 					'js' => 'no',

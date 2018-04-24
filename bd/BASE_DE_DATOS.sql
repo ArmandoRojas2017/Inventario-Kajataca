@@ -115,6 +115,33 @@ create table eventos (
 		
 ); 
 
+create table logs (
+
+	fecha datetime default now(),
+	id_eventos int unsigned, 
+	id_usuarios int unsigned, 
+	descripcion varchar(100),	
+	constraint pk3 foreign key ( id_eventos ) references  eventos (id_eventos),
+	constraint pk4 foreign key ( id_usuarios ) references  usuarios (id_usuarios)
+);
+
+/* Eventos*/
+
+
+insert into eventos (descripcion)  values ('Ingresó al Sistema'); 
+insert into eventos (descripcion)  values ('Salio exitosamente del Sistema'); 
+insert into eventos (descripcion)  values ('Ingreso a '); 
+insert into eventos (descripcion)  values ('Genero un nuevo  '); 
+insert into eventos (descripcion)  values ('Genero una nuevo  '); 
+insert into eventos (descripcion)  values ('Modificando un '); 
+insert into eventos (descripcion)  values ('Modificando una '); 
+insert into eventos (descripcion)  values ('Desactivando un '); 
+insert into eventos (descripcion)  values ('Desactivando una '); 
+insert into eventos (descripcion)  values ('Abastecio ');
+insert into eventos (descripcion)  values ('Despacho ');
+
+
+
 
 /*Volcando datos para eventos*/
 
@@ -133,21 +160,7 @@ insert configuracion (descripcion, fecha) values ( '137627911d58602826fd657b3cac
 
 insert configuracion (descripcion, fecha) values ( '137627911d58602826fd657b3caccb1e' , 20180311003744 );
 
-create table logs (
 
-	fecha datetime default now(),
-
-
-	id_eventos int unsigned, 
-	id_usuarios int unsigned, 
-
-	descripcion varchar(100) not null unique,
-	
-	
-	constraint pk3 foreign key ( id_eventos ) references  eventos (id_eventos),
-	
-	constraint pk4 foreign key ( id_usuarios ) references  usuarios (id_usuarios)
-); 
 
 
 create table categorias (
@@ -312,20 +325,7 @@ insert into usuarios (id_usuarios, nick , nombre,clave,pregunta,	respuesta, id_r
 
 
 
-/* Eventos*/
 
-
-insert into eventos (descripcion)  values ('Ingresó al Sistema'); 
-insert into eventos (descripcion)  values ('Salio exitosamente del Sistema'); 
-insert into eventos (descripcion)  values ('Ingreso a '); 
-insert into eventos (descripcion)  values ('Genero un nuevo  '); 
-insert into eventos (descripcion)  values ('Genero una nuevo  '); 
-insert into eventos (descripcion)  values ('Modificando un '); 
-insert into eventos (descripcion)  values ('Modificando una '); 
-insert into eventos (descripcion)  values ('Desactivando un '); 
-insert into eventos (descripcion)  values ('Desactivando una '); 
-insert into eventos (descripcion)  values ('Abastecio ');
-insert into eventos (descripcion)  values ('Despacho ');
 
 
 /*Categoria*/

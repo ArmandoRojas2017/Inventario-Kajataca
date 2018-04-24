@@ -16,7 +16,11 @@ class AccesoControlador extends Controlador
 		$this->controlador = new Acceso();
 
 		if( $this->controlador->validarIngreso( $_POST['usuario'] , $_POST['clave']   ) > 0 )
-		echo 1; // affirmative answer
+		{
+		   $this->addLog(EVENTOS['ingresar_sistema']);
+			echo OK;
+		
+		} // affirmative answer
 		else 
 		echo  -1; // negative answer
 

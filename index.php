@@ -55,7 +55,7 @@ require_once 'include/Rutas.php';
 <?php $rutas->getController() ?>
 
 <?php if ($rutas->getJs() != "no" ): ?>
-	
+<footer> Armando Rojas 2018   </footer>
 <script src="vendor/jquery/crazy.js" > </script>
 <script src="vendor/bootstrap/js/bootstrap.min.js" > </script>
 <script src="vendor/wow/wow.js" > </script>

@@ -108,7 +108,7 @@
 
 	
 
-	<footer> Armando Rojas 2018   </footer>
+
 
 <div id=area > </div>
 </section>

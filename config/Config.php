@@ -1,4 +1,13 @@
 <?php 
+/*
+	
+$_SESSION['nombre'] = $registro[0]['nombre'];
+$_SESSION['id'] = $registro[0]['id_usuarios'];
+$_SESSION['nick'] = $registro[0]['nick'];
+$_SESSION['tipo'] = $registro[0]['descripcion'];
+$_SESSION['id_roles'] = $registro[0]['id_roles'];
+$_SESSION['autenticado'] = ENCONTRADO;
+*/
 
 	const RUTAS =  array(
 		'direccion' => 'localhost/inventario/',
@@ -21,6 +30,12 @@
 
 	);
 
+	const EVENTOS = array(
+
+		'ingresar_sistema' => 1, 
+		'salir_sistema' => 2, 
+	);
+
 
 
 	 const USER = "root";
@@ -30,6 +45,9 @@
 
 	 const ENCONTRADO = 1;
 	 const NO_ENCONTRADO = -1; 
+
+	 const ERROR = -1;
+	 const OK = 1; 
 
 
 	const NO_VERIFICADO = "<script>window.location.href = '?url=salir'</script>'"; 

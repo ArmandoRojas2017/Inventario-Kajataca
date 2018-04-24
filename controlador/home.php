@@ -6,9 +6,10 @@
 		
 		function get()
 		{
-			$galeria = new Galeria();
 			
-
+			
+			$galeria = new Galeria();
+		
 			view("home",$this->addToCompact(array( 'imagenes' => $galeria->get() ) ));
 		}
 	}

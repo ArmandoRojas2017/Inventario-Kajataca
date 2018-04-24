@@ -8,20 +8,39 @@
 	{
 		
 		protected $menu;
-		protected $controlador;
+		protected $modelo;
+		protected $logs; 
 
 
-		function __construct()
+		function __construct($modelo=null)
 		{	
 
 			$array = glob(RUTAS['model']."*.php");
+			
 			foreach (  $array as $file  ) { 
 		
 				require $file;
 			
 			}
 
-			$this->menu = new Menu(); 	
+			$this->menu = new Menu(); 
+			$this->logs = new Logs(); 
+
+			if($modelo != null)
+				$this->modelo = new $modelo(); 
+
+		}
+		// agregar registros del sistema 
+		public function addLog($evento , $descrip = "" ){
+
+			$datos = array( 
+				"id"        => $_SESSION['id'] ,  
+				"evento"    => $evento ,
+				"descrip"   => $descrip
+ 				);
+
+			$this->logs->add($datos);
+			
 		}
 
 
@@ -66,6 +85,12 @@
 			$object = new $controller();
 
 			//call method
+
+
+
+
+
+
 			return $object->$method();
 		}
 

@@ -53,6 +53,6 @@
 	</div>
 </div>
 
-<footer> Armando Rojas 2018   </footer>
+
 
 

@@ -12,6 +12,8 @@
 
 		function get(){
 
+			
+			
 			view('index'); 
 			
 		}
