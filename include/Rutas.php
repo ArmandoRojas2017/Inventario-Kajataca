@@ -42,12 +42,32 @@
 					'js' => 'home',
 					'method' 	 => 'get' 
 				),
+				// pantalla de inicio
+				'selectRol' => array( 
+					'controller' => 'RolControlador' , 
+					'js' => 'no',
+					'method' 	 => 'getSelect' 
+				),
 				// pantalla de consulta general de usuarios
 				'usuario' => array( 
 					'controller' => 'UsuariosControlador' , 
 					'js' => 'usuario',
 					'method' 	 => 'get' 
 				),
+				// pantalla de consulta general de usuarios
+				'imprimirUsuario' => array( 
+					'controller' => 'UsuariosControlador' , 
+					'js' => 'no',
+					'method' 	 => 'imprimir' 
+				),
+					'filtrarUsuario' => array( 
+					'controller' => 'UsuariosControlador' , 
+					'js' => 'no',
+					'method' 	 => 'filtrar' 
+				),
+
+
+
 				// formulario de usuarios
 				'agregarUsuario' => array( 
 					'controller' => 'UsuariosControlador' , 
@@ -83,6 +103,13 @@
 					'js' => 'no',
 					'method' 	 => 'verificar_estado' 
 				),
+
+				'Error404' => array(
+
+					'controller' => 'Error404',
+					'js' => 'no',
+					'method' => 'get'
+				)
 
 			
 				); 
@@ -120,8 +147,9 @@
 
 			}else{
 
-				$this->js = "";
-				$this->controller = "404";
+				$this->js = " ";
+				$this->controller = "Error404";
+				$this->method = "get";
 			}
 					
 		}

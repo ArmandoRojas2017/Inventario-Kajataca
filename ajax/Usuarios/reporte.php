@@ -29,9 +29,7 @@ $encabezado = array("Id","Nombre y Apellido","Nick","Estado");
 $pdf->AliasNbPages();
 $pdf->AddPage();
 $pdf->SetFont('Times','',12);
-$pdf->dimension(array("31","62","52","40"));
 $pdf->FancyTable($encabezado, $datos);
-
 $pdf->Output();
 
 

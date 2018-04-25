@@ -22,7 +22,7 @@ class ReportesFPDF extends FPDF
 function Header()
 {
 	// Logo
-	$this->Image('../../images/logo.jpeg',10,6,185);
+	$this->Image('images/logo.jpeg',10,6,185);
 	// Arial bold 15
 	$this->SetFont('Arial','B',15);
 	// Move to the right
@@ -67,6 +67,7 @@ function FancyTable($header, $data)
     $this->SetFont('');
     // Data
     $fill = false;
+   
     foreach($data as $row)
     {	
     	 for( $i = 0; $i<count($row); $i++)
@@ -75,6 +76,8 @@ function FancyTable($header, $data)
         $this->Ln();
         $fill = !$fill;
     }
+
+
     // Closing line
     $this->Cell(array_sum($w),0,'','T');
 }

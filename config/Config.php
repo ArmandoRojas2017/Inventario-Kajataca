@@ -34,6 +34,7 @@ $_SESSION['autenticado'] = ENCONTRADO;
 
 		'ingresar_sistema' => 1, 
 		'salir_sistema' => 2, 
+		'intento_ingresar' => 3, 
 	);
 
 

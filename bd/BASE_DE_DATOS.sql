@@ -130,6 +130,7 @@ create table logs (
 
 insert into eventos (descripcion)  values ('Ingresó al Sistema'); 
 insert into eventos (descripcion)  values ('Salio exitosamente del Sistema'); 
+insert into eventos (descripcion)  values ('Intento ingresar a una pagina'); 
 insert into eventos (descripcion)  values ('Ingreso a '); 
 insert into eventos (descripcion)  values ('Genero un nuevo  '); 
 insert into eventos (descripcion)  values ('Genero una nuevo  '); 

@@ -109,12 +109,15 @@
 
 		}
 
-
-		public function getReporte($titulo , $data ){
-
-			$this->reportes->SetFont('Arial','',14);
+		// generar reportes 
+		public function getReporte($titulo , $data , $dimension ){
+			
+			$this->reportes->dimension($dimension);
+			$this->reportes->AliasNbPages();
 			$this->reportes->AddPage();
-			$this->reportes->Estado($data,$titulo);
+			$this->reportes->SetFont('Times','',12);
+			$this->reportes->dimension(array("31","62","52","40"));
+			$this->reportes->FancyTable($titulo, $data );
 			$this->reportes->Output();
 
 

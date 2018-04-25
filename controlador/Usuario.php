@@ -3,14 +3,21 @@
 	class UsuariosControlador extends Controlador
 	{
 		
-	
+		public function __construct(){
+
+			parent::__construct(Usuario::class);
+			
+
+		}
+
 		public function get(){
 
 		
+
 			// validar el acceso
 			$this->acceso(MODULOS['consultar_usuario']);
 
-			$modelo = new Usuario();
+			$modelo = $this->modelo;
 		
 
 			$encabezado = array(
@@ -43,7 +50,8 @@
 		public function getAgregar(){
 
 
-			$modelo = new Usuario(); // creacion del objecto usuario
+			$modelo = $this->modelo;
+		
 			// validar el acceso
 			$this->acceso(MODULOS['agregar_usuario']);
 
@@ -63,7 +71,8 @@
 
 		public function addUsuario(){
 
-			$modelo = new Usuario(); // instanciar el objecto
+			$modelo = $this->modelo;
+		
 			$this->acceso(MODULOS['agregar_usuario']);
 
 
@@ -78,6 +87,46 @@
 
 			return $modelo->add($datos);
 
+		}
+
+
+		public function imprimir(){
+
+			
+			$encabezado = array("Id","Nombre y Apellido","Nick","Estado");
+
+
+		
+			$arreglo = $this->modelo->get_tabla_filtrado($_GET['rol'] , $_GET['status']);
+			$datos = [];
+
+			for ($i=0; $i < count($arreglo); $i++) { 
+				
+				$datos[$i][0] = $arreglo[$i]['id_usuarios'];
+				$datos[$i][1] = $arreglo[$i]['nombre'];
+				$datos[$i][2] = $arreglo[$i]['nick'];
+				$datos[$i][3] = ($arreglo[$i]['status'] == 1) ? "ACTIVO" : "DESACTIVADO";
+			}
+			$dimension = array("31","62","52","40");
+			
+			$this->getReporte($encabezado ,$datos , $dimension ); 
+		}
+
+
+		public function filtrar(){
+
+			$contenido = $this->modelo->get_tabla_filtrado($_POST['rol'] , $_POST['status']);
+
+			$encabezado = array(
+
+			array('texto' => 'Id' , 'filtro' => 'id' ),
+			array('texto' => 'Nombre y Apellido' , 'filtro' => 'nombre' ),
+			array('texto' => 'Nick' , 'filtro' => 'nick' ),
+			array('texto' => 'Tipo' , 'filtro' => 'Rol' )
+			
+			);
+
+			componentes("tabla",compact('contenido','encabezado'));
 		}
 		
 	}

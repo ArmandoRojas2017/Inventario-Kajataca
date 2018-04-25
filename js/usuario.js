@@ -19,7 +19,7 @@ $(document).ready(function() {
 
 
 	// asignar roles al select 
-	ajax("ajax/Roles/select.php",function(resp){
+	ajax(localStorage.ajax+'selectRol',function(resp){
 
 		$("#rol").append(resp)
 	},null)
@@ -33,7 +33,7 @@ $(document).ready(function() {
 
 	let filtrado = () =>{
 
-		ajax("ajax/Usuarios/consultar.php",function(rsp){
+		ajax(localStorage.ajax+'filtrarUsuario',function(rsp){
 
 			$("#search-example").html(rsp)
 		}, { rol: $("#rol").val() , status: $("#status").val() } )
@@ -46,9 +46,8 @@ $(document).ready(function() {
 
 	$("#botonImprimir").click(()=> {
 		
-		let buscador = "&search="+$("#dynatable-query-search-search-example").val().toString();
-		let variables = "status="+$("#status").val().toString()+"&rol="+$("#rol").val().toString()
-		window.open("ajax/Usuarios/reporte.php"+"?"+variables)
+		let variables = "&status="+$("#status").val().toString()+"&rol="+$("#rol").val().toString()
+		window.open( "?url=imprimirUsuario"+variables )
 	});
 
 

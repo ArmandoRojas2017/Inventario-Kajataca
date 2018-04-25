@@ -67,7 +67,7 @@ var usuarios_validaciones = function usuarios_validaciones( ){
 
 
 	// asignar roles al select 
-	ajax("ajax/Roles/select.php",function(resp){
+	ajax("?url=selectRol",function(resp){
 
 		$("#rol").html(resp)
 	},null)

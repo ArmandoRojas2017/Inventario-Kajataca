@@ -5,6 +5,6 @@
 
 <div class="col-sm-2">
 <select name="status" id="rol" class="form-control">
-		<option value="">TODOS</option>
+		<option value="-3">TODOS</option>
 </select>
 </div>
