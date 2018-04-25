@@ -104,8 +104,8 @@
 
 			$permisos = new Permisos(); 
 
-			if ($permisos->validaPantalla($modulo) == 1 )
-				view("505");
+			if ($permisos->consultar($modulo) == 1 )
+				header("location:?url=Error505");
 
 		}
 

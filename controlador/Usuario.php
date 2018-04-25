@@ -43,6 +43,11 @@
 
 		}
 
+		public function ver(){
+
+			echo $_POST['id'];
+		}
+
 
 		
 
@@ -92,7 +97,9 @@
 
 		public function imprimir(){
 
-			
+			// validar el acceso
+			$this->acceso(MODULOS['consultar_usuario']);
+
 			$encabezado = array("Id","Nombre y Apellido","Nick","Estado");
 
 
@@ -114,6 +121,9 @@
 
 
 		public function filtrar(){
+			
+			// validar el acceso
+			$this->acceso(MODULOS['consultar_usuario']);
 
 			$contenido = $this->modelo->get_tabla_filtrado($_POST['rol'] , $_POST['status']);
 

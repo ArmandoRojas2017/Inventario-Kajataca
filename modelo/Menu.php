@@ -55,9 +55,12 @@
 				1 = sub modulo consultar usuarios
 			 */
 			$usuario = 0;
+			$id_usuario = "no";
 
-			if($this->permisos->consultar(1) == -1 )
-				$usuario =  array( 'texto' => 'Usuarios' , 'icono' => 'user'  ); 
+			if($this->permisos->consultar(MODULOS['consultar_usuario']) == -1 ){
+				$usuario =  array( 'texto' => 'Usuarios' , 'icono' => 'user'  );
+				$id_usuario =  "usuario";
+			}
 
 			
 
@@ -65,7 +68,7 @@
 			return  array('titulo' => 'Gestion', 
 					 	 	'icono' => 'paperclip',
 					 		'contenido' => array( 
-					 								"usuario" => $usuario ,
+					 								"$id_usuario" => $usuario ,
 
 													"proveedor" => array( 'texto' => 'Proveedores' , 
 					 													 'icono' => 'folder-close'  

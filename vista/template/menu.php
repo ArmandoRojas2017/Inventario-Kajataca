@@ -53,11 +53,13 @@
 
             <!-- Asignar texto e Icono -->
             <?php foreach ($opc['contenido'] as $key => $sub): ?>
+              <?php if($key != "no"): ?>
               <li>
                 <a href="#" id=<?=$key ?> > <?= $sub['texto']  ?>  
                 <i class=<?= "'glyphicon glyphicon-".$sub['icono']."'" ?> ></i>   
                 </a>
               </li>
+            <?php endif ?>
             <?php endforeach ?>
 
           </ul>

@@ -1,8 +1,5 @@
 <?php 
 
-	session_start();
-
-
 
 	class Permisos extends Modelo{
 
@@ -22,23 +19,11 @@
 					'id' => $_SESSION['id_roles'] , 
 					'modulo' => $id_sub_modulo 
 					));
-
-				
-
-
-
+			// encontro registros
 			if (count($registro) > 0)
 				return 1;
-			else 
+			else // no encontro registros
 				return -1;
-		}
-
-		function validaPantalla($id_sub_modulo){
-				// denegar servicio
-			if($this->consultar($id_sub_modulo) != -1) {
-				view("505");
-				exit();
-			}
 		}
 
 

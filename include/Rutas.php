@@ -107,9 +107,17 @@
 				'Error404' => array(
 
 					'controller' => 'Error404',
-					'js' => 'no',
+					'js' => '',
+					'method' => 'get'
+				),
+
+				'Error505' => array(
+
+					'controller' => 'Error505',
+					'js' => '',
 					'method' => 'get'
 				)
+
 
 			
 				); 
