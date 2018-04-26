@@ -24,3 +24,9 @@
 * Longitud minima 8 caracteres
 * Longitud maxima 12 caracteres 
 * Debe llevar por lo menos un caracter especial permitido, una letra y un numero
+
+## Cedula:
+
+* Longitud minima 7 caracteres
+* Longitud maxima 8 caracteres 
+* solo numeros

@@ -71,7 +71,7 @@ var login_validaciones = function login_validaciones(){
 
 var usuarios_validaciones = function usuarios_validaciones( ){
 
-	let interruptor = 0
+	 localStorage.interruptor = 0
 
 	validaciones_generales()
 	// mensajes 
@@ -116,7 +116,7 @@ var usuarios_validaciones = function usuarios_validaciones( ){
 	/*Longitud Permitida*/
 	nombre.longitudMax(40)
 	nick.longitudMax(12)
-	cedula.longitudMax(10)
+	cedula.longitudMax(8)
 	clave.longitudMax(12)
 	clave2.longitudMax(12)
 
@@ -147,14 +147,10 @@ setInterval( () =>{
 		/*Valida Minima cantidad de carecteres */
 		
 		//valida la cedula 
-		if(cedula.val().length < 5){
-			$("#error1").html(mensajes.alerta1)
-			cedula.sombra("red")
-		}
-		else {
-			$("#error1").html("")
-			cedula.sombra(false)
-		}
+		cedula.longitud("#error1",7)
+		
+
+		
 
 
 		//valida nombre  
@@ -253,8 +249,8 @@ setInterval( () =>{
 			$("#botonGuardar").disabled(false)
 
 			if(interruptor == 0){
-				mensajeNotify( {mensaje: "Listo..."} )
-				interruptor = 1
+				mensajeNotify( {mensaje: "Presione el boton Ingresar..."} )
+				 localStorage.interruptor = 1
 			}
 
 			
@@ -263,7 +259,7 @@ setInterval( () =>{
 		else {
 
 			$("#botonGuardar").disabled(true);
-			interruptor = 0
+			 localStorage.interruptor = 0
 		}
 
 		//---------------------------------------

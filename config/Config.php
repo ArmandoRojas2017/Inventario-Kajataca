@@ -37,8 +37,17 @@ $_SESSION['autenticado'] = ENCONTRADO;
 	const EVENTOS = array(
 
 		'ingresar_sistema' => 1, 
-		'salir_sistema' => 2, 
+		'salir_sistema'    => 2, 
 		'intento_ingresar' => 3, 
+		'ingreso_a'        => 4,
+		'genero_un'        => 5,
+		'genero_una'       => 6,
+		'modifico_un'      => 7,
+		'modifico_una'     => 8,
+		'cambio_un'     => 9,
+		'cambio_una'    => 10,
+		'abastecio'    	   => 11,
+		'despacho'    	   => 12,
 	);
 
 

@@ -78,7 +78,7 @@
 				// formulario de usuarios
 				'agregarUsuario' => array( 
 					'controller' => 'UsuariosControlador' , 
-					'js' => 'Usuarios/agregar',
+					'js' => 'agregarUsuario',
 					'method' 	 => 'getAgregar' 
 				),
 				// Verifica usuario y clave por Ajax 
