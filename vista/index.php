@@ -27,8 +27,11 @@
 					<form method="post" class="form-horizontal">
 						
 						<!-- Usuario  -->
-
+						<label for="ci" class="col-sm-offset-5 control-label text-danger oculto" id=error1 >
+							
+						</label> 
 						<div class="form-group">
+						
 
 							<div class="col-md-4 col-md-offset-1  col-sm-2 col-sm-offset-2">
 								<label class="form-control" id=labelUsuario >
@@ -52,7 +55,7 @@
 						</div>
 
 
-
+	<label for="ci" class="col-sm-offset-5 control-label text-danger oculto" id=error2 ></label> 
 						<div class="form-group">
 							<div class="col-md-4 col-md-offset-1 col-sm-offset-2 col-sm-2">
 								<label class="form-control">
@@ -77,13 +80,12 @@
 						</div>
 
 					</form>
-
-					
-				</div>
-				<div class="panel-footer">
-				<div class="row">
+<div class="row">
 					<div class="col-sm-offset-1 col-sm-4">
-							<button class="btn btn-block btn-primary" id=ingresar > Ingresar </button>
+							<button class="btn btn-block btn-primary" id=ingresar > 
+								Ingresar 
+								
+							</button>
 					</div>
 					<div class="col-sm-6">
 							<button class="btn btn-block btn-danger" id=cambiar > Cambiar Contraseña</button>
@@ -91,9 +93,15 @@
 				
 
 				</div>
+					
+				</div>
+				<div class="panel-footer">
+				
 				<div class="row">
-					<div class="col-sm-offset-2 col-sm-8">
-							UNEFA - 2017 version Beta 3.0.1
+					
+					
+					<div class="col-sm-offset-1 col-sm-10 text-center">
+							UNEFA 2018 - version Beta 3.0.1
 					</div>
 					
 				
