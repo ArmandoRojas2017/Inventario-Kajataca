@@ -58,11 +58,14 @@ require_once 'include/Rutas.php';
 
 <?php if ($rutas->getJs() != "no" ): ?>
 
-<footer> Armando Rojas 2018   </footer>
-<div class="usuario_hora" >
+<footer> 
+	<span id=Hora> </span>
+	-
+	<span id=Nombre_Usuario > Armando Rojas 2018    </span>
 	
-	Hola
-</div>
+
+</footer>
+
 
 <script src="vendor/jquery/crazy.js" > </script>
 <script src="vendor/bootstrap/js/bootstrap.min.js" > </script>
