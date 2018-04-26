@@ -33,7 +33,7 @@
 
 ## Pregunta de Recuperacion:
 
-* Longitud minima 7 caracteres
-* Longitud maxima 8 caracteres 
-* solo numeros
+* Longitud minima 6 caracteres
+* Longitud maxima 50 caracteres 
+* letras y numeros
 

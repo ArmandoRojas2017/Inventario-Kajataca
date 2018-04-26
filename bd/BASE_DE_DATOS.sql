@@ -91,7 +91,7 @@ create table usuarios (
 	nick varchar(12) not null unique,
 	nombre varchar(40) not null,
 	clave varchar(100),
-	pregunta varchar(100),
+	pregunta varchar(50),
 	respuesta varchar(100),
 	
 	fecha_c datetime default now(),

@@ -129,14 +129,18 @@ var usuarios_validaciones = function usuarios_validaciones( ){
 	cedula.validCampo(soloNumeros())
 	nick.validCampo(soloLetras_Numeros())
 	clave.validCampo(soloLetras_Numeros())
-	respuesta1.validCampo(soloLetras_Numeros())
-	respuesta2.validCampo(soloLetras_Numeros())
+	respuesta1.validCampo(soloLetras())
+	respuesta2.validCampo(soloLetras())
 	clave2.validCampo(soloLetras_Numeros())
 	pregunta.validCampo(soloLetras())
 
 
 	// cambiar los iconos a modo botones	
 	$(".glyphicon-eye-open").css('cursor', 'pointer');
+
+	
+		clave.tooltip_focus({titulo: 'Clave Segura' , contenido: 'Para que tu clave sea segura debe tener por lo menos 1 letra y un digito'});
+	
 
 
 
@@ -151,32 +155,16 @@ setInterval( () =>{
 		nombre.longitud("#error2",3)
 		nick.longitud("#error3",8)
 		clave.longitud("#error5",8)
-		clave2.sombra("red").comparar(clave,"#error6")ç
-		pregunta.longitud("#error7",3)
+		clave.verificarClave("#error5")
+		
+
+		clave2.comparar(clave,"#error6")
+		pregunta.longitud("#error7",6)
+		respuesta1.longitud("#error8",3)
+		respuesta2.comparar(respuesta1,"#error9")
 		
 	
 
-
-
-		//respuesta secreta
-		if(respuesta1.val().length < 10 ){
-			$("#error8").html(mensajes.alerta7)
-			respuesta1.sombra("red")
-		}
-		else {
-			$("#error8").html("")
-			respuesta1.sombra(false)
-		}
-
-		//respuesta secreta 2
-		if(respuesta2.val() != respuesta1.val() ){
-			$("#error9").html(mensajes.alerta8)
-			respuesta2.sombra("red")
-		}
-		else {
-			$("#error9").html("")
-			respuesta2.sombra(false)
-		}
 
 
 
@@ -187,24 +175,20 @@ setInterval( () =>{
 		
 
 		/* Activar el boton de guardar */
-		if(
-			(cedula.val().length > 5 ) &&
-			(nombre.val().length > 2 ) &&
-			(nick.val().length > 8 ) &&
-			(clave.val().length > 8 ) &&
-			(clave.val() == clave2.val() ) 
-
-			){
+		if(localStorage.control == 1 ){
 
 
 			$("#botonGuardar").disabled(false)
 
-			if(interruptor == 0){
-				mensajeNotify( {mensaje: "Presione el boton Ingresar..."} )
+			 
+
+			if(localStorage.interruptor == 0){
+				mensajeNotify( {mensaje: "Presione el boton Guarda (boton de color Azul)..."} )
 				 localStorage.interruptor = 1
+
 			}
 
-			
+				nombre.quitarEspacio()
 
 		}
 		else {
