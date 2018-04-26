@@ -1,6 +1,7 @@
 var verProducto = (val) =>{
 
-		url = 'ajax/Usuarios/ver.php'
+		url = localStorage.ajax + 'verUsuario'
+
 		consultaIndividual(val,url)
 		
 	}

@@ -7,7 +7,7 @@
 	1 = TRUE 
 	0 = FALSE 
 
- */
+ */ 
 
 create database Cerenis;
 
@@ -89,7 +89,7 @@ create table usuarios (
 	id_usuarios int unsigned ,
 	id_roles int unsigned,
 	nick varchar(12) not null unique,
-	nombre varchar(100) not null,
+	nombre varchar(40) not null,
 	clave varchar(100),
 	pregunta varchar(100),
 	respuesta varchar(100),

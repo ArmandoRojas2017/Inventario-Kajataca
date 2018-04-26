@@ -102,7 +102,18 @@
 		return "value='".$valor."'"; 
 	}
 
+	function js($ruta){
+
+		echo "<script src='js/".$ruta.".js'> </script>";
+	}
+
+	function incluir_js($variable, $valor){
+
+		echo "<script> localStorage.$variable = $valor </script>";
+	}
+
 
 
 
  ?>
+

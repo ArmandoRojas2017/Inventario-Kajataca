@@ -18,18 +18,30 @@ var login_validaciones = function login_validaciones(){
 
 
 /*----- Validar Campos de Usuario y Clave  -------------*/
-
-  $("input[name=usuario]").mayuscula().longitudMax(12) // texto en mayuscula 
-  $("input[name=clave]").mayuscula().longitudMax(12) // texto en mayuscula 
   
-  $("input[name=usuario]").validCampo(soloLetras_Numeros()) // solo acepta letras y numeros 
+  // texto en mayuscula, longitud maxima 12 y validacion solo acepta letras
+  $("input[name=usuario]").mayuscula().longitudMax(12)
+  $("input[name=usuario]").validCampo(soloLetras_Numeros()) 
+  // texto en mayuscula, longitud maxima 12 y no acpeta caracteres especiales
+  $("input[name=clave]").mayuscula().longitudMax(12)
+  $("input[name=clave]").validCampo(soloLetras_Numeros()) 
   
-  $("input[name=clave]").validCampo(soloClaves()) // solo acepta letras y numeros 
 
-  $("input[name=usuario]").longitud($("#ingresar") , {max:12,min:4})
-
-  $("input[name=clave]").longitud($("#ingresar") , {max:12,min:4})
  //----------------------------------------------------------------------------------------
+
+
+ setInterval( function(){
+
+ if (  ($("input[name=usuario]").val().length > 4) && 
+
+ 	($("input[name=clave]").val().length > 4) )
+ 	$("#ingresar").disabled(false);
+
+
+}   , 100)
+
+
+
 
 	 validaciones_generales()
 
@@ -78,7 +90,7 @@ var usuarios_validaciones = function usuarios_validaciones( ){
 
 		/*solo letras mayusculas*/
 		$("input").mayuscula()
-
+ 
 
 	/*Longitud Permitida*/
 	nombre.longitudMax(40)

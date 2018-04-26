@@ -19,7 +19,7 @@ Menu(); //invocamos los scripts del menu
 	
 	/*Reproducto de Audio*/
 
-	ajax("ajax/configuracion/Canciones.json",
+	ajax("config/Canciones.json",
 
 		function(json){
 

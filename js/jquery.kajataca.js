@@ -178,6 +178,13 @@ var numeroAleatorio = function() {
 	return Math.round(Math.random() * 10)
 }
 
+var numeroAleatorio2 = function numeroAleatorio2(inferior,superior){ 
+   	var numPosibilidades = superior - inferior 
+   	var aleat = Math.random() * numPosibilidades 
+   	aleat = Math.round(aleat) 
+   	return parseInt(inferior) + aleat 
+}
+
 ;(function($){
 
 	$.fn.extend({
@@ -468,7 +475,7 @@ const videoDeAyuda = ( id ) => {
 
 	let objecto = {}
 	// direccion donde se encuentra el archivo json para configurar video y guia 
-	let url_archivoJSON = 'ajax/configuracion/ayuda.json'
+	let url_archivoJSON = 'config/ayuda.json'
 	let url_modal = 'vista/modal/ayuda.php'
 
 	$.getJSON(url_archivoJSON , 

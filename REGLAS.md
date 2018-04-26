@@ -3,9 +3,24 @@
 *	-1 es una respuesta negativa
 *	1 es una respuesta positiva 
 
-# Validación de Formulario
+# Validación de Formulario Usuario
 
 ## Nombre:
 
 * Longitud minima 3 caracteres
-* Longitud maxima 20 caracteres 
+* Longitud maxima 40 caracteres 
+* Solo acepta letras 
+
+## Nick:
+
+* Longitud minima 8 caracteres
+* Longitud maxima 12 caracteres 
+* Solo acepta letras y Numeros
+* Debe llevar por lo menos un caracter especial permitido, una letra y un numero
+
+
+## Clave:
+
+* Longitud minima 8 caracteres
+* Longitud maxima 12 caracteres 
+* Debe llevar por lo menos un caracter especial permitido, una letra y un numero

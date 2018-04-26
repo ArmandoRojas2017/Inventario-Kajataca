@@ -32,8 +32,8 @@ let respuesta2 = $("#inputRespuesta2")
 
 $("#botonGuardar").click(() => {
 
-	ajax( localStorage.ajax+'usuarioNueveo' , function(resp){
-		alert(resp)
+	ajax( localStorage.ajax+'usuarioNuevo' , function(resp){
+	
 	}, { 
 
 		id : cedula.val(),

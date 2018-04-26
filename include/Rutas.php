@@ -60,10 +60,17 @@
 					'js' => 'no',
 					'method' 	 => 'imprimir' 
 				),
-					'filtrarUsuario' => array( 
+				
+				'filtrarUsuario' => array( 
 					'controller' => 'UsuariosControlador' , 
 					'js' => 'no',
 					'method' 	 => 'filtrar' 
+				),
+
+				'verUsuario' => array( 
+					'controller' => 'UsuariosControlador' , 
+					'js' => 'no',
+					'method' 	 => 'ver' 
 				),
 
 

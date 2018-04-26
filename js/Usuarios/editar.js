@@ -68,10 +68,17 @@ $(document).ready(function() {
 $("#botonSalir").ruta("usuario")
 
 // asignar roles al select 
-	ajax("ajax/Roles/select.php",function(resp){
+	ajax(localStorage.ajax+'selectRol',function(resp){
 
 		$("#rol").html(resp)
+
+		
+		
+		
 	},null)
+
+
+setTimeout( ()=>{$("#rol option[value="+localStorage.auxiliar+"]").attr("selected",true);}, 1000)
 
 
 

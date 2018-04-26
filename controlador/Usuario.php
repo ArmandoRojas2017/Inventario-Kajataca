@@ -6,16 +6,15 @@
 		public function __construct(){
 
 			parent::__construct(Usuario::class);
+			// validar el acceso
+			$this->acceso(MODULOS['modulo_usuario']);
 			
 
 		}
 
 		public function get(){
 
-		
-
-			// validar el acceso
-			$this->acceso(MODULOS['consultar_usuario']);
+	
 
 			$modelo = $this->modelo;
 		
@@ -45,7 +44,23 @@
 
 		public function ver(){
 
-			echo $_POST['id'];
+			$form =  $this->modelo->getById($_POST['id']);
+
+			// toma los datos de la primera posicion
+			$inputs = 	$form[0] ;
+			$formulario = 'formularios/agregarUsuario';
+
+
+			$datos =  array(
+				
+				'titulo' =>  $inputs['nick']
+
+			);
+
+			incluir_js("auxiliar",$inputs['id_roles']);
+			js("Usuarios/editar");
+			
+			view("modal/usuario",compact('datos','formulario','inputs'));
 		}
 
 
@@ -57,8 +72,7 @@
 
 			$modelo = $this->modelo;
 		
-			// validar el acceso
-			$this->acceso(MODULOS['agregar_usuario']);
+		
 
 			$datos = array(
 
@@ -78,7 +92,7 @@
 
 			$modelo = $this->modelo;
 		
-			$this->acceso(MODULOS['agregar_usuario']);
+
 
 
 			$datos = array( 
@@ -97,8 +111,7 @@
 
 		public function imprimir(){
 
-			// validar el acceso
-			$this->acceso(MODULOS['consultar_usuario']);
+
 
 			$encabezado = array("Id","Nombre y Apellido","Nick","Estado");
 
@@ -121,9 +134,7 @@
 
 
 		public function filtrar(){
-			
-			// validar el acceso
-			$this->acceso(MODULOS['consultar_usuario']);
+
 
 			$contenido = $this->modelo->get_tabla_filtrado($_POST['rol'] , $_POST['status']);
 

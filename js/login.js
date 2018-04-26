@@ -15,40 +15,12 @@ $(document).ready(function() {
 /*Imagen al cargar */
 
 
-/* Bloquear Boton de Ingresar */
-
-	$("#ingresar").disabled(true)
-//--------------------------------
-
-
-
-
-
-/*----- Validar Campos de Usuario y Clave  -------------*/
-
-
-  $("input[name=usuario]").mayuscula().longitudMax(12) // texto en mayuscula 
-  $("input[name=clave]").mayuscula().longitudMax(12) // texto en mayuscula 
-  
-  $("input[name=usuario]").validCampo(soloLetras_Numeros()) // solo acepta letras y numeros 
-  
-  $("input[name=clave]").validCampo(soloClaves()) // solo acepta letras y numeros 
-
-  $("input[name=usuario]").longitud($("#ingresar") , {max:12,min:4})
-
-  $("input[name=clave]").longitud($("#ingresar") , {max:12,min:4})
-
-
-
-//----------------------------------------------------------------------------------------
-
 
 /*------ Ingreso al Sistema */
 
 // al hacer click
 $("#ingresar").click(function() {
 
-	if ( ( $("input[name=usuario]").val() != "" ) &&  ($("input[name=clave]").val() != "" ) ){
 
 	let objecto = {
 
@@ -90,9 +62,7 @@ $("#ingresar").click(function() {
 		mensajeNotify({mensaje:'Error en la conexion', tipo:'danger'})
 
 	})
-	
-}else
-	modalImagen("Campos vacios... Termina de escribir en todos los campos")
+
 
 });
 //--------------------------------------------------------------------------------
@@ -153,13 +123,7 @@ footer()
 login_validaciones()
 
 
-setInterval( function(){
 
- if (  ($("input[name=usuario]").val().length > 4) && ($("input[name=clave]").val().length > 4) )
- 	$("#ingresar").disabled(false);
-
-
-}   , 100);
 	
 
 

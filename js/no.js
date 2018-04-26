@@ -1,4 +1,0 @@
-
-
-	$("body").html("no jodas")
-

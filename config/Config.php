@@ -26,7 +26,11 @@ $_SESSION['autenticado'] = ENCONTRADO;
 	const MODULOS = array(
 
 		'consultar_usuario' => 1 , 
+		'imprimir_usuario' => 2,
 		'agregar_usuario' => 3,
+		'modificar_usuario' => 4,
+		'desactivar_usuario' => 5,
+		'modulo_usuario' => 6,
 
 	);
 
