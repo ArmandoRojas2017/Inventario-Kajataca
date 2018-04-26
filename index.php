@@ -13,6 +13,7 @@ require_once 'include/Rutas.php';
 ?>
 
 <?php if ($rutas->getJs() != "no" ): ?>
+<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 <!DOCTYPE html>
 <html>
 <head>
@@ -56,7 +57,13 @@ require_once 'include/Rutas.php';
 <?php $rutas->getController() ?>
 
 <?php if ($rutas->getJs() != "no" ): ?>
+
 <footer> Armando Rojas 2018   </footer>
+<div class="usuario_hora" >
+	
+	Hola
+</div>
+
 <script src="vendor/jquery/crazy.js" > </script>
 <script src="vendor/bootstrap/js/bootstrap.min.js" > </script>
 <script src="vendor/wow/wow.js" > </script>
@@ -66,6 +73,7 @@ require_once 'include/Rutas.php';
 <script src="vendor/select/bootstrap-select.js" > </script>
 <script src="vendor/sweetAlert2/sweetalert2.js" > </script>
 <script src="js/mensajes.js" > </script>
+<script src="js/animar_all.js" > </script>
 <script src="js/jquery.kajataca.js" > </script>
 <script src="js/Menu.js" > </script>
 <script src="js/validacion_formulario.js" > </script>

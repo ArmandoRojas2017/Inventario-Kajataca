@@ -229,9 +229,11 @@ var numeroAleatorio2 = function numeroAleatorio2(inferior,superior){
 			animar: function(tipo){
 				return this.each(function(){
 
-					$(this).addClass('WOW '+tipo);
+					$(this).addClass('WOW '+tipo)
+
 			 		new WOW().init()
-			 		setTimeout( $(this).removeClass('WOW '+tipo), 3000 )
+
+			 	
 
 				})
 			},
@@ -301,45 +303,50 @@ var numeroAleatorio2 = function numeroAleatorio2(inferior,superior){
 			});
 		},
 
+		// validar campo Vacio
+		
+		campoVacio: function(id){
+
+			this.each(function(){
+  				
+  				if($(this).val() == ""  ){
+					$(this).sombra("red")
+					$(id).html("Campo Vacio")
+					localStorage.control =  -1
+  				}
+  				else{
+  					$(this).sombra(false)
+  					$(id).html("")
+  					localStorage.control = 1
+  				}
+			});
+		},
+
+		// valida longitud del texto
+		
+		longitud: function(id , cantMax ){
+
+			this.each(function(){
+  				
+  				if($(this).val().length < cantMax  ){
+					$(this).sombra("red")
+					$(id).html("Necesita por lo menos "+cantMax+' caracteres')
+					localStorage.control =  -1
+  				}
+  				else{
+  					$(this).sombra(false)
+  					$(id).html("")
+  					localStorage.control =  1
+  				}
+			});
+		},
+
 	
 
 		
 		//---------------------------------
 
-		/*Validacion con mensajes notify.js */
-
-		// longitud del campo requiere de notify.js 
-		longitud: function(boton , arreglo ){
-
-					return this.each(function(){
-						$(this).keyup(function() {
-				
-								if (  $(this).val().length < arreglo['min'] + 1){
-
-									var texto = 'Debe ser mayor a '+arreglo['min']+' caracteres ';
-									mensajeNotify({mensaje:texto, tipo:'danger'});
-
-									$(this).sombra('red');
-									boton.disabled(true);
-
-								}else if( $(this).val().length > (arreglo['max']-2) ) {
-								
-									var texto = 'Debe ser menor a '+arreglo['max']+' caracteres ';
-									mensajeNotify({mensaje:texto, tipo:'danger'});
-
-									$(this).sombra('red');	
-									boton.disabled(true);
-
-								}else{
-										
-										$(this).sombra('green'); 
-									
-								}// ELSE
-
-						});							
-					});				
-				},
-		//----------------------------
+		
 
 		/* Tooltip con JQuery.flyout.js */
 

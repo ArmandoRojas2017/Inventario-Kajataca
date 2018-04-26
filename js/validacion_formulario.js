@@ -10,10 +10,7 @@ var validaciones_generales = function validaciones_generales(){
 
 var login_validaciones = function login_validaciones(){
 
-	/* Bloquear Boton de Ingresar */
-
-	$("#ingresar").disabled(true)
-//--------------------------------
+	
 
 
 
@@ -30,15 +27,39 @@ var login_validaciones = function login_validaciones(){
  //----------------------------------------------------------------------------------------
 
 
+	localStorage.control = 0
+
+ 	/* Validacion del sistema*/
  setInterval( function(){
 
- if (  ($("input[name=usuario]").val().length > 4) && 
+ 	
 
- 	($("input[name=clave]").val().length > 4) )
- 	$("#ingresar").disabled(false);
+	$("input[name=usuario]").campoVacio("#error1")
+	$("input[name=clave]").campoVacio("#error2")
+	$("input[name=usuario]").longitud("#error1",8)
+	$("input[name=clave]").longitud("#error2",8)
 
 
-}   , 100)
+
+
+ if ( localStorage.control == 1  ){
+
+ 	 	$("#ingresar").disabled(false);
+ 	 	$("#error1").html("");
+ 	 	$("#error2").html("");
+ 
+ }else
+
+
+ 	/* Bloquear Boton de Ingresar */
+
+	$("#ingresar").disabled(true)
+	//--------------------------------
+ 
+
+
+
+}   , 0500)
 
 
 
