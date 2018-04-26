@@ -30,3 +30,10 @@
 * Longitud minima 7 caracteres
 * Longitud maxima 8 caracteres 
 * solo numeros
+
+## Pregunta de Recuperacion:
+
+* Longitud minima 7 caracteres
+* Longitud maxima 8 caracteres 
+* solo numeros
+

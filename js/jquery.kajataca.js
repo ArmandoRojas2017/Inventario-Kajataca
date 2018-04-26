@@ -341,6 +341,23 @@ var numeroAleatorio2 = function numeroAleatorio2(inferior,superior){
 			});
 		},
 
+		comparar: function(objecto , id){
+
+			this.each(function(){
+  				
+  				if($(this).val() != objecto.val()  ){
+					$(this).sombra("red")
+					$(id).html('No coinciden con el campo anterior')
+					localStorage.control =  -1
+  				}
+  				else{
+  					$(this).sombra(false)
+  					$(id).html("")
+  					localStorage.control =  1
+  				}
+			});
+		},
+
 	
 
 		

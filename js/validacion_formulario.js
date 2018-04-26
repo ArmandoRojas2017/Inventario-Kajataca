@@ -148,64 +148,15 @@ setInterval( () =>{
 		
 		//valida la cedula 
 		cedula.longitud("#error1",7)
+		nombre.longitud("#error2",3)
+		nick.longitud("#error3",8)
+		clave.longitud("#error5",8)
+		clave2.sombra("red").comparar(clave,"#error6")ç
+		pregunta.longitud("#error7",3)
 		
-
-		
-
-
-		//valida nombre  
-		if(nombre.val().length < 5){
-			$("#error2").html(mensajes.alerta2)
-			nombre.sombra("red")
-		}
-		else {
-			$("#error2").html("")
-			nombre.sombra(false)
-		}
+	
 
 
-		//valida nick 
-		if(nick.val().length < 5){
-			$("#error3").html(mensajes.alerta3)
-			nick.sombra("red")
-		}
-		else {
-			$("#error3").html("")
-			nick.sombra(false)
-		}
-
-
-		//valida clave
-		if(clave.val().length < 7){
-			$("#error5").html(mensajes.alerta4)
-			clave.sombra("red")
-		}
-		else {
-			$("#error5").html("")
-			clave.sombra(false)
-		}
-
-
-		//valida clave2
-		if(clave.val() != clave2.val() ){
-			$("#error6").html(mensajes.alerta5)
-			clave2.sombra("red")
-		}
-		else {
-			$("#error6").html("")
-			clave2.sombra(false)
-		}
-
-
-		//pregunta secreta
-		if(pregunta.val().length < 10 ){
-			$("#error7").html(mensajes.alerta6)
-			pregunta.sombra("red")
-		}
-		else {
-			$("#error7").html("")
-			pregunta.sombra(false)
-		}
 
 		//respuesta secreta
 		if(respuesta1.val().length < 10 ){
