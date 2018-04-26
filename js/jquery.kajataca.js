@@ -185,6 +185,8 @@ var numeroAleatorio2 = function numeroAleatorio2(inferior,superior){
    	return parseInt(inferior) + aleat 
 }
 
+String.prototype.trim = function() { return this.replace(/^\s+|\s+$/g, "")}
+
 ;(function($){
 
 	$.fn.extend({
@@ -328,7 +330,8 @@ var numeroAleatorio2 = function numeroAleatorio2(inferior,superior){
 
 			this.each(function(){
   				
-  				if($(this).val().length < cantMax  ){
+
+  				if($(this).val().trim().length < cantMax   ){
 					$(this).sombra("red")
 					$(id).html("Necesita por lo menos "+cantMax+' caracteres')
 					localStorage.control =  -1
@@ -355,6 +358,16 @@ var numeroAleatorio2 = function numeroAleatorio2(inferior,superior){
   					$(id).html("")
   					localStorage.control =  1
   				}
+			});
+		},
+
+			quitarEspacio: function(objecto , id){
+
+			this.each(function(){
+  				
+  				$(this).val($(this).val().trim())
+					
+  				
 			});
 		},
 

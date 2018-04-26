@@ -185,10 +185,11 @@ setInterval( () =>{
 			if(localStorage.interruptor == 0){
 				mensajeNotify( {mensaje: "Presione el boton Guarda (boton de color Azul)..."} )
 				 localStorage.interruptor = 1
+				 nombre.quitarEspacio()
 
 			}
 
-				nombre.quitarEspacio()
+				
 
 		}
 		else {
