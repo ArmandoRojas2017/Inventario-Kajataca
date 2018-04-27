@@ -19,12 +19,13 @@ let clave2 = $("#inputClave2")
 let pregunta = $("#inputPregunta")
 let respuesta1 = $("#inputRespuesta1")
 let respuesta2 = $("#inputRespuesta2")
+let rol = $("#rol")
 
 
 
 
 /*Mensaje en pantalla*/
-//modalImagen("Todos los campos del formulario son obligatorios")
+modalImagen("Todos los campos del formulario son obligatorios")
 
 
 
@@ -36,12 +37,13 @@ $("#botonGuardar").click(() => {
 	
 	}, { 
 
-		id : cedula.val(),
-		nombre : nombre.val(),
-		nick : nick.val(),
-		clave: clave.val(),
-		pregunta: pregunta.val(),
-		respuesta : respuesta1.val()
+		id        : cedula.val(),
+		nombre    : nombre.val(),
+		nick      : nick.val(),
+		clave     : clave.val(),
+		pregunta  : pregunta.val(),
+		respuesta : respuesta1.val(),
+		rol       : rol.val()
 	})
 
 });

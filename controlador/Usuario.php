@@ -109,6 +109,28 @@
 		}
 
 
+		public function editUsuario(){
+
+			$modelo = $this->modelo;
+		
+
+
+
+			$datos = array( 
+				"id"        => $_POST['id'] ,  
+				"nick"      => $_POST['nick']  , 
+				"nombre"    => $_POST['nombre']  , 
+				"pregunta"  => $_POST['pregunta'] , 
+				"respuesta" => $_POST['respuesta'] , 
+				"clave"     => $_POST['clave'] , 
+				"tipo"      => $_POST['rol'] 
+			);
+
+			return $modelo->add($datos);
+
+		}
+
+
 		public function imprimir(){
 
 

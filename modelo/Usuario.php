@@ -50,12 +50,15 @@ class Usuario extends Modelo{
 			return $this->consult($datos); 
 		}
 
-		public function __construct(){
 
-			$this->tabla = "usuarios";
-			
+		public function edit($datos){
+
+			$this->sql = "UPDATE  usuarios SET   nick=:nick, nombre=:nombre, clave = md5( :clave ), pregunta = :pregunta, respuesta=md5( :respuesta ) , id_roles=:tipo where id_usuarios = :id";
+
+			return $this->consult($datos); 
 		}
 
+		
 
 
 
@@ -67,6 +70,13 @@ class Usuario extends Modelo{
 
 			$this->sql['edit'] = "UPDATE usuarios set status = :status where id_usuarios = :id";
 		}
+
+		public function __construct(){
+
+			$this->tabla = "usuarios";
+			
+		}
+
 
 
 
