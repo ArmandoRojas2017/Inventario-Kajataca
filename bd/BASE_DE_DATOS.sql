@@ -128,11 +128,11 @@ create table logs (
 /* Eventos*/
 
 
-/*1)*/insert into eventos (descripcion)  values ('Ingresó al Sistema'); 
-/*2)*/insert into eventos (descripcion)  values ('Salio exitosamente del Sistema'); 
-/*3)*/insert into eventos (descripcion)  values ('Intento ingresar a una pagina'); 
-/*4)*/insert into eventos (descripcion)  values ('Ingreso a '); 
-/*5)*/insert into eventos (descripcion)  values ('Genero un nuevo  '); 
+insert into eventos (descripcion)  values ('Ingresó al Sistema'); 
+insert into eventos (descripcion)  values ('Salio exitosamente del Sistema'); 
+insert into eventos (descripcion)  values ('Intento ingresar a una pagina'); 
+insert into eventos (descripcion)  values ('Ingreso a '); 
+insert into eventos (descripcion)  values ('Genero un nuevo  '); 
 insert into eventos (descripcion)  values ('Genero una nueva  '); 
 insert into eventos (descripcion)  values ('Modificando un '); 
 insert into eventos (descripcion)  values ('Modificando una '); 
@@ -140,6 +140,11 @@ insert into eventos (descripcion)  values ('Cambio de Estado a un ');
 insert into eventos (descripcion)  values ('Cambio de Estado a una '); 
 insert into eventos (descripcion)  values ('Abastecio ');
 insert into eventos (descripcion)  values ('Despacho ');
+insert into eventos (descripcion)  values ('Realizo un filtrado de tablas en modulo ');
+insert into eventos (descripcion)  values ('Genero un Reporte en ');
+insert into eventos (descripcion)  values ('Realizo un peticion AJAX en ');
+insert into eventos (descripcion)  values ('Elimino un ');
+insert into eventos (descripcion)  values ('Elimino a un ');
 
 
 

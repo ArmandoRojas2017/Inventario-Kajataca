@@ -130,11 +130,11 @@
 				),
 
 					// verificar usuario por Ajax 
-				/*'logs' => array( 
+				'logs' => array( 
 					'controller' => 'LogsControlador' , 
 					'js' => 'logs',
 					'method' 	 => 'get' 
-				),*/
+				),
 
 				'Error404' => array(
 
@@ -148,7 +148,14 @@
 					'controller' => 'Error505',
 					'js' => '',
 					'method' => 'get'
-				)
+				),
+
+
+				'distribuidora' => array( 
+					'controller' => 'ProveedorControlador' , 
+					'js' => 'proveedor',
+					'method' 	 => 'get' 
+				),
 
 
 

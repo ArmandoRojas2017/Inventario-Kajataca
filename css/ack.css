@@ -105,6 +105,8 @@ a{
   left: 0;
   z-index: 1040;
   background: linear-gradient(to top, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
+  overflow: auto;
+  max-height: 90%;
 }
 
 
@@ -122,7 +124,7 @@ a{
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	background-size: cover;
-	overflow: hidden;
+	overflow: auto;
 }
 
 .modal-backdrop-kajataca {

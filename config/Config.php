@@ -1,6 +1,6 @@
 <?php 
 /*
-	
+	 
 $_SESSION['nombre'] = $registro[0]['nombre'];
 $_SESSION['id'] = $registro[0]['id_usuarios'];
 $_SESSION['nick'] = $registro[0]['nick'];
@@ -44,10 +44,15 @@ $_SESSION['autenticado'] = ENCONTRADO;
 		'genero_una'       => 6,
 		'modifico_un'      => 7,
 		'modifico_una'     => 8,
-		'cambio_un'     => 9,
-		'cambio_una'    => 10,
+		'cambio_un'        => 9,
+		'cambio_una'       => 10,
 		'abastecio'    	   => 11,
 		'despacho'    	   => 12,
+		'filtrado'   	   => 13,
+		'genero_reporte'   => 14,
+		'peticion_ajax'    => 15,
+		'elimino_un'       => 16,
+		'elimino_a_un'     => 17,
 	);
 
 

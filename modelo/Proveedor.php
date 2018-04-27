@@ -1,11 +1,13 @@
 <?php 
 
-class Usuario extends Modelo{
+class Proveedor extends Modelo{
 
 
 		public function get_tabla(){
 			
-			$this->sql = "select id_usuarios, nombre, nick, roles.descripcion as tipo, usuarios.status from Usuarios, roles WHERE roles.id_roles = usuarios.id_roles ";
+			$this->sql = "SELECT id_distribuidora as id , empresas.descripcion as empresa , distribuidora.descripcion as distribuidora , nombre , telefono , distribuidora.status from distribuidora, empresas where distribuidora.id_empresas=empresas.id_empresas";
+
+
 
 			return $this->consult();
 
@@ -60,10 +62,12 @@ class Usuario extends Modelo{
 
 	
 
+		
+
 
 		public function __construct(){
 
-			$this->tabla = "usuarios";
+			$this->tabla = "Proveedorr";
 			
 		}
 

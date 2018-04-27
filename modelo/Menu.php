@@ -70,7 +70,7 @@
 					 		'contenido' => array( 
 					 								"$id_usuario" => $usuario ,
 
-													"proveedor" => array( 'texto' => 'Proveedores' , 
+													"proveedor" => array( 'texto' => 'Distribuidora' , 
 					 													 'icono' => 'folder-close'  
 					 													),
 													"articulo" => array( 'texto' => 'Articulos' , 

@@ -6,7 +6,7 @@ const errorAlCargarPorAjax = () => "Problemas Tecnicos... Por favor notificar al
 
 const mensajeValidacionClickDerecho = () => "Accion de Click derecho denegada..."
 
-const mensajeValidacionCampo = () => "Accion de Click derecho denegada..."
+
 
 
 //-------------------------------------------------

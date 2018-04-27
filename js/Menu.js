@@ -8,6 +8,7 @@ let Menu = function(){
 	$("#ver").ruta("verPerfil")
 	$("#roles").ruta("roles")
 	$("#reporte4").ruta("logs")
+	$("#proveedor").ruta("distribuidora")
 
 	
 
@@ -18,6 +19,8 @@ let Menu = function(){
 	});
 
 	//-------------------------------------
+	
+
 	//
 	/*----- No permite click derecho */
 		clickDerecho();
