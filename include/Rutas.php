@@ -60,7 +60,7 @@
 					'js' => 'no',
 					'method' 	 => 'imprimir' 
 				),
-				
+				//filtrar datos de usuario
 				'filtrarUsuario' => array( 
 					'controller' => 'UsuariosControlador' , 
 					'js' => 'no',
@@ -71,6 +71,24 @@
 					'controller' => 'UsuariosControlador' , 
 					'js' => 'no',
 					'method' 	 => 'ver' 
+				),
+
+				'editarUsuario' => array( 
+					'controller' => 'UsuariosControlador' , 
+					'js' => 'no',
+					'method' 	 => 'editUsuario' 
+				),
+
+				'eliminarUsuario' => array( 
+					'controller' => 'UsuariosControlador' , 
+					'js' => 'no',
+					'method' 	 => 'deleteUsuario' 
+				),
+
+				'cambiarStatusUsuario' => array( 
+					'controller' => 'UsuariosControlador' , 
+					'js' => 'no',
+					'method' 	 => 'cambiarStatusUsuario' 
 				),
 
 
@@ -111,6 +129,13 @@
 					'method' 	 => 'verificar_estado' 
 				),
 
+					// verificar usuario por Ajax 
+				/*'logs' => array( 
+					'controller' => 'LogsControlador' , 
+					'js' => 'logs',
+					'method' 	 => 'get' 
+				),*/
+
 				'Error404' => array(
 
 					'controller' => 'Error404',
@@ -124,6 +149,9 @@
 					'js' => '',
 					'method' => 'get'
 				)
+
+
+
 
 
 			

@@ -22,10 +22,14 @@
     <?php for( $i = 0; $i < count($contenido); $i++ ): ?>
     
        <?php $contador = 0 ?>
+
+
   <tr>
 
       <?php foreach (   $contenido[$i] as $key => $texto ): ?>
    	
+
+
       <?php if($key != 'status'): ?>
         <td style="text-align: left;">
       		  <?= $texto ?>

@@ -44,7 +44,7 @@
 <div class="form-group">
 <label for="ci" class="col-sm-4 control-label">Rol</label>
 <div class="col-sm-6">
-	<select name="rol" id="rol" class="form-control"></select>
+	<select name="rol" id="rol" class="form-control rol"></select>
 </div>
 </div>
 

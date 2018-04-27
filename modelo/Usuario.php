@@ -58,6 +58,8 @@ class Usuario extends Modelo{
 			return $this->consult($datos); 
 		}
 
+	
+
 		
 
 

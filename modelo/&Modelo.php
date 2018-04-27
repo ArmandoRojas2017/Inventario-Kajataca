@@ -109,6 +109,36 @@ abstract class Modelo{
 		}
 
 
+		public function deleteById($id){
+
+				//Creamos el sql
+				$this->sql= "DELETE FROM {$this->tabla} where id_{$this->tabla} = :id";
+				
+				$array = array('id' => $id);
+
+				return $this->consult($array);
+			
+		}
+
+		public function statusChangeById($id){
+
+				
+
+			$status = $this->getById($id)[0]['status'];
+			echo $status;
+			$status = ($status == 1) ? 0 : 1;
+			echo $status;
+			$array = array('id' => $id  , 'status' => $status );
+
+					//Creamos el sql
+				$this->sql= "UPDATE {$this->tabla} set status = :status  where id_{$this->tabla} = :id";
+
+			
+				return $this->consult($array);
+			
+		}
+
+
 		public function __destruct(){unset($this);}
 	}
 

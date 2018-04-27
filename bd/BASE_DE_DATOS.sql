@@ -315,12 +315,8 @@ insert into roles (descripcion) values ("Administrador");
 
 /*Usuarios*/
 
-insert into usuarios (id_usuarios, nick , nombre,clave,pregunta,respuesta, id_roles) values (26059573, 'ARMANDO2018',"ARMANDOROJAS", md5('12345678') , '¿Eres Chavizta?' ,	'TU ERES MARICO', 1 );
-insert into usuarios (id_usuarios, nick , nombre,clave,pregunta, respuesta, id_roles) values (2,'CAPERUCITA',"NELSIBETH DE MADURO", md5('12345678') , '¿Eres Chavizta?' ,'TU ERES MARICO', 2 );
-insert into usuarios (id_usuarios, nick , nombre,clave,pregunta, respuesta, id_roles) values (3,'CRISTIANK',"CRISTIAN HEREDIA", md5('12345678') , '¿Eres Chavizta?' ,'TU ERES MARICO', 2 );
-insert into usuarios (id_usuarios, nick , nombre,clave,pregunta, respuesta, id_roles) values (4,'PANDITA',"CERENIS CABRERA", md5('12345') , '¿Eres Chavizta?' , 'TU ERES MARICO', 2 );
-insert into usuarios (id_usuarios, nick , nombre,clave,pregunta,	respuesta, id_roles) values (5,'PELUCA',"VILMARYS CASTILLO", md5('12345678') , '¿Eres Chavizta?' ,'TU ERES MARICO', 2 );
-
+insert into usuarios (id_usuarios, nick , nombre,clave,pregunta,respuesta, id_roles) values (2605957, 'ARMANDO2018',"ARMANDO ROJAS", md5('Ar12345678') , 'Eres Chavizta' ,	md5('TU ERES MARICO'), 1 );
+insert into usuarios (id_usuarios, nick , nombre,clave,pregunta,respuesta, id_roles) values (12964334, 'NORKIS2018',"NORKIS QUERALES", md5('Ar12345678') , 'Eres Chavizta' ,	md5('TU ERES MARICO'), 1 );
 
 
 

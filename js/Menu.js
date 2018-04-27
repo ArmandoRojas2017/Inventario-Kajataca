@@ -7,6 +7,7 @@ let Menu = function(){
 	$("#usuario").ruta("usuario")
 	$("#ver").ruta("verPerfil")
 	$("#roles").ruta("roles")
+	$("#reporte4").ruta("logs")
 
 	
 

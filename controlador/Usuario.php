@@ -15,7 +15,8 @@
 		public function get(){
 
 	
-
+			$this->addLog(EVENTOS['ingreso_a'],'consulta de usuarios');
+			
 			$modelo = $this->modelo;
 		
 
@@ -57,8 +58,10 @@
 
 			);
 
+		
+
 			incluir_js("auxiliar",$inputs['id_roles']);
-			js("Usuarios/editar");
+			js("editarUsuario");
 			
 			view("modal/usuario",compact('datos','formulario','inputs'));
 		}
@@ -102,7 +105,8 @@
 				"pregunta"  => $_POST['pregunta'] , 
 				"respuesta" => $_POST['respuesta'] , 
 				"clave"     => $_POST['clave'] , 
-				"tipo"      => 1 );
+				"tipo"      => $_POST['rol'] 
+				 );
 
 			return $modelo->add($datos);
 
@@ -114,8 +118,6 @@
 			$modelo = $this->modelo;
 		
 
-
-
 			$datos = array( 
 				"id"        => $_POST['id'] ,  
 				"nick"      => $_POST['nick']  , 
@@ -123,12 +125,34 @@
 				"pregunta"  => $_POST['pregunta'] , 
 				"respuesta" => $_POST['respuesta'] , 
 				"clave"     => $_POST['clave'] , 
-				"tipo"      => $_POST['rol'] 
+				"tipo"      => $_POST['tipo'] 
 			);
 
-			return $modelo->add($datos);
+			var_dump($datos);
+
+			return $modelo->edit($datos) ;
 
 		}
+
+
+		public function deleteUsuario(){
+
+			$modelo = $this->modelo;
+		
+
+
+			echo $modelo->deleteById($_POST['id']) ;
+
+		}
+
+		public function cambiarStatusUsuario(){
+
+			$modelo = $this->modelo;
+		
+			echo $modelo->statusChangeById($_POST['id']); 
+
+		}
+
 
 
 		public function imprimir(){
