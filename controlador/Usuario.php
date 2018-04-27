@@ -15,7 +15,7 @@
 		public function get(){
 
 	
-			$this->addLog(EVENTOS['ingreso_a'],'consulta de usuarios');
+			$this->addLog(EVENTOS['ingreso_a'],' consulta de usuarios');
 			
 			$modelo = $this->modelo;
 		
@@ -45,6 +45,8 @@
 
 		public function ver(){
 
+
+
 			$form =  $this->modelo->getById($_POST['id']);
 
 			// toma los datos de la primera posicion
@@ -58,7 +60,8 @@
 
 			);
 
-		
+			$this->addLog(EVENTOS['peticion_ajax'],' modulo usuarios para ver detalladamente al usuario '.$inputs['nick']
+);
 
 			incluir_js("auxiliar",$inputs['id_roles']);
 			js("editarUsuario");

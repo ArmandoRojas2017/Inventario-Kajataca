@@ -331,7 +331,7 @@ insert into eventos (descripcion)  values ('Abastecio ');
 insert into eventos (descripcion)  values ('Despacho ');
 insert into eventos (descripcion)  values ('Realizo un filtrado de tablas en modulo ');
 insert into eventos (descripcion)  values ('Genero un Reporte en ');
-insert into eventos (descripcion)  values ('Realizo un peticion AJAX en ');
+insert into eventos (descripcion)  values ('Realizo una peticion AJAX en ');
 insert into eventos (descripcion)  values ('Elimino un ');
 insert into eventos (descripcion)  values ('Elimino a un ');
 insert into eventos (descripcion)  values ('Ocurrion un error en ');
