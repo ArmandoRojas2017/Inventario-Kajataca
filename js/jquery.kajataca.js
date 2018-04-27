@@ -319,7 +319,8 @@ String.prototype.trim = function() { return this.replace(/^\s+|\s+$/g, "")}
   				else{
   					$(this).sombra(false)
   					$(id).html("")
-  					localStorage.control = 1
+  					
+
   				}
 			});
 		},
@@ -339,7 +340,7 @@ String.prototype.trim = function() { return this.replace(/^\s+|\s+$/g, "")}
   				else{
   					$(this).sombra(false)
   					$(id).html("")
-  					localStorage.control =  1
+  				
   				}
 			});
 		},
@@ -356,12 +357,11 @@ String.prototype.trim = function() { return this.replace(/^\s+|\s+$/g, "")}
   				else{
   					$(this).sombra(false)
   					$(id).html("")
-  					localStorage.control =  1
   				}
 			});
 		},
 
-			quitarEspacio: function(objecto , id){
+		quitarEspacio: function(objecto , id){
 
 			this.each(function(){
   				
@@ -371,7 +371,32 @@ String.prototype.trim = function() { return this.replace(/^\s+|\s+$/g, "")}
 			});
 		},
 
+		claveSegura: function(id){
+
+			this.each(function(){
+  				
+  				let letraM = /[A-Z]+/
+  				let letra  = /[a-z]+/
+  				let digito = /[0-9]+/
+  				let cadena = $(this).val()
+  				
+  			if( !letraM.test(cadena)  || !digito.test(cadena) || letra.test(cadena) ){
+					
+					$(this).sombra("red")
+					$(id).html('No es una clave segura')
+					localStorage.control =  -1
+  			}else{
+  					$(this).sombra(false)
+  					$(id).html("")
+  			}
+  				
+			});
+		},
+
 	
+
+
+
 
 		
 		//---------------------------------
@@ -433,7 +458,7 @@ String.prototype.trim = function() { return this.replace(/^\s+|\s+$/g, "")}
 
 				return this.each(function(){
 
-					$(this).click( () => $(nodo).html("") );
+					$(this).click( () => {$(nodo).html("")} );
 				});
 			},
 
@@ -441,16 +466,7 @@ String.prototype.trim = function() { return this.replace(/^\s+|\s+$/g, "")}
 
 		//---------------------------------
 		//
-		/* borrar Area */
-			verificarClave: function(clave){
-
-				return this.each(function(){
-
-					$(this).click( () => $(nodo).html("") );
-				});
-			},
-
-
+	
 
 		//---------------------------------
 		

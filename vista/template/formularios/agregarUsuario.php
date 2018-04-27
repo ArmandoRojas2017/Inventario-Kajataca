@@ -52,6 +52,9 @@
 <label for="ci" class="col-sm-offset-5 control-label text-danger oculto" id=error5 >
 </label> 
 
+<label for="ci" class="col-sm-offset-5 control-label text-danger oculto" id=error14 >
+</label> 
+
 
 <div class="form-group oculto">
 <label for="clave" class="col-sm-4 control-label">Contraseña <span id=ver1 class="glyphicon glyphicon-eye-open"></span> </label>

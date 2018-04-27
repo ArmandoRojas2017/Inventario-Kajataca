@@ -27,12 +27,12 @@ var login_validaciones = function login_validaciones(){
  //----------------------------------------------------------------------------------------
 
 
-	localStorage.control = 0
+	
 
  	/* Validacion del sistema*/
  setInterval( function(){
 
- 	
+ 	localStorage.control = 1
 
 	$("input[name=usuario]").campoVacio("#error1")
 	$("input[name=clave]").campoVacio("#error2")
@@ -147,7 +147,7 @@ var usuarios_validaciones = function usuarios_validaciones( ){
 /*Verifica los campos*/
 setInterval( () =>{
 
-
+		localStorage.control = 1
 		/*Valida Minima cantidad de carecteres */
 		
 		//valida la cedula 
@@ -155,7 +155,7 @@ setInterval( () =>{
 		nombre.longitud("#error2",3)
 		nick.longitud("#error3",8)
 		clave.longitud("#error5",8)
-		clave.verificarClave("#error5")
+		clave.claveSegura("#error14")
 		
 
 		clave2.comparar(clave,"#error6")
@@ -186,6 +186,7 @@ setInterval( () =>{
 				mensajeNotify( {mensaje: "Presione el boton Guarda (boton de color Azul)..."} )
 				 localStorage.interruptor = 1
 				 nombre.quitarEspacio()
+				 pregunta.quitarEspacio()
 
 			}
 
