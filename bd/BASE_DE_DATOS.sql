@@ -31,7 +31,7 @@ create table sub_modulos (
 
 	id_sub_modulos int unsigned auto_increment,
 	id_modulos int unsigned,
-	descripcion varchar(100) not null unique,
+	descripcion varchar(100) not null ,
 	fecha_c datetime default now(),
 	fecha_m datetime default now(),
 	status TINYINT(1) default 1, 
@@ -39,23 +39,6 @@ create table sub_modulos (
 	constraint pk49 foreign key ( id_modulos ) references  modulos (id_modulos)
 );
 
-/*
-
- ##############
-	Modulos y sub modulos
-############### 
-
-*/
-insert into modulos (descripcion) values ('usuarios');
-
-
-/*modulo usuarios*/
-insert into sub_modulos ( id_modulos , descripcion) values (1 , 'consultar');
-insert into sub_modulos ( id_modulos , descripcion) values (1 , 'imprimir');
-insert into sub_modulos ( id_modulos , descripcion) values (1 , 'registrar');
-insert into sub_modulos ( id_modulos , descripcion) values (1 , 'modificar');
-insert into sub_modulos ( id_modulos , descripcion) values (1 , 'desactivar');
-insert into sub_modulos ( id_modulos , descripcion) values (1 , 'TODO');
 
 
 
@@ -125,26 +108,8 @@ create table logs (
 	constraint pk4 foreign key ( id_usuarios ) references  usuarios (id_usuarios)
 );
 
-/* Eventos*/
 
 
-insert into eventos (descripcion)  values ('Ingresó al Sistema'); 
-insert into eventos (descripcion)  values ('Salio exitosamente del Sistema'); 
-insert into eventos (descripcion)  values ('Intento ingresar a una pagina'); 
-insert into eventos (descripcion)  values ('Ingreso a '); 
-insert into eventos (descripcion)  values ('Genero un nuevo  '); 
-insert into eventos (descripcion)  values ('Genero una nueva  '); 
-insert into eventos (descripcion)  values ('Modificando un '); 
-insert into eventos (descripcion)  values ('Modificando una '); 
-insert into eventos (descripcion)  values ('Cambio de Estado a un '); 
-insert into eventos (descripcion)  values ('Cambio de Estado a una '); 
-insert into eventos (descripcion)  values ('Abastecio ');
-insert into eventos (descripcion)  values ('Despacho ');
-insert into eventos (descripcion)  values ('Realizo un filtrado de tablas en modulo ');
-insert into eventos (descripcion)  values ('Genero un Reporte en ');
-insert into eventos (descripcion)  values ('Realizo un peticion AJAX en ');
-insert into eventos (descripcion)  values ('Elimino un ');
-insert into eventos (descripcion)  values ('Elimino a un ');
 
 
 
@@ -223,7 +188,7 @@ create table empresas (
 	primary key  (id_empresas)
 );
 
-insert into empresas (descripcion) values ("La Polar");
+
 
 create table distribuidora (
 
@@ -313,9 +278,83 @@ create table abastecimiento(
 #############################
  */
 
+
+
+/*
+
+ ##############
+	Modulos y sub modulos
+############### 
+
+*/
+insert into modulos (descripcion) values ('usuarios');
+insert into modulos (descripcion) values ('distribuidora');
+insert into modulos (descripcion) values ('logs');
+
+
+/*modulo usuarios*/
+insert into sub_modulos ( id_modulos , descripcion) values (1 , 'consultar');
+insert into sub_modulos ( id_modulos , descripcion) values (1 , 'imprimir');
+insert into sub_modulos ( id_modulos , descripcion) values (1 , 'registrar');
+insert into sub_modulos ( id_modulos , descripcion) values (1 , 'modificar');
+insert into sub_modulos ( id_modulos , descripcion) values (1 , 'desactivar');
+
+/*modulo distribuidora*/
+insert into sub_modulos ( id_modulos , descripcion) values (2 , 'consultar');
+insert into sub_modulos ( id_modulos , descripcion) values (2 , 'imprimir');
+insert into sub_modulos ( id_modulos , descripcion) values (2 , 'registrar');
+insert into sub_modulos ( id_modulos , descripcion) values (2 , 'modificar');
+insert into sub_modulos ( id_modulos , descripcion) values (2 , 'desactivar');
+
+/*logs */
+insert into sub_modulos ( id_modulos , descripcion) values (3 , 'consultar');
+
+
+
+
+	
+
+/* Eventos*/
+
+
+insert into eventos (descripcion)  values ('Ingresó al Sistema'); 
+insert into eventos (descripcion)  values ('Salio exitosamente del Sistema'); 
+insert into eventos (descripcion)  values ('Intento ingresar a una pagina'); 
+insert into eventos (descripcion)  values ('Ingreso a '); 
+insert into eventos (descripcion)  values ('Genero un nuevo  '); 
+insert into eventos (descripcion)  values ('Genero una nueva  '); 
+insert into eventos (descripcion)  values ('Modificando un '); 
+insert into eventos (descripcion)  values ('Modificando una '); 
+insert into eventos (descripcion)  values ('Cambio de Estado a un '); 
+insert into eventos (descripcion)  values ('Cambio de Estado a una '); 
+insert into eventos (descripcion)  values ('Abastecio ');
+insert into eventos (descripcion)  values ('Despacho ');
+insert into eventos (descripcion)  values ('Realizo un filtrado de tablas en modulo ');
+insert into eventos (descripcion)  values ('Genero un Reporte en ');
+insert into eventos (descripcion)  values ('Realizo un peticion AJAX en ');
+insert into eventos (descripcion)  values ('Elimino un ');
+insert into eventos (descripcion)  values ('Elimino a un ');
+insert into eventos (descripcion)  values ('Ocurrion un error en ');
+insert into eventos (descripcion)  values ('Intento ');
+
+
 /*Tipos de usuario*/
 insert into roles (descripcion) values ("Root");
 insert into roles (descripcion) values ("Administrador");
+
+
+/*
+	Rol => administrador , id => 2
+	Permiso => 1..5 Usuarios = acceso denegado
+ */
+insert permisos values(2,1);
+insert permisos values(2,2);
+insert permisos values(2,3);
+insert permisos values(2,4);	
+insert permisos values(2,5);
+insert permisos values(2,6);
+
+
 
 
 /*Usuarios*/
@@ -368,16 +407,7 @@ insert distribuidora (id_empresas , descripcion , nombre , telefono ) values (1,
 insert distribuidora (id_empresas , descripcion , nombre , telefono ) values (2, 'Mafia Cabrera','Cerenis Cabrera','04245452248'); 
 
 
-/*
-	Rol => administrador , id => 2
-	Permiso => 1..5 Usuarios = acceso denegado
- */
-insert permisos values(2,1);
-insert permisos values(2,2);
-insert permisos values(2,3);
-insert permisos values(2,4);	
-insert permisos values(2,5);
-insert permisos values(2,6);
+
 
 
 drop database Cerenis;

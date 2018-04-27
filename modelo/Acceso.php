@@ -8,8 +8,7 @@
 		// ingreso al sistema 
 		function validarIngreso(  $user  , $pass  ){
 
-		// clave encriptada
-			$pass = md5($pass); 
+	
 		
 		// datos a consultar 
 			$arreglo = array( "nick" => $user , "clave" => $pass  ); 
@@ -18,7 +17,6 @@
 			$registro = $this->consult($arreglo);
 			
 
-			$registro[0]['nombre'];
 		//verifica si existe un usuario 
 
 		 	if ( (count($arreglo) >  0 ) and ( $registro[0]['id_usuarios'] != "")  ) { 
@@ -46,7 +44,7 @@
 		public function __construct(){
 
 			//sentencia SQL
-			$this->sql = "SELECT id_usuarios, nombre, nick, descripcion, usuarios.id_roles FROM usuarios, roles  where nick=:nick AND clave= :clave AND usuarios.status = 1 " ;
+			$this->sql = "SELECT id_usuarios, nombre, nick, descripcion, usuarios.id_roles FROM usuarios, roles where nick = :nick AND clave = md5(:clave)" ;
 
 			
 		}

@@ -25,12 +25,20 @@ $_SESSION['autenticado'] = ENCONTRADO;
 
 	const MODULOS = array(
 
-		'consultar_usuario' => 1 , 
-		'imprimir_usuario' => 2,
-		'agregar_usuario' => 3,
-		'modificar_usuario' => 4,
-		'desactivar_usuario' => 5,
-		'modulo_usuario' => 6,
+		'consultar_usuario'  	   =>1, 
+		'imprimir_usuario'   	   =>2,
+		'agregar_usuario'    	   =>3,
+		'modificar_usuario'  	   =>4,
+		'desactivar_usuario' 	   =>5,
+
+		'consultar_distribuidora'  =>6, 
+		'imprimir_distribuidora'   =>7,
+		'agregar_distribuidora'    =>8,
+		'modificar_distribuidora'  =>9,
+		'desactivar_distribuidora' =>10,
+
+		'logs'                     =>11,
+	
 
 	);
 
@@ -53,6 +61,8 @@ $_SESSION['autenticado'] = ENCONTRADO;
 		'peticion_ajax'    => 15,
 		'elimino_un'       => 16,
 		'elimino_a_un'     => 17,
+		'error_en'         => 18,
+		'intento'          => 19,
 	);
 
 

@@ -20,7 +20,7 @@ var login_validaciones = function login_validaciones(){
   $("input[name=usuario]").mayuscula().longitudMax(12)
   $("input[name=usuario]").validCampo(soloLetras_Numeros()) 
   // texto en mayuscula, longitud maxima 12 y no acpeta caracteres especiales
-  $("input[name=clave]").mayuscula().longitudMax(12)
+  $("input[name=clave]").longitudMax(12)
   $("input[name=clave]").validCampo(soloLetras_Numeros()) 
   
 
