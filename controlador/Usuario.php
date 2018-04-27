@@ -75,7 +75,7 @@
 
 		public function getAgregar(){
 
-
+		$this->addLog(EVENTOS['ingreso_a'],' registrar usuario ');
 			$modelo = $this->modelo;
 		
 		
@@ -97,8 +97,8 @@
 		public function addUsuario(){
 
 			$modelo = $this->modelo;
+			$this->addLog(EVENTOS['peticion_ajax'],' modulo usuarios para registrar un nuevo usuario con nick '.$_POST['nick']);
 		
-
 
 
 			$datos = array( 
@@ -111,7 +111,20 @@
 				"tipo"      => $_POST['rol'] 
 				 );
 
-			return $modelo->add($datos);
+			// respuesta 
+			$rsp = $modelo->add($datos);
+			
+			switch ($rsp) {
+				case 1:
+					$this->addLog(EVENTOS['genero_un'],' nuevo usuario con nick '.$_POST['nick']);
+					break;
+				
+				default:
+					# code...
+					break;
+			}
+
+			return $rsp;
 
 		}
 
@@ -119,6 +132,8 @@
 		public function editUsuario(){
 
 			$modelo = $this->modelo;
+
+			$this->addLog(EVENTOS['peticion_ajax'],' modulo usuarios para editar un  usuario con nick '.$_POST['nick']);
 		
 
 			$datos = array( 
@@ -131,8 +146,6 @@
 				"tipo"      => $_POST['tipo'] 
 			);
 
-			var_dump($datos);
-
 			return $modelo->edit($datos) ;
 
 		}
@@ -141,7 +154,8 @@
 		public function deleteUsuario(){
 
 			$modelo = $this->modelo;
-		
+			
+			$this->addLog(EVENTOS['peticion_ajax'],' modulo usuarios para eliminar un usuario con Cedula '.$_POST['id']);
 
 
 			echo $modelo->deleteById($_POST['id']) ;
