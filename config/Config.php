@@ -38,6 +38,12 @@ $_SESSION['autenticado'] = ENCONTRADO;
 		'desactivar_distribuidora' =>10,
 
 		'logs'                     =>11,
+
+		'consultar_empresa'  		=>12, 
+		'imprimir_empresa '  		=>13,
+		'agregar_empresa  '   	    =>14,
+		'modificar_empresa'  		=>15,
+		'desactivar_empresa'       	=>16,
 	
 
 	);

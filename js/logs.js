@@ -6,6 +6,6 @@ $(document).ready(function() {
 		//invocamos mejoras a las tablas
 	tablas();
 
-
+	Menu(); //invocamos los scripts del menu 
 
 });

@@ -158,6 +158,18 @@
 				),
 
 
+				'empresas' => array( 
+					'controller' => 'EmpresasControlador' , 
+					'js' => 'empresas',
+					'method' 	 => 'get' 
+				),
+				'agregarEmpresa' => array( 
+					'controller' => 'EmpresasControlador' , 
+					'js' => 'agregarEmpresa',
+					'method' 	 => 'getAgregar' 
+				),
+
+
 
 
 

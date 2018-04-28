@@ -62,6 +62,15 @@
 				$id_usuario =  "usuario";
 			}
 
+
+			$empresa = 0;
+			$id_empresa = "no";
+
+			if($this->permisos->consultar(MODULOS['consultar_empresa']) == -1 ){
+				$empresa =  array( 'texto' => 'Empresas' , 'icono' => 'user'  );
+				$id_empresa =  "empresas";
+			}
+
 			
 
 
@@ -79,7 +88,9 @@
 													"roles" => array(
 															'texto' => "Roles de Usuarios",
 															'icono' => "eye-open"
-														)
+														),
+
+													"$id_empresa" => $empresa ,
 					 							 )  
 					 		);
 

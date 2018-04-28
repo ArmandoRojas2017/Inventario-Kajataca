@@ -1,11 +1,11 @@
 <?php 
 
-class Usuario extends Modelo{
+class Empresas extends Modelo{
 
 
 		public function get_tabla(){
 			
-			$this->sql = "select id_usuarios, nombre, nick, roles.descripcion as tipo, usuarios.status from Usuarios, roles WHERE roles.id_roles = usuarios.id_roles ";
+			$this->sql = "SELECT id_empresas, descripcion, status from empresas ";
 
 			return $this->consult();
 
@@ -93,7 +93,7 @@ class Usuario extends Modelo{
 
 		public function __construct(){
 
-			$this->tabla = "usuarios";
+			$this->tabla = "empresas";
 			
 		}
 

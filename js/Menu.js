@@ -9,6 +9,7 @@ let Menu = function(){
 	$("#roles").ruta("roles")
 	$("#reporte4").ruta("logs")
 	$("#proveedor").ruta("distribuidora")
+	$("#empresas").ruta("empresas")
 
 	
 

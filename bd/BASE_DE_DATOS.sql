@@ -290,6 +290,7 @@ create table abastecimiento(
 insert into modulos (descripcion) values ('usuarios');
 insert into modulos (descripcion) values ('distribuidora');
 insert into modulos (descripcion) values ('logs');
+insert into modulos (descripcion) values ('empresas');
 
 
 /*modulo usuarios*/
@@ -309,7 +310,12 @@ insert into sub_modulos ( id_modulos , descripcion) values (2 , 'desactivar');
 /*logs */
 insert into sub_modulos ( id_modulos , descripcion) values (3 , 'consultar');
 
-
+/*modulo distribuidora*/
+insert into sub_modulos ( id_modulos , descripcion) values (4 , 'consultar');
+insert into sub_modulos ( id_modulos , descripcion) values (4 , 'imprimir');
+insert into sub_modulos ( id_modulos , descripcion) values (4 , 'registrar');
+insert into sub_modulos ( id_modulos , descripcion) values (4 , 'modificar');
+insert into sub_modulos ( id_modulos , descripcion) values (4 , 'desactivar');
 
 
 	
