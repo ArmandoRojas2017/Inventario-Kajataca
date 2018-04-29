@@ -102,6 +102,36 @@ function mensajeOk( arreglo  ){
 
 }
 
+
+function mensajeNo( arreglo  ){
+
+	swal({
+	  title: arreglo['titulo'],
+	  text: arreglo['contenido'],
+	  type: 'error',
+	  confirmButtonColor: '#3085d6',
+	  confirmButtonText: 'OK'
+
+	})
+
+}
+
+
+function mensajeOk2( arreglo , funcion ){
+
+	swal({
+	  title: arreglo['titulo'],
+	  text: arreglo['contenido'],
+	  type: 'success',
+	  confirmButtonColor: '#3085d6',
+	  confirmButtonText: 'OK'
+
+	}).then((result) => {
+		  if (result.value) {funcion()}  				
+	})
+
+}
+
 /*Pie de Pagina*/
 function footer(){
 	/* Efectos al Footer*/

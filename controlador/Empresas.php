@@ -34,15 +34,16 @@
 
 				'titulo' => "Consultar Empresas",
 				'icono' => 'search',
-				'select' => "select/selectUsuarios",
+
 				'encabezado' => $encabezado,
+				'botonera'  => "botoneraTablaImprimir",
 				'contenido' => $modelo->get_tabla()
 
 			);
 			$this->vista("usuario",$datos);
 
 		}
-
+		// cargar por ajax modal
 		public function ver(){
 
 
@@ -51,27 +52,27 @@
 
 			// toma los datos de la primera posicion
 			$inputs = 	$form[0] ;
-			$formulario = 'formularios/agregarUsuario';
+			$formulario = 'formularios/agregarEmpresa';
 
 
 			$datos =  array(
 				
-				'titulo' =>  $inputs['nick']
+				'titulo' =>  $inputs['descripcion']
 
 			);
 
-			$this->addLog(EVENTOS['peticion_ajax'],' modulo usuarios para ver detalladamente al usuario '.$inputs['nick']
+			$this->addLog(EVENTOS['peticion_ajax'],' modulo empresas para ver detalladamente a la empresa '.$inputs['nombre']
 );
 
 			incluir_js("auxiliar",$inputs['id_roles']);
-			js("editarUsuario");
+			js("editarEmpresa");
 			
 			view("modal/usuario",compact('datos','formulario','inputs'));
 		}
 
 
 		
-
+		// ajax
 
 		public function getAgregar(){
 
@@ -93,77 +94,69 @@
 
 		// ajax
 
-		public function addUsuario(){
+		public function add(){
 
 			$modelo = $this->modelo;
-			$this->addLog(EVENTOS['peticion_ajax'],' modulo usuarios para registrar un nuevo usuario con nick '.$_POST['nick']);
+			$this->addLog(EVENTOS['peticion_ajax'],' modulo empresas para registrar un nueva empresa con nombre '.$_POST['nombre']);
 		
 
 
 			$datos = array( 
-				"id"        => $_POST['id'] ,  
-				"nick"      => $_POST['nick']  , 
+				"id"        => $_POST['id'] ,   
 				"nombre"    => $_POST['nombre']  , 
-				"pregunta"  => $_POST['pregunta'] , 
-				"respuesta" => $_POST['respuesta'] , 
-				"clave"     => $_POST['clave'] , 
-				"tipo"      => $_POST['rol'] 
+
+	
 				 );
 
 			// respuesta 
-			$rsp = $modelo->add($datos);
+			  echo $modelo->add($datos);
+			/*
+			if ($r == 1)
+				$this->addLog(EVENTOS['genero_un'],' nueva Empresa con nombre '.$_POST['nombre']);
+			else 
+				$this->addLog(EVENTOS['intento'],' registrar una empresa con nombre '.$_POST['nombre']);
+				*/
 			
-			switch ($rsp) {
-				case 1:
-					$this->addLog(EVENTOS['genero_un'],' nuevo usuario con nick '.$_POST['nick']);
-					break;
-				
-				default:
-					# code...
-					break;
 			}
 
-			return $rsp;
 
-		}
+		
 
-
-		public function editUsuario(){
+		// ajax
+		public function editar(){
 
 			$modelo = $this->modelo;
 
-			$this->addLog(EVENTOS['peticion_ajax'],' modulo usuarios para editar un  usuario con nick '.$_POST['nick']);
+			$this->addLog(EVENTOS['peticion_ajax'],' modulo Empresas para editar una empresa '.$_POST['nombre']);
 		
 
-			$datos = array( 
-				"id"        => $_POST['id'] ,  
-				"nick"      => $_POST['nick']  , 
+				$datos = array( 
+				"id"        => $_POST['id'] ,   
 				"nombre"    => $_POST['nombre']  , 
-				"pregunta"  => $_POST['pregunta'] , 
-				"respuesta" => $_POST['respuesta'] , 
-				"clave"     => $_POST['clave'] , 
-				"tipo"      => $_POST['tipo'] 
-			);
+	
+				 );
 
-			return $modelo->edit($datos) ;
+			echo $modelo->edit($datos) ;
 
 		}
 
-
-		public function deleteUsuario(){
+		// ajax
+		public function eliminar(){
 
 			$modelo = $this->modelo;
 			
-			$this->addLog(EVENTOS['peticion_ajax'],' modulo usuarios para eliminar un usuario con Cedula '.$_POST['id']);
+			$this->addLog(EVENTOS['peticion_ajax'],' modulo empresas para eliminar un usuario con rif '.$_POST['id']);
 
 
 			echo $modelo->deleteById($_POST['id']) ;
 
 		}
 
-		public function cambiarStatusUsuario(){
+		public function cambiarStatus(){
 
 			$modelo = $this->modelo;
+
+			$this->addLog(EVENTOS['peticion_ajax'],' modulo empresas para cambiar de estado un empresa con rif '.$_POST['id']);
 		
 			echo $modelo->statusChangeById($_POST['id']); 
 
@@ -171,46 +164,9 @@
 
 
 
-		public function imprimir(){
+	
 
 
-
-			$encabezado = array("Id","Nombre y Apellido","Nick","Estado");
-
-
-		
-			$arreglo = $this->modelo->get_tabla_filtrado($_GET['rol'] , $_GET['status']);
-			$datos = [];
-
-			for ($i=0; $i < count($arreglo); $i++) { 
-				
-				$datos[$i][0] = $arreglo[$i]['id_usuarios'];
-				$datos[$i][1] = $arreglo[$i]['nombre'];
-				$datos[$i][2] = $arreglo[$i]['nick'];
-				$datos[$i][3] = ($arreglo[$i]['status'] == 1) ? "ACTIVO" : "DESACTIVADO";
-			}
-			$dimension = array("31","62","52","40");
-			
-			$this->getReporte($encabezado ,$datos , $dimension ); 
-		}
-
-
-		public function filtrar(){
-
-
-			$contenido = $this->modelo->get_tabla_filtrado($_POST['rol'] , $_POST['status']);
-
-			$encabezado = array(
-
-			array('texto' => 'Id' , 'filtro' => 'id' ),
-			array('texto' => 'Nombre y Apellido' , 'filtro' => 'nombre' ),
-			array('texto' => 'Nick' , 'filtro' => 'nick' ),
-			array('texto' => 'Tipo' , 'filtro' => 'Rol' )
-			
-			);
-
-			componentes("tabla",compact('contenido','encabezado'));
-		}
 		
 	}
 

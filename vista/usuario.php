@@ -11,7 +11,12 @@ componentes('menu',compact('opciones')); ?>
 	<div class="row">
 
 		
-			<?php if(!$botonera) componentes("botoneraTabla",compact("select"))  ?>
+			<?php 
+
+				if(!isset($botonera)) componentes("botoneraTabla",compact("select")) ;
+				else componentes($botonera,compact("select"))
+
+			 ?>
 			<?php componentes('tabla',compact('encabezado','contenido')) ?>
 		
 		</div>

@@ -113,7 +113,7 @@
 		}
 
 
-		public function editUsuario(){
+		public function editar(){
 
 			$modelo = $this->modelo;
 		
@@ -135,7 +135,7 @@
 		}
 
 
-		public function deleteUsuario(){
+		public function eliminaro(){
 
 			$modelo = $this->modelo;
 		
@@ -145,7 +145,7 @@
 
 		}
 
-		public function cambiarStatusUsuario(){
+		public function cambiarStatus(){
 
 			$modelo = $this->modelo;
 		

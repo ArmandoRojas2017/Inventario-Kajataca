@@ -16,7 +16,11 @@
 </select>
 </div>
 
-<?php if($select) componentes($select) ?>
+<?php 
+
+if(isset($select)) componentes($select) ;
+
+?>
 
 
 <div class="col-sm-1">

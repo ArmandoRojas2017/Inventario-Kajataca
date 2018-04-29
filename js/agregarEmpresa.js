@@ -3,47 +3,49 @@ $(document).ready(function() {
 
 
 //boton salir para volver al consultar
-$("#botonSalir").ruta("usuario")
+$("#botonSalir").ruta("empresas")
+
+$("h6").visibilidad(false) // ocultar estatus 
 
 	
 Menu(); //invocamos los scripts del menu 
 usuarios_validaciones(); //invocamos los scripts del menu 
+tooltip_empresas();
 
 insertar_Hora_NombreDeUsuario("#mi_reloj" , "#nombre_usuario")
 
 let nombre = $("#inputNombre")
 let cedula = $("#inputCedula")
-let nick = $("#inputNick")
-let clave = $("#inputClave")
-let clave2 = $("#inputClave2")
-let pregunta = $("#inputPregunta")
-let respuesta1 = $("#inputRespuesta1")
-let respuesta2 = $("#inputRespuesta2")
-let rol = $("#rol")
-
 
 
 
 /*Mensaje en pantalla*/
-modalImagen("Todos los campos del formulario son obligatorios")
-
+//modalImagen("Todos los campos del formulario son obligatorios")
 
 
 
 
 $("#botonGuardar").click(() => {
 
-	ajax( localStorage.ajax+'usuarioNuevo' , function(resp){
+	ajax( localStorage.ajax+'nuevaEmpresa' , function(resp){
+
+		if(resp.trim() == 1){
+
+			mensajeOk2(
+				{
+					titulo:'Empresa Registrada' , 
+					contenido: 'La empresa fue registrada Correctamente'
+				} , () => {  window.location.href = '?url=empresas'  } )
+		}else{
+
+			mensajeNo({titulo:'Empresa No Registrada' , contenido: 'El Rif o El nombre ya ha sido usado, por favor verifique los datos o consulte en la tabla de empresas'} )
+		}
 	
 	}, { 
 
 		id        : cedula.val(),
 		nombre    : nombre.val(),
-		nick      : nick.val(),
-		clave     : clave.val(),
-		pregunta  : pregunta.val(),
-		respuesta : respuesta1.val(),
-		rol       : rol.val()
+		
 	})
 
 });

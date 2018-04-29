@@ -136,6 +136,7 @@ let Menu = function(){
 	
 	footer()
 	insertar_Hora_NombreDeUsuario("#Hora" , "#Nombre_Usuario")
+	tooltip_empresas()
 	
 
 

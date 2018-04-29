@@ -131,7 +131,7 @@ abstract class Modelo{
 			$array = array('id' => $id  , 'status' => $status );
 
 					//Creamos el sql
-				$this->sql= "UPDATE {$this->tabla} set status = :status  where id_{$this->tabla} = :id";
+				$this->sql= "UPDATE {$this->tabla} set status = :status , fecha_m = now()  where id_{$this->tabla} = :id";
 
 			
 				return $this->consult($array);

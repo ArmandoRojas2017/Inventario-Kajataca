@@ -44,30 +44,13 @@ class Empresas extends Modelo{
 		}
 
 
-		public function verificar($id , $nick){
-
-			$array = array( 'id' => $id , 'nick' => $nick );
-
-			$this->sql = "SELECT * from usuarios where id_usuarios = :id or nick=:nick";
-
-			return $this->consult($array);
-		}
-
 		public function add($datos){
 
-			$control = $this->verificar($datos['id'] , $datos['nick']); 
+		$this->sql = "INSERT into empresas (id_empresas, descripcion) values(:id , :nombre )";
 
-			if(count($control) > 1){
+			echo $this->consult($datos); 
 
-				return -1; //nick o cedula registrada  
-
-			}else {
-
-				$this->sql = "INSERT into usuarios (id_usuarios, nick, nombre,clave,pregunta,respuesta, id_roles) values(:id , :nick, :nombre, md5( :clave ) , :pregunta , md5( :respuesta ), :tipo )";
-
-			return $this->consult($datos); 
-
-			}
+			
 
 			
 		}
@@ -75,17 +58,10 @@ class Empresas extends Modelo{
 
 		public function edit($datos){
 
-			$control = $this->verificar($datos['id'] , $datos['nick']); 
-
-			if(count($control) > 1){
-
-				return -1; //nick o cedula registrada  
-
-			}else {
-			$this->sql = "UPDATE  usuarios SET   nick=:nick, nombre=:nombre, clave = md5( :clave ), pregunta = :pregunta, respuesta=md5( :respuesta ) , id_roles=:tipo where id_usuarios = :id";
+			$this->sql = "UPDATE  {$this->tabla} SET   descripcion=:nombre , fecha_m = now() where id_{$this->tabla} = :id";
 
 			return $this->consult($datos); 
-		 }
+		 
 		}
 
 	

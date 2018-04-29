@@ -82,7 +82,7 @@ class Usuario extends Modelo{
 				return -1; //nick o cedula registrada  
 
 			}else {
-			$this->sql = "UPDATE  usuarios SET   nick=:nick, nombre=:nombre, clave = md5( :clave ), pregunta = :pregunta, respuesta=md5( :respuesta ) , id_roles=:tipo where id_usuarios = :id";
+			$this->sql = "UPDATE  usuarios SET   nick=:nick, nombre=:nombre, clave = md5( :clave ), pregunta = :pregunta, respuesta=md5( :respuesta ) , id_roles=:tipo, fecha_m = now() where id_usuarios = :id";
 
 			return $this->consult($datos); 
 		 }

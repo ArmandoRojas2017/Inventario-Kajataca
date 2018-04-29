@@ -168,6 +168,37 @@
 					'js' => 'agregarEmpresa',
 					'method' 	 => 'getAgregar' 
 				),
+				// registra usuario por Ajax
+				'nuevaEmpresa' => array( 
+					'controller' => 'EmpresasControlador' , 
+					'js' => 'no',
+					'method' 	 => 'add' 
+				),
+
+
+				'verEmpresa' => array( 
+					'controller' => 'EmpresasControlador' , 
+					'js' => 'no',
+					'method' 	 => 'ver' 
+				),
+
+				'editarEmpresa' => array( 
+					'controller' => 'EmpresasControlador' , 
+					'js' => 'no',
+					'method' 	 => 'editar' 
+				),
+
+				'eliminarEmpresa' => array( 
+					'controller' => 'EmpresasControlador' , 
+					'js' => 'no',
+					'method' 	 => 'eliminar' 
+				),
+
+				'statusEmpresa' => array( 
+					'controller' => 'EmpresasControlador' , 
+					'js' => 'no',
+					'method' 	 => 'cambiarStatus' 
+				),
 
 
 
