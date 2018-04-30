@@ -15,11 +15,11 @@
 
 		// verificar 
 			$registro = $this->consult($arreglo);
+
 		
 
-		//verifica si existe un usuario 
-
-		 	if ( (count($arreglo) >  0 ) and ( $registro[0]['id_usuarios'] != "")  ) { 
+		 	if ( count($registro) > 0  ) 
+		 	{ 
 		 		// almacenar datos 
 			 		
 			 		$_SESSION['nombre'] = $registro[0]['nombre'];
@@ -39,7 +39,7 @@
 		 	}
 
 
-		}
+		}// fin de la funcion
 
 		public function __construct(){
 
