@@ -1,4 +1,20 @@
-<?php if($inputs)extract($inputs) ?>
+<?php if(isset($inputs)) 
+
+  extract($inputs); 
+
+  else {
+
+    $id_usuarios = ""; 
+    $nombre = "";
+    $nick = "";
+    $status = 3; 
+
+  }
+
+
+
+
+?>
 
 <form class="form-horizontal">
 
@@ -126,26 +142,7 @@ Repita la Respuesta
 </div>
 
 
-
-
- <?php if (($status) == 1): ?>
- 	<div class="form-group">
- 	<div class="col-sm-6">
-            <h6 class="btn btn-success btn-sm" style="display: inline;  ">
-              Activo
-            </h6>
-            </div>
-            </div>
-          <?php else: ?>
-
-          	 	<div class="form-group">
- 	<div class="col-sm-6">
-            <h6 class="btn btn-info btn-sm" style="display: inline;  ">
-            Desactivado
-            </h6>
-             </div>
-            </div>
-          <?php endif  ?>
+<?php componentes("statusFormulario",compact('status')) ?>
 
 
 </form>

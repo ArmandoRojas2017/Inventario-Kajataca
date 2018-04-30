@@ -1,4 +1,4 @@
-<?php if($inputs)extract($inputs) ?>
+<?php if(isset($inputs))extract($inputs) ?>
 
 <form class="form-horizontal">
 
@@ -9,7 +9,7 @@
 <div class="form-group">
 <label for="ci" class="col-sm-4 control-label">Rif</label>
 <div class="col-sm-6">
-<input  type="text" class="form-control" id="inputCedula" placeholder="Ejemplo: 26059573" <?= value($id_empresas) ?> >
+<input  type="text" class="form-control" id="inputCedula" placeholder="Ejemplo: 26059573" <?php if(isset($id_empresas) ) echo  value($id_empresas) ?> >
 </div>
 </div>
 
@@ -23,31 +23,13 @@
 <div class="form-group">
 <label for="nombre" class="col-sm-4 control-label">Nombre de la Empresa</label>
 <div class="col-sm-6">
-<input type="text" class="form-control" id="inputNombre" placeholder="Ejemplo: Armando Rojas" <?= value($descripcion) ?> >
+<input type="text" class="form-control" id="inputNombre" placeholder="Ejemplo: Armando Rojas" <?php if(isset($id_descripcion) ) echo  value($descripcion) ?> >
 </div>
 </div>
 
 
 
-
- <?php if (($status) == 1): ?>
- 	<div class="form-group">
- 	<div class="col-sm-6">
-            <h6 class="btn btn-success btn-sm" style="display: inline;  ">
-              Activo
-            </h6>
-            </div>
-            </div>
-          <?php else: ?>
-
-          	 	<div class="form-group">
- 	<div class="col-sm-6">
-            <h6 class="btn btn-info btn-sm" style="display: inline;  ">
-            Desactivado
-            </h6>
-             </div>
-            </div>
-          <?php endif  ?>
+<?php componentes("statusFormulario",compact('status')) ?>
 
 
 </form>

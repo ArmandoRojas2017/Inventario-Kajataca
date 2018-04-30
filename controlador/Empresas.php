@@ -61,10 +61,10 @@
 
 			);
 
-			$this->addLog(EVENTOS['peticion_ajax'],' modulo empresas para ver detalladamente a la empresa '.$inputs['nombre']
+			$this->addLog(EVENTOS['peticion_ajax'],' modulo empresas para ver detalladamente a la empresa '.$inputs['descripcion']
 );
 
-			incluir_js("auxiliar",$inputs['id_roles']);
+		
 			js("editarEmpresa");
 			
 			view("modal/usuario",compact('datos','formulario','inputs'));

@@ -51,12 +51,22 @@ mensajeSiNo(
 
 						ajax(localStorage.ajax + 'eliminarEmpresa', (rsp) =>{
 
-							
-							mensajeOk({titulo : '¡Listo!' , contenido: `Eliminado...` });
-							setTimeout( () => {
 
-									window.location.href = '?url=empresas'
-							} , 3000 )
+							if(rsp.trim() == 1){
+
+
+								mensajeOk2({titulo : '¡Listo!' , contenido: `Eliminado...` }, 
+									 () => {
+										window.location.href = '?url=empresas'
+										}
+									)
+							}
+							else 
+								mensajeNo({
+									titulo : '¡No se puede eliminar!' , 
+									contenido: `porque se ha utilizado esta empresa en otros registros, solo puede cambiar su estado` 
+								})
+							
 
 						},{
 							id: rif.val()
