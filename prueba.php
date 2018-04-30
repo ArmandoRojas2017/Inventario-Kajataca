@@ -1,16 +1,16 @@
-<?php 
-	
-require_once 'config/Config.php';  
-require_once 'include/Helpers.php'; 
-require_once 'include/Rutas.php';
-require_once 'modelo/&Modelo.php';
-require_once 'modelo/Empresas.php';
+<?php
+// Carga la configuración 
+//$config = parse_ini_file('config.ini'); 
 
+$config = array(  'username' => "armando" , 'password' => "12345678" , "dbname" => 'cerenis' );
 
-$rutas = new Empresas();
+// Conexión con los datos del 'config.ini' 
+$connection = mysqli_connect('192.168.0.103',$config['username'],"12345678",$config['dbname']); 
 
-$arreglo = array( 'id' => '12' , 'nombre' => 'PAPAS'  );
-
-echo $rutas->add($arreglo)
-
- ?>
+// Si la conexión falla, aparece el error 
+if($connection === false) { 
+ echo 'Ha habido un error <br>'.mysqli_connect_error(); 
+} else {
+ echo 'Conectado a la base de datos';
+}
+?>

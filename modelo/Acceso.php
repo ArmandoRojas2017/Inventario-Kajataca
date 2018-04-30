@@ -15,7 +15,7 @@
 
 		// verificar 
 			$registro = $this->consult($arreglo);
-			
+		
 
 		//verifica si existe un usuario 
 

@@ -17,6 +17,9 @@ componentes('menu',compact('opciones')); ?>
 				else componentes($botonera,compact("select"))
 
 			 ?>
+
+			
+
 			<?php componentes('tabla',compact('encabezado','contenido')) ?>
 		
 		</div>

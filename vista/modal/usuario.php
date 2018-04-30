@@ -20,7 +20,7 @@
 
 <?php componentes("".$formulario,compact('inputs')) ?>
 
-<?php if(!$botonera): ?>
+<?php if(!isset($botonera)): ?>
 
 <div class="modal-footer">
   <?php componentes('botoneraModal',compact('estado')) ?>

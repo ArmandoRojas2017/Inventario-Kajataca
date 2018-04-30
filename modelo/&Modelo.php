@@ -139,7 +139,7 @@ abstract class Modelo{
 		}
 
 
-		public function __destruct(){unset($this);}
+		
 	}
 
  ?>

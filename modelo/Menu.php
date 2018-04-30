@@ -16,7 +16,11 @@
 		// captura el id del usuario 
 		public function __construct(){
 
-			$this->id = $_SESSION['id'];
+			if(isset($_SESSION['id'] ))
+				$this->id = $_SESSION['id'];
+			else 
+				$this->id = 0;
+			
 			$this->permisos = new Permisos();
 		}
 

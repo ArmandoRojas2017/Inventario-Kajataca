@@ -46,6 +46,8 @@ $("#ingresar").click(function() {
 
 		}
 		else if($request.trim() == -1){
+
+			alert($request)
 			mensajeNotify({mensaje:'Usuario o Clave Invalida', tipo:'danger'})
 
 		}

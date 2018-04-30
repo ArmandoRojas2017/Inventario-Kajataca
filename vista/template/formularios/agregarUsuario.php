@@ -145,7 +145,7 @@ Repita la Respuesta
             </h6>
              </div>
             </div>
-          <?endif  ?>
+          <?php endif  ?>
 
 
 </form>

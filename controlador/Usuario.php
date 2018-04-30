@@ -6,8 +6,7 @@
 		public function __construct(){
 
 			parent::__construct(Usuario::class);
-			// validar el acceso
-			$this->acceso(MODULOS['modulo_usuario']);
+		
 			
 
 		}

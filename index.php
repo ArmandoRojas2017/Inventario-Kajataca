@@ -9,6 +9,8 @@ require_once 'include/Helpers.php';
 
 require_once 'include/Rutas.php';
 
+if( !isset($_SESSION['id'])) $_SESSION['id'] = -1;
+
 /*controlador base*/
 ?>
 
