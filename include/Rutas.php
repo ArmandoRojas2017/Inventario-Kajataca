@@ -184,7 +184,7 @@
 					'method' 	 => 'editar' 
 				),
 
-				'eliminarDistribuidoraa' => array( 
+				'eliminarDistribuidora' => array( 
 					'controller' => 'DistribuidoraControlador' , 
 					'js' => 'no',
 					'method' 	 => 'eliminar' 

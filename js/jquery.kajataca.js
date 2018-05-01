@@ -812,3 +812,55 @@ buscar (location.search) o hasta encontrar el símbolo «et» también conocido 
  Al final dicho texto encontrado decodificado y devuelto. 
 En el remoto caso de no encontrar coincidencias, devolverá una cadena vacía.
  */
+
+
+
+ /*Funciones extra para el sistema, como libreria deberia ser elminada*/
+
+
+ var boton_eliminar = (objecto) =>{
+
+
+$("#botonEliminar").click(()=>{
+
+mensajeSiNo(
+			{ 
+				titulo: "¡Alerta!",
+				contenido: "¿Estas seguro de eliminarlo?",
+				titulo2: "¡Listo!",
+				contenido2: "Eliminado"
+
+			},
+			() => {
+
+
+						ajax(localStorage.ajax + objecto.url, (rsp) =>{
+
+
+							if(rsp.trim() == 1){
+
+
+								mensajeOk2({titulo : '¡Listo!' , contenido: `Eliminado...` }, 
+									 () => {
+										window.location.href = localStorage.ajax + objecto.direct
+										}
+									)
+							}
+							else 
+								mensajeNo({
+									titulo : '¡No se puede eliminar!' , 
+									contenido: `porque se ha utilizado en otros registros, solo puede cambiar su estado` 
+								})
+							
+
+						},objecto.variables)
+						 
+						
+						
+			}
+		)
+
+
+})
+
+}

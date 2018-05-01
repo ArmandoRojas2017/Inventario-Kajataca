@@ -3,7 +3,7 @@ $(document).ready(function() {
 
 
 //boton salir para volver al consultar
-$("#botonSalir").ruta("empresas")
+$("#botonSalir").ruta("distribuidora")
 
 $("h6").visibilidad(false) // ocultar estatus 
 
@@ -37,7 +37,7 @@ $("#botonGuardar").click(() => {
 				} , () => {  window.location.href = '?url=distribuidora'  } )
 		}else{
 
-		
+
 			mensajeNo({
 				titulo:'Distribuidora No Registrada' , 
 				contenido: 'El Rif , El nombre o el telefono ya ha sido usado, por favor verifique los datos o consulte en la tabla de distribuidoras'} 

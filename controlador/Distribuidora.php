@@ -53,7 +53,7 @@
 
 			// toma los datos de la primera posicion
 			$inputs = 	$form[0] ;
-			$formulario = 'formularios/agregarEmpresa';
+			$formulario = 'formularios/agregarDistribuidora';
 
 
 			$datos =  array(
@@ -77,7 +77,7 @@
 
 		public function getAgregar(){
 
-		$this->addLog(EVENTOS['ingreso_a'],' registrar empresas ');
+		$this->addLog(EVENTOS['ingreso_a'],' registrar distribuidora ');
 			$modelo = $this->modelo;
 		
 		
@@ -98,7 +98,7 @@
 		public function add(){
 
 			$modelo = $this->modelo;
-			$this->addLog(EVENTOS['peticion_ajax'],' modulo empresas para registrar un nueva empresa con nombre '.$_POST['nombre']);
+			$this->addLog(EVENTOS['peticion_ajax'],' modulo distribuidora para registrar un nueva distribuidora con nombre '.$_POST['distribuidora']);
 		
 
 
@@ -125,7 +125,7 @@
 
 			$modelo = $this->modelo;
 
-			$this->addLog(EVENTOS['peticion_ajax'],' modulo Empresas para editar una empresa '.$_POST['nombre']);
+			$this->addLog(EVENTOS['peticion_ajax'],' modulo Distribuidora para cambiar el nombre a una distribuidora con rif '.$_POST['id']);
 		
 
 				$datos = array( 
@@ -143,7 +143,7 @@
 
 			$modelo = $this->modelo;
 			
-			$this->addLog(EVENTOS['peticion_ajax'],' modulo empresas para eliminar un usuario con rif '.$_POST['id']);
+			$this->addLog(EVENTOS['peticion_ajax'],' modulo Distribuidora para eliminar a una distribuidora con rif : '.$_POST['id']);
 
 
 			echo $modelo->deleteById($_POST['id']) ;
@@ -154,7 +154,7 @@
 
 			$modelo = $this->modelo;
 
-			$this->addLog(EVENTOS['peticion_ajax'],' modulo empresas para cambiar de estado un empresa con rif '.$_POST['id']);
+			$this->addLog(EVENTOS['peticion_ajax'],' modulo Distribuidora para cambiar de estado un Distribuidora con rif '.$_POST['id']);
 		
 			echo $modelo->statusChangeById($_POST['id']); 
 
@@ -162,7 +162,8 @@
 
 		public function select(){
 
-			
+			$this->addLog(EVENTOS['peticion_ajax'],' modulo Distribuidora para solicitar un select con todas las distribuidoras ');
+
 			$data = $this->modelo->get_select(); 
 
 			componentes("plantillaSelect", compact('data') );
