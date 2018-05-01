@@ -151,6 +151,8 @@
 				),
 
 
+
+
 				'distribuidora' => array( 
 					'controller' => 'ProveedorControlador' , 
 					'js' => 'proveedor',
@@ -158,44 +160,44 @@
 				),
 
 				'agregarDistribuidora' => array( 
-					'controller' => 'EmpresasControlador' , 
-					'js' => 'agregarEmpresa',
+					'controller' => 'ProveedorControlador' , 
+					'js' => 'agregarProveedor',
 					'method' 	 => 'getAgregar' 
 				),
 				// registra usuario por Ajax
-				'nuevaEDistribuidora' => array( 
-					'controller' => 'EmpresasControlador' , 
+				'nuevaDistribuidora' => array( 
+					'controller' => 'ProveedorControlador' , 
 					'js' => 'no',
 					'method' 	 => 'add' 
 				),
 
 
 				'verEDistribuidora' => array( 
-					'controller' => 'EmpresasControlador' , 
+					'controller' => 'ProveedorControlador' , 
 					'js' => 'no',
 					'method' 	 => 'ver' 
 				),
 
 				'editarEDistribuidora' => array( 
-					'controller' => 'EmpresasControlador' , 
+					'controller' => 'ProveedorControlador' , 
 					'js' => 'no',
 					'method' 	 => 'editar' 
 				),
 
 				'eliminarDistribuidoraa' => array( 
-					'controller' => 'EmpresasControlador' , 
+					'controller' => 'ProveedorControlador' , 
 					'js' => 'no',
 					'method' 	 => 'eliminar' 
 				),
 
 				'statusEDistribuidora' => array( 
-					'controller' => 'EmpresasControlador' , 
+					'controller' => 'ProveedorControlador' , 
 					'js' => 'no',
 					'method' 	 => 'cambiarStatus' 
 				),
 
 				'selectEDistribuidora' => array( 
-					'controller' => 'EmpresasControlador' , 
+					'controller' => 'ProveedorControlador' , 
 					'js' => 'no',
 					'method' 	 => 'select' 
 				),

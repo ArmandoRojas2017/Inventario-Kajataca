@@ -84,9 +84,9 @@
 
 			$datos = array(
 
-					'titulo' => "Registrar una Nueva Empresa",
+					'titulo' => "Registrar un Nueva Distribuidora",
 					'icono' => 'plus-sign',
-					'formulario' => "formularios/agregarEmpresa",
+					'formulario' => "formularios/agregarDistribuidora",
 
 				);
 			$this->vista("agregarUsuario",$datos);

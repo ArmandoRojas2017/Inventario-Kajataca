@@ -73,9 +73,9 @@ $_SESSION['autenticado'] = ENCONTRADO;
 
 
 
-	 const USER = "armando";
+	 const USER = "root";
 	 const PASS = "12345678";
-	 const HOST = "192.168.0.107";
+	 const HOST = "localhost";
 	 const DATABASE = "Cerenis";
 
 	 const ENCONTRADO = 1;
