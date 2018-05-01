@@ -62,11 +62,11 @@
 
 			);
 
-			$this->addLog(EVENTOS['peticion_ajax'],' modulo empresas para ver detalladamente a la empresa '.$inputs['descripcion']
+			$this->addLog(EVENTOS['peticion_ajax'],' modulo distribuidora para ver detalladamente a la distribuidora '.$inputs['descripcion']
 );
 
 		
-			js("editarEmpresa");
+			js("editarProveedor");
 			
 			view("modal/usuario",compact('datos','formulario','inputs'));
 		}

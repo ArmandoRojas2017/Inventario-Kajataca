@@ -172,7 +172,7 @@
 				),
 
 
-				'verEDistribuidora' => array( 
+				'verDistribuidora' => array( 
 					'controller' => 'DistribuidoraControlador' , 
 					'js' => 'no',
 					'method' 	 => 'ver' 
