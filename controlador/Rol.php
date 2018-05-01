@@ -12,7 +12,7 @@
 		function getSelect(){
 
 			
-			$data = $this->modelo->get_all(); 
+			$data = $this->modelo->get_select(); 
 
 			componentes("plantillaSelect", compact('data') );
 			

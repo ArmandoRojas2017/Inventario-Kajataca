@@ -96,6 +96,14 @@ abstract class Modelo{
 			
 		}
 
+		public function get_select(){
+
+				//Creamos el sql
+				$this->sql= "SELECT id_{$this->tabla} as id , descripcion as texto FROM {$this->tabla}";
+				return $this->consult();
+			
+		}
+
 		public function getById($id){
 
 				//Creamos el sql

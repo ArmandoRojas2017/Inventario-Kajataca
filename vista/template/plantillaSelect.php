@@ -4,7 +4,7 @@
 <label class=" control-label form-control " > <?= $label ?> </label>
 </div>
 <div class="col-sm-2">
-<select name="status" id=<?= "'".$id."'"  ?> class="form-control">
+<select name="status" id=<?= "'".$idSelect."'"  ?> class="form-control">
 <?php endif?>
 
 		<?php if (isset($opcionExtra)): ?>
@@ -17,7 +17,7 @@
 			<?php foreach ($data as $arreglo): ?>
 				<?php extract($arreglo) ?>
 
-				<option <?= value($id_roles) ?>  ><?= $descripcion ?></option>
+				<option <?= value($id) ?>  ><?= $texto ?></option>
 
 			<?php endforeach ?>
 		

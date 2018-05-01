@@ -162,6 +162,15 @@
 
 		}
 
+		public function select(){
+
+			
+			$data = $this->modelo->get_select(); 
+
+			componentes("plantillaSelect", compact('data') );
+			
+		}
+
 
 
 	

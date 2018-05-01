@@ -157,6 +157,54 @@
 					'method' 	 => 'get' 
 				),
 
+				'agregarDistribuidora' => array( 
+					'controller' => 'EmpresasControlador' , 
+					'js' => 'agregarEmpresa',
+					'method' 	 => 'getAgregar' 
+				),
+				// registra usuario por Ajax
+				'nuevaEDistribuidora' => array( 
+					'controller' => 'EmpresasControlador' , 
+					'js' => 'no',
+					'method' 	 => 'add' 
+				),
+
+
+				'verEDistribuidora' => array( 
+					'controller' => 'EmpresasControlador' , 
+					'js' => 'no',
+					'method' 	 => 'ver' 
+				),
+
+				'editarEDistribuidora' => array( 
+					'controller' => 'EmpresasControlador' , 
+					'js' => 'no',
+					'method' 	 => 'editar' 
+				),
+
+				'eliminarDistribuidoraa' => array( 
+					'controller' => 'EmpresasControlador' , 
+					'js' => 'no',
+					'method' 	 => 'eliminar' 
+				),
+
+				'statusEDistribuidora' => array( 
+					'controller' => 'EmpresasControlador' , 
+					'js' => 'no',
+					'method' 	 => 'cambiarStatus' 
+				),
+
+				'selectEDistribuidora' => array( 
+					'controller' => 'EmpresasControlador' , 
+					'js' => 'no',
+					'method' 	 => 'select' 
+				),
+
+
+
+
+
+
 
 				'empresas' => array( 
 					'controller' => 'EmpresasControlador' , 
@@ -198,6 +246,12 @@
 					'controller' => 'EmpresasControlador' , 
 					'js' => 'no',
 					'method' 	 => 'cambiarStatus' 
+				),
+
+				'selectEmpresa' => array( 
+					'controller' => 'EmpresasControlador' , 
+					'js' => 'no',
+					'method' 	 => 'select' 
 				),
 
 

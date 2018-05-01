@@ -44,7 +44,7 @@
 		public function __construct(){
 
 			//sentencia SQL
-			$this->sql = "SELECT id_usuarios, nombre, nick, descripcion, usuarios.id_roles FROM usuarios, roles where nick = :nick AND clave = md5(:clave)" ;
+			$this->sql = "SELECT id_usuarios, nombre, nick, descripcion, usuarios.id_roles FROM usuarios, roles where nick = :nick AND clave = md5(:clave) AND usuarios.status = 1 " ;
 
 			
 		}
