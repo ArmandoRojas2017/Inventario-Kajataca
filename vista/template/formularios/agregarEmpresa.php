@@ -23,7 +23,7 @@
 <div class="form-group">
 <label for="nombre" class="col-sm-4 control-label">Nombre de la Empresa</label>
 <div class="col-sm-6">
-<input type="text" class="form-control" id="inputNombre" placeholder="Ejemplo: Armando Rojas" <?php if(isset($id_descripcion) ) echo  value($descripcion) ?> >
+<input type="text" class="form-control" id="inputNombre" placeholder="Ejemplo: Armando Rojas" <?php if(isset($descripcion) ) echo  value($descripcion) ?> >
 </div>
 </div>
 

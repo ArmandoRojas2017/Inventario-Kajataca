@@ -73,10 +73,18 @@
 
 
 <div class="form-group oculto">
-<label for="clave" class="col-sm-4 control-label">Contraseña <span id=ver1 class="glyphicon glyphicon-eye-open"></span> </label>
+<label for="ci" class="col-sm-4 control-label">
+Repita Contraseña  
+
+</label>
+
 <div class="col-sm-6">
-<input type="password" class="form-control" id="inputClave" placeholder="Ejemplo: Azhk123ñP" >
-	
+  <div class="input-group">
+<input type="password" class="form-control" id="inputClave" placeholder="Ejemplo: Azhk123ñP ">
+      
+      <div class="input-group-addon" >  <span id=ver1 class="glyphicon glyphicon-eye-open"></span>   </div>
+  </div>
+  
 </div>
 </div>
 
@@ -88,11 +96,15 @@
 <div class="form-group oculto">
 <label for="ci" class="col-sm-4 control-label">
 Repita Contraseña  
-<span id=ver2 class="glyphicon glyphicon-eye-open"></span> 
+
 </label>
 
 <div class="col-sm-6">
+  <div class="input-group">
 <input type="password" class="form-control" id="inputClave2" placeholder="Ejemplo: Azhk123ñP ">
+      
+      <div class="input-group-addon" >  <span id=ver2 class="glyphicon glyphicon-eye-open"></span>   </div>
+  </div>
 	
 </div>
 </div>
@@ -104,7 +116,14 @@ Repita Contraseña
 <div class="form-group oculto">
 <label for="ci" class="col-sm-4 control-label">Pregunta Secreta</label>
 <div class="col-sm-6">
+
+<div class="input-group">
+     <div class="input-group-addon">  <b>¿</b> </div>
 <input type="text" class="form-control" id="inputPregunta" placeholder="Ejemplo: ¿Comida Favorita?">
+
+       <div class="input-group-addon">  <b>?</b> </div>
+                </div>
+
 	
 </div>
 </div>
@@ -117,11 +136,13 @@ Repita Contraseña
 <div class="form-group oculto">
 <label for="ci" class="col-sm-4 control-label">
 Respuesta a la pregunta Secreta
-<span id=ver3 class="glyphicon glyphicon-eye-open"></span>
+
 </label>
 <div class="col-sm-6">
+  <div class="input-group">
 <input type="password" class="form-control" id="inputRespuesta1" placeholder="Ejemplo: Ensalada de Pollo :v">
-	
+	 <div class="input-group-addon"><span id=ver3 class="glyphicon glyphicon-eye-open"></span>  </div>
+  </div>
 </div>
 </div>
 
@@ -133,10 +154,13 @@ Respuesta a la pregunta Secreta
 <div class="form-group">
 <label for="ci" class="col-sm-4 control-label oculto">
 Repita la Respuesta
-<span id=ver4 class="glyphicon glyphicon-eye-open"></span>
 </label>
 <div class="col-sm-6">
-<input type="password" class="form-control" id="inputRespuesta2" placeholder="Ejemplo: Ensalada de Pollo :v">
+  <div class="input-group">
+    <input type="password" class="form-control" id="inputRespuesta2" placeholder="Ejemplo: Ensalada de Pollo :v">
+    <div class="input-group-addon" > <span id=ver4 class="glyphicon glyphicon-eye-open"></span>
+ </div>    
+  </div>
 	
 </div>
 </div>
@@ -146,3 +170,4 @@ Repita la Respuesta
 
 
 </form>
+

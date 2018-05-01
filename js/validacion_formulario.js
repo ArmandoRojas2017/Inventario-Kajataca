@@ -5,7 +5,7 @@ var validaciones_generales = function validaciones_generales(){
  	 $("input").noCopiar() // no copiar y pegar 
  	 clickDerecho() // no permite clcik derecho 
 }
-
+ 
 
 
 var login_validaciones = function login_validaciones(){
@@ -74,19 +74,7 @@ var usuarios_validaciones = function usuarios_validaciones( ){
 	 localStorage.interruptor = 0
 
 	validaciones_generales()
-	// mensajes 
-	let mensajes = {
 
-	alerta1 : "La Cédula debe ser mayor a 5 numeros",
-	alerta2 : "El nombre debe llevar al menos 3 caracteres ",
-	alerta3 : "El nick debe tener al menos 8 caracteres ",
-	alerta4 : "La contraseña debe poseer al menos 8 caracteres",
-	alerta5 : "La contraseña no coinciden",
-	alerta6 : "La pregunta secreta debe llevar al menos 10 caracteres",
-	alerta7 : "Respuesta secreta debe poseer al menos 3 caracteres",
-	alerta8 : "No coinciden las respuestas secretas",
-
-	}
 
 	// campos 
 	let nombre = $("#inputNombre")
@@ -103,6 +91,127 @@ var usuarios_validaciones = function usuarios_validaciones( ){
 	ajax("?url=selectRol",function(resp){
 
 		$("#rol").html(resp)
+	},null)
+
+
+	tooltip_usuario();
+
+	/*Longitud Permitida*/
+	nombre.mayuscula().longitudMax(40)
+	nick.mayuscula().longitudMax(12)
+	cedula.longitudMax(8)
+	clave.longitudMax(12)
+	clave2.longitudMax(12)
+
+	pregunta.mayuscula().longitudMax(20)
+	respuesta1.mayuscula().longitudMax(20)
+	respuesta2.mayuscula().longitudMax(20)
+
+	/*valida teclado*/
+	nombre.validCampo(soloLetras())
+	cedula.validCampo(soloNumeros())
+	nick.validCampo(soloLetras_Numeros())
+	clave.validCampo(soloLetras_Numeros())
+	respuesta1.validCampo(soloLetras())
+	respuesta2.validCampo(soloLetras())
+	clave2.validCampo(soloLetras_Numeros())
+	pregunta.validCampo(soloLetras())
+
+
+	// cambiar los iconos a modo botones	
+	$(".glyphicon-eye-open").css('cursor', 'pointer');
+
+	
+
+
+
+/*Verifica los campos*/
+setInterval( () =>{
+
+		localStorage.control = 1
+		/*Valida Minima cantidad de carecteres */
+		
+		//valida la cedula 
+		cedula.longitud("#error1",7)
+		nombre.longitud("#error2",3)
+		nick.longitud("#error3",8)
+		clave.longitud("#error5",8)
+		clave.claveSegura("#error14")
+		
+
+		clave2.comparar(clave,"#error6")
+		pregunta.longitud("#error7",6)
+		respuesta1.longitud("#error8",3)
+		respuesta2.comparar(respuesta1,"#error9")
+		
+	
+
+
+
+
+
+
+		//---------------------------------------
+
+		
+
+		/* Activar el boton de guardar */
+		if(localStorage.control == 1 ){
+
+
+			$("#botonGuardar").disabled(false)
+
+			 
+
+			if(localStorage.interruptor == 0){
+				mensajeNotify( {mensaje: "Presione el boton Guarda (boton de color Azul)..."} )
+				 localStorage.interruptor = 1
+				 nombre.quitarEspacio()
+				 pregunta.quitarEspacio()
+
+			}
+
+				
+
+		}
+		else {
+
+			$("#botonGuardar").disabled(true);
+			 localStorage.interruptor = 0
+		}
+
+		//---------------------------------------
+
+
+
+
+} , 500  )
+
+
+}
+
+
+
+var proveedor_validaciones = function usuarios_validaciones( ){
+
+	 localStorage.interruptor = 0
+
+	validaciones_generales()
+	// mensajes 
+
+
+	// campos 
+	let nombre = $("#nombre")
+	let rif = $("#rif")
+	let distribuidora = $("#distribuidora")
+	let empresa = $("#empresa")
+	let telefono = $("#telefono")
+
+
+	// asignar roles al select 
+	ajax("?url=selectEmpresa",function(resp){
+
+		$("#empresa").html(resp)
 	},null)
 
 
