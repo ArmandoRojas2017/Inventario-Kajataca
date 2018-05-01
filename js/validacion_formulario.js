@@ -225,7 +225,7 @@ var proveedor_validaciones = function usuarios_validaciones( ){
 	/*Longitud Permitida*/
 	nombre.longitudMax(40)
 	telefono.longitudMax(11)
-	distribuidora.longitudMax(3)
+	distribuidora.longitudMax(40)
 	rif.longitudMax(12)
 	
 
@@ -246,18 +246,12 @@ setInterval( () =>{
 		localStorage.control = 1
 		/*Valida Minima cantidad de carecteres */
 		
-		//valida la cedula 
 		rif.longitud("#error1",7)
 		distribuidora.longitud("#error2",3)
 		nombre.longitud("#error4",3)
 		telefono.longitud("#error5",11)
 		
 		
-
-
-
-
-
 
 		//---------------------------------------
 

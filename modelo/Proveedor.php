@@ -1,6 +1,6 @@
 <?php 
 
-class Proveedor extends Modelo{
+class Distribuidora extends Modelo{
 
 
 		public function get_tabla(){
@@ -20,7 +20,7 @@ class Proveedor extends Modelo{
 
 		public function add($datos){
 
-			$this->sql = "INSERT into {$this->tabla} (id_{$this->tabla}, id_empresas, nombre, telefono) values(:id , :empresa , :nombre , :telefono )";
+			$this->sql = "INSERT into {$this->tabla} (id_{$this->tabla}, id_empresas, descripcion, nombre, telefono) values(:id , :empresa , :distribuidora, :nombre , :telefono )";
 
 			return $this->consult($datos); 
 
@@ -44,7 +44,7 @@ class Proveedor extends Modelo{
 
 		public function __construct(){
 
-			$this->tabla = "Proveedorr";
+			$this->tabla = "distribuidora";
 			
 		}
 

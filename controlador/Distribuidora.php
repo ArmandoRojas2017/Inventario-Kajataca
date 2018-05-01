@@ -1,11 +1,11 @@
 <?php 
 
-	class ProveedorControlador extends Controlador
+	class DistribuidoraControlador extends Controlador
 	{
 		
 		public function __construct(){
 
-			parent::__construct(Proveedor::class);
+			parent::__construct(Distribuidora::class);
 		
 			
 
@@ -105,18 +105,15 @@
 			$datos = array( 
 				"id"        => $_POST['id'] ,   
 				"nombre"    => $_POST['nombre']  , 
+				"distribuidora"    => $_POST['distribuidora']  , 
+				"empresa"    => $_POST['empresa']  , 
+				"telefono"    => $_POST['telefono']  , 
 
-	
 				 );
 
 			// respuesta 
 			  echo $modelo->add($datos);
-			/*
-			if ($r == 1)
-				$this->addLog(EVENTOS['genero_un'],' nueva Empresa con nombre '.$_POST['nombre']);
-			else 
-				$this->addLog(EVENTOS['intento'],' registrar una empresa con nombre '.$_POST['nombre']);
-				*/
+		
 			
 			}
 

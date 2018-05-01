@@ -14,37 +14,43 @@ tooltip_proveedor();
 
 insertar_Hora_NombreDeUsuario("#mi_reloj" , "#nombre_usuario")
 
-let nombre = $("#inputNombre")
-let cedula = $("#inputCedula")
+
 
 
 
 /*Mensaje en pantalla*/
-//modalImagen("Todos los campos del formulario son obligatorios")
+modalImagen("Todos los campos del formulario son obligatorios")
 
 
 
 
 $("#botonGuardar").click(() => {
 
-	ajax( localStorage.ajax+'nuevaEmpresa' , function(resp){
+	ajax( localStorage.ajax+'nuevaDistribuidora' , function(resp){
 
 		if(resp.trim() == 1){
 
 			mensajeOk2(
 				{
-					titulo:'Empresa Registrada' , 
-					contenido: 'La empresa fue registrada Correctamente'
-				} , () => {  window.location.href = '?url=empresas'  } )
+					titulo:'Distribuidora Registrada' , 
+					contenido: 'La distribuidora fue registrada Correctamente'
+				} , () => {  window.location.href = '?url=distribuidora'  } )
 		}else{
 
-			mensajeNo({titulo:'Empresa No Registrada' , contenido: 'El Rif o El nombre ya ha sido usado, por favor verifique los datos o consulte en la tabla de empresas'} )
+		
+			mensajeNo({
+				titulo:'Distribuidora No Registrada' , 
+				contenido: 'El Rif , El nombre o el telefono ya ha sido usado, por favor verifique los datos o consulte en la tabla de distribuidoras'} 
+				)
 		}
 	
 	}, { 
 
-		id        : cedula.val(),
-		nombre    : nombre.val(),
+		id              : $("#rif").val(),
+		distribuidora   : $("#distribuidora").val(),
+		empresa         : $("#empresa").val(),
+		telefono        : $("#telefono").val(),
+		nombre          : $("#nombre").val(),
 		
 	})
 
