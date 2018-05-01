@@ -3,7 +3,7 @@
 *	-1 es una respuesta negativa
 *	1 es una respuesta positiva 
 
-# Validación de Formulario Usuario
+# Validación de Formulario 
 
 ## Nombre:
 
@@ -37,3 +37,20 @@
 * Longitud maxima 50 caracteres 
 * letras y numeros
 
+## Rif:
+
+* Longitud minima 7 caracteres
+* Longitud maxima 12 caracteres 
+* solo numeros
+
+## Telefono:
+
+* Longitud minima 11 caracteres
+* Longitud maxima 11 caracteres 
+* solo numeros
+
+## Nombre de Empresa, Distribuidora, entre otros similares....
+
+* Longitud minima 3 caracteres
+* Longitud maxima 40 caracteres 
+* Solo acepta letras 

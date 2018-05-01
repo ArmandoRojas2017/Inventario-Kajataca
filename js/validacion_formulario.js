@@ -224,32 +224,19 @@ var proveedor_validaciones = function usuarios_validaciones( ){
 
 	/*Longitud Permitida*/
 	nombre.longitudMax(40)
-	nick.longitudMax(12)
-	cedula.longitudMax(8)
-	clave.longitudMax(12)
-	clave2.longitudMax(12)
+	telefono.longitudMax(11)
+	distribuidora.longitudMax(3)
+	rif.longitudMax(12)
+	
 
-	pregunta.longitudMax(20)
-	respuesta1.longitudMax(20)
-	respuesta2.longitudMax(20)
+
 
 	/*valida teclado*/
 	nombre.validCampo(soloLetras())
-	cedula.validCampo(soloNumeros())
-	nick.validCampo(soloLetras_Numeros())
-	clave.validCampo(soloLetras_Numeros())
-	respuesta1.validCampo(soloLetras())
-	respuesta2.validCampo(soloLetras())
-	clave2.validCampo(soloLetras_Numeros())
-	pregunta.validCampo(soloLetras())
+	distribuidora.validCampo(soloLetras2())
+	rif.validCampo(soloNumeros())
+	telefono.validCampo(soloNumeros())
 
-
-	// cambiar los iconos a modo botones	
-	$(".glyphicon-eye-open").css('cursor', 'pointer');
-
-	
-		clave.tooltip_focus({titulo: 'Clave Segura' , contenido: 'Para que tu clave sea segura debe tener por lo menos 1 letra y un digito'});
-	
 
 
 
@@ -260,19 +247,12 @@ setInterval( () =>{
 		/*Valida Minima cantidad de carecteres */
 		
 		//valida la cedula 
-		cedula.longitud("#error1",7)
-		nombre.longitud("#error2",3)
-		nick.longitud("#error3",8)
-		clave.longitud("#error5",8)
-		clave.claveSegura("#error14")
+		rif.longitud("#error1",7)
+		distribuidora.longitud("#error2",3)
+		nombre.longitud("#error4",3)
+		telefono.longitud("#error5",11)
 		
-
-		clave2.comparar(clave,"#error6")
-		pregunta.longitud("#error7",6)
-		respuesta1.longitud("#error8",3)
-		respuesta2.comparar(respuesta1,"#error9")
 		
-	
 
 
 

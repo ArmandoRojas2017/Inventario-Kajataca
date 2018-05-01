@@ -564,6 +564,11 @@ function soloLetras(){
 	return "{ABCDEFGHIJKMNLOPQRSTUVWXYZÑab cdefghijklmnopqrstuvwxyzñ}"
 }
 
+function soloLetras2(){
+
+	return "{ABCDEFGHIJKMNLOPQRSTUVWXYZÑab cdefghijklmnopq.rstuvwxyzñ}"
+}
+
 function soloClaves(){
 
 	return "{1234567890ABCDEFGHIJKMNLOPQRSTUVWXYZÑabcdefghijklmnopqrstuvwxyzñ.$_-@}"
