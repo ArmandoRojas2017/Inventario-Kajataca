@@ -178,7 +178,7 @@
 					'method' 	 => 'ver' 
 				),
 
-				'editarEDistribuidora' => array( 
+				'editarDistribuidora' => array( 
 					'controller' => 'DistribuidoraControlador' , 
 					'js' => 'no',
 					'method' 	 => 'editar' 
@@ -190,13 +190,13 @@
 					'method' 	 => 'eliminar' 
 				),
 
-				'statusEDistribuidora' => array( 
+				'statusDistribuidora' => array( 
 					'controller' => 'DistribuidoraControlador' , 
 					'js' => 'no',
 					'method' 	 => 'cambiarStatus' 
 				),
 
-				'selectEDistribuidora' => array( 
+				'selectDistribuidora' => array( 
 					'controller' => 'DistribuidoraControlador' , 
 					'js' => 'no',
 					'method' 	 => 'select' 

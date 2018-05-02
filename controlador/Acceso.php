@@ -55,6 +55,10 @@ class AccesoControlador extends Controlador
 		if (  $_SESSION['autenticado'] == 1  )echo VERIFICADO;
 		else echo NO_VERIFICADO; 
 	}
+
+	function cambiar_clave(){
+		
+	}
 }
 
   

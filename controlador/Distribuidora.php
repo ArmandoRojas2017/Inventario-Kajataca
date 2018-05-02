@@ -155,6 +155,8 @@
 			$modelo = $this->modelo;
 
 			$this->addLog(EVENTOS['peticion_ajax'],' modulo Distribuidora para cambiar de estado un Distribuidora con rif '.$_POST['id']);
+
+			var_dump($_POST['id']);
 		
 			echo $modelo->statusChangeById($_POST['id']); 
 

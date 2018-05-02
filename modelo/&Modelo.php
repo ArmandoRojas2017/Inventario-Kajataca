@@ -133,9 +133,9 @@ abstract class Modelo{
 				
 
 			$status = $this->getById($id)[0]['status'];
-			echo $status;
+		
 			$status = ($status == 1) ? 0 : 1;
-			echo $status;
+		
 			$array = array('id' => $id  , 'status' => $status );
 
 					//Creamos el sql

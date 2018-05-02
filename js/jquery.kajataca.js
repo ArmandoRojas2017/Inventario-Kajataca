@@ -818,6 +818,8 @@ En el remoto caso de no encontrar coincidencias, devolverá una cadena vacía.
  /*Funciones extra para el sistema, como libreria deberia ser elminada*/
 
 
+
+
  var boton_eliminar = (objecto) =>{
 
 
@@ -864,3 +866,174 @@ mensajeSiNo(
 })
 
 }
+
+
+var boton_editar = ( funcion ) => {
+
+	$("#botonEditar").click(()=>{
+	
+	$(".cerrar").addClass('invisible')
+	$("#botonEditar").addClass('invisible')
+	$("#botonEstado").addClass('invisible')
+	$("#botonEliminar").addClass('invisible')
+	
+	$("#botonGuardar").removeClass('invisible');
+	$("#botonCancelar").removeClass('invisible');
+
+	$("input").disabled(false)
+	$("select").disabled(false)
+		funcion()
+	})
+
+}
+
+
+var boton_status = ( objecto ) => {
+	$("#botonEstado").click(() => {
+
+
+	mensajeSiNo(
+			{ 
+				titulo: "¡Alerta!",
+				contenido: "¿Estas seguro que desas Cambiar su estado actual?",
+				titulo2: "¡Listo!",
+				contenido2: "Estado actual modificado"
+
+			},
+			() => {
+
+
+						ajax(localStorage.ajax + objecto.url, (rsp) =>{
+
+					
+							mensajeOk2({
+								titulo   : 'Estado Cambiado' ,
+							 	contenido: `El estado del registro fue cambiado ` 
+							 } ,  
+							 	() => {window.location.href = localStorage.ajax + objecto.direct } 
+							)
+							
+						}, objecto.variables )// fin de ajax
+						 
+						
+						
+			}
+		)
+
+});
+}
+
+
+var boton_cancelar = ()=>{
+
+	$("#botonCancelar").click( () => {
+
+
+	$(".cerrar").removeClass('invisible');
+	$("#botonEditar").removeClass('invisible')
+	$("#botonEstado").removeClass('invisible')
+	$("#botonEliminar").removeClass('invisible')
+
+	$("#botonGuardar").addClass('invisible')
+	$("#botonCancelar").addClass('invisible')
+
+	$("input").disabled(true)
+	$("select").disabled(true)
+
+})
+}
+
+var boton_guardar = (objecto) =>{
+
+
+	$("#botonGuardar").click( ()=> {
+
+
+	ajax(
+	localStorage.ajax + objecto.url, 
+		(rsp) =>{
+		
+			if(rsp.trim() == 1){
+				mensajeOk2({
+					titulo : 'Modificado' ,
+				 contenido: 'El registro fue modficado existosamente'
+				},()=>{window.location.href = localStorage.ajax + objecto.direct }  )
+			
+			}//if
+			else {
+			
+				mensajeNo({
+					titulo : 'No se puede Modificar' ,
+				 contenido: objecto.mensaje
+				})
+			}
+		},
+		
+			objecto.variables
+
+		)
+})
+
+}
+
+
+ var editar_modal = (objecto , funcion ) => {
+
+	
+		$("select").disabled(true)
+		$("input").disabled(true)
+
+		let id = objecto.id
+		let principal = objecto.principal
+		let secundario = objecto.secundario
+		let v = objecto.v
+
+	let eliminar = {
+
+		url       : 'eliminar'+secundario,
+		direct    : principal,
+		variables :  id
+	}
+
+	let guardar = {
+
+		url       : 'editar'+secundario,
+		direct    : principal,
+		variables :  v,
+		mensaje   : objecto.sms
+	}
+
+
+	let editar = () => {
+
+		$("#rif").disabled(true)
+	}
+
+	let status = {
+
+		url       : 'status'+secundario,
+		direct    : principal,
+		variables :  id
+	}
+
+
+
+	Menu() //invocamos los scripts del menu 
+
+
+
+
+	// eliminar Usuario 
+	boton_eliminar(eliminar)
+	boton_editar(editar)
+	boton_status(status)
+	boton_cancelar()
+	boton_guardar(guardar)
+
+
+
+	función()
+
+	
+
+ }
