@@ -105,6 +105,12 @@
 					'js' => 'no',
 					'method' 	 => 'pedirAcceso' 
 				),
+				// cambiar clave con un modal
+				'cambiar' => array( 
+					'controller' => 'AccesoControlador' , 
+					'js' => 'no',
+					'method' 	 => 'cambiar_clave' 
+				),
 				// salir del sistema por ajax
 				'salir' => array( 
 					'controller' => 'AccesoControlador' , 

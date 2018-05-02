@@ -57,7 +57,28 @@ class AccesoControlador extends Controlador
 	}
 
 	function cambiar_clave(){
-		
+
+		js("cambiar_clave");
+			//$form =  $this->modelo->getById($_POST['id']);
+
+			// toma los datos de la primera posicion
+			//$inputs = 	$form[0] ;
+			//$formulario = 'formularios/agregarUsuario';
+
+
+			/*$datos =  array(
+				
+				'titulo' =>  $inputs['nick']
+
+			);*/
+
+			//$this->addLog(EVENTOS['peticion_ajax'],' modulo usuarios para ver detalladamente al usuario '.$inputs['nick']
+
+
+			
+			js("editarUsuario");
+			
+			view("modal/usuario",compact('datos','formulario','inputs'));
 	}
 }
 

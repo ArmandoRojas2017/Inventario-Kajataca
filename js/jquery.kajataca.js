@@ -945,7 +945,7 @@ var boton_cancelar = ()=>{
 
 var boton_guardar = (objecto) =>{
 
-
+console.log(objecto.variables)
 	$("#botonGuardar").click( ()=> {
 
 
@@ -1022,7 +1022,6 @@ var boton_guardar = (objecto) =>{
 
 
 
-
 	// eliminar Usuario 
 	boton_eliminar(eliminar)
 	boton_editar(editar)
@@ -1032,7 +1031,7 @@ var boton_guardar = (objecto) =>{
 
 
 
-	función()
+	funcion
 
 	
 

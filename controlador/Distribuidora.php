@@ -67,6 +67,8 @@
 
 		
 			js("editarProveedor");
+			incluir_js("auxiliar",$inputs['id_empresas']);
+
 			
 			view("modal/usuario",compact('datos','formulario','inputs'));
 		}
@@ -130,9 +132,11 @@
 
 				$datos = array( 
 				"id"        => $_POST['id'] ,   
-				"nombre"    => $_POST['nombre']  , 
+				"distribuidora"    => $_POST['distribuidora']  , 
 	
 				 );
+
+
 
 			echo $modelo->edit($datos) ;
 

@@ -30,7 +30,7 @@ class Distribuidora extends Modelo{
 
 		public function edit($datos){
 
-			$this->sql = "UPDATE  {$this->tabla} SET   descripcion=:nombre , fecha_m = now() where id_{$this->tabla} = :id";
+			$this->sql = "UPDATE  {$this->tabla} SET   descripcion=:distribuidora , fecha_m = now() where id_{$this->tabla} = :id";
 
 			return $this->consult($datos); 
 		 

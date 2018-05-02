@@ -6,9 +6,17 @@
  */
 
 $(document).ready(function() {
+
+	// asignar roles al select 
+	ajax("?url=selectEmpresa",function(resp){
+
+		$("#empresa").html(resp)
+	},null)
 	
+	setTimeout( ()=>{
+
 	let objecto = {
-		id         : {id: $("#rif").val()} ,
+		id         : $("#rif") ,
 		principal  : 'distribuidora',
 		secundario : 'Distribuidora',
 		v :{ 
@@ -27,6 +35,18 @@ $(document).ready(function() {
 
 	editar_modal(objecto , proveedor_validaciones() ) 
 
+
+
+	$("#empresa option[value="+localStorage.auxiliar+"]").attr("selected",true)
+
+
+
+	}
+
+
+
+		,
+	 500)
 
 
 

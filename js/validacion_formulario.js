@@ -208,11 +208,7 @@ var proveedor_validaciones = function usuarios_validaciones( ){
 	let telefono = $("#telefono")
 
 
-	// asignar roles al select 
-	ajax("?url=selectEmpresa",function(resp){
-
-		$("#empresa").html(resp)
-	},null)
+	
 
 
 	/*No Copiar y pegar */
@@ -269,7 +265,7 @@ setInterval( () =>{
 				mensajeNotify( {mensaje: "Presione el boton Guarda (boton de color Azul)..."} )
 				 localStorage.interruptor = 1
 				 nombre.quitarEspacio()
-				 pregunta.quitarEspacio()
+
 
 			}
 
