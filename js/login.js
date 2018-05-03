@@ -124,6 +124,11 @@ footer()
 login_validaciones()
 
 
+// cambiar clave 
+
+$("#cambiar").ruta("cambiar")
+
+
 
 	
 

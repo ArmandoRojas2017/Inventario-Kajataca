@@ -125,6 +125,7 @@ a{
 	-moz-background-size: cover;
 	background-size: cover;
 	overflow: auto;
+
 }
 
 .modal-backdrop-kajataca {
@@ -142,6 +143,7 @@ a{
 	-moz-background-size: cover;
 	background-size: cover;
 	overflow: auto;
+	min-height: 100em;
 }
 
 .modal-content{

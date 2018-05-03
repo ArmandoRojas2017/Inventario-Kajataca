@@ -128,7 +128,8 @@
 
 
 
-<div id=area > </div>
 </section>
 
 
+
+<div id=modal_cambiar ></div>

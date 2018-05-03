@@ -287,3 +287,93 @@ setInterval( () =>{
 
 
 }
+
+
+
+var recuperar_validaciones = function recuperar_validaciones( ){
+
+	 localStorage.interruptor = 0
+
+	validaciones_generales()
+	// mensajes 
+
+
+	// campos 
+	let nick = $("#nick")
+	let cedula = $("#cedula")
+	let distribuidora = $("#pregunta")
+	let respuesta = $("#respuesta")
+	let clave = $("#clave")
+	let clave2 = $("#clave2")
+
+
+	
+	tooltip_usuario();
+
+	/*Longitud Permitida*/
+
+	cedula.longitudMax(8)
+	clave.longitudMax(12)
+	clave2.longitudMax(12)
+
+
+	respuesta.mayuscula().longitudMax(20)
+
+
+
+	cedula.validCampo(soloNumeros())
+	clave.validCampo(soloLetras_Numeros())
+	respuesta.validCampo(soloLetras())
+	clave2.validCampo(soloLetras_Numeros())
+
+
+
+
+/*Verifica los campos*/
+setInterval( () =>{
+
+		localStorage.control = 1
+		/*Valida Minima cantidad de carecteres */
+		
+		cedula.longitud("#error1",7)
+	
+
+
+		//---------------------------------------
+
+		
+
+		/* Activar el boton de guardar */
+		if(localStorage.control == 1 ){
+
+
+			$("#botonGuardar").disabled(false)
+
+			 
+
+			if(localStorage.interruptor == 0){
+				mensajeNotify( {mensaje: "Presione el boton Guarda (boton de color Azul)..."} )
+				 localStorage.interruptor = 1
+				 nombre.quitarEspacio()
+
+
+			}
+
+				
+
+		}
+		else {
+
+			$("#botonGuardar").disabled(true);
+			 localStorage.interruptor = 0
+		}
+
+		//---------------------------------------
+
+
+
+
+} , 500  )
+
+
+}

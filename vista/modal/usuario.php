@@ -33,9 +33,12 @@
 <?php endif ?>
 
 </div><!-- /.modal-content -->
+
 </div><!-- /.modal-dialog -->
+
 </div><!-- /.modal -->
 </div>
+
 
 
 

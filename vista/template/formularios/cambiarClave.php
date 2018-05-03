@@ -2,7 +2,7 @@
 
 <form class="form-horizontal campo">
 
-<label for="ci" class="col-sm-offset-5 control-label text-danger oculto campo1" id=error1 >
+<label for="ci" class="col-sm-offset-5 control-label text-danger oculto campo1" id=error10 >
 </label> 
 
 
@@ -16,7 +16,7 @@
 </div>
 </div>
 
-<label for="ci" class="col-sm-offset-5 control-label text-danger oculto campo2" id=error2 >
+<label for="ci" class="col-sm-offset-5 control-label text-danger oculto campo2" id=error11 >
 </label> 
 
 
@@ -28,7 +28,7 @@
  </label>
 
 <div class="col-sm-6">
-<input type="password" class="form-control " id="inputRespuesta" placeholder="Ejemplo: CERENIS CABRERA" >
+<input type="password" class="form-control " id="respuesta" placeholder="Ejemplo: CERENIS CABRERA" >
 </div>
 </div>
 
@@ -42,7 +42,7 @@
  </label>
 
  <div class="col-sm-6">
-<input type="password" class="form-control " id="inputRespuesta" placeholder="Ejemplo: ARMANDO2018" >
+<input type="password" class="form-control " id="nick" placeholder="Ejemplo: ARMANDO2018" >
 </div>
 
 
@@ -50,11 +50,11 @@
 </div>
 
 
-<label for="ci" class="col-sm-offset-5 control-label text-danger oculto campo3" id=error3 >
+<label for="ci" class="col-sm-offset-5 control-label text-danger oculto campo3" id=error12 >
 </label> 
 
 <div class="form-group campo3">
-<label for="inputNick" class="col-sm-4 control-label">
+<label for="clave" class="col-sm-4 control-label">
   Nueva Contraseña
  </label>
 
@@ -65,11 +65,11 @@
 </div>
 
 
-<label for="ci" class="col-sm-offset-5 control-label text-danger oculto campo3" id=error4 >
+<label for="ci" class="col-sm-offset-5 control-label text-danger oculto campo3" id=error13 >
 </label> 
 
 <div class="form-group campo3">
-<label for="inputClave2" class="col-sm-4 control-label">
+<label for="clave2" class="col-sm-4 control-label">
   Repita Contraseña
  </label>
 
@@ -82,6 +82,7 @@
 
 
 </div>
+
 
 
 
