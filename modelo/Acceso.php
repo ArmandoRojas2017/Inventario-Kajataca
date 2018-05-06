@@ -42,7 +42,20 @@
 		}// fin de la funcion
 
 
-		public function cambiar_clave($opc , $datos){
+		public function cambiar($opc , $datos){
+
+			switch ($opc) {
+				
+				case 1:
+					$this->sql = "SELECT pregunta , id_usuarios from usuarios where id_usuarios = :id"; 
+
+
+					 return $this->consult($datos); 
+
+				break;
+
+				
+			}
 
 		}
 

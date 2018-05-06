@@ -69,30 +69,7 @@ $("#ingresar").click(function() {
 //--------------------------------------------------------------------------------
 
 
-/* ------------- Mensajes tooltip de ayuda -------------------- */
 
-$("input[name=usuario]").tooltip({titulo:"¡¡¡Escribe Aqui!!!", contenido:"Ingresa tu nombre de Usuario"})
-
-$("input[name=clave]").tooltip({titulo:"¡¡¡Escribe Aqui!!!", contenido:"Ingresa tu clave super secreta"})
-
-$("#ingresar")
-.tooltip(
-			{
-				titulo:mensajesIndex.tituloBoton ,
-				contenido: "Si haces click aqui verificara tu usuario y clave, si son correctos ingresaras al sistema" 
-			}
-		)
-
-$("#cambiar")
-.tooltip(
-			{
-				titulo:mensajesIndex.tituloBoton ,
-				contenido: "¿Haz olvidado tu clave? no te preocupes, haz click aqui para ingresar al sistema de recuperacion de claves" 
-			}
-		)
-
-
-// -------------------------------------------------------------
 
 /*---------Verificar si esta ya ingreso al sistema-------------------*/
 	
@@ -122,6 +99,7 @@ $("#cambiar")
 
 footer()
 login_validaciones()
+tooltip_login()
 
 
 // cambiar clave 
@@ -129,7 +107,36 @@ login_validaciones()
 $("#cambiar").ruta("cambiar")
 
 
+$("input[name=usuario]").attr('type', 'password');
 
+localStorage.botonUsuario = 0
+localStorage.botonClave = 0
+
+
+$("#botonUsuario").click(()=>{
+	
+	if(localStorage.botonUsuario == 0){
+
+		$("input[name=usuario]").attr('type', 'text')
+		localStorage.botonUsuario = 1
+	}else {
+		$("input[name=usuario]").attr('type', 'password')
+		localStorage.botonUsuario = 0
+	}
+})
+
+
+$("#botonClave").click(()=>{
+	
+	if(localStorage.botonClave == 0){
+
+		$("input[name=clave]").attr('type', 'text')
+		localStorage.botonClave = 1
+	}else {
+		$("input[name=clave]").attr('type', 'password')
+		localStorage.botonClave = 0
+	}
+})
 	
 
 

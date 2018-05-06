@@ -5,6 +5,9 @@ $(document).ready(function() {
 	$(".campo2").visibilidad(false)
 	$(".campo3").visibilidad(false)	
 
+	$(".paso2").visibilidad(false)
+	$(".paso3").visibilidad(false)
+
 
 
 
@@ -21,30 +24,30 @@ $(document).ready(function() {
 			(rsp)=>{
 				// verificar cedula
 
-				if(rsp.trim() == 1){
+				if(rsp.trim() != -1){
 
-					$(".paso1").addClass('paso2')
-					$(".paso1").removeClass('paso1')
+					$(".paso1").visibilidad(false)
+					$(".paso2").visibilidad(true)
 					$("#cedula").disabled(true)
 
 					// cargar pregunta 
 
-					ajax( localStorage.ajax + 'datos' , (rsp) => {
+				
 
-						$("#pregunta").html('¿'+rsp.trim()+'?')
+					$("#pregunta").html('¿'+JSON.parse(rsp.trim())[0].pregunta+'?')
 
-					} ,  {id : $("#cedula").val() , opc: 2}  )
+					
 
 
 					$(".campo2").fadeIn('slow', () => {
 
-							$(".paso2").click(() => {alert("mujer")});
+						
 
 					});
 
 
 					
-
+				
 
 				}
 				else mensajeNo({
@@ -58,6 +61,11 @@ $(document).ready(function() {
 		{id : $("#cedula").val() , opc: 1} )
 
 	})
+
+
+		$(".paso2").click(() => {
+						alert("mujer")
+					});
 
 
 

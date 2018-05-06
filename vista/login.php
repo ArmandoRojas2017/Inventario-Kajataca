@@ -47,7 +47,9 @@
 	      						
 	      						<input type="text" class="form-control" name="usuario"  >
 	      						<div class="input-group-addon">
+	      							<div class="btn btn-xs " id=botonUsuario >
 	      							<i class="glyphicon glyphicon-user" ></i>
+	      							</div>
 	      						</div>
 	    					</div>
 
@@ -71,8 +73,10 @@
 
 							<div class="input-group-addon">
 	      							
-
-	      							<i class="glyphicon glyphicon-lock" ></i>
+									<div class="btn btn-xs " id=botonClave >
+										<i class="glyphicon glyphicon-lock" ></i>
+									</div>
+	      							
 	      						</div>
 	    				</div>
 

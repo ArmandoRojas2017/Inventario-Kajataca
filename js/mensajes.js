@@ -2,6 +2,48 @@
 /* Mensaje de Ayuda con tooltip */
 
 
+var tooltip_login = () =>{
+
+	$("input[name=usuario]").tooltip_focus({titulo:"¡¡¡Escribe Aqui!!!", contenido:"Ingresa tu nombre de Usuario"})
+
+	$("input[name=clave]").tooltip_focus({titulo:"¡¡¡Escribe Aqui!!!", contenido:"Ingresa tu clave super secreta"})
+	/* ------------- Mensajes tooltip de ayuda -------------------- */
+
+
+
+$("#ingresar").tooltip({
+				titulo:"¡¡¡Click Aqui!!!" ,
+				contenido: "Si haces click aqui verificara tu usuario y clave, si son correctos ingresaras al sistema" 
+			})
+
+$("#cambiar").tooltip({
+				titulo:"¡¡¡Click Aqui!!!"  ,
+				contenido: "¿Haz olvidado tu clave? no te preocupes, haz click aqui para ingresar al sistema de recuperacion de claves" 
+			})
+
+
+$("#botonUsuario i").tooltip({
+				titulo:"¡¡¡Click Aqui!!!"  ,
+				contenido: "Click aqui para mostrar u ocultar el nombre de usuario" 
+			})
+
+$("#botonClave i").tooltip({
+				titulo:"¡¡¡Click Aqui!!!"  ,
+				contenido: "Click aqui para mostrar u ocultar la clave de usuario" 
+			})
+
+// -------------------------------------------------------------
+
+
+
+
+
+
+}
+
+
+// -------------------------------------------------------------
+
 
 
 

@@ -71,12 +71,17 @@ class AccesoControlador extends Controlador
 				
 				case 1:	// verificar cedula
 
-					$datos = $modelo->getById($_POST['id']);
+					// formatea el id
+					$datos = array( 'id' => $_POST['id'] );
 
-					if(count($datos) > 0)
-					 	echo 1;
+					// realiza la consulta
+					$registro = $this->modelo->cambiar($_POST['opc'] , $datos);
 
-					else echo -1;
+					// verifica la cantidad de registros
+					if(count($registro) > 0)
+					 	echo json_encode($registro); 
+
+					else echo -1; // error 
 
 
 

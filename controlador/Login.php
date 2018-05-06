@@ -14,7 +14,7 @@
 
 			
 			
-			view('index'); 
+			view('login'); 
 			
 		}
 
