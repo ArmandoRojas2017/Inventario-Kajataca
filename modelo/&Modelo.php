@@ -104,10 +104,12 @@ abstract class Modelo{
 			
 		}
 
-		public function getById($id){
+		public function getById( $id ){
 
 				//Creamos el sql
 				$this->sql= "SELECT * FROM {$this->tabla} where id_{$this->tabla} = :id";
+
+
 				
 
 				$array = array('id' => $id);

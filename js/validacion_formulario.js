@@ -136,7 +136,7 @@ setInterval( () =>{
 		nombre.longitud("#error2",3)
 		nick.longitud("#error3",8)
 		clave.longitud("#error5",8)
-		clave.claveSegura("#error14")
+
 		
 
 		clave2.comparar(clave,"#error6")
@@ -192,7 +192,7 @@ setInterval( () =>{
 
 
 
-var proveedor_validaciones = function usuarios_validaciones( ){
+var proveedor_validaciones = function proveedor_validaciones( ){
 
 	 localStorage.interruptor = 0
 
@@ -307,8 +307,6 @@ var recuperar_validaciones = function recuperar_validaciones( ){
 	let clave2 = $("#clave2")
 
 
-	
-	tooltip_usuario();
 
 	/*Longitud Permitida*/
 
@@ -335,10 +333,9 @@ setInterval( () =>{
 		localStorage.control = 1
 		/*Valida Minima cantidad de carecteres */
 		
+		
+
 		cedula.longitud("#error1",7)
-	
-
-
 		//---------------------------------------
 
 		
@@ -352,9 +349,8 @@ setInterval( () =>{
 			 
 
 			if(localStorage.interruptor == 0){
-				mensajeNotify( {mensaje: "Presione el boton Guarda (boton de color Azul)..."} )
 				 localStorage.interruptor = 1
-				 nombre.quitarEspacio()
+				
 
 
 			}

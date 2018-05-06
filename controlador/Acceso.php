@@ -9,6 +9,10 @@
 class AccesoControlador extends Controlador
 {
 
+	function __construct(){
+
+		parent::__construct(Acceso::class);
+	}
 
 
 	function pedirAcceso(){
@@ -56,12 +60,41 @@ class AccesoControlador extends Controlador
 		else echo NO_VERIFICADO; 
 	}
 
+	/*
+		Datos para el cambio de clave 
+	*/
+	function datos(){
+
+		$modelo = new Usuario();
+
+		switch ($_POST['opc']) {
+				
+				case 1:	// verificar cedula
+
+					$datos = $modelo->getById($_POST['id']);
+
+					if(count($datos) > 0)
+					 	echo 1;
+
+					else echo -1;
+
+
+
+				break;
+				
+				case 2: // cargar pregunta 
+
+					$datos = $modelo->getById($_POST['id'])[0];
+					echo $datos['pregunta'];
+					
+				break;
+			
+		}
+		
+	}
+
 	function cambiar_clave(){
 
-			//$form =  $this->modelo->getById($_POST['id']);
-
-			// toma los datos de la primera posicion
-			//$inputs = 	$form[0] ;
 			
 			$formulario = 'formularios/cambiarClave';
 			$botonera = 'botoneraModalAceptar';

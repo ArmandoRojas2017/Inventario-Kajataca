@@ -116,6 +116,19 @@
 					'controller' => 'AccesoControlador' , 
 					'method' 	 => 'salir' 
 				) ,
+
+				// salir del sistema por ajax
+				'datos' => array( 
+					'controller' => 'AccesoControlador' , 
+					'method' 	 => 'datos' ,
+					'js' => 'no'
+				) ,
+
+
+
+
+
+
 				// agregar un nuevo usuario por ajax
 				'usuarioNuevo' => array( 
 					'controller' => 'UsuariosControlador' , 

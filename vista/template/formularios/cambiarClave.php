@@ -1,8 +1,9 @@
-<?php if($inputs)extract($inputs) ?>
+
 
 <form class="form-horizontal campo">
 
-<label for="ci" class="col-sm-offset-5 control-label text-danger oculto campo1" id=error10 >
+<label for="ci" class="col-sm-offset-5 control-label text-danger oculto campo1" id=error1 >
+
 </label> 
 
 

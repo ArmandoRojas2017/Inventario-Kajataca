@@ -41,6 +41,11 @@
 
 		}// fin de la funcion
 
+
+		public function cambiar_clave($opc , $datos){
+
+		}
+
 		public function __construct(){
 
 			//sentencia SQL

@@ -137,7 +137,7 @@
 				 );
 
 
-
+			
 			echo $modelo->edit($datos) ;
 
 		}

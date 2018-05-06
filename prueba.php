@@ -1,7 +1,7 @@
 <?php
 // Carga la configuración 
 //$config = parse_ini_file('config.ini'); 
-
+/*
 $config = array(  'username' => "armando" , 'password' => "12345678" , "dbname" => 'cerenis' );
 
 // Conexión con los datos del 'config.ini' 
@@ -13,4 +13,22 @@ if($connection === false) {
 } else {
  echo 'Conectado a la base de datos';
 }
+
+*/
+
+require 'config/Config.php';
+require 'modelo/&Modelo.php';
+require 'modelo/Usuario.php';
+
+$modelo = new Usuario();
+
+$json = json_encode($modelo->get_all());
+
+
+$x = json_decode($json);
+
+echo $x[0]->id_usuarios
+
 ?>
+
+
