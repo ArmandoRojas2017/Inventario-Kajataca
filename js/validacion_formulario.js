@@ -289,8 +289,8 @@ setInterval( () =>{
 }
 
 
-
-var recuperar_validaciones = function recuperar_validaciones( ){
+// validar recuperacion de clave 
+var recuperar_validaciones = function recuperar_validaciones(paso){
 
 	 localStorage.interruptor = 0
 
@@ -303,8 +303,11 @@ var recuperar_validaciones = function recuperar_validaciones( ){
 	let cedula = $("#cedula")
 	let distribuidora = $("#pregunta")
 	let respuesta = $("#respuesta")
-	let clave = $("#clave")
-	let clave2 = $("#clave2")
+	let clave = $("#inputClave")
+	let clave2 = $("#inputClave2")
+	var boton = $(".paso"+paso)
+
+
 
 
 
@@ -333,9 +336,19 @@ setInterval( () =>{
 		localStorage.control = 1
 		/*Valida Minima cantidad de carecteres */
 		
+		if(paso == 1)
+			cedula.longitud("#error1",7)
+
+		else if(paso == 2)
+			respuesta.longitud("#error2",3)
 		
 
-		cedula.longitud("#error1",7)
+		else {
+
+			clave.longitud("#error3",8)
+			clave2.comparar(clave,"#error4")
+
+		}
 		//---------------------------------------
 
 		
@@ -343,8 +356,10 @@ setInterval( () =>{
 		/* Activar el boton de guardar */
 		if(localStorage.control == 1 ){
 
+			
+				boton.disabled(false)
 
-			$("#botonGuardar").disabled(false)
+	
 
 			 
 
@@ -360,7 +375,7 @@ setInterval( () =>{
 		}
 		else {
 
-			$("#botonGuardar").disabled(true);
+			boton.disabled(true);
 			 localStorage.interruptor = 0
 		}
 

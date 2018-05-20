@@ -67,6 +67,9 @@ class AccesoControlador extends Controlador
 
 		$modelo = new Usuario();
 
+		$datos = []; 
+		$registro = [];
+
 		switch ($_POST['opc']) {
 				
 				case 1:	// verificar cedula
@@ -74,27 +77,26 @@ class AccesoControlador extends Controlador
 					// formatea el id
 					$datos = array( 'id' => $_POST['id'] );
 
-					// realiza la consulta
-					$registro = $this->modelo->cambiar($_POST['opc'] , $datos);
-
-					// verifica la cantidad de registros
-					if(count($registro) > 0)
-					 	echo json_encode($registro); 
-
-					else echo -1; // error 
-
-
-
 				break;
 				
 				case 2: // cargar pregunta 
 
-					$datos = $modelo->getById($_POST['id'])[0];
-					echo $datos['pregunta'];
-					
+					// formatea el id y la respuesta 
+					$datos = array( 'id' => $_POST['id'] , 'respuesta' =>  $_POST['respuesta']);
+				
 				break;
 			
 		}
+
+	$registro = $this->modelo->cambiar($_POST['opc'] , $datos);
+	// verifica la cantidad de registros
+	if(count($registro) > 0)
+	 	echo json_encode($registro); 
+
+	else echo -1; // error 
+
+
+
 		
 	}
 

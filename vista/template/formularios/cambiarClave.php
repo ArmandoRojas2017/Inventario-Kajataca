@@ -17,20 +17,37 @@
 </div>
 </div>
 
-<label for="ci" class="col-sm-offset-5 control-label text-danger oculto campo2" id=error11 >
+
+
+
+<label for="ci" class="col-sm-offset-5 control-label text-danger oculto campo2" id=error2 >
 </label> 
 
 
-
 <div class="form-group campo2">
+
+
+
 
 <label for="inputNick" id=pregunta  class="col-sm-4 control-label">
   ¿MI NOVIA? 
  </label>
 
+
 <div class="col-sm-6">
-<input type="password" class="form-control " id="respuesta" placeholder="Ejemplo: CERENIS CABRERA" >
+	<div class="input-group">
+		<input type="password" class="form-control " id="respuesta" placeholder="Ejemplo: CERENIS CABRERA" >
+		<dir class="input-group-addon"  >
+				<a  id=botonRespuesta >
+				<i class="glyphicon glyphicon-eye-open"> </i>
+				</a>
+			
+		</dir>
+			
+	</div>
 </div>
+
+
 </div>
 
 
@@ -43,7 +60,7 @@
  </label>
 
  <div class="col-sm-6">
-<input type="password" class="form-control " id="nick" placeholder="Ejemplo: ARMANDO2018" >
+<input type="text" class="form-control " id="nick" placeholder="Ejemplo: ARMANDO2018" >
 </div>
 
 
@@ -51,7 +68,7 @@
 </div>
 
 
-<label for="ci" class="col-sm-offset-5 control-label text-danger oculto campo3" id=error12 >
+<label for="ci" class="col-sm-offset-5 control-label text-danger oculto campo3" id=error3 >
 </label> 
 
 <div class="form-group campo3">
@@ -66,7 +83,7 @@
 </div>
 
 
-<label for="ci" class="col-sm-offset-5 control-label text-danger oculto campo3" id=error13 >
+<label for="ci" class="col-sm-offset-5 control-label text-danger oculto campo3" id=error4 >
 </label> 
 
 <div class="form-group campo3">

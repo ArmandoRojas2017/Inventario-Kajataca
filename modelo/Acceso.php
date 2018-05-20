@@ -50,12 +50,24 @@
 					$this->sql = "SELECT pregunta , id_usuarios from usuarios where id_usuarios = :id"; 
 
 
+				
+
+				break;
+
+
+				case 2:
+					$this->sql = "SELECT nick from usuarios where id_usuarios = :id and respuesta = md5(:respuesta) "; 
+
+
 					 return $this->consult($datos); 
 
 				break;
 
 				
 			}
+
+
+				 return $this->consult($datos); 
 
 		}
 
